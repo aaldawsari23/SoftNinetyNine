@@ -19,9 +19,6 @@ export default function CatalogContent() {
   const [selectedStockStatus, setSelectedStockStatus] = useState<StockStatus | 'all'>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState<'newest' | 'price-asc' | 'price-desc' | 'name'>('newest');
-  const [selectedCondition, setSelectedCondition] = useState<'all' | 'new' | 'used'>(
-    conditionParam === 'new' || conditionParam === 'used' ? (conditionParam as any) : 'all',
-  );
   const [showFilters, setShowFilters] = useState<boolean>(false);
 
   // Filter and sort products with optimizations
@@ -30,10 +27,6 @@ export default function CatalogContent() {
 
     if (selectedType !== 'all') {
       filtered = filtered.filter(p => p.type === selectedType);
-    }
-
-    if (selectedCondition === 'new') {
-      filtered = filtered.filter(p => p.is_featured);
     }
 
     if (selectedCategory !== 'all') {
@@ -75,7 +68,7 @@ export default function CatalogContent() {
     }
 
     return filtered;
-  }, [selectedType, selectedCategory, selectedBrand, selectedStockStatus, searchQuery, sortBy, selectedCondition]);
+  }, [selectedType, selectedCategory, selectedBrand, selectedStockStatus, searchQuery, sortBy]);
 
   const filteredCategories = useMemo(() => {
     if (selectedType === 'all') return categories;
@@ -116,14 +109,13 @@ export default function CatalogContent() {
 
       {/* Quick filter chips - simplified single row */}
       <div className="space-y-3">
-        {/* Type + Condition in one row */}
+        {/* Type chips */}
         <div className="flex flex-wrap gap-2">
-          {/* Type chips */}
           {([
             { key: 'all', label: 'الكل', icon: '🔍' },
             { key: 'bike', label: 'دراجات', icon: '🏍️' },
             { key: 'part', label: 'قطع غيار', icon: '⚙️' },
-            { key: 'gear', label: 'إكسسوارات', icon: '🪖' },
+            { key: 'gear', label: 'ملابس وحماية', icon: '🧥' },
           ] as { key: ProductType | 'all'; label: string; icon: string }[]).map((opt) => (
             <button
               key={opt.key}
@@ -138,27 +130,6 @@ export default function CatalogContent() {
               }`}
             >
               {opt.icon} {opt.label}
-            </button>
-          ))}
-
-          <div className="w-px h-6 bg-gray-700 mx-1 hidden sm:block"></div>
-
-          {/* Condition chips */}
-          {([
-            { key: 'all', label: 'الكل' },
-            { key: 'new', label: '✨ جديد' },
-            { key: 'used', label: '🔧 مستعمل' },
-          ] as { key: 'all' | 'new' | 'used'; label: string }[]).map((opt) => (
-            <button
-              key={opt.key}
-              onClick={() => setSelectedCondition(opt.key)}
-              className={`text-xs md:text-sm px-3 md:px-4 py-1.5 md:py-2 rounded-full border transition-all duration-200 ${
-                selectedCondition === opt.key
-                  ? 'bg-primary text-white border-primary shadow-md shadow-primary/30'
-                  : 'border-gray-700 text-text-secondary hover:bg-primary/20 hover:border-primary/50'
-              }`}
-            >
-              {opt.label}
             </button>
           ))}
         </div>
@@ -254,7 +225,6 @@ export default function CatalogContent() {
                   setSelectedBrand('all');
                   setSelectedStockStatus('all');
                   setSearchQuery('');
-                  setSelectedCondition('all');
                 }}
                 className="btn-secondary w-full text-sm"
               >
