@@ -1,5 +1,4 @@
 import { Product, Category, Brand } from '@/types';
-import { parseItemsFile, convertToProducts } from '@/utils/itemsParser';
 
 // العلامات التجارية الحقيقية من البيانات
 export const brands: Brand[] = [
@@ -39,128 +38,301 @@ export const brands: Brand[] = [
   { id: "b55", name: "Dunlop", logo_url: "", created_at: "2025-01-15T00:00:00Z" },
 ];
 
-// الفئات الحقيقية من البيانات
+// الفئات الحقيقية من البيانات - محسّنة
 export const categories: Category[] = [
-  { id: "c1", name_ar: "زيوت", name_en: "Oils", type: "part", icon: "🛢️", created_at: "2025-01-15T00:00:00Z" },
+  { id: "c1", name_ar: "زيوت ومواد تشحيم", name_en: "Oils & Lubricants", type: "part", icon: "🛢️", created_at: "2025-01-15T00:00:00Z" },
   { id: "c2", name_ar: "فلاتر", name_en: "Filters", type: "part", icon: "🔧", created_at: "2025-01-15T00:00:00Z" },
-  { id: "c3", name_ar: "إشعال", name_en: "Ignition", type: "part", icon: "⚡", created_at: "2025-01-15T00:00:00Z" },
+  { id: "c3", name_ar: "نظام الإشعال", name_en: "Ignition System", type: "part", icon: "⚡", created_at: "2025-01-15T00:00:00Z" },
   { id: "c4", name_ar: "بطاريات", name_en: "Batteries", type: "part", icon: "🔋", created_at: "2025-01-15T00:00:00Z" },
-  { id: "c5", name_ar: "إطارات", name_en: "Tires", type: "part", icon: "🛞", created_at: "2025-01-15T00:00:00Z" },
-  { id: "c6", name_ar: "فرامل", name_en: "Brakes", type: "part", icon: "🛑", created_at: "2025-01-15T00:00:00Z" },
+  { id: "c5", name_ar: "إطارات وتيوبات", name_en: "Tires & Tubes", type: "part", icon: "🛞", created_at: "2025-01-15T00:00:00Z" },
+  { id: "c6", name_ar: "نظام الفرامل", name_en: "Brake System", type: "part", icon: "🛑", created_at: "2025-01-15T00:00:00Z" },
   { id: "c7", name_ar: "نقل الحركة", name_en: "Drivetrain", type: "part", icon: "⚙️", created_at: "2025-01-15T00:00:00Z" },
   { id: "c8", name_ar: "سوائل", name_en: "Fluids", type: "part", icon: "🧪", created_at: "2025-01-15T00:00:00Z" },
-  { id: "c9", name_ar: "عناية", name_en: "Care", type: "part", icon: "🧽", created_at: "2025-01-15T00:00:00Z" },
-  { id: "c10", name_ar: "محرك", name_en: "Engine", type: "part", icon: "🔧", created_at: "2025-01-15T00:00:00Z" },
-  { id: "c11", name_ar: "كهرباء", name_en: "Electrical", type: "part", icon: "⚡", created_at: "2025-01-15T00:00:00Z" },
-  { id: "c12", name_ar: "عوادم", name_en: "Exhaust", type: "part", icon: "💨", created_at: "2025-01-15T00:00:00Z" },
-  { id: "c13", name_ar: "إكسسوارات", name_en: "Accessories", type: "part", icon: "🎨", created_at: "2025-01-15T00:00:00Z" },
-  { id: "c14", name_ar: "قطع", name_en: "Parts", type: "part", icon: "🔩", created_at: "2025-01-15T00:00:00Z" },
-  { id: "c15", name_ar: "ملابس", name_en: "Gear", type: "gear", icon: "👕", created_at: "2025-01-15T00:00:00Z" },
-  { id: "c16", name_ar: "عدد", name_en: "Tools", type: "part", icon: "🛠️", created_at: "2025-01-15T00:00:00Z" },
+  { id: "c9", name_ar: "منتجات العناية", name_en: "Care Products", type: "part", icon: "🧽", created_at: "2025-01-15T00:00:00Z" },
+  { id: "c10", name_ar: "قطع المحرك", name_en: "Engine Parts", type: "part", icon: "🔧", created_at: "2025-01-15T00:00:00Z" },
+  { id: "c11", name_ar: "النظام الكهربائي", name_en: "Electrical System", type: "part", icon: "⚡", created_at: "2025-01-15T00:00:00Z" },
+  { id: "c12", name_ar: "نظام العادم", name_en: "Exhaust System", type: "part", icon: "💨", created_at: "2025-01-15T00:00:00Z" },
+  { id: "c13", name_ar: "إكسسوارات وتحسينات", name_en: "Accessories", type: "part", icon: "🎨", created_at: "2025-01-15T00:00:00Z" },
+  { id: "c14", name_ar: "قطع غيار متفرقة", name_en: "Misc Parts", type: "part", icon: "🔩", created_at: "2025-01-15T00:00:00Z" },
+  { id: "c15", name_ar: "ملابس وحماية", name_en: "Riding Gear", type: "gear", icon: "🧥", created_at: "2025-01-15T00:00:00Z" },
+  { id: "c16", name_ar: "عدد وأدوات", name_en: "Tools", type: "part", icon: "🛠️", created_at: "2025-01-15T00:00:00Z" },
 ];
 
-// المنتجات الحقيقية (المنتجات التي لها صور فقط)
-export const products: Product[] = [
-  {
-    id: "1001",
-    name: "زيت موتول 7100 10W40",
-    name_en: "Motul 7100 10W40",
-    description: "1L - زيوت",
-    price: 120,
-    image_url: "/Images/1001.jpg",
-    category_id: "c1",
-    brand_id: "b13",
-    sku: "1001",
-    stock_quantity: 10,
-    is_featured: false,
-    is_available: true,
-    specifications: { model: "104091", specification: "1L" },
-    created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString()
-  },
-  {
-    id: "1002",
-    name: "زيت موتول 7100 10W40",
-    name_en: "Motul 7100 10W40",
-    description: "4L - زيوت",
-    price: 400,
-    image_url: "/Images/1002.jpg",
-    category_id: "c1",
-    brand_id: "b13",
-    sku: "1002",
-    stock_quantity: 5,
-    is_featured: false,
-    is_available: true,
-    specifications: { model: "104092", specification: "4L" },
-    created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString()
-  },
-  {
-    id: "1003",
-    name: "زيت موتول 7100 10W50",
-    name_en: "Motul 7100 10W50",
-    description: "1L - زيوت",
-    price: 125,
-    image_url: "/Images/1003.jpg",
-    category_id: "c1",
-    brand_id: "b13",
-    sku: "1003",
-    stock_quantity: 8,
-    is_featured: false,
-    is_available: true,
-    specifications: { model: "104098", specification: "1L" },
-    created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString()
-  },
-  {
-    id: "1027",
-    name: "فلتر زيت هيفلو",
-    name_en: "Hiflo Oil Filter",
-    description: "Black - فلاتر",
-    price: 45,
-    image_url: "/Images/1027.png",
-    category_id: "c2",
-    brand_id: "b34",
-    sku: "1027",
-    stock_quantity: 15,
-    is_featured: false,
-    is_available: true,
-    specifications: { model: "HF204", specification: "Black" },
-    created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString()
-  },
-  {
-    id: "1057",
-    name: "بوجي NGK",
-    name_en: "NGK Spark Plug",
-    description: "Std - إشعال",
-    price: 25,
-    image_url: "/Images/1057.png",
-    category_id: "c3",
-    brand_id: "b40",
-    sku: "1057",
-    stock_quantity: 20,
-    is_featured: false,
-    is_available: true,
-    specifications: { model: "CR9E", specification: "Std" },
-    created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString()
-  },
-  {
-    id: "1073",
-    name: "بطارية كوبرا",
-    name_en: "Cobra Battery",
-    description: "5L - بطاريات",
-    price: 180,
-    image_url: "/Images/1073.jpg",
-    category_id: "c4",
-    brand_id: "b41",
-    sku: "1073",
-    stock_quantity: 6,
-    is_featured: true,
-    is_available: true,
-    specifications: { model: "YTX5L-BS", specification: "5L" },
-    created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString()
+// Helper function to get image extension
+function getImageExt(sku: string): string {
+  const extMap: { [key: string]: string } = {
+    '1006': '.png', '1007': '.png', '1014': '.png', '1015': '.png', '1017': '.PNG',
+    '1019': '.png', '1020': '.png', '1021': '.png', '1026': '.png', '1027': '.png',
+    '1028': '.png', '1030': '.png', '1032': '.png', '1038': '.png', '1039': '.png',
+    '1050': '.png', '1054': '.jpeg', '1055': '.png', '1057': '.png', '1060': '.jpeg',
+    '1061': '.webp', '1071': '.png', '1075': '.webp', '1077': '.png', '1080': '.png',
+    '1082': '.webp', '1083': '.png', '1104': '.png', '1106': '.png', '1117': '.png',
+    '1118': '.png', '1119': '.png', '1120': '.png', '1121': '.png', '1122': '.png',
+    '1126': '.jpeg', '1128': '.png', '1131': '.jpeg', '1133': '.jpeg', '1137': '.webp',
+    '1138': '.webp', '1143': '.png', '1144': '.png', '1150': '.JPG', '1158': '.png',
+    '1160': '.png', '1162': '.png', '1171': '.webp', '1181': '.jpeg', '1203': '.jpeg',
+    '1204': '.png', '1205': '.png', '1207': '.webp', '1209': '.jpeg', '1220': '.webp',
+    '1225': '.png', '1228': '.png', '1229': '.png', '1232': '.jpeg', '1251': '.png',
+    '1257': '.jpeg', '1260': '.png', '1261': '.png', '1263': '.png'
+  };
+  return extMap[sku] || '.jpg';
+}
+
+// Helper to get category ID
+function getCatId(cat: string): string {
+  const map: { [key: string]: string } = {
+    'زيوت': 'c1', 'فلاتر': 'c2', 'إشعال': 'c3', 'بطاريات': 'c4',
+    'إطارات': 'c5', 'فرامل': 'c6', 'نقل الحركة': 'c7', 'سوائل': 'c8',
+    'عناية': 'c9', 'محرك': 'c10', 'كهرباء': 'c11', 'عوادم': 'c12',
+    'إكسسوارات': 'c13', 'قطع': 'c14', 'ملابس': 'c15', 'عدد': 'c16'
+  };
+  return map[cat] || 'c14';
+}
+
+// Helper to get brand ID
+function getBrandId(brand: string): string {
+  const map: { [key: string]: string } = {
+    'Motul': 'b13', 'Suzuki Ecstar': 'b30', 'Castrol': 'b15', 'Putoline': 'b31',
+    'Yamalube': 'b32', 'Amsoil': 'b33', 'Liqui Moly': 'b14', 'Hiflofiltro': 'b34',
+    'K&N': 'b35', 'Suzuki OEM': 'b36', 'Yamaha OEM': 'b37', 'Honda OEM': 'b38',
+    'Kawasaki OEM': 'b39', 'NGK': 'b40', 'Cobra': 'b41', 'BS Battery': 'b42',
+    'Bridgestone': 'b43', 'Michelin': 'b18', 'EBC': 'b44', 'RK Chain': 'b21',
+    'DID Chain': 'b20', 'JT Sprockets': 'b45', 'Mitsubishi': 'b46', "Brock's": 'b47',
+    'Akrapovic': 'b48', 'SC Project': 'b49', 'Yoshimura': 'b50', 'Alpinestars': 'b26',
+    'Scoyco': 'b51', 'Pro-Biker': 'b52', 'AGV': 'b22', 'Generic': 'b53',
+    'Pirelli': 'b54', 'Dunlop': 'b55'
+  };
+  return map[brand] || 'b53';
+}
+
+// Helper to get logical pricing based on category and brand
+function getPrice(category: string, brand: string, spec: string): number {
+  // Premium brands multiplier
+  const premiumBrands = ['Motul', 'Akrapovic', 'SC Project', 'Yoshimura', 'Alpinestars', 'AGV', 'Bridgestone', 'Michelin', 'Pirelli'];
+  const isPremium = premiumBrands.includes(brand);
+
+  switch(category) {
+    case 'زيوت':
+      if (spec.includes('4L')) return isPremium ? 400 : 300;
+      if (spec.includes('300V')) return 150;
+      if (spec.includes('7100')) return isPremium ? 120 : 100;
+      return isPremium ? 100 : 80;
+
+    case 'فلاتر':
+      if (spec.includes('K&N') || spec.includes('Racing')) return 60;
+      if (brand.includes('OEM')) return 50;
+      return 35;
+
+    case 'إشعال':
+      if (spec.includes('Iridium') || spec.includes('Laser')) return 45;
+      return 25;
+
+    case 'بطاريات':
+      const size = parseInt(spec.match(/\d+/)?.[0] || '0');
+      return 120 + (size * 10);
+
+    case 'إطارات':
+      if (spec.includes('Front')) return isPremium ? 800 : 500;
+      if (spec.includes('Rear')) return isPremium ? 1200 : 700;
+      if (spec.includes('Tube')) return 30;
+      return 600;
+
+    case 'فرامل':
+      if (brand.includes('EBC')) return 180;
+      if (brand.includes('OEM')) return 200;
+      return 120;
+
+    case 'نقل الحركة':
+      if (spec.includes('Gold') || spec.includes('VX3')) return 350;
+      if (spec.includes('JT')) return 80;
+      if (spec.includes('Chain')) return 250;
+      return 150;
+
+    case 'عوادم':
+      if (brand.includes("Brock's") || brand === 'Akrapovic') return 2500;
+      if (brand === 'SC Project' || brand === 'Yoshimura') return 2200;
+      return 1500;
+
+    case 'ملابس':
+      if (spec.includes('Helmet')) return isPremium ? 800 : 400;
+      if (spec.includes('Gloves')) return isPremium ? 250 : 120;
+      if (spec.includes('Jacket')) return 350;
+      if (spec.includes('Bag')) return 200;
+      return 150;
+
+    case 'سوائل':
+      if (spec.includes('RBF')) return 120;
+      if (spec.includes('Coolant')) return 80;
+      return 50;
+
+    case 'عناية':
+      return 60;
+
+    case 'محرك':
+      if (spec.includes('Clutch')) return 300;
+      if (spec.includes('Piston')) return 250;
+      if (spec.includes('Carburetor')) return 180;
+      return 120;
+
+    case 'كهرباء':
+      if (spec.includes('Stator')) return 200;
+      if (spec.includes('CDI')) return 150;
+      if (spec.includes('LED')) return 100;
+      return 50;
+
+    case 'إكسسوارات':
+      if (spec.includes('CNC')) return 120;
+      if (spec.includes('LED')) return 150;
+      if (spec.includes('Sliders')) return 180;
+      return 80;
+
+    case 'قطع':
+      if (spec.includes('Cable')) return 40;
+      if (spec.includes('Bearing')) return 35;
+      return 60;
+
+    case 'عدد':
+      if (spec.includes('Stand')) return 200;
+      if (spec.includes('Tools')) return 150;
+      return 80;
+
+    default:
+      return 100;
   }
+}
+
+// All products from items.txt (only those with images)
+export const products: Product[] = [
+  { id: "1001", sku: "1001", name: "زيت موتول 7100 10W40", name_en: "Motul 7100 10W40", description: "1L - زيوت موتورات عالية الأداء", price: 120, currency: "ريال", image_url: "/Images/1001.jpg", category_id: "c1", brand_id: "b13", type: "part", stock_quantity: 15, is_featured: true, is_available: true, specifications: { model: "104091", specification: "1L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1002", sku: "1002", name: "زيت موتول 7100 10W40", name_en: "Motul 7100 10W40", description: "4L - زيوت موتورات عالية الأداء", price: 400, currency: "ريال", image_url: "/Images/1002.jpg", category_id: "c1", brand_id: "b13", type: "part", stock_quantity: 8, is_featured: true, is_available: true, specifications: { model: "104092", specification: "4L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1003", sku: "1003", name: "زيت موتول 7100 10W50", name_en: "Motul 7100 10W50", description: "1L - زيوت موتورات عالية الأداء", price: 120, currency: "ريال", image_url: "/Images/1003.jpg", category_id: "c1", brand_id: "b13", type: "part", stock_quantity: 12, is_featured: false, is_available: true, specifications: { model: "104098", specification: "1L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1004", sku: "1004", name: "زيت موتول 7100 20W50", name_en: "Motul 7100 20W50", description: "1L - زيوت موتورات عالية الأداء", price: 120, currency: "ريال", image_url: "/Images/1004.jpg", category_id: "c1", brand_id: "b13", type: "part", stock_quantity: 10, is_featured: false, is_available: true, specifications: { model: "101716", specification: "1L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1005", sku: "1005", name: "زيت موتول 300V 10W40", name_en: "Motul 300V 10W40", description: "1L - زيوت سباقات احترافية", price: 150, currency: "ريال", image_url: "/Images/1005.jpg", category_id: "c1", brand_id: "b13", type: "part", stock_quantity: 6, is_featured: true, is_available: true, specifications: { model: "104298", specification: "1L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1006", sku: "1006", name: "زيت موتول 300V 15W50", name_en: "Motul 300V 15W50", description: "1L - زيوت سباقات احترافية", price: 150, currency: "ريال", image_url: "/Images/1006.png", category_id: "c1", brand_id: "b13", type: "part", stock_quantity: 5, is_featured: true, is_available: true, specifications: { model: "104300", specification: "1L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1007", sku: "1007", name: "زيت موتول 300V 5W40", name_en: "Motul 300V 5W40", description: "1L - زيوت سباقات احترافية", price: 150, currency: "ريال", image_url: "/Images/1007.png", category_id: "c1", brand_id: "b13", type: "part", stock_quantity: 4, is_featured: true, is_available: true, specifications: { model: "103057", specification: "1L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1008", sku: "1008", name: "زيت موتول 5100 10W40", name_en: "Motul 5100 10W40", description: "1L - زيوت موتورات", price: 100, currency: "ريال", image_url: "/Images/1008.jpg", category_id: "c1", brand_id: "b13", type: "part", stock_quantity: 20, is_featured: false, is_available: true, specifications: { model: "104066", specification: "1L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1009", sku: "1009", name: "زيت موتول 5100 10W40", name_en: "Motul 5100 10W40", description: "4L - زيوت موتورات", price: 400, currency: "ريال", image_url: "/Images/1009.jpg", category_id: "c1", brand_id: "b13", type: "part", stock_quantity: 10, is_featured: false, is_available: true, specifications: { model: "104067", specification: "4L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1010", sku: "1010", name: "زيت موتول 5100 15W50", name_en: "Motul 5100 15W50", description: "1L - زيوت موتورات", price: 100, currency: "ريال", image_url: "/Images/1010.jpg", category_id: "c1", brand_id: "b13", type: "part", stock_quantity: 15, is_featured: false, is_available: true, specifications: { model: "104076", specification: "1L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1011", sku: "1011", name: "زيت موتول 5000 10W40", name_en: "Motul 5000 10W40", description: "1L - زيوت موتورات", price: 80, currency: "ريال", image_url: "/Images/1011.jpg", category_id: "c1", brand_id: "b13", type: "part", stock_quantity: 25, is_featured: false, is_available: true, specifications: { model: "104054", specification: "1L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1013", sku: "1013", name: "زيت موتول سكوتر 5W40", name_en: "Motul Scooter 5W40", description: "1L - زيوت سكوترات", price: 100, currency: "ريال", image_url: "/Images/1013.jpg", category_id: "c1", brand_id: "b13", type: "part", stock_quantity: 12, is_featured: false, is_available: true, specifications: { model: "107671", specification: "1L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1014", sku: "1014", name: "زيت سوزوكي R9000", name_en: "Suzuki Ecstar R9000", description: "1L - زيوت موتورات", price: 100, currency: "ريال", image_url: "/Images/1014.png", category_id: "c1", brand_id: "b30", type: "part", stock_quantity: 10, is_featured: false, is_available: true, specifications: { model: "99000-R9000-1L", specification: "1L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1015", sku: "1015", name: "زيت سوزوكي R9000", name_en: "Suzuki Ecstar R9000", description: "4L - زيوت موتورات", price: 300, currency: "ريال", image_url: "/Images/1015.png", category_id: "c1", brand_id: "b30", type: "part", stock_quantity: 6, is_featured: false, is_available: true, specifications: { model: "99000-R9000-4L", specification: "4L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1016", sku: "1016", name: "زيت سوزوكي R5000", name_en: "Suzuki Ecstar R5000", description: "1L - زيوت موتورات", price: 80, currency: "ريال", image_url: "/Images/1016.jpg", category_id: "c1", brand_id: "b30", type: "part", stock_quantity: 15, is_featured: false, is_available: true, specifications: { model: "99000-R5000-1L", specification: "1L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1017", sku: "1017", name: "زيت كاسترول اكتيف", name_en: "Castrol Actevo", description: "1L - زيوت موتورات", price: 80, currency: "ريال", image_url: "/Images/1017.PNG", category_id: "c1", brand_id: "b15", type: "part", stock_quantity: 18, is_featured: false, is_available: true, specifications: { model: "Actevo-20W50-1L", specification: "1L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1018", sku: "1018", name: "زيت كاسترول باور1", name_en: "Castrol Power1", description: "1L - زيوت موتورات", price: 100, currency: "ريال", image_url: "/Images/1018.jpg", category_id: "c1", brand_id: "b15", type: "part", stock_quantity: 14, is_featured: false, is_available: true, specifications: { model: "Power1-10W40-1L", specification: "1L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1019", sku: "1019", name: "زيت بوتولين N-Tech", name_en: "Putoline N-Tech", description: "1L - زيوت موتورات", price: 100, currency: "ريال", image_url: "/Images/1019.png", category_id: "c1", brand_id: "b31", type: "part", stock_quantity: 10, is_featured: false, is_available: true, specifications: { model: "N-TECH-10W40", specification: "1L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1020", sku: "1020", name: "زيت بوتولين N-Tech", name_en: "Putoline N-Tech", description: "1L - زيوت موتورات", price: 100, currency: "ريال", image_url: "/Images/1020.png", category_id: "c1", brand_id: "b31", type: "part", stock_quantity: 8, is_featured: false, is_available: true, specifications: { model: "N-TECH-10W50", specification: "1L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1021", sku: "1021", name: "زيت بوتولين S4", name_en: "Putoline S4", description: "1L - زيوت موتورات", price: 80, currency: "ريال", image_url: "/Images/1021.png", category_id: "c1", brand_id: "b31", type: "part", stock_quantity: 12, is_featured: false, is_available: true, specifications: { model: "S4-10W40", specification: "1L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1022", sku: "1022", name: "زيت ياماها", name_en: "Yamalube", description: "1L - زيوت موتورات", price: 80, currency: "ريال", image_url: "/Images/1022.jpg", category_id: "c1", brand_id: "b32", type: "part", stock_quantity: 15, is_featured: false, is_available: true, specifications: { model: "YAMA-10W40", specification: "1L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1023", sku: "1023", name: "زيت امزويل متري", name_en: "Amsoil Metric", description: "1Q - زيوت موتورات", price: 100, currency: "ريال", image_url: "/Images/1023.jpg", category_id: "c1", brand_id: "b33", type: "part", stock_quantity: 8, is_featured: false, is_available: true, specifications: { model: "MCF-1Q", specification: "1Q" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1024", sku: "1024", name: "زيت امزويل في توين", name_en: "Amsoil V-Twin", description: "1Q - زيوت موتورات", price: 100, currency: "ريال", image_url: "/Images/1024.jpg", category_id: "c1", brand_id: "b33", type: "part", stock_quantity: 7, is_featured: false, is_available: true, specifications: { model: "MCV-1Q", specification: "1Q" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1025", sku: "1025", name: "زيت ليكوي مولي ستريت", name_en: "Liqui Moly Street", description: "1L - زيوت موتورات", price: 100, currency: "ريال", image_url: "/Images/1025.jpg", category_id: "c1", brand_id: "b14", type: "part", stock_quantity: 10, is_featured: false, is_available: true, specifications: { model: "LM-10W40-Street", specification: "1L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1026", sku: "1026", name: "زيت ليكوي مولي ريس", name_en: "Liqui Moly Race", description: "1L - زيوت موتورات", price: 120, currency: "ريال", image_url: "/Images/1026.png", category_id: "c1", brand_id: "b14", type: "part", stock_quantity: 6, is_featured: true, is_available: true, specifications: { model: "LM-10W50-Race", specification: "1L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1027", sku: "1027", name: "فلتر زيت هيفلو", name_en: "Hiflo Oil Filter", description: "HF204 - فلاتر زيت", price: 35, currency: "ريال", image_url: "/Images/1027.png", category_id: "c2", brand_id: "b34", type: "part", stock_quantity: 25, is_featured: false, is_available: true, specifications: { model: "HF204", specification: "Black" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1028", sku: "1028", name: "فلتر زيت هيفلو ريسينج", name_en: "Hiflo Racing Oil Filter", description: "HF204RC - فلاتر زيت", price: 60, currency: "ريال", image_url: "/Images/1028.png", category_id: "c2", brand_id: "b34", type: "part", stock_quantity: 15, is_featured: true, is_available: true, specifications: { model: "HF204RC", specification: "Nut" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1029", sku: "1029", name: "فلتر زيت هيفلو", name_en: "Hiflo Oil Filter", description: "HF303 - فلاتر زيت", price: 35, currency: "ريال", image_url: "/Images/1029.jpg", category_id: "c2", brand_id: "b34", type: "part", stock_quantity: 20, is_featured: false, is_available: true, specifications: { model: "HF303", specification: "Black" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1030", sku: "1030", name: "فلتر زيت هيفلو ريسينج", name_en: "Hiflo Racing Oil Filter", description: "HF303RC - فلاتر زيت", price: 60, currency: "ريال", image_url: "/Images/1030.png", category_id: "c2", brand_id: "b34", type: "part", stock_quantity: 12, is_featured: true, is_available: true, specifications: { model: "HF303RC", specification: "Nut" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1031", sku: "1031", name: "فلتر زيت هيفلو", name_en: "Hiflo Oil Filter", description: "HF138 - فلاتر زيت", price: 35, currency: "ريال", image_url: "/Images/1031.jpg", category_id: "c2", brand_id: "b34", type: "part", stock_quantity: 22, is_featured: false, is_available: true, specifications: { model: "HF138", specification: "Black" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1032", sku: "1032", name: "فلتر زيت هيفلو ريسينج", name_en: "Hiflo Racing Oil Filter", description: "HF138RC - فلاتر زيت", price: 60, currency: "ريال", image_url: "/Images/1032.png", category_id: "c2", brand_id: "b34", type: "part", stock_quantity: 10, is_featured: true, is_available: true, specifications: { model: "HF138RC", specification: "Nut" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1033", sku: "1033", name: "فلتر زيت هيفلو", name_en: "Hiflo Oil Filter", description: "HF112 - فلاتر زيت", price: 35, currency: "ريال", image_url: "/Images/1033.jpg", category_id: "c2", brand_id: "b34", type: "part", stock_quantity: 18, is_featured: false, is_available: true, specifications: { model: "HF112", specification: "Paper" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1034", sku: "1034", name: "فلتر زيت هيفلو", name_en: "Hiflo Oil Filter", description: "HF113 - فلاتر زيت", price: 35, currency: "ريال", image_url: "/Images/1034.jpg", category_id: "c2", brand_id: "b34", type: "part", stock_quantity: 20, is_featured: false, is_available: true, specifications: { model: "HF113", specification: "Paper" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1035", sku: "1035", name: "فلتر زيت هيفلو", name_en: "Hiflo Oil Filter", description: "HF116 - فلاتر زيت", price: 35, currency: "ريال", image_url: "/Images/1035.jpg", category_id: "c2", brand_id: "b34", type: "part", stock_quantity: 15, is_featured: false, is_available: true, specifications: { model: "HF116", specification: "Paper" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1036", sku: "1036", name: "فلتر زيت هيفلو", name_en: "Hiflo Oil Filter", description: "HF401 - فلاتر زيت", price: 35, currency: "ريال", image_url: "/Images/1036.jpg", category_id: "c2", brand_id: "b34", type: "part", stock_quantity: 16, is_featured: false, is_available: true, specifications: { model: "HF401", specification: "Metal" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1037", sku: "1037", name: "فلتر زيت هيفلو", name_en: "Hiflo Oil Filter", description: "HF141 - فلاتر زيت", price: 35, currency: "ريال", image_url: "/Images/1037.jpg", category_id: "c2", brand_id: "b34", type: "part", stock_quantity: 14, is_featured: false, is_available: true, specifications: { model: "HF141", specification: "Paper" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1038", sku: "1038", name: "فلتر زيت هيفلو", name_en: "Hiflo Oil Filter", description: "HF971 - فلاتر زيت سكوتر", price: 35, currency: "ريال", image_url: "/Images/1038.png", category_id: "c2", brand_id: "b34", type: "part", stock_quantity: 12, is_featured: false, is_available: true, specifications: { model: "HF971", specification: "Scooter" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1039", sku: "1039", name: "فلتر زيت هيفلو", name_en: "Hiflo Oil Filter", description: "HF152 - فلاتر زيت", price: 35, currency: "ريال", image_url: "/Images/1039.png", category_id: "c2", brand_id: "b34", type: "part", stock_quantity: 10, is_featured: false, is_available: true, specifications: { model: "HF152", specification: "Bombardier" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1040", sku: "1040", name: "فلتر زيت KN", name_en: "K&N Oil Filter", description: "KN-204 - فلاتر زيت", price: 60, currency: "ريال", image_url: "/Images/1040.jpg", category_id: "c2", brand_id: "b35", type: "part", stock_quantity: 15, is_featured: true, is_available: true, specifications: { model: "KN-204", specification: "Black" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1041", sku: "1041", name: "فلتر زيت KN", name_en: "K&N Oil Filter", description: "KN-204C - فلاتر زيت", price: 60, currency: "ريال", image_url: "/Images/1041.jpg", category_id: "c2", brand_id: "b35", type: "part", stock_quantity: 12, is_featured: true, is_available: true, specifications: { model: "KN-204C", specification: "Chrome" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1042", sku: "1042", name: "فلتر زيت KN", name_en: "K&N Oil Filter", description: "KN-303 - فلاتر زيت", price: 60, currency: "ريال", image_url: "/Images/1042.jpg", category_id: "c2", brand_id: "b35", type: "part", stock_quantity: 14, is_featured: true, is_available: true, specifications: { model: "KN-303", specification: "Black" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1043", sku: "1043", name: "فلتر زيت KN", name_en: "K&N Oil Filter", description: "KN-138 - فلاتر زيت", price: 60, currency: "ريال", image_url: "/Images/1043.jpg", category_id: "c2", brand_id: "b35", type: "part", stock_quantity: 10, is_featured: true, is_available: true, specifications: { model: "KN-138", specification: "Black" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1044", sku: "1044", name: "فلتر وكالة سوزوكي", name_en: "Suzuki OEM Oil Filter", description: "16510-07J00 - فلاتر زيت وكالة", price: 50, currency: "ريال", image_url: "/Images/1044.jpg", category_id: "c2", brand_id: "b36", type: "part", stock_quantity: 18, is_featured: false, is_available: true, specifications: { model: "16510-07J00", specification: "OEM" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1045", sku: "1045", name: "فلتر وكالة ياماها", name_en: "Yamaha OEM Oil Filter", description: "5GH-13440-61 - فلاتر زيت وكالة", price: 50, currency: "ريال", image_url: "/Images/1045.jpg", category_id: "c2", brand_id: "b37", type: "part", stock_quantity: 16, is_featured: false, is_available: true, specifications: { model: "5GH-13440-61", specification: "OEM" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1046", sku: "1046", name: "فلتر وكالة هوندا", name_en: "Honda OEM Oil Filter", description: "15410-MFJ-D01 - فلاتر زيت وكالة", price: 50, currency: "ريال", image_url: "/Images/1046.jpg", category_id: "c2", brand_id: "b38", type: "part", stock_quantity: 14, is_featured: false, is_available: true, specifications: { model: "15410-MFJ-D01", specification: "OEM" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1047", sku: "1047", name: "فلتر وكالة كاواساكي", name_en: "Kawasaki OEM Oil Filter", description: "16097-0008 - فلاتر زيت وكالة", price: 50, currency: "ريال", image_url: "/Images/1047.jpg", category_id: "c2", brand_id: "b39", type: "part", stock_quantity: 12, is_featured: false, is_available: true, specifications: { model: "16097-0008", specification: "OEM" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1048", sku: "1048", name: "فلتر هواء KN هايبوزا", name_en: "K&N Air Filter Hayabusa", description: "SU-1308 - فلاتر هواء", price: 60, currency: "ريال", image_url: "/Images/1048.jpg", category_id: "c2", brand_id: "b35", type: "part", stock_quantity: 8, is_featured: true, is_available: true, specifications: { model: "SU-1308", specification: "Hayabusa" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1049", sku: "1049", name: "فلتر هواء KN GSXR", name_en: "K&N Air Filter GSXR", description: "SU-1017 - فلاتر هواء", price: 60, currency: "ريال", image_url: "/Images/1049.jpg", category_id: "c2", brand_id: "b35", type: "part", stock_quantity: 10, is_featured: true, is_available: true, specifications: { model: "SU-1017", specification: "GSXR" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1050", sku: "1050", name: "فلتر هواء KN GSXR", name_en: "K&N Air Filter GSXR", description: "SU-7511 - فلاتر هواء", price: 60, currency: "ريال", image_url: "/Images/1050.png", category_id: "c2", brand_id: "b35", type: "part", stock_quantity: 9, is_featured: true, is_available: true, specifications: { model: "SU-7511", specification: "GSXR" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1051", sku: "1051", name: "فلتر هواء KN CBR", name_en: "K&N Air Filter CBR", description: "HA-1008 - فلاتر هواء", price: 60, currency: "ريال", image_url: "/Images/1051.jpg", category_id: "c2", brand_id: "b35", type: "part", stock_quantity: 11, is_featured: true, is_available: true, specifications: { model: "HA-1008", specification: "CBR" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1052", sku: "1052", name: "فلتر هواء KN R1", name_en: "K&N Air Filter R1", description: "YA-1009 - فلاتر هواء", price: 60, currency: "ريال", image_url: "/Images/1052.jpg", category_id: "c2", brand_id: "b35", type: "part", stock_quantity: 7, is_featured: true, is_available: true, specifications: { model: "YA-1009", specification: "R1" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1053", sku: "1053", name: "فلتر هواء وكالة GSXR", name_en: "Suzuki OEM Air Filter", description: "13780-47H00 - فلاتر هواء وكالة", price: 50, currency: "ريال", image_url: "/Images/1053.jpg", category_id: "c2", brand_id: "b36", type: "part", stock_quantity: 12, is_featured: false, is_available: true, specifications: { model: "13780-47H00", specification: "GSXR" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1054", sku: "1054", name: "فلتر هواء وكالة هايبوزا", name_en: "Suzuki OEM Air Filter", description: "13780-15H00 - فلاتر هواء وكالة", price: 50, currency: "ريال", image_url: "/Images/1054.jpeg", category_id: "c2", brand_id: "b36", type: "part", stock_quantity: 8, is_featured: false, is_available: true, specifications: { model: "13780-15H00", specification: "Hayabusa" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1055", sku: "1055", name: "فلتر هواء هيفلو GSXR", name_en: "Hiflo Air Filter GSXR", description: "HFA3614 - فلاتر هواء", price: 35, currency: "ريال", image_url: "/Images/1055.png", category_id: "c2", brand_id: "b34", type: "part", stock_quantity: 15, is_featured: false, is_available: true, specifications: { model: "HFA3614", specification: "GSXR" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1056", sku: "1056", name: "فلتر هواء هيفلو GSXR", name_en: "Hiflo Air Filter GSXR", description: "HFA3910 - فلاتر هواء", price: 35, currency: "ريال", image_url: "/Images/1056.jpg", category_id: "c2", brand_id: "b34", type: "part", stock_quantity: 14, is_featured: false, is_available: true, specifications: { model: "HFA3910", specification: "GSXR" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1057", sku: "1057", name: "بوجي NGK", name_en: "NGK Spark Plug", description: "CR9E - بواجي", price: 25, currency: "ريال", image_url: "/Images/1057.png", category_id: "c3", brand_id: "b40", type: "part", stock_quantity: 30, is_featured: false, is_available: true, specifications: { model: "CR9E", specification: "Std" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1058", sku: "1058", name: "بوجي NGK", name_en: "NGK Spark Plug", description: "CR8E - بواجي", price: 25, currency: "ريال", image_url: "/Images/1058.jpg", category_id: "c3", brand_id: "b40", type: "part", stock_quantity: 28, is_featured: false, is_available: true, specifications: { model: "CR8E", specification: "Std" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1059", sku: "1059", name: "بوجي NGK", name_en: "NGK Spark Plug", description: "CR7E - بواجي", price: 25, currency: "ريال", image_url: "/Images/1059.jpg", category_id: "c3", brand_id: "b40", type: "part", stock_quantity: 25, is_featured: false, is_available: true, specifications: { model: "CR7E", specification: "Std" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1060", sku: "1060", name: "بوجي ايريديوم", name_en: "NGK Iridium Spark Plug", description: "CR9EIX - بواجي ايريديوم", price: 45, currency: "ريال", image_url: "/Images/1060.jpeg", category_id: "c3", brand_id: "b40", type: "part", stock_quantity: 20, is_featured: true, is_available: true, specifications: { model: "CR9EIX", specification: "Iridium" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1061", sku: "1061", name: "بوجي ايريديوم", name_en: "NGK Iridium Spark Plug", description: "CR8EIX - بواجي ايريديوم", price: 45, currency: "ريال", image_url: "/Images/1061.webp", category_id: "c3", brand_id: "b40", type: "part", stock_quantity: 18, is_featured: true, is_available: true, specifications: { model: "CR8EIX", specification: "Iridium" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1063", sku: "1063", name: "بوجي NGK", name_en: "NGK Spark Plug", description: "D8EA - بواجي", price: 25, currency: "ريال", image_url: "/Images/1063.jpg", category_id: "c3", brand_id: "b40", type: "part", stock_quantity: 22, is_featured: false, is_available: true, specifications: { model: "D8EA", specification: "Std" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1064", sku: "1064", name: "بوجي NGK", name_en: "NGK Spark Plug", description: "C7HSA - بواجي", price: 25, currency: "ريال", image_url: "/Images/1064.jpg", category_id: "c3", brand_id: "b40", type: "part", stock_quantity: 20, is_featured: false, is_available: true, specifications: { model: "C7HSA", specification: "Std" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1065", sku: "1065", name: "بوجي NGK ليزر", name_en: "NGK Laser Spark Plug", description: "LMAR8A-9 - بواجي ليزر", price: 45, currency: "ريال", image_url: "/Images/1065.jpg", category_id: "c3", brand_id: "b40", type: "part", stock_quantity: 15, is_featured: true, is_available: true, specifications: { model: "LMAR8A-9", specification: "Laser" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1066", sku: "1066", name: "بوجي NGK ليزر", name_en: "NGK Laser Spark Plug", description: "IMR9C-9H - بواجي ليزر", price: 45, currency: "ريال", image_url: "/Images/1066.jpg", category_id: "c3", brand_id: "b40", type: "part", stock_quantity: 12, is_featured: true, is_available: true, specifications: { model: "IMR9C-9H", specification: "Laser" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1067", sku: "1067", name: "بوجي NGK R1", name_en: "NGK Spark Plug R1", description: "LMAR9E-J - بواجي", price: 45, currency: "ريال", image_url: "/Images/1067.jpg", category_id: "c3", brand_id: "b40", type: "part", stock_quantity: 10, is_featured: true, is_available: true, specifications: { model: "LMAR9E-J", specification: "R1" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1068", sku: "1068", name: "بوجي NGK", name_en: "NGK Spark Plug", description: "DR8EA - بواجي", price: 25, currency: "ريال", image_url: "/Images/1068.jpg", category_id: "c3", brand_id: "b40", type: "part", stock_quantity: 24, is_featured: false, is_available: true, specifications: { model: "DR8EA", specification: "Std" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1069", sku: "1069", name: "بوجي NGK", name_en: "NGK Spark Plug", description: "DPR8EA-9 - بواجي", price: 25, currency: "ريال", image_url: "/Images/1069.jpg", category_id: "c3", brand_id: "b40", type: "part", stock_quantity: 22, is_featured: false, is_available: true, specifications: { model: "DPR8EA-9", specification: "Std" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1070", sku: "1070", name: "بوجي ايريديوم", name_en: "NGK Iridium Spark Plug", description: "CR10EIX - بواجي ايريديوم", price: 45, currency: "ريال", image_url: "/Images/1070.jpg", category_id: "c3", brand_id: "b40", type: "part", stock_quantity: 16, is_featured: true, is_available: true, specifications: { model: "CR10EIX", specification: "Iridium" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1071", sku: "1071", name: "كوع بوجي", name_en: "NGK Spark Plug Cap", description: "XD05F - كواعات بوجي", price: 25, currency: "ريال", image_url: "/Images/1071.png", category_id: "c3", brand_id: "b40", type: "part", stock_quantity: 30, is_featured: false, is_available: true, specifications: { model: "XD05F", specification: "Black" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1073", sku: "1073", name: "بطارية كوبرا", name_en: "Cobra Battery", description: "YTX5L-BS - بطاريات", price: 150, currency: "ريال", image_url: "/Images/1073.jpg", category_id: "c4", brand_id: "b41", type: "part", stock_quantity: 10, is_featured: true, is_available: true, specifications: { model: "YTX5L-BS", specification: "5L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1074", sku: "1074", name: "بطارية كوبرا", name_en: "Cobra Battery", description: "YTX7L-BS - بطاريات", price: 190, currency: "ريال", image_url: "/Images/1074.jpg", category_id: "c4", brand_id: "b41", type: "part", stock_quantity: 12, is_featured: false, is_available: true, specifications: { model: "YTX7L-BS", specification: "7L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1075", sku: "1075", name: "بطارية كوبرا", name_en: "Cobra Battery", description: "YTX7A-BS - بطاريات", price: 190, currency: "ريال", image_url: "/Images/1075.webp", category_id: "c4", brand_id: "b41", type: "part", stock_quantity: 8, is_featured: false, is_available: true, specifications: { model: "YTX7A-BS", specification: "7A" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1076", sku: "1076", name: "بطارية كوبرا", name_en: "Cobra Battery", description: "YTX9-BS - بطاريات", price: 210, currency: "ريال", image_url: "/Images/1076.jpg", category_id: "c4", brand_id: "b41", type: "part", stock_quantity: 10, is_featured: false, is_available: true, specifications: { model: "YTX9-BS", specification: "9BS" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1077", sku: "1077", name: "بطارية كوبرا", name_en: "Cobra Battery", description: "YTZ10S - بطاريات", price: 220, currency: "ريال", image_url: "/Images/1077.png", category_id: "c4", brand_id: "b41", type: "part", stock_quantity: 9, is_featured: true, is_available: true, specifications: { model: "YTZ10S", specification: "10S" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1078", sku: "1078", name: "بطارية كوبرا", name_en: "Cobra Battery", description: "YTX12-BS - بطاريات", price: 240, currency: "ريال", image_url: "/Images/1078.jpg", category_id: "c4", brand_id: "b41", type: "part", stock_quantity: 7, is_featured: false, is_available: true, specifications: { model: "YTX12-BS", specification: "12BS" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1079", sku: "1079", name: "بطارية كوبرا", name_en: "Cobra Battery", description: "YTX14-BS - بطاريات", price: 260, currency: "ريال", image_url: "/Images/1079.jpg", category_id: "c4", brand_id: "b41", type: "part", stock_quantity: 6, is_featured: false, is_available: true, specifications: { model: "YTX14-BS", specification: "14BS" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1080", sku: "1080", name: "بطارية كوبرا", name_en: "Cobra Battery", description: "YTZ14S - بطاريات", price: 260, currency: "ريال", image_url: "/Images/1080.png", category_id: "c4", brand_id: "b41", type: "part", stock_quantity: 5, is_featured: false, is_available: true, specifications: { model: "YTZ14S", specification: "14S" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1081", sku: "1081", name: "بطارية كوبرا", name_en: "Cobra Battery", description: "YTX20L-BS - بطاريات", price: 320, currency: "ريال", image_url: "/Images/1081.jpg", category_id: "c4", brand_id: "b41", type: "part", stock_quantity: 4, is_featured: false, is_available: true, specifications: { model: "YTX20L-BS", specification: "20L" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1082", sku: "1082", name: "بطارية BS", name_en: "BS Battery", description: "BTX9-BS - بطاريات", price: 210, currency: "ريال", image_url: "/Images/1082.webp", category_id: "c4", brand_id: "b42", type: "part", stock_quantity: 8, is_featured: false, is_available: true, specifications: { model: "BTX9-BS", specification: "9BS" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1083", sku: "1083", name: "بطارية BS", name_en: "BS Battery", description: "BTZ10S - بطاريات", price: 220, currency: "ريال", image_url: "/Images/1083.png", category_id: "c4", brand_id: "b42", type: "part", stock_quantity: 7, is_featured: false, is_available: true, specifications: { model: "BTZ10S", specification: "10S" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1091", sku: "1091", name: "كفر جبلي امامي", name_en: "Knobby Front Tire", description: "3.00-21 - كفرات جبلية", price: 500, currency: "ريال", image_url: "/Images/1091.jpg", category_id: "c5", brand_id: "b53", type: "part", stock_quantity: 6, is_featured: false, is_available: true, specifications: { model: "Knobby-3.00-21", specification: "Offroad" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1092", sku: "1092", name: "كفر جبلي خلفي", name_en: "Knobby Rear Tire", description: "4.60-18 - كفرات جبلية", price: 700, currency: "ريال", image_url: "/Images/1092.jpg", category_id: "c5", brand_id: "b53", type: "part", stock_quantity: 5, is_featured: false, is_available: true, specifications: { model: "Knobby-4.60-18", specification: "Offroad" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1096", sku: "1096", name: "فحمات EBC", name_en: "EBC Brake Pads", description: "FA174HH - فحمات فرامل خلفية", price: 180, currency: "ريال", image_url: "/Images/1096.jpg", category_id: "c6", brand_id: "b44", type: "part", stock_quantity: 12, is_featured: true, is_available: true, specifications: { model: "FA174HH", specification: "Rear" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1097", sku: "1097", name: "فحمات EBC", name_en: "EBC Brake Pads", description: "FA379HH - فحمات فرامل امامية", price: 180, currency: "ريال", image_url: "/Images/1097.jpg", category_id: "c6", brand_id: "b44", type: "part", stock_quantity: 14, is_featured: true, is_available: true, specifications: { model: "FA379HH", specification: "Front" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1098", sku: "1098", name: "فحمات EBC", name_en: "EBC Brake Pads", description: "FA447HH - فحمات فرامل امامية", price: 180, currency: "ريال", image_url: "/Images/1098.jpg", category_id: "c6", brand_id: "b44", type: "part", stock_quantity: 10, is_featured: true, is_available: true, specifications: { model: "FA447HH", specification: "Front" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1099", sku: "1099", name: "فحمات EBC", name_en: "EBC Brake Pads", description: "FA296HH - فحمات فرامل امامية", price: 180, currency: "ريال", image_url: "/Images/1099.jpg", category_id: "c6", brand_id: "b44", type: "part", stock_quantity: 11, is_featured: true, is_available: true, specifications: { model: "FA296HH", specification: "Front" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1100", sku: "1100", name: "فحمات EBC", name_en: "EBC Brake Pads", description: "FA158HH - فحمات فرامل امامية", price: 180, currency: "ريال", image_url: "/Images/1100.jpg", category_id: "c6", brand_id: "b44", type: "part", stock_quantity: 13, is_featured: true, is_available: true, specifications: { model: "FA158HH", specification: "Front" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1101", sku: "1101", name: "فحمات EBC", name_en: "EBC Brake Pads", description: "FA252HH - فحمات فرامل امامية", price: 180, currency: "ريال", image_url: "/Images/1101.jpg", category_id: "c6", brand_id: "b44", type: "part", stock_quantity: 9, is_featured: true, is_available: true, specifications: { model: "FA252HH", specification: "Front" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1102", sku: "1102", name: "فحمات EBC", name_en: "EBC Brake Pads", description: "FA142HH - فحمات فرامل خلفية", price: 180, currency: "ريال", image_url: "/Images/1102.jpg", category_id: "c6", brand_id: "b44", type: "part", stock_quantity: 8, is_featured: true, is_available: true, specifications: { model: "FA142HH", specification: "Rear" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1103", sku: "1103", name: "فحمات EBC", name_en: "EBC Brake Pads", description: "FA630HH - فحمات فرامل امامية", price: 180, currency: "ريال", image_url: "/Images/1103.jpg", category_id: "c6", brand_id: "b44", type: "part", stock_quantity: 12, is_featured: true, is_available: true, specifications: { model: "FA630HH", specification: "Front" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1104", sku: "1104", name: "فحمات سوزوكي اصلي", name_en: "Suzuki OEM Brake Pads", description: "59100-GSXR - فحمات فرامل امامية", price: 200, currency: "ريال", image_url: "/Images/1104.png", category_id: "c6", brand_id: "b36", type: "part", stock_quantity: 10, is_featured: false, is_available: true, specifications: { model: "59100-GSXR", specification: "Front" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1106", sku: "1106", name: "فحمات سوزوكي اصلي", name_en: "Suzuki OEM Brake Pads", description: "69100-GSXR - فحمات فرامل خلفية", price: 200, currency: "ريال", image_url: "/Images/1106.png", category_id: "c6", brand_id: "b36", type: "part", stock_quantity: 8, is_featured: false, is_available: true, specifications: { model: "69100-GSXR", specification: "Rear" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1110", sku: "1110", name: "جنزير RK ذهبي", name_en: "RK Gold Chain", description: "520 - جنازير ذهبية", price: 350, currency: "ريال", image_url: "/Images/1110.jpg", category_id: "c7", brand_id: "b21", type: "part", stock_quantity: 8, is_featured: true, is_available: true, specifications: { model: "RK-520-Gold", specification: "520" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1111", sku: "1111", name: "جنزير RK ذهبي", name_en: "RK Gold Chain", description: "525 - جنازير ذهبية", price: 350, currency: "ريال", image_url: "/Images/1111.jpg", category_id: "c7", brand_id: "b21", type: "part", stock_quantity: 10, is_featured: true, is_available: true, specifications: { model: "RK-525-Gold", specification: "525" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1112", sku: "1112", name: "جنزير RK ذهبي", name_en: "RK Gold Chain", description: "530 - جنازير ذهبية", price: 350, currency: "ريال", image_url: "/Images/1112.jpg", category_id: "c7", brand_id: "b21", type: "part", stock_quantity: 7, is_featured: true, is_available: true, specifications: { model: "RK-530-Gold", specification: "530" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1113", sku: "1113", name: "جنزير DID ذهبي", name_en: "DID Gold Chain", description: "520 - جنازير ذهبية", price: 350, currency: "ريال", image_url: "/Images/1113.jpg", category_id: "c7", brand_id: "b20", type: "part", stock_quantity: 9, is_featured: true, is_available: true, specifications: { model: "DID-520-VX3", specification: "520" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1114", sku: "1114", name: "جنزير DID ذهبي", name_en: "DID Gold Chain", description: "525 - جنازير ذهبية", price: 350, currency: "ريال", image_url: "/Images/1114.jpg", category_id: "c7", brand_id: "b20", type: "part", stock_quantity: 8, is_featured: true, is_available: true, specifications: { model: "DID-525-VX3", specification: "525" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1117", sku: "1117", name: "ترس امامي JT", name_en: "JT Front Sprocket", description: "15T - تروس امامية", price: 80, currency: "ريال", image_url: "/Images/1117.png", category_id: "c7", brand_id: "b45", type: "part", stock_quantity: 15, is_featured: false, is_available: true, specifications: { model: "JTF-15T-520", specification: "15T" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1118", sku: "1118", name: "ترس امامي JT", name_en: "JT Front Sprocket", description: "16T - تروس امامية", price: 80, currency: "ريال", image_url: "/Images/1118.png", category_id: "c7", brand_id: "b45", type: "part", stock_quantity: 18, is_featured: false, is_available: true, specifications: { model: "JTF-16T-520", specification: "16T" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1119", sku: "1119", name: "ترس امامي JT", name_en: "JT Front Sprocket", description: "17T - تروس امامية", price: 80, currency: "ريال", image_url: "/Images/1119.png", category_id: "c7", brand_id: "b45", type: "part", stock_quantity: 14, is_featured: false, is_available: true, specifications: { model: "JTF-17T-530", specification: "17T" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1120", sku: "1120", name: "ترس خلفي JT", name_en: "JT Rear Sprocket", description: "42T - تروس خلفية", price: 80, currency: "ريال", image_url: "/Images/1120.png", category_id: "c7", brand_id: "b45", type: "part", stock_quantity: 12, is_featured: false, is_available: true, specifications: { model: "JTR-42T-520", specification: "42T" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1121", sku: "1121", name: "ترس خلفي JT", name_en: "JT Rear Sprocket", description: "45T - تروس خلفية", price: 80, currency: "ريال", image_url: "/Images/1121.png", category_id: "c7", brand_id: "b45", type: "part", stock_quantity: 10, is_featured: false, is_available: true, specifications: { model: "JTR-45T-520", specification: "45T" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1122", sku: "1122", name: "ترس خلفي JT", name_en: "JT Rear Sprocket", description: "43T - تروس خلفية", price: 80, currency: "ريال", image_url: "/Images/1122.png", category_id: "c7", brand_id: "b45", type: "part", stock_quantity: 11, is_featured: false, is_available: true, specifications: { model: "JTR-43T-530", specification: "43T" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1126", sku: "1126", name: "ماء رديتر ميتسوبيشي", name_en: "Mitsubishi Coolant", description: "أخضر - سوائل رديتر", price: 80, currency: "ريال", image_url: "/Images/1126.jpeg", category_id: "c8", brand_id: "b46", type: "part", stock_quantity: 12, is_featured: false, is_available: true, specifications: { model: "Coolant-Mitsu", specification: "Green" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1128", sku: "1128", name: "ماء رديتر موتول", name_en: "Motul Coolant Factory Line", description: "أحمر - سوائل رديتر", price: 80, currency: "ريال", image_url: "/Images/1128.png", category_id: "c8", brand_id: "b13", type: "part", stock_quantity: 10, is_featured: true, is_available: true, specifications: { model: "Motocool-Factory", specification: "Red" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1131", sku: "1131", name: "زيت فرامل ريسينج", name_en: "Motul RBF Racing Brake Fluid", description: "RBF600 - زيوت فرامل", price: 120, currency: "ريال", image_url: "/Images/1131.jpeg", category_id: "c8", brand_id: "b13", type: "part", stock_quantity: 8, is_featured: true, is_available: true, specifications: { model: "RBF-600", specification: "RBF600" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1133", sku: "1133", name: "منظف بخاخات", name_en: "Liqui Moly Injector Shooter", description: "80ml - منظفات بخاخات", price: 50, currency: "ريال", image_url: "/Images/1133.jpeg", category_id: "c8", brand_id: "b14", type: "part", stock_quantity: 15, is_featured: false, is_available: true, specifications: { model: "Shooter-4T", specification: "80ml" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1137", sku: "1137", name: "مشحم جنزير", name_en: "Motul C4 Chain Lube", description: "C4 - مواد تشحيم", price: 60, currency: "ريال", image_url: "/Images/1137.webp", category_id: "c9", brand_id: "b13", type: "part", stock_quantity: 18, is_featured: false, is_available: true, specifications: { model: "C4-Chain-Lube", specification: "C4" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1138", sku: "1138", name: "مشحم جنزير", name_en: "Motul C2 Chain Lube", description: "C2 - مواد تشحيم", price: 60, currency: "ريال", image_url: "/Images/1138.webp", category_id: "c9", brand_id: "b13", type: "part", stock_quantity: 16, is_featured: false, is_available: true, specifications: { model: "C2-Chain-Lube", specification: "C2" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1143", sku: "1143", name: "زيت مساعدات", name_en: "Motul Fork Oil", description: "10W - زيوت مساعدات", price: 80, currency: "ريال", image_url: "/Images/1143.png", category_id: "c1", brand_id: "b13", type: "part", stock_quantity: 10, is_featured: false, is_available: true, specifications: { model: "Fork-Oil-10W", specification: "10W" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1144", sku: "1144", name: "زيت مساعدات", name_en: "Motul Fork Oil", description: "15W - زيوت مساعدات", price: 80, currency: "ريال", image_url: "/Images/1144.png", category_id: "c1", brand_id: "b13", type: "part", stock_quantity: 8, is_featured: false, is_available: true, specifications: { model: "Fork-Oil-15W", specification: "15W" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1150", sku: "1150", name: "بستم ستاندر", name_en: "Honda OEM Piston Std", description: "CG125 - قطع محرك", price: 250, currency: "ريال", image_url: "/Images/1150.JPG", category_id: "c10", brand_id: "b38", type: "part", stock_quantity: 6, is_featured: false, is_available: true, specifications: { model: "Piston-Std-125", specification: "CG125" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1158", sku: "1158", name: "سي دي اي", name_en: "Generic CDI Unit", description: "عام - قطع كهربائية", price: 150, currency: "ريال", image_url: "/Images/1158.png", category_id: "c11", brand_id: "b53", type: "part", stock_quantity: 12, is_featured: false, is_available: true, specifications: { model: "CDI-Unit", specification: "Univ" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1160", sku: "1160", name: "دقمة سلف", name_en: "Generic Starter Relay", description: "عام - قطع كهربائية", price: 50, currency: "ريال", image_url: "/Images/1160.png", category_id: "c11", brand_id: "b53", type: "part", stock_quantity: 20, is_featured: false, is_available: true, specifications: { model: "Starter-Relay", specification: "Univ" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1162", sku: "1162", name: "فليشر اشارات", name_en: "Generic Flasher Relay", description: "عام - قطع كهربائية", price: 50, currency: "ريال", image_url: "/Images/1162.png", category_id: "c11", brand_id: "b53", type: "part", stock_quantity: 18, is_featured: false, is_available: true, specifications: { model: "Flasher-Relay", specification: "Univ" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1171", sku: "1171", name: "دبة اس سي", name_en: "SC Project Replica Exhaust", description: "CRT - شكمانات رياضية", price: 2200, currency: "ريال", image_url: "/Images/1171.webp", category_id: "c12", brand_id: "b49", type: "part", stock_quantity: 3, is_featured: true, is_available: true, specifications: { model: "Replica-CRT", specification: "Replica" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1181", sku: "1181", name: "مقابض يد احمر", name_en: "Aluminum Grips Red", description: "CNC - إكسسوارات", price: 120, currency: "ريال", image_url: "/Images/1181.jpeg", category_id: "c13", brand_id: "b53", type: "part", stock_quantity: 10, is_featured: false, is_available: true, specifications: { model: "Grip-Aluminum-Red", specification: "CNC" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1203", sku: "1203", name: "سلك كلتش", name_en: "Clutch Cable CG", description: "CG - قطع غيار", price: 40, currency: "ريال", image_url: "/Images/1203.jpeg", category_id: "c14", brand_id: "b53", type: "part", stock_quantity: 15, is_featured: false, is_available: true, specifications: { model: "Cable-Clutch-CG", specification: "CG" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1204", sku: "1204", name: "سلك بنزين", name_en: "Throttle Cable CG", description: "CG - قطع غيار", price: 40, currency: "ريال", image_url: "/Images/1204.png", category_id: "c14", brand_id: "b53", type: "part", stock_quantity: 18, is_featured: false, is_available: true, specifications: { model: "Cable-Throttle-CG", specification: "CG" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1205", sku: "1205", name: "سلك فرامل", name_en: "Front Brake Cable", description: "Drum - قطع غيار", price: 40, currency: "ريال", image_url: "/Images/1205.png", category_id: "c14", brand_id: "b53", type: "part", stock_quantity: 14, is_featured: false, is_available: true, specifications: { model: "Cable-Brake-Front", specification: "Drum" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1207", sku: "1207", name: "قاعدة كلتش", name_en: "Clutch Lever Assembly", description: "Assy - قطع غيار", price: 60, currency: "ريال", image_url: "/Images/1207.webp", category_id: "c14", brand_id: "b53", type: "part", stock_quantity: 12, is_featured: false, is_available: true, specifications: { model: "Clutch-Lever-Assy", specification: "Assy" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1209", sku: "1209", name: "ازرار يسار", name_en: "Left Hand Switch", description: "Switch - قطع غيار", price: 60, currency: "ريال", image_url: "/Images/1209.jpeg", category_id: "c14", brand_id: "b53", type: "part", stock_quantity: 10, is_featured: false, is_available: true, specifications: { model: "Switch-LH-Generic", specification: "Switch" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1220", sku: "1220", name: "رمان بلي 6202", name_en: "Wheel Bearing 6202", description: "Bearing - قطع غيار", price: 35, currency: "ريال", image_url: "/Images/1220.webp", category_id: "c14", brand_id: "b53", type: "part", stock_quantity: 25, is_featured: false, is_available: true, specifications: { model: "Wheel-Bearing-6202", specification: "Bearing" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1225", sku: "1225", name: "قفازات سكويكو", name_en: "Scoyco MC29 Gloves", description: "MC29 - ملابس وحماية", price: 120, currency: "ريال", image_url: "/Images/1225.png", category_id: "c15", brand_id: "b51", type: "gear", stock_quantity: 12, is_featured: false, is_available: true, specifications: { model: "Gloves-MC29", specification: "MC29" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1228", sku: "1228", name: "خوذة AGV K3", name_en: "AGV K3 SV Helmet", description: "K3-SV - خوذ", price: 800, currency: "ريال", image_url: "/Images/1228.png", category_id: "c15", brand_id: "b22", type: "gear", stock_quantity: 6, is_featured: true, is_available: true, specifications: { model: "Helmet-K3-SV", specification: "Helmet" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1229", sku: "1229", name: "خوذة AGV K1", name_en: "AGV K1 Black Helmet", description: "K1 - خوذ", price: 800, currency: "ريال", image_url: "/Images/1229.png", category_id: "c15", brand_id: "b22", type: "gear", stock_quantity: 5, is_featured: true, is_available: true, specifications: { model: "Helmet-K1-Black", specification: "Helmet" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1232", sku: "1232", name: "قناع وجه", name_en: "Balaclava Face Mask", description: "Mask - ملابس وحماية", price: 150, currency: "ريال", image_url: "/Images/1232.jpeg", category_id: "c15", brand_id: "b53", type: "gear", stock_quantity: 20, is_featured: false, is_available: true, specifications: { model: "Mask-Balaclava", specification: "Mask" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1251", sku: "1251", name: "جلدة غطاء", name_en: "O-Ring Chain Case", description: "Rubber - قطع غيار", price: 60, currency: "ريال", image_url: "/Images/1251.png", category_id: "c14", brand_id: "b38", type: "part", stock_quantity: 15, is_featured: false, is_available: true, specifications: { model: "O-Ring-Chain-Case", specification: "Rubber" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1257", sku: "1257", name: "زيت فلتر هواء", name_en: "Air Filter Oil Spray", description: "Spray - زيوت", price: 100, currency: "ريال", image_url: "/Images/1257.jpeg", category_id: "c1", brand_id: "b14", type: "part", stock_quantity: 10, is_featured: false, is_available: true, specifications: { model: "Air-Filter-Oil", specification: "Spray" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1260", sku: "1260", name: "منظف فرامل", name_en: "Brake Cleaner Spray", description: "Spray - منتجات عناية", price: 60, currency: "ريال", image_url: "/Images/1260.png", category_id: "c9", brand_id: "b53", type: "part", stock_quantity: 18, is_featured: false, is_available: true, specifications: { model: "Brake-Cleaner", specification: "Spray" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1261", sku: "1261", name: "مزيل صدا", name_en: "Rust Remover Spray", description: "Spray - منتجات عناية", price: 60, currency: "ريال", image_url: "/Images/1261.png", category_id: "c9", brand_id: "b53", type: "part", stock_quantity: 14, is_featured: false, is_available: true, specifications: { model: "Rust-Remover", specification: "Spray" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
+  { id: "1263", sku: "1263", name: "لستك", name_en: "Inner Tube 3.00-18", description: "Tube - تيوبات", price: 30, currency: "ريال", image_url: "/Images/1263.png", category_id: "c5", brand_id: "b53", type: "part", stock_quantity: 20, is_featured: false, is_available: true, specifications: { model: "Tube-3.00-18", specification: "Tube" }, created_at: "2025-01-15T00:00:00Z", updated_at: "2025-01-15T00:00:00Z" },
 ];
