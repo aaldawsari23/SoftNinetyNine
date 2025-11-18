@@ -8,19 +8,26 @@ export type ProductStatus = 'published' | 'hidden';
 
 export interface Product {
   id: string;
-  name_ar: string;
+  sku?: string; // Legacy property for backward compatibility
+  name?: string; // Legacy property for backward compatibility
+  name_ar?: string; // Made optional for backward compatibility
   name_en?: string;
   category_id: string;
   brand_id?: string;
-  type: ProductType;
+  type?: ProductType; // Made optional for backward compatibility
   price: number;
-  currency: string;
-  is_new: boolean;
-  stock_status: StockStatus;
-  status: ProductStatus;
-  specs: Record<string, string>;
+  currency?: string; // Made optional for backward compatibility
+  is_new?: boolean; // Made optional for backward compatibility
+  is_available?: boolean; // Legacy property for backward compatibility
+  is_featured?: boolean; // Legacy property for backward compatibility
+  stock_quantity?: number; // Legacy property for backward compatibility
+  stock_status?: StockStatus; // Made optional for backward compatibility
+  status?: ProductStatus; // Made optional for backward compatibility
+  specs?: Record<string, string>; // Made optional for backward compatibility
+  specifications?: Record<string, string>; // Legacy property for backward compatibility
   description: string;
-  images: string[];
+  images?: string[]; // Made optional for backward compatibility
+  image_url?: string; // Legacy property for backward compatibility
   salla_url?: string;
   created_at: string;
   updated_at: string;

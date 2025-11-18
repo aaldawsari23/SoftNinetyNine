@@ -9,7 +9,7 @@ export default function AdminProductsPage() {
   const [statusFilter, setStatusFilter] = useState<'all' | 'published' | 'hidden'>('all');
 
   const filteredProducts = products.filter(p => {
-    const matchesSearch = p.name_ar.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    const matchesSearch = p.name_ar?.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          p.name_en?.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesStatus = statusFilter === 'all' || p.status === statusFilter;
     return matchesSearch && matchesStatus;

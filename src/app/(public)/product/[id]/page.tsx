@@ -65,7 +65,7 @@ export default function ProductPage() {
             {/* Thumbnail Gallery */}
             {false && (
               <div className="grid grid-cols-4 gap-2">
-                {product.images.slice(1).map((img, idx) => (
+                {product?.images?.slice(1).map((img, idx) => (
                   <div key={idx} className="card p-0 overflow-hidden cursor-pointer hover:border-primary">
                     <img
                       src={img}
