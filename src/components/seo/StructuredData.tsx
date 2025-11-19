@@ -7,8 +7,8 @@ export default function StructuredData() {
     "alternateName": "SoftNinteyNine Bikes",
     "description": "متجر متخصص في قطع الغيار الأصلية وزيوت الصيانة والإكسسوارات للدراجات النارية في جيزان",
     "url": "https://soft99bikes.com",
-    "image": "https://soft99bikes.com/logo.jpeg",
-    "logo": "https://soft99bikes.com/logo.jpeg",
+    "image": "https://soft99bikes.com/logo.svg",
+    "logo": "https://soft99bikes.com/logo.svg",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "جيزان",
