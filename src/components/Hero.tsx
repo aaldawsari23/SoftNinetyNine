@@ -1,64 +1,118 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-b from-gray-900 via-background to-background py-8 md:py-12 overflow-hidden min-h-[60vh] flex items-center">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-          backgroundSize: '40px 40px'
+    <section className="relative min-h-[80vh] md:min-h-[85vh] bg-gradient-to-br from-background via-background-light to-background overflow-hidden flex items-center">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0">
+        {/* Grid pattern */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: 'linear-gradient(to right, #FF2E2E 1px, transparent 1px), linear-gradient(to bottom, #FF2E2E 1px, transparent 1px)',
+          backgroundSize: '50px 50px'
         }}></div>
+
+        {/* Gradient orbs */}
+        <div className="absolute top-20 left-10 w-96 h-96 bg-primary/20 rounded-full blur-[120px] animate-pulse-slow"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] animate-pulse-slow animation-delay-2000"></div>
+
+        {/* Floating particles */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-float"></div>
+          <div className="absolute top-3/4 left-3/4 w-2 h-2 bg-secondary rounded-full animate-float animation-delay-1000"></div>
+          <div className="absolute top-1/2 right-1/3 w-2 h-2 bg-accent rounded-full animate-float animation-delay-2000"></div>
+        </div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-4xl mx-auto">
-          {/* Main Title */}
-          <div className="flex flex-col items-center justify-center gap-3 mb-6">
-            <div className="relative w-16 h-16 md:w-20 md:h-20">
-              <Image
-                src="/logo.svg"
+        <div className="text-center max-w-5xl mx-auto">
+          {/* Logo and Title with animation */}
+          <div className="flex flex-col items-center justify-center gap-6 mb-8 animate-slide-down">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-primary/30 blur-xl group-hover:bg-primary/50 transition-all duration-500"></div>
+              <img
+                src="/logo.jpeg"
                 alt="سوفت تسعة وتسعين"
-                fill
-                className="rounded-lg shadow-lg object-cover"
-                priority
+                className="relative w-24 h-24 md:w-32 md:h-32 rounded-2xl shadow-2xl border-2 border-primary/30 group-hover:scale-110 transition-transform duration-500"
               />
             </div>
-            <h1 className="flex flex-col items-center gap-1">
-              <span className="text-primary text-2xl md:text-4xl font-bold">
-                سوفت تسعة وتسعين
-              </span>
-              <span className="text-white text-lg md:text-2xl font-semibold">
-                SoftNinteyNine Bikes
-              </span>
-            </h1>
+
+            <div className="space-y-4">
+              <h1 className="relative">
+                <span className="block text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-hover to-accent animate-shimmer bg-[length:200%_auto]">
+                  سوفت تسعة وتسعين
+                </span>
+                <span className="block text-xl md:text-2xl lg:text-3xl font-bold text-white/80 mt-2">
+                  SoftNinteyNine Bikes
+                </span>
+              </h1>
+
+              {/* Premium badge */}
+              <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/30 rounded-full px-4 py-2">
+                <span className="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+                <span className="text-accent text-sm font-semibold">متجر معتمد</span>
+              </div>
+            </div>
           </div>
 
-          {/* Tagline */}
-          <p className="text-sm md:text-lg text-text-secondary mb-4 max-w-2xl mx-auto leading-relaxed">
-            قطع غيار أصلية + زيوت ومواد الصيانة + إكسسوارات + مواقف للإيجار
-          </p>
+          {/* Tagline with better typography */}
+          <div className="space-y-4 mb-10 animate-fade-in">
+            <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-medium max-w-3xl mx-auto leading-relaxed">
+              بيع دراجات نارية (جديد ومستعمل) + قطع غيار أصلية + إكسسوارات + مواقف للإيجار
+            </p>
+            <p className="text-base md:text-lg text-text-secondary max-w-2xl mx-auto">
+              نوفّر أفضل الدراجات وقطع الغيار والإكسسوارات عالية الجودة في جيزان
+            </p>
+          </div>
 
-          <p className="text-xs md:text-base text-text-muted mb-8 md:mb-10 max-w-xl mx-auto">
-            نوفّر أفضل قطع الغيار والزيوت والإكسسوارات عالية الجودة في جيزان
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center max-w-md mx-auto">
-            <Link 
-              href="/catalog" 
-              className="btn-primary px-6 md:px-8 py-3 md:py-4 text-sm md:text-base w-full sm:w-auto font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+          {/* CTA Buttons with enhanced design */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
+            <Link
+              href="/catalog"
+              className="group relative px-8 py-4 bg-gradient-to-r from-primary to-primary-hover text-white font-bold rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/50 w-full sm:w-auto"
             >
-              تصفح المنتجات 🛍️
+              <span className="relative z-10 flex items-center justify-center gap-2 text-lg">
+                <span>تصفح المنتجات</span>
+                <span className="text-2xl group-hover:translate-x-1 transition-transform">🏍️</span>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-hover to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>
-            <Link 
-              href="/contact" 
-              className="btn-secondary px-6 md:px-8 py-3 md:py-4 text-sm md:text-base w-full sm:w-auto font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+
+            <Link
+              href="/contact"
+              className="group relative px-8 py-4 bg-background-card/50 backdrop-blur-md text-white font-bold rounded-2xl border-2 border-primary/30 overflow-hidden transition-all duration-300 hover:scale-105 hover:border-primary hover:bg-primary/10 hover:shadow-xl w-full sm:w-auto"
             >
-              تواصل معنا 📞
+              <span className="relative z-10 flex items-center justify-center gap-2 text-lg">
+                <span>تواصل معنا</span>
+                <span className="text-2xl group-hover:scale-110 transition-transform">📞</span>
+              </span>
             </Link>
           </div>
+
+          {/* Features highlights */}
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto animate-fade-in">
+            {[
+              { icon: '✅', text: 'ضمان الجودة' },
+              { icon: '🚚', text: 'توصيل سريع' },
+              { icon: '💰', text: 'أسعار منافسة' },
+              { icon: '🛡️', text: 'دعم متواصل' },
+            ].map((feature, index) => (
+              <div
+                key={index}
+                className="glass p-4 rounded-xl text-center hover:bg-white/10 transition-all duration-300 hover:-translate-y-1"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="text-3xl mb-2">{feature.icon}</div>
+                <p className="text-sm text-white/80 font-medium">{feature.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
+          <div className="w-1 h-3 bg-white/50 rounded-full animate-pulse"></div>
         </div>
       </div>
     </section>
