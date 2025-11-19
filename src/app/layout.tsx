@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     siteName: "سوفت تسعة وتسعين",
     images: [
       {
-        url: "/logo.jpeg",
-        width: 1200,
-        height: 630,
+        url: "/logo.png",
+        width: 512,
+        height: 512,
         alt: "سوفت تسعة وتسعين - قطع غيار الدراجات النارية",
       },
     ],
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "سوفت تسعة وتسعين | قطع غيار وزيوت الدراجات النارية",
     description: "متجر متخصص في قطع الغيار الأصلية وزيوت الصيانة للدراجات النارية",
-    images: ["/logo.jpeg"],
+    images: ["/logo.png"],
   },
   robots: {
     index: true,
@@ -56,8 +56,8 @@ export default function RootLayout({
     <html lang="ar" dir="rtl">
       <head>
         <StructuredData />
-        <link rel="icon" href="/logo.jpeg" sizes="any" />
-        <link rel="apple-touch-icon" href="/logo.jpeg" />
+        <link rel="icon" href="/logo.png" sizes="any" type="image/png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
         <meta name="theme-color" content="#E50914" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       </head>

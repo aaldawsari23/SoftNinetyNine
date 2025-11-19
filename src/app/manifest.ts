@@ -15,24 +15,24 @@ export default function manifest(): MetadataRoute.Manifest {
     dir: 'rtl',
     icons: [
       {
-        src: '/logo.jpeg',
+        src: '/logo.png',
         sizes: '192x192',
-        type: 'image/jpeg',
+        type: 'image/png',
         purpose: 'any'
       },
       {
-        src: '/logo.jpeg',
+        src: '/logo.png',
         sizes: '512x512',
-        type: 'image/jpeg',
+        type: 'image/png',
         purpose: 'maskable'
       }
     ],
     categories: ['shopping', 'automotive'],
     screenshots: [
       {
-        src: '/logo.jpeg',
-        sizes: '1280x720',
-        type: 'image/jpeg',
+        src: '/logo.png',
+        sizes: '512x512',
+        type: 'image/png',
         form_factor: 'wide'
       }
     ]

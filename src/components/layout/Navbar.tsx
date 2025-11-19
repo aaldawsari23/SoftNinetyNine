@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -45,12 +46,19 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-background-light border-b border-gray-800 sticky top-0 z-50 shadow-lg">
-      <div className="container mx-auto px-3 md:px-4">
+    <nav className="bg-background-light/95 border-b border-gray-800 sticky top-0 z-50 shadow-lg backdrop-blur supports-[backdrop-filter]:bg-background-light/80">
+      <div className="max-w-screen-xl mx-auto px-3 sm:px-4 lg:px-6 pt-[env(safe-area-inset-top)]">
         <div className="flex items-center justify-between h-14 md:h-16">
           {/* Logo and store name - simplified for mobile */}
           <Link href="/" className="flex items-center gap-2">
-            <img src="/logo.jpeg" alt="سوفت تسعة وتسعين" className="h-9 w-9 md:h-11 md:w-11 rounded-md" />
+            <Image
+              src="/logo.png"
+              alt="سوفت تسعة وتسعين"
+              width={44}
+              height={44}
+              className="h-9 w-9 md:h-11 md:w-11 rounded-lg border border-gray-800 object-contain"
+              priority
+            />
             <div className="leading-tight">
               <span className="text-primary font-bold text-sm md:text-lg block">
                 سوفت تسعة وتسعين
@@ -109,6 +117,7 @@ export default function Navbar() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden text-white p-2 hover:bg-background rounded-md transition-colors"
             aria-label="القائمة"
+            aria-expanded={isMobileMenuOpen}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isMobileMenuOpen ? (
@@ -122,7 +131,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-800 space-y-1">
+          <div className="md:hidden py-4 border-t border-gray-800 space-y-1 max-h-[75vh] overflow-y-auto pr-1">
             <Link
               href="/"
               className="block px-3 py-2.5 text-text-secondary hover:text-white hover:bg-background rounded-md transition-colors"

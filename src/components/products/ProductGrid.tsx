@@ -22,7 +22,7 @@ function ProductGrid({ products, title }: ProductGridProps) {
       {title && (
         <h2 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">{title}</h2>
       )}
-      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-4 lg:gap-6">
+      <div className="grid auto-rows-fr gap-3 md:gap-4 lg:gap-6 [grid-template-columns:repeat(auto-fit,minmax(180px,1fr))]">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

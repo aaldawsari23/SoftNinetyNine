@@ -39,14 +39,14 @@ function ProductCard({ product }: ProductCardProps) {
     <Link href={`/product/${product.id}`} className="group h-full">
       <div className="product-card h-full flex flex-col">
         {/* Image */}
-        <div className="relative overflow-hidden mb-3 rounded-lg bg-gray-900 h-40 sm:h-44 md:h-48">
+        <div className="relative overflow-hidden mb-3 rounded-xl bg-gray-900/80 border border-gray-800/70 aspect-[4/3] min-h-[10rem] sm:min-h-[11rem]">
           {imageSrc ? (
             <Image
               src={imageSrc}
               alt={displayName}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-105"
-              sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
+              sizes="(max-width: 480px) 45vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
               priority={false}
               loading="lazy"
             />

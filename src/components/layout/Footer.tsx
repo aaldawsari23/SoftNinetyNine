@@ -1,14 +1,21 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Footer() {
   return (
     <footer className="bg-background-light border-t border-gray-800 mt-auto">
-      <div className="container mx-auto px-4 py-8 md:py-12">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {/* About / Branding */}
           <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <img src="/logo.jpeg" alt="سوفت تسعه وتسعين" className="w-10 h-10 rounded-md" />
+            <div className="flex items-center gap-3">
+              <Image
+                src="/logo.png"
+                alt="سوفت تسعه وتسعين"
+                width={48}
+                height={48}
+                className="w-12 h-12 rounded-xl border border-gray-800 object-contain"
+              />
               <div className="flex flex-col leading-tight">
                 <span className="text-primary font-bold text-base">سوفت تسعه وتسعين</span>
                 <span className="text-text-muted text-xs">SoftNinteyNine</span>

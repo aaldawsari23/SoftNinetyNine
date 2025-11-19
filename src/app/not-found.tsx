@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { products } from '@/data/realData';
 
@@ -12,16 +13,22 @@ export default function NotFound() {
     <div className="min-h-screen bg-background flex flex-col">
       {/* Simple header */}
       <header className="bg-background-light border-b border-gray-800 py-4">
-        <div className="container mx-auto px-4">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6">
           <Link href="/" className="flex items-center gap-2">
-            <img src="/logo.jpeg" alt="سوفت تسعة وتسعين" className="h-10 w-10 rounded-md" />
+            <Image
+              src="/logo.png"
+              alt="سوفت تسعة وتسعين"
+              width={40}
+              height={40}
+              className="h-10 w-10 rounded-lg border border-gray-800 object-contain"
+            />
             <span className="text-primary font-bold text-lg">سوفت تسعة وتسعين</span>
           </Link>
         </div>
       </header>
 
       {/* Main content */}
-      <main className="flex-1 flex flex-col items-center justify-center p-4 text-center">
+      <main className="flex-1 flex flex-col items-center justify-center p-4 sm:p-6 text-center space-y-6">
         <div className="max-w-md mx-auto mb-8">
           <div className="text-8xl mb-6">🔍</div>
           <h1 className="text-3xl font-bold text-white mb-4">الصفحة غير موجودة</h1>

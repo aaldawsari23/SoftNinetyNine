@@ -16,7 +16,7 @@ export default function Home() {
 
       {/* Main Categories Section - placed first for better UX */}
       <section className="py-10 md:py-16 bg-background">
-        <div className="container mx-auto px-4">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">تصفح حسب الفئة</h2>
             <p className="text-text-secondary text-sm md:text-base">اختر الفئة المناسبة لك</p>
@@ -86,7 +86,7 @@ export default function Home() {
       {/* Featured Bikes Section */}
       {bikes.length > 0 && (
         <section className="py-10 md:py-16 bg-background-light">
-          <div className="container mx-auto px-4">
+          <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6 md:mb-8">
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">الدراجات المميزة</h2>
@@ -106,7 +106,7 @@ export default function Home() {
 
       {/* Latest Products Section */}
       <section className="py-10 md:py-16 bg-background">
-        <div className="container mx-auto px-4">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6 md:mb-8">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">أحدث المنتجات</h2>
@@ -125,7 +125,7 @@ export default function Home() {
 
       {/* CTA Section - simplified */}
       <section className="py-12 md:py-16 bg-gradient-to-b from-background-light to-background">
-        <div className="container mx-auto px-4 text-center">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
             هل لديك استفسار؟
           </h2>
