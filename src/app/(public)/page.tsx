@@ -10,75 +10,82 @@ export default function Home() {
   // Get bikes only (first 4)
   const bikes = products.filter(p => p.category_id?.startsWith('c-') && p.is_available).slice(0, 4);
 
+  const categoriesHighlights = [
+    {
+      title: 'الدراجات النارية',
+      description: 'سبورت، كروزر، ادفنتشر، صحراوي، ومستعمل مميز',
+      icon: '🏍️',
+      href: '/catalog?type=bike',
+      cta: 'استعرض الدراجات',
+    },
+    {
+      title: 'قطع الغيار والزيوت',
+      description: 'زيوت موتول، فلاتر، كهرباء، نقل حركة وصيانة دورية',
+      icon: '⚙️',
+      href: '/catalog?type=part',
+      cta: 'تصفح القطع',
+    },
+    {
+      title: 'إكسسوارات ووقاية',
+      description: 'خوذ، قفازات، جاكيتات وأدوات حماية للركاب',
+      icon: '🛡️',
+      href: '/catalog?type=gear',
+      cta: 'تسوق الإكسسوارات',
+    },
+    {
+      title: 'مواقف للإيجار',
+      description: 'مساحات آمنة لحفظ الدراجة بخطط يومية، أسبوعية وشهرية',
+      icon: '🅿️',
+      href: '/parking',
+      cta: 'تعرف على الأسعار',
+    },
+  ];
+
   return (
     <>
       <Hero />
 
       {/* Main Categories Section - placed first for better UX */}
-      <section className="py-10 md:py-16 bg-background">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">تصفح حسب الفئة</h2>
-            <p className="text-text-secondary text-sm md:text-base">اختر الفئة المناسبة لك</p>
+          <div className="text-center mb-10 md:mb-14 space-y-3">
+            <span className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold">
+              اختر الوجهة المناسبة لك
+            </span>
+            <h2 className="text-2xl md:text-3xl font-bold text-white">تصفح حسب الخدمة</h2>
+            <p className="text-text-secondary text-sm md:text-base max-w-2xl mx-auto">
+              الدراجات المميزة، القطع الأصلية، إكسسوارات الحماية وخدمة المواقف كلها متوفرة لتختار ما يناسبك بسرعة.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            {/* Bikes Category */}
-            <Link
-              href="/catalog?type=bike"
-              className="group card p-6 md:p-8 text-center hover:border-primary transition-all duration-300"
-            >
-              <div className="text-5xl md:text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                🏍️
-              </div>
-              <h3 className="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                الدراجات النارية
-              </h3>
-              <p className="text-text-secondary text-xs md:text-sm mb-4">
-                سبورت، كروزر، ادفنتشر، وغيرها
-              </p>
-              <span className="text-primary text-sm group-hover:underline">
-                تصفح الدراجات ←
-              </span>
-            </Link>
-
-            {/* Parts Category */}
-            <Link
-              href="/catalog?type=part"
-              className="group card p-6 md:p-8 text-center hover:border-primary transition-all duration-300"
-            >
-              <div className="text-5xl md:text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                ⚙️
-              </div>
-              <h3 className="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                قطع الغيار
-              </h3>
-              <p className="text-text-secondary text-xs md:text-sm mb-4">
-                زيوت، فلاتر، إطارات، وقطع احترافية
-              </p>
-              <span className="text-primary text-sm group-hover:underline">
-                تصفح القطع ←
-              </span>
-            </Link>
-
-            {/* Gear Category */}
-            <Link
-              href="/catalog?type=gear"
-              className="group card p-6 md:p-8 text-center hover:border-primary transition-all duration-300"
-            >
-              <div className="text-5xl md:text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                🪖
-              </div>
-              <h3 className="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                الإكسسوارات
-              </h3>
-              <p className="text-text-secondary text-xs md:text-sm mb-4">
-                خوذ، قفازات، جاكيتات، وأحذية
-              </p>
-              <span className="text-primary text-sm group-hover:underline">
-                تصفح الإكسسوارات ←
-              </span>
-            </Link>
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6">
+            {categoriesHighlights.map((category) => (
+              <Link
+                key={category.title}
+                href={category.href}
+                aria-label={`الانتقال إلى ${category.title}`}
+                className="group card h-full p-6 md:p-7 flex flex-col gap-4 text-right border border-white/5 bg-gradient-to-b from-background-light/70 to-background-light"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="h-12 w-12 rounded-2xl bg-white/5 flex items-center justify-center text-3xl">
+                    {category.icon}
+                  </div>
+                  <span className="text-[11px] uppercase tracking-[0.2em] text-text-muted">Soft99</span>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-lg md:text-xl font-bold text-white group-hover:text-primary transition-colors">
+                    {category.title}
+                  </h3>
+                  <p className="text-text-secondary text-xs md:text-sm leading-relaxed">
+                    {category.description}
+                  </p>
+                </div>
+                <span className="mt-auto text-primary text-sm md:text-base font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                  {category.cta}
+                  <span aria-hidden>←</span>
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
