@@ -1,33 +1,23 @@
 // Product Types
 export type ProductType = 'bike' | 'part' | 'gear';
-// The set of valid stock statuses. Removed the obsolete 'preorder' state since
-// the store no longer supports pre‑orders. Products are either available or
-// unavailable for purchase.
 export type StockStatus = 'available' | 'unavailable';
 export type ProductStatus = 'published' | 'hidden';
 
 export interface Product {
   id: string;
-  sku?: string; // Legacy property for backward compatibility
-  name?: string; // Legacy property for backward compatibility
-  name_ar?: string; // Made optional for backward compatibility
+  name_ar: string;
   name_en?: string;
   category_id: string;
   brand_id?: string;
-  type?: ProductType; // Made optional for backward compatibility
+  type: ProductType;
   price: number;
-  currency?: string; // Made optional for backward compatibility
-  is_new?: boolean; // Made optional for backward compatibility
-  is_available?: boolean; // Legacy property for backward compatibility
-  is_featured?: boolean; // Legacy property for backward compatibility
-  stock_quantity?: number; // Legacy property for backward compatibility
-  stock_status?: StockStatus; // Made optional for backward compatibility
-  status?: ProductStatus; // Made optional for backward compatibility
-  specs?: Record<string, string>; // Made optional for backward compatibility
-  specifications?: Record<string, string>; // Legacy property for backward compatibility
+  currency: string;
+  is_new: boolean;
+  stock_status: StockStatus;
+  status: ProductStatus;
+  specs: Record<string, string>;
   description: string;
-  images?: string[]; // Made optional for backward compatibility
-  image_url?: string; // Legacy property for backward compatibility
+  images: string[];
   salla_url?: string;
   created_at: string;
   updated_at: string;
@@ -65,20 +55,3 @@ export interface ProductFilters {
 
 // Sort Types
 export type SortOption = 'newest' | 'price-asc' | 'price-desc' | 'name';
-
-// Admin User Types
-export interface AdminUser {
-  id: string;
-  username: string;
-  email: string;
-  role: 'admin' | 'editor';
-}
-
-// Stats Types
-export interface DashboardStats {
-  totalProducts: number;
-  publishedProducts: number;
-  hiddenProducts: number;
-  totalCategories: number;
-  totalBrands: number;
-}
