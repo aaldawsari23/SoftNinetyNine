@@ -8,7 +8,7 @@ export default function Footer() {
           {/* About / Branding */}
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <img src="/logo.jpeg" alt="سوفت تسعه وتسعين" className="w-10 h-10 rounded-md" />
+            <img src="/logo.svg" alt="سوفت تسعه وتسعين" className="w-10 h-10 rounded-md" />
               <div className="flex flex-col leading-tight">
                 <span className="text-primary font-bold text-base">سوفت تسعه وتسعين</span>
                 <span className="text-text-muted text-xs">SoftNinteyNine</span>

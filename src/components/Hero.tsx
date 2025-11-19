@@ -18,7 +18,7 @@ export default function Hero() {
           <div className="flex flex-col items-center justify-center gap-3 mb-6">
             <div className="relative w-16 h-16 md:w-20 md:h-20">
               <Image
-                src="/logo.jpeg"
+                src="/logo.svg"
                 alt="سوفت تسعة وتسعين"
                 fill
                 className="rounded-lg shadow-lg object-cover"

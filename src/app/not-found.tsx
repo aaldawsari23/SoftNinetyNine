@@ -14,7 +14,7 @@ export default function NotFound() {
       <header className="bg-background-light border-b border-gray-800 py-4">
         <div className="container mx-auto px-4">
           <Link href="/" className="flex items-center gap-2">
-            <img src="/logo.jpeg" alt="سوفت تسعة وتسعين" className="h-10 w-10 rounded-md" />
+            <img src="/logo.svg" alt="سوفت تسعة وتسعين" className="h-10 w-10 rounded-md" />
             <span className="text-primary font-bold text-lg">سوفت تسعة وتسعين</span>
           </Link>
         </div>
