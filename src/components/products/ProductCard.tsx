@@ -39,14 +39,14 @@ function ProductCard({ product }: ProductCardProps) {
     <Link href={`/product/${product.id}`} className="group h-full">
       <div className="product-card h-full flex flex-col">
         {/* Image */}
-        <div className="relative overflow-hidden mb-3 rounded-lg bg-gray-900 h-40 sm:h-44 md:h-48">
+        <div className="relative overflow-hidden mb-4 rounded-xl bg-gray-900 aspect-[4/3]">
           {imageSrc ? (
             <Image
               src={imageSrc}
               alt={displayName}
               fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
-              sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 25vw"
               priority={false}
               loading="lazy"
             />
@@ -57,10 +57,12 @@ function ProductCard({ product }: ProductCardProps) {
           )}
 
           {/* Badges - moved to LEFT for RTL */}
-          <div className="absolute top-2 left-2 flex flex-col gap-1.5">
-            <span className={`text-[10px] md:text-xs px-2 py-1 rounded-md font-bold shadow-lg ${
-              product.is_featured ? 'bg-green-600 text-white' : 'bg-primary text-white'
-            }`}>
+          <div className="absolute top-3 left-3 flex flex-col gap-1.5">
+            <span
+              className={`text-[10px] md:text-xs px-2 py-1 rounded-md font-bold shadow-lg ${
+                product.is_featured ? 'bg-green-600 text-white' : 'bg-primary text-white'
+              }`}
+            >
               {product.is_featured ? 'مميز' : 'جديد'}
             </span>
             {!isAvailable && (
@@ -72,19 +74,23 @@ function ProductCard({ product }: ProductCardProps) {
         </div>
 
         {/* Content */}
-        <div className="flex-1 flex flex-col px-1">
-          <h3 className="text-sm md:text-base font-bold text-white mb-2 line-clamp-2 leading-snug group-hover:text-primary transition-colors">
+        <div className="flex-1 flex flex-col">
+          <h3 className="text-base md:text-lg font-bold text-white mb-2 line-clamp-2 leading-snug group-hover:text-primary transition-colors">
             {displayName}
           </h3>
 
+          <p className="text-[11px] md:text-sm text-text-secondary mb-4">
+            {isAvailable ? 'جاهز للتسليم من المعرض' : 'سيتم إشعارك فور توفره'}
+          </p>
+
           {/* Specs Preview */}
           {product.specifications && Object.keys(product.specifications).length > 0 && (
-            <div className="text-[10px] md:text-xs text-text-secondary mb-3 space-y-0.5">
+            <div className="text-[10px] md:text-xs text-text-secondary mb-4 space-y-1">
               {Object.entries(product.specifications)
                 .slice(0, 2)
                 .map(([key, value]) => (
-                  <div key={key} className="flex justify-between items-center">
-                    <span className="text-text-muted">{key}:</span>
+                  <div key={key} className="flex items-center justify-between gap-2">
+                    <span className="text-text-muted">{key}</span>
                     <span className="font-semibold text-white">{value}</span>
                   </div>
                 ))}
@@ -92,18 +98,16 @@ function ProductCard({ product }: ProductCardProps) {
           )}
 
           {/* Price - more prominent */}
-          <div className="mt-auto pt-3 border-t border-gray-800">
-            <div className="flex items-baseline gap-1.5">
-              <span className="text-xl md:text-2xl font-black text-green-400">
+          <div className="mt-auto pt-3 border-t border-gray-800 space-y-3">
+            <div className="flex items-baseline gap-2">
+              <span className="text-2xl font-black text-green-400">
                 {product.price.toLocaleString('ar-SA')}
               </span>
               <span className="text-xs md:text-sm text-text-secondary font-semibold">
                 {product.currency}
               </span>
             </div>
-            <p className="text-[10px] text-text-muted mt-1 group-hover:text-primary transition-colors">
-              اضغط لعرض التفاصيل ←
-            </p>
+            <span className="btn-ghost text-center">عرض التفاصيل</span>
           </div>
         </div>
       </div>

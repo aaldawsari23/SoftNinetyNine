@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
 import ProductGrid from '@/components/products/ProductGrid';
 import { products, categories, brands } from '@/data/realData';
@@ -9,7 +9,6 @@ import { ProductType, StockStatus } from '@/types';
 export default function CatalogContent() {
   const searchParams = useSearchParams();
   const typeParam = searchParams.get('type') as ProductType | null;
-  const conditionParam = searchParams.get('condition');
   const categoryParam = searchParams.get('category');
 
   // Filters state
@@ -23,7 +22,13 @@ export default function CatalogContent() {
 
   // Filter and sort products with optimizations
   const filteredProducts = useMemo(() => {
-    let filtered = products.filter(p => p.is_available);
+    let filtered = [...products];
+
+    if (selectedStockStatus === 'unavailable') {
+      filtered = filtered.filter(p => !p.is_available);
+    } else {
+      filtered = filtered.filter(p => p.is_available);
+    }
 
     if (selectedType !== 'all') {
       filtered = filtered.filter(p => p.type === selectedType);
@@ -35,10 +40,6 @@ export default function CatalogContent() {
 
     if (selectedBrand !== 'all') {
       filtered = filtered.filter(p => p.brand_id === selectedBrand);
-    }
-
-    if (selectedStockStatus !== 'all') {
-      filtered = filtered.filter(p => p.is_available);
     }
 
     if (searchQuery) {
@@ -76,20 +77,34 @@ export default function CatalogContent() {
   }, [selectedType]);
 
   return (
-    <div className="space-y-4 md:space-y-6">
+    <div className="space-y-6">
       {/* Top bar: results count and sort */}
-      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 pb-4 border-b border-gray-800">
-        <p className="text-text-secondary text-sm md:text-base">
-          <span className="text-primary font-bold">{filteredProducts.length}</span> منتج
-        </p>
-        <div className="flex flex-wrap items-center gap-3">
-          {/* Sorting select */}
-          <div className="flex items-center gap-2">
-            <label className="text-xs md:text-sm text-text-secondary">الترتيب:</label>
+      <div className="card flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+        <div>
+          <p className="text-text-secondary text-xs md:text-sm">عدد المنتجات المتاحة الآن</p>
+          <p className="text-3xl md:text-4xl font-black text-white">{filteredProducts.length}</p>
+          <p className="text-text-muted text-xs md:text-sm">يمكنك البحث أو استخدام الفلاتر للوصول لأسرع نتيجة.</p>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+          <label className="sr-only" htmlFor="catalog-search">
+            البحث في المنتجات
+          </label>
+          <div className="flex-1">
+            <input
+              id="catalog-search"
+              type="search"
+              placeholder="ابحث عن منتج أو كود..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="input-field w-full text-sm"
+            />
+          </div>
+          <div className="flex items-center gap-2 text-xs md:text-sm">
+            <label className="text-text-secondary whitespace-nowrap">ترتيب حسب</label>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as any)}
-              className="input-field text-xs md:text-sm py-1.5 md:py-2 px-3"
+              className="input-field text-xs md:text-sm py-2 px-3"
             >
               <option value="newest">الأحدث</option>
               <option value="price-asc">السعر: الأقل أولاً</option>
@@ -97,20 +112,21 @@ export default function CatalogContent() {
               <option value="name">الاسم</option>
             </select>
           </div>
-          {/* Advanced filter toggle button */}
           <button
             onClick={() => setShowFilters(!showFilters)}
-            className="btn-secondary text-xs md:text-sm py-1.5 md:py-2 px-3 md:px-4"
+            className="btn-secondary text-xs md:text-sm py-2 px-4"
+            aria-expanded={showFilters}
+            aria-controls="advanced-filters"
           >
-            {showFilters ? '✕ إغلاق الفلاتر' : '⚙️ فلاتر متقدمة'}
+            {showFilters ? 'إخفاء الفلاتر' : 'فلاتر متقدمة'}
           </button>
         </div>
       </div>
 
-      {/* Quick filter chips - simplified single row */}
-      <div className="space-y-3">
-        {/* Type chips */}
-        <div className="flex flex-wrap gap-2">
+      {/* Quick filter chips */}
+      <div className="card space-y-3">
+        <p className="text-text-secondary text-xs md:text-sm">فلترة سريعة حسب نوع المنتج</p>
+        <div className="flex gap-2 overflow-x-auto no-scrollbar py-1">
           {([
             { key: 'all', label: 'الكل', icon: '🔍' },
             { key: 'bike', label: 'دراجات', icon: '🏍️' },
@@ -123,7 +139,7 @@ export default function CatalogContent() {
                 setSelectedType(opt.key as any);
                 setSelectedCategory('all');
               }}
-              className={`text-xs md:text-sm px-3 md:px-4 py-1.5 md:py-2 rounded-full border transition-all duration-200 ${
+              className={`flex-shrink-0 text-xs md:text-sm px-3 md:px-4 py-1.5 md:py-2 rounded-full border transition-all duration-200 ${
                 selectedType === opt.key
                   ? 'bg-primary text-white border-primary shadow-md shadow-primary/30'
                   : 'border-gray-700 text-text-secondary hover:bg-primary/20 hover:border-primary/50'
@@ -134,60 +150,58 @@ export default function CatalogContent() {
           ))}
         </div>
 
-        {/* Category chips - only show if type is selected */}
         {selectedType !== 'all' && filteredCategories.length > 0 && (
-          <div className="flex flex-wrap gap-2">
-            <button
-              onClick={() => setSelectedCategory('all')}
-              className={`text-xs md:text-sm px-3 md:px-4 py-1.5 md:py-2 rounded-full border transition-all duration-200 ${
-                selectedCategory === 'all'
-                  ? 'bg-primary text-white border-primary shadow-md shadow-primary/30'
-                  : 'border-gray-700 text-text-secondary hover:bg-primary/20 hover:border-primary/50'
-              }`}
-            >
-              كل الفئات
-            </button>
-            {filteredCategories.slice(0, 8).map((category) => (
+          <div className="pt-3 border-t border-gray-800 space-y-2">
+            <p className="text-text-secondary text-xs">تحديد الفئة أدق</p>
+            <div className="flex flex-wrap gap-2">
               <button
-                key={category.id}
-                onClick={() => setSelectedCategory(category.id)}
+                onClick={() => setSelectedCategory('all')}
                 className={`text-xs md:text-sm px-3 md:px-4 py-1.5 md:py-2 rounded-full border transition-all duration-200 ${
-                  selectedCategory === category.id
+                  selectedCategory === 'all'
                     ? 'bg-primary text-white border-primary shadow-md shadow-primary/30'
                     : 'border-gray-700 text-text-secondary hover:bg-primary/20 hover:border-primary/50'
                 }`}
               >
-                {category.name_ar}
+                كل الفئات
               </button>
-            ))}
+              {filteredCategories.slice(0, 8).map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`text-xs md:text-sm px-3 md:px-4 py-1.5 md:py-2 rounded-full border transition-all duration-200 ${
+                    selectedCategory === category.id
+                      ? 'bg-primary text-white border-primary shadow-md shadow-primary/30'
+                      : 'border-gray-700 text-text-secondary hover:bg-primary/20 hover:border-primary/50'
+                  }`}
+                >
+                  {category.name_ar}
+                </button>
+              ))}
+            </div>
           </div>
         )}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mt-4">
+      <div className="grid grid-cols-1 gap-6 lg:gap-8 lg:grid-cols-4">
         {/* Filters Sidebar - displayed conditionally */}
         {showFilters && (
-          <aside className="lg:col-span-1">
-            <div className="card sticky top-20">
-              <h2 className="text-lg md:text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <span>⚙️</span>
-                <span>فلاتر متقدمة</span>
-              </h2>
-
-              {/* Search */}
-              <div className="mb-5">
-                <label className="block text-xs md:text-sm text-text-secondary mb-2 font-semibold">🔍 البحث</label>
-                <input
-                  type="text"
-                  placeholder="ابحث عن منتج..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="input-field w-full text-sm"
-                />
+          <aside id="advanced-filters" className="space-y-5 lg:col-span-1">
+            <div className="card lg:sticky lg:top-24 space-y-5">
+              <div className="flex items-center justify-between">
+                <h2 className="text-lg md:text-xl font-bold text-white flex items-center gap-2">
+                  <span>⚙️</span>
+                  <span>فلاتر متقدمة</span>
+                </h2>
+                <button
+                  className="text-text-secondary text-xs hover:text-primary"
+                  onClick={() => setShowFilters(false)}
+                >
+                  إغلاق
+                </button>
               </div>
 
               {/* Brand Filter */}
-              <div className="mb-5">
+              <div>
                 <label className="block text-xs md:text-sm text-text-secondary mb-2 font-semibold">🏷️ الماركة</label>
                 <select
                   value={selectedBrand}
@@ -204,7 +218,7 @@ export default function CatalogContent() {
               </div>
 
               {/* Stock Status Filter */}
-              <div className="mb-5">
+              <div>
                 <label className="block text-xs md:text-sm text-text-secondary mb-2 font-semibold">📦 حالة التوفر</label>
                 <select
                   value={selectedStockStatus}
@@ -215,6 +229,35 @@ export default function CatalogContent() {
                   <option value="available">متوفر</option>
                   <option value="unavailable">غير متوفر</option>
                 </select>
+              </div>
+
+              <div>
+                <label className="block text-xs md:text-sm text-text-secondary mb-2 font-semibold">📁 الفئة</label>
+                <div className="space-y-2 max-h-40 overflow-y-auto pr-1">
+                  <button
+                    onClick={() => setSelectedCategory('all')}
+                    className={`w-full text-right text-xs md:text-sm px-3 py-2 rounded-lg border transition-colors ${
+                      selectedCategory === 'all'
+                        ? 'bg-primary/20 border-primary text-white'
+                        : 'border-gray-800 text-text-secondary hover:border-primary/40'
+                    }`}
+                  >
+                    كل الفئات
+                  </button>
+                  {filteredCategories.map((category) => (
+                    <button
+                      key={category.id}
+                      onClick={() => setSelectedCategory(category.id)}
+                      className={`w-full text-right text-xs md:text-sm px-3 py-2 rounded-lg border transition-colors ${
+                        selectedCategory === category.id
+                          ? 'bg-primary/20 border-primary text-white'
+                          : 'border-gray-800 text-text-secondary hover:border-primary/40'
+                      }`}
+                    >
+                      {category.name_ar}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               {/* Reset Button */}
