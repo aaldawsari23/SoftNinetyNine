@@ -4,7 +4,7 @@ import { products } from '@/data/realData';
 export default function NotFound() {
   // Get some random products to suggest
   const randomProducts = products
-    .filter(p => p.is_available)
+    .filter(p => p.status === 'published')
     .sort(() => 0.5 - Math.random())
     .slice(0, 4);
 
@@ -51,10 +51,10 @@ export default function NotFound() {
                   className="card p-4 hover:border-primary transition-colors"
                 >
                   <div className="h-32 bg-gray-900 rounded-lg mb-3 overflow-hidden">
-                    {product.image_url ? (
-                      <img 
-                        src={product.image_url} 
-                        alt={product.name}
+                    {product.images && product.images[0] ? (
+                      <img
+                        src={product.images[0]}
+                        alt={product.name_ar}
                         className="w-full h-full object-cover"
                       />
                     ) : (
@@ -64,10 +64,10 @@ export default function NotFound() {
                     )}
                   </div>
                   <h3 className="text-white font-semibold text-sm mb-2 line-clamp-2">
-                    {product.name}
+                    {product.name_ar}
                   </h3>
                   <p className="text-green-400 font-bold text-lg">
-                    {product.price.toLocaleString('ar-SA')} ر.س
+                    {product.price.toLocaleString('ar-SA')} {product.currency}
                   </p>
                 </Link>
               ))}
