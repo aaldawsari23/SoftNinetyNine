@@ -133,11 +133,11 @@ export default function ProductPage() {
               </div>
 
               {/* Specs */}
-              {product.specifications && Object.keys(product.specifications).length > 0 && (
+              {product.specs && Object.keys(product.specs).length > 0 && (
                 <div className="mb-6">
                   <h2 className="text-xl font-bold text-white mb-3">المواصفات</h2>
                   <div className="bg-background-light p-4 rounded-md space-y-2">
-                    {Object.entries(product.specifications).map(([key, value]) => (
+                    {Object.entries(product.specs).map(([key, value]) => (
                       <div key={key} className="flex justify-between text-sm">
                         <span className="text-text-secondary">{key}</span>
                         <span className="text-white font-semibold">{value}</span>
