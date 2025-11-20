@@ -6,8 +6,8 @@ import Link from 'next/link';
 export default function AdminDashboard() {
   const stats = {
     totalProducts: products.length,
-    publishedProducts: products.filter(p => p.is_available).length,
-    hiddenProducts: products.filter(p => !p.is_available).length,
+    publishedProducts: products.filter(p => p.status === 'published').length,
+    hiddenProducts: products.filter(p => p.status === 'hidden').length,
     totalCategories: categories.length,
     totalBrands: brands.length,
   };
