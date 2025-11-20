@@ -105,13 +105,17 @@
 
   /* Product Card - Premium */
   .product-card {
-    @apply relative bg-gradient-to-br from-background-card to-background-light border border-border rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/30 hover:border-primary/50 hover:-translate-y-1 group;
+    @apply relative bg-gradient-to-br from-background-card to-background-light border border-border rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/30 hover:border-primary/50 hover:-translate-y-1;
     background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(15, 15, 15, 0.95) 100%);
   }
 
   .product-card::before {
     content: '';
-    @apply absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100;
+    @apply absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 transition-opacity duration-500;
+  }
+
+  .group:hover .product-card::before {
+    opacity: 1;
   }
 
   /* Input Field - Modern */
@@ -121,12 +125,16 @@
 
   /* Category Card - Interactive */
   .category-card {
-    @apply relative overflow-hidden bg-gradient-to-br from-background-card to-background-light border-2 border-border rounded-2xl p-8 transition-all duration-500 hover:scale-[1.05] hover:border-primary hover:shadow-2xl hover:shadow-primary/30 cursor-pointer group;
+    @apply relative overflow-hidden bg-gradient-to-br from-background-card to-background-light border-2 border-border rounded-2xl p-8 transition-all duration-500 hover:scale-[1.05] hover:border-primary hover:shadow-2xl hover:shadow-primary/30 cursor-pointer;
   }
 
   .category-card::after {
     content: '';
-    @apply absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100;
+    @apply absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 transition-opacity duration-500;
+  }
+
+  .category-card.group:hover::after {
+    opacity: 1;
   }
 
   /* Badge styles */

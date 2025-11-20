@@ -17,8 +17,8 @@ export default function ProductPage() {
   const brand = product.brand_id ? brands.find(b => b.id === product.brand_id) : null;
   const category = categories.find(c => c.id === product.category_id);
 
-  const displayName = product.name || product.name_en || 'منتج';
-  const isAvailable = product.is_available;
+  const displayName = product.name_ar || product.name_en || 'منتج';
+  const isAvailable = product.stock_status === 'available';
   // Preorder status removed from the store; treat only available vs unavailable.
 
   const handleBuyNow = () => {
@@ -49,9 +49,9 @@ export default function ProductPage() {
           {/* Images Section */}
           <div>
             <div className="card p-0 overflow-hidden mb-4">
-              {product.image_url ? (
+              {product.images && product.images.length > 0 ? (
                 <img
-                  src={product.image_url}
+                  src={product.images[0]}
                   alt={displayName}
                   className="w-full h-96 object-cover"
                 />
@@ -133,11 +133,11 @@ export default function ProductPage() {
               </div>
 
               {/* Specs */}
-              {product.specifications && Object.keys(product.specifications).length > 0 && (
+              {product.specs && Object.keys(product.specs).length > 0 && (
                 <div className="mb-6">
                   <h2 className="text-xl font-bold text-white mb-3">المواصفات</h2>
                   <div className="bg-background-light p-4 rounded-md space-y-2">
-                    {Object.entries(product.specifications).map(([key, value]) => (
+                    {Object.entries(product.specs).map(([key, value]) => (
                       <div key={key} className="flex justify-between text-sm">
                         <span className="text-text-secondary">{key}</span>
                         <span className="text-white font-semibold">{value}</span>
@@ -171,23 +171,25 @@ export default function ProductPage() {
               .filter(p =>
                 p.id !== product.id &&
                 p.category_id === product.category_id &&
-                p.is_available
+                p.stock_status === 'available'
               )
               .slice(0, 4)
               .map(p => {
                 const relatedProductLink = `/product/${p.id}`;
+                const relatedImage = p.images && p.images.length > 0 ? p.images[0] : '';
+                const relatedName = p.name_ar || p.name_en || 'منتج';
                 return (
                   <Link key={p.id} href={relatedProductLink} className="card p-4 hover:border-primary">
                     <div className="h-32 bg-gray-900 rounded-md mb-3 overflow-hidden">
-                      {p.image_url ? (
-                        <img src={p.image_url} alt={p.name} className="w-full h-full object-cover" />
+                      {relatedImage ? (
+                        <img src={relatedImage} alt={relatedName} className="w-full h-full object-cover" />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center">
                           <span className="text-4xl">🏍️</span>
                         </div>
                       )}
                     </div>
-                    <h3 className="text-white font-semibold mb-2 line-clamp-2">{p.name}</h3>
+                    <h3 className="text-white font-semibold mb-2 line-clamp-2">{relatedName}</h3>
                     <p className="text-green-500 font-bold">{p.price.toLocaleString('ar-SA')} {p.currency}</p>
                   </Link>
                 );
