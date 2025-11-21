@@ -50,7 +50,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-14 md:h-16">
           {/* Logo and store name - simplified for mobile */}
           <Link href="/" className="flex items-center gap-2">
-            <img src="/logo.svg" alt="سوفت تسعة وتسعين" className="h-9 w-9 md:h-11 md:w-11 rounded-md" />
+            <img src="/Logo.png" alt="سوفت تسعة وتسعين" className="h-9 w-9 md:h-11 md:w-11 rounded-md object-contain" />
             <div className="leading-tight">
               <span className="text-primary font-bold text-sm md:text-lg block">
                 سوفت تسعة وتسعين
