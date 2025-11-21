@@ -5,19 +5,26 @@ export type ProductStatus = 'published' | 'hidden';
 
 export interface Product {
   id: string;
-  name_ar: string;
+  sku?: string;
+  name?: string; // For compatibility with realData.ts
+  name_ar?: string;
   name_en?: string;
   category_id: string;
   brand_id?: string;
   type: ProductType;
   price: number;
   currency: string;
-  is_new: boolean;
-  stock_status: StockStatus;
-  status: ProductStatus;
-  specs: Record<string, string>;
+  is_new?: boolean;
+  is_featured?: boolean; // For compatibility with realData.ts
+  is_available?: boolean; // For compatibility with realData.ts
+  stock_status?: StockStatus;
+  stock_quantity?: number; // For compatibility with realData.ts
+  status?: ProductStatus;
+  specs?: Record<string, string>;
+  specifications?: Record<string, string>; // For compatibility with realData.ts
   description: string;
-  images: string[];
+  images?: string[];
+  image_url?: string; // For compatibility with realData.ts
   salla_url?: string;
   created_at: string;
   updated_at: string;

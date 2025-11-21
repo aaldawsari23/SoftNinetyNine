@@ -96,6 +96,8 @@ export function convertToProducts(items: ItemData[]): Product[] {
       name_en: `${item.brand} ${item.model}`,
       description: `${item.specification} - ${item.category}`,
       price: 0, // سيتم تحديدها لاحقاً
+      currency: 'ريال',
+      type: 'part' as const,
       image_url: getImagePath(item.sku),
       category_id: getCategoryId(item.category),
       brand_id: getBrandId(item.brand),
