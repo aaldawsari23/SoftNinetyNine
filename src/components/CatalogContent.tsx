@@ -51,7 +51,8 @@ export default function CatalogContent() {
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
       filtered = filtered.filter(p =>
-        p.name_ar.toLowerCase().includes(query) ||
+        p.name_ar?.toLowerCase().includes(query) ||
+        p.name?.toLowerCase().includes(query) ||
         p.name_en?.toLowerCase().includes(query) ||
         p.description.toLowerCase().includes(query)
       );
@@ -65,7 +66,11 @@ export default function CatalogContent() {
         filtered.sort((a, b) => b.price - a.price);
         break;
       case 'name':
-        filtered.sort((a, b) => a.name_ar.localeCompare(b.name_ar, 'ar'));
+        filtered.sort((a, b) => {
+          const nameA = a.name_ar || a.name || '';
+          const nameB = b.name_ar || b.name || '';
+          return nameA.localeCompare(nameB, 'ar');
+        });
         break;
       case 'newest':
       default:
