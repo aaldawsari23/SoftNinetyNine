@@ -3,7 +3,7 @@
 import { useState, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
 import ProductGrid from '@/components/products/ProductGrid';
-import { products, categories } from '@/data/realData';
+import { products, categories } from '@/data/mockData';
 import { ProductType } from '@/types';
 
 export default function CatalogContent() {
