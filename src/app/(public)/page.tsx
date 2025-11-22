@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import ProductGrid from '@/components/products/ProductGrid';
-import { products } from '@/data/mockData';
+import { products } from '@/data/realData';
 import { ProductType } from '@/types';
 
 export default function Home() {
