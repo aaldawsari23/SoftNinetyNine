@@ -54,107 +54,106 @@ export default function CatalogContent() {
     return categories.filter(c => c.type === selectedType);
   }, [selectedType]);
 
+  const [showSubcategories, setShowSubcategories] = useState(false);
+
   return (
-    <div className="space-y-4 md:space-y-6">
-      {/* Compact Filter Bar - Fixed and Small */}
-      <div className="glass rounded-xl p-3 md:p-4 sticky top-16 md:top-18 z-40">
-        {/* Search + Count */}
-        <div className="flex items-center gap-3 mb-3">
+    <div className="space-y-4">
+      {/* Ultra Compact Filter Bar */}
+      <div className="glass rounded-lg p-2 sticky top-16 z-40">
+        {/* Search + Main Categories in one row */}
+        <div className="flex items-center gap-2 mb-2">
           <div className="relative flex-1">
             <input
               type="text"
-              placeholder="ابحث عن منتج..."
+              placeholder="بحث..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="input-field w-full pl-10 text-sm"
+              className="input-field w-full pl-8 text-xs h-8"
             />
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted">🔍</span>
+            <span className="absolute left-2 top-1/2 -translate-y-1/2 text-text-muted text-sm">🔍</span>
           </div>
-          <div className="text-left">
-            <p className="text-xs md:text-sm text-text-muted">
-              <span className="text-primary font-bold text-base md:text-lg">{filteredProducts.length}</span> منتج
-            </p>
-          </div>
-        </div>
 
-        {/* Main Type Filters */}
-        <div className="flex flex-wrap gap-2 mb-2">
-          {[
-            { key: 'all', label: 'الكل', icon: '🔍' },
-            { key: 'bike', label: 'دراجات', icon: '🏍️' },
-            { key: 'part', label: 'قطع غيار', icon: '⚙️' },
-            { key: 'gear', label: 'إكسسوارات', icon: '🪖' },
-          ].map((opt) => (
-            <button
-              key={opt.key}
-              onClick={() => {
-                setSelectedType(opt.key as any);
-                setSelectedCategory('all');
-              }}
-              className={`px-3 py-1.5 md:px-4 md:py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 ${
-                selectedType === opt.key
-                  ? 'bg-primary text-white shadow-lg shadow-primary/30'
-                  : 'bg-background-card text-text-secondary hover:bg-background-hover hover:text-white'
-              }`}
-            >
-              <span className="mr-1">{opt.icon}</span>
-              {opt.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Condition Filters - Only show for bikes */}
-        {selectedType === 'bike' && (
-          <div className="flex flex-wrap gap-2 mb-2 pt-2 border-t border-border-light">
-            <span className="text-text-muted text-xs md:text-sm self-center">الحالة:</span>
+          {/* Main Type Icons - Very Small */}
+          <div className="flex gap-1">
             {[
-              { key: 'all', label: 'الكل' },
-              { key: 'new', label: 'جديد ✨' },
-              { key: 'used', label: 'مستعمل 🔧' },
+              { key: 'all', icon: '📋' },
+              { key: 'bike', icon: '🏍️' },
+              { key: 'part', icon: '⚙️' },
+              { key: 'gear', icon: '🪖' },
+            ].map((opt) => (
+              <button
+                key={opt.key}
+                onClick={() => {
+                  setSelectedType(opt.key as any);
+                  setSelectedCategory('all');
+                  setShowSubcategories(opt.key !== 'all');
+                }}
+                className={`w-8 h-8 rounded-lg text-base transition-all ${
+                  selectedType === opt.key
+                    ? 'bg-primary shadow-lg'
+                    : 'bg-background-card hover:bg-background-hover'
+                }`}
+                title={opt.key === 'all' ? 'الكل' : opt.key === 'bike' ? 'دراجات' : opt.key === 'part' ? 'قطع' : 'إكسسوارات'}
+              >
+                {opt.icon}
+              </button>
+            ))}
+          </div>
+
+          <span className="text-xs text-text-muted whitespace-nowrap">
+            <span className="text-primary font-bold">{filteredProducts.length}</span>
+          </span>
+        </div>
+
+        {/* Condition Filters - Bikes Only */}
+        {selectedType === 'bike' && (
+          <div className="flex gap-1 mb-2">
+            {[
+              { key: 'all', label: 'الكل', icon: '📋' },
+              { key: 'new', label: 'جديد', icon: '✨' },
+              { key: 'used', label: 'مستعمل', icon: '🔧' },
             ].map((opt) => (
               <button
                 key={opt.key}
                 onClick={() => setSelectedCondition(opt.key as any)}
-                className={`px-3 py-1 md:px-4 md:py-1.5 rounded-lg text-xs md:text-sm font-medium transition-all duration-200 ${
+                className={`px-2 py-1 rounded text-[10px] transition-all ${
                   selectedCondition === opt.key
                     ? 'bg-secondary text-white'
-                    : 'bg-background-card text-text-secondary hover:bg-background-hover hover:text-white'
+                    : 'bg-background-card text-text-secondary hover:bg-background-hover'
                 }`}
               >
-                {opt.label}
+                {opt.icon} {opt.label}
               </button>
             ))}
           </div>
         )}
 
-        {/* Categories - Compact Chips */}
-        {selectedType !== 'all' && filteredCategories.length > 0 && (
-          <div className="pt-2 border-t border-border-light">
-            <div className="flex flex-wrap gap-2">
+        {/* Collapsible Subcategories */}
+        {selectedType !== 'all' && filteredCategories.length > 0 && showSubcategories && (
+          <div className="flex flex-wrap gap-1">
+            <button
+              onClick={() => setSelectedCategory('all')}
+              className={`px-2 py-0.5 rounded text-[9px] transition-all ${
+                selectedCategory === 'all'
+                  ? 'bg-accent text-white'
+                  : 'bg-background-card text-text-secondary'
+              }`}
+            >
+              الكل
+            </button>
+            {filteredCategories.map((category) => (
               <button
-                onClick={() => setSelectedCategory('all')}
-                className={`px-2 py-1 rounded-md text-[10px] md:text-xs font-medium transition-all duration-200 ${
-                  selectedCategory === 'all'
+                key={category.id}
+                onClick={() => setSelectedCategory(category.id)}
+                className={`px-2 py-0.5 rounded text-[9px] transition-all ${
+                  selectedCategory === category.id
                     ? 'bg-accent text-white'
-                    : 'bg-background-card text-text-secondary hover:bg-background-hover'
+                    : 'bg-background-card text-text-secondary'
                 }`}
               >
-                كل الفئات
+                {category.icon} {category.name_ar}
               </button>
-              {filteredCategories.slice(0, 10).map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`px-2 py-1 rounded-md text-[10px] md:text-xs font-medium transition-all duration-200 ${
-                    selectedCategory === category.id
-                      ? 'bg-accent text-white'
-                      : 'bg-background-card text-text-secondary hover:bg-background-hover'
-                  }`}
-                >
-                  {category.icon} {category.name_ar}
-                </button>
-              ))}
-            </div>
+            ))}
           </div>
         )}
       </div>
