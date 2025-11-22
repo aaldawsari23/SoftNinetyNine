@@ -36,40 +36,27 @@ export default function Hero() {
               />
             </div>
 
-            <div className="space-y-4">
-              <h1 className="relative">
-                <span className="block text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-hover to-accent animate-shimmer bg-[length:200%_auto]">
-                  سوفت تسعة وتسعين
-                </span>
-                <span className="block text-xl md:text-2xl lg:text-3xl font-bold text-white/80 mt-2">
-                  SoftNinteyNine Bikes
-                </span>
-              </h1>
-
-              {/* Premium badge */}
-              <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/30 rounded-full px-4 py-2">
-                <span className="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
-                <span className="text-accent text-sm font-semibold">متجر معتمد</span>
-              </div>
-            </div>
+            <h1 className="relative">
+              <span className="block text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-hover to-accent animate-shimmer bg-[length:200%_auto]">
+                سوفت تسعة وتسعين
+              </span>
+              <span className="block text-xl md:text-2xl lg:text-3xl font-bold text-white/80 mt-2">
+                SoftNinteyNine Bikes
+              </span>
+            </h1>
           </div>
 
-          {/* Tagline - Simplified */}
-          <div className="mb-8 animate-fade-in">
-            <p className="text-base md:text-lg text-text-secondary max-w-2xl mx-auto">
-              دراجات نارية • قطع غيار • إكسسوارات • مواقف للإيجار
-            </p>
-          </div>
-
-          {/* CTA Buttons with enhanced design */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up mt-8">
             <Link
               href="/catalog"
               className="group relative px-8 py-4 bg-gradient-to-r from-primary to-primary-hover text-white font-bold rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/50 w-full sm:w-auto"
             >
-              <span className="relative z-10 flex items-center justify-center gap-2 text-lg">
+              <span className="relative z-10 flex items-center justify-center gap-3 text-lg">
+                <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
                 <span>تصفح المنتجات</span>
-                <span className="text-2xl group-hover:translate-x-1 transition-transform">🏍️</span>
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary-hover to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>
@@ -78,9 +65,11 @@ export default function Hero() {
               href="/contact"
               className="group relative px-8 py-4 bg-background-card/50 backdrop-blur-md text-white font-bold rounded-2xl border-2 border-primary/30 overflow-hidden transition-all duration-300 hover:scale-105 hover:border-primary hover:bg-primary/10 hover:shadow-xl w-full sm:w-auto"
             >
-              <span className="relative z-10 flex items-center justify-center gap-2 text-lg">
+              <span className="relative z-10 flex items-center justify-center gap-3 text-lg">
+                <svg className="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
                 <span>تواصل معنا</span>
-                <span className="text-2xl group-hover:scale-110 transition-transform">📞</span>
               </span>
             </Link>
           </div>
