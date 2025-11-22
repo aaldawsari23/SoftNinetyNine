@@ -54,13 +54,10 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Tagline with better typography */}
-          <div className="space-y-4 mb-10 animate-fade-in">
-            <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-medium max-w-3xl mx-auto leading-relaxed">
-              بيع دراجات نارية (جديد ومستعمل) + قطع غيار أصلية + إكسسوارات + مواقف للإيجار
-            </p>
+          {/* Tagline - Simplified */}
+          <div className="mb-8 animate-fade-in">
             <p className="text-base md:text-lg text-text-secondary max-w-2xl mx-auto">
-              نوفّر أفضل الدراجات وقطع الغيار والإكسسوارات عالية الجودة في جيزان
+              دراجات نارية • قطع غيار • إكسسوارات • مواقف للإيجار
             </p>
           </div>
 
@@ -88,24 +85,6 @@ export default function Hero() {
             </Link>
           </div>
 
-          {/* Features highlights */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto animate-fade-in">
-            {[
-              { icon: '✅', text: 'ضمان الجودة' },
-              { icon: '🚚', text: 'توصيل سريع' },
-              { icon: '💰', text: 'أسعار منافسة' },
-              { icon: '🛡️', text: 'دعم متواصل' },
-            ].map((feature, index) => (
-              <div
-                key={index}
-                className="glass p-4 rounded-xl text-center hover:bg-white/10 transition-all duration-300 hover:-translate-y-1"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="text-3xl mb-2">{feature.icon}</div>
-                <p className="text-sm text-white/80 font-medium">{feature.text}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
 
