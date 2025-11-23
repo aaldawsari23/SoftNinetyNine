@@ -1,6 +1,6 @@
 'use client';
 
-import { categories, products } from '@/data/realData';
+import { categories, products } from '@/data/products';
 
 export default function AdminCategoriesPage() {
   const getCategoryProductCount = (categoryId: string) => {

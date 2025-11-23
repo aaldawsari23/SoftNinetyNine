@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { products } from '@/data/realData';
+import { products } from '@/data/products';
 import Link from 'next/link';
 
 export default function AdminProductsPage() {
