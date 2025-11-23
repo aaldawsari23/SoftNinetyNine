@@ -1,6 +1,6 @@
 'use client';
 
-import { products, brands, categories } from '@/data/realData';
+import { products, brands, categories } from '@/data/products';
 import { notFound, useParams } from 'next/navigation';
 import Link from 'next/link';
 import { WHATSAPP_NUMBER } from '@/data/config';

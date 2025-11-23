@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { products, categories } from '@/data/realData'
+import { products, categories } from '@/data/products'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://soft99bikes.com'

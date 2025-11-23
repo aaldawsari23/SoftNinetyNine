@@ -1,6 +1,6 @@
 'use client';
 
-import { products, categories, brands } from '@/data/realData';
+import { products, categories, brands } from '@/data/products';
 import Link from 'next/link';
 
 export default function AdminDashboard() {

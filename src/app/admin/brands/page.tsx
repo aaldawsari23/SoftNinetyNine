@@ -1,6 +1,6 @@
 'use client';
 
-import { brands, products } from '@/data/realData';
+import { brands, products } from '@/data/products';
 
 export default function AdminBrandsPage() {
   const getBrandProductCount = (brandId: string) => {

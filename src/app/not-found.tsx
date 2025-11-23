@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { products } from '@/data/realData';
+import { products } from '@/data/products';
 
 export default function NotFound() {
   // Get some random products to suggest
