@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { useCart } from '@/contexts/CartContext';
 import CartDrawer from '@/components/cart/CartDrawer';
@@ -29,14 +28,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/Logo.png"
-              alt="سوفت 99"
-              width={36}
-              height={36}
-              className="h-9 w-9 rounded-md object-contain"
-              priority
-            />
+            <img src="/Logo.png" alt="سوفت 99" className="h-9 w-9 rounded-md object-contain" />
             <span className="text-primary font-bold text-sm md:text-base">سوفت 99</span>
           </Link>
 

@@ -26,11 +26,17 @@ export default function ProductGrid({ products, title }: ProductGridProps) {
       )}
       {/* Modern responsive grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-5">
-        {products.map((product) => (
-          <ProductCard
+        {products.map((product, index) => (
+          <div
             key={product.id}
-            product={product}
-          />
+            className="animate-fade-in"
+            style={{
+              animationDelay: `${Math.min(index * 30, 300)}ms`,
+              animationFillMode: 'both'
+            }}
+          >
+            <ProductCard product={product} />
+          </div>
         ))}
       </div>
     </div>

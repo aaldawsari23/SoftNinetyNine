@@ -25,16 +25,16 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <Link href={`/product/${product.id}`} className="group h-full block">
-      <div className="h-full flex flex-col bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden hover:border-primary/50 active:border-primary/70 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 active:scale-[0.98]">
+      <div className="h-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
         {/* Image */}
-        <div className="relative overflow-hidden bg-gradient-to-b from-background to-background-light aspect-square">
+        <div className="relative overflow-hidden bg-gradient-to-b from-background to-background-light h-48 md:h-56">
           <LazyProductImage product={product} alt={displayName} />
 
-          {/* Quick Add Button - visible on mobile, enhanced on hover */}
+          {/* Quick Add Button */}
           {isAvailable && (
             <button
               onClick={handleAddToCart}
-              className="absolute bottom-2 right-2 bg-primary/90 backdrop-blur-sm text-white p-2 rounded-lg opacity-70 md:opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary hover:scale-110 active:scale-95"
+              className="absolute bottom-2 right-2 bg-primary/90 backdrop-blur-sm text-white p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-primary"
               aria-label="أضف للسلة"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -52,8 +52,8 @@ export default function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
 
-        {/* Content - Compact - Flex to push price to bottom */}
-        <div className="flex-1 flex flex-col p-3 md:p-4 space-y-2">
+        {/* Content - Compact */}
+        <div className="p-4 space-y-2">
           {/* Category & Brand */}
           <div className="flex items-center gap-2 text-xs">
             {category && (
@@ -81,13 +81,10 @@ export default function ProductCard({ product }: ProductCardProps) {
             )}
           </div>
 
-          {/* Spacer to push price to bottom */}
-          <div className="flex-1"></div>
-
           {/* Price */}
           {product.price > 0 && (
             <div className="pt-2 border-t border-white/5">
-              <span className="text-lg md:text-xl font-bold text-green-500">{product.price.toLocaleString('ar-SA')} {product.currency}</span>
+              <span className="text-xl font-bold text-green-500">{product.price.toLocaleString('ar-SA')} {product.currency}</span>
             </div>
           )}
 
