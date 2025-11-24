@@ -9,8 +9,6 @@ export default function Navbar() {
   const navLinks = [
     { href: '/', label: 'الرئيسية' },
     { href: '/catalog', label: 'جميع المنتجات' },
-    { href: '/catalog?type=part', label: 'قطع الغيار' },
-    { href: '/catalog?type=gear', label: 'الإكسسوارات' },
     { href: '/parking', label: 'مواقف' },
     { href: '/contact', label: 'تواصل' },
   ];

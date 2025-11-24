@@ -8,20 +8,14 @@ import { ProductType } from '@/types';
 
 export default function CatalogContent() {
   const searchParams = useSearchParams();
-  const typeParam = searchParams.get('type') as ProductType | null;
   const categoryParam = searchParams.get('category');
 
-  const [selectedType, setSelectedType] = useState<ProductType | 'all'>(typeParam || 'all');
   const [selectedCategory, setSelectedCategory] = useState<string>(categoryParam || 'all');
   const [selectedBrand, setSelectedBrand] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredProducts = useMemo(() => {
     let filtered = products.filter(p => p.status === 'published');
-
-    if (selectedType !== 'all') {
-      filtered = filtered.filter(p => p.type === selectedType);
-    }
 
     if (selectedCategory !== 'all') {
       filtered = filtered.filter(p => p.category_id === selectedCategory);
@@ -40,12 +34,11 @@ export default function CatalogContent() {
     }
 
     return filtered.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
-  }, [selectedType, selectedCategory, selectedBrand, searchQuery]);
+  }, [selectedCategory, selectedBrand, searchQuery]);
 
   const availableCategories = useMemo(() => {
-    if (selectedType === 'all') return categories;
-    return categories.filter(c => c.type === selectedType);
-  }, [selectedType]);
+    return categories;
+  }, []);
 
   const availableBrands = useMemo(() => {
     const brandIds = new Set(filteredProducts.map(p => p.brand_id));
@@ -70,35 +63,8 @@ export default function CatalogContent() {
           </svg>
         </div>
 
-        {/* Type Filter */}
-        <div className="flex items-center gap-2 mb-2">
-          <span className="text-xs text-text-muted">النوع:</span>
-          <div className="flex gap-1 flex-wrap">
-            {[
-              { key: 'all', label: 'الكل' },
-              { key: 'part', label: 'قطع' },
-              { key: 'gear', label: 'ملابس' },
-            ].map((opt) => (
-              <button
-                key={opt.key}
-                onClick={() => {
-                  setSelectedType(opt.key as any);
-                  setSelectedCategory('all');
-                }}
-                className={`px-3 py-1 rounded text-xs transition-all ${
-                  selectedType === opt.key
-                    ? 'bg-primary text-white'
-                    : 'bg-background-card text-text-secondary hover:bg-background-hover'
-                }`}
-              >
-                {opt.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
         {/* Category Filter */}
-        {selectedType !== 'all' && availableCategories.length > 0 && (
+        {availableCategories.length > 0 && (
           <div className="flex items-center gap-2 mb-2">
             <span className="text-xs text-text-muted">الفئة:</span>
             <select

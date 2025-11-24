@@ -8,7 +8,6 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   const displayName = product.name_ar || product.name_en || 'منتج';
   const isAvailable = product.stock_status === 'available';
-  const isBike = product.type === 'bike';
 
   const imageSrc = (product.images && product.images.length > 0 && product.images[0]) || '';
 
@@ -16,9 +15,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     <Link href={`/product/${product.id}`} className="group h-full block">
       <div className="product-card h-full flex flex-col p-2 md:p-3 relative hover:scale-[1.02] transition-transform duration-300">
         {/* Image */}
-        <div className={`relative overflow-hidden rounded-lg bg-background mb-2 md:mb-3 ${
-          isBike ? 'h-40 md:h-56' : 'h-32 md:h-40'
-        }`}>
+        <div className="relative overflow-hidden rounded-lg bg-background mb-2 md:mb-3 h-32 md:h-40">
           {imageSrc ? (
             <img
               src={imageSrc}
@@ -31,19 +28,6 @@ export default function ProductCard({ product }: ProductCardProps) {
               <span className="text-3xl md:text-4xl opacity-30">🏍️</span>
             </div>
           )}
-
-          {/* Badges - Compact */}
-          <div className="absolute top-2 left-2 flex flex-col gap-1">
-            {product.is_new ? (
-              <span className="px-2 py-0.5 bg-success/90 text-white text-[10px] md:text-xs font-bold rounded-md backdrop-blur-sm">
-                ✨ جديد
-              </span>
-            ) : (
-              <span className="px-2 py-0.5 bg-secondary/90 text-white text-[10px] md:text-xs font-bold rounded-md backdrop-blur-sm">
-                مستعمل
-              </span>
-            )}
-          </div>
 
           {!isAvailable && (
             <div className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center">
@@ -60,25 +44,22 @@ export default function ProductCard({ product }: ProductCardProps) {
             {displayName}
           </h3>
 
-          {/* Specs - Only show for bikes and only mileage */}
-          {isBike && product.specs?.['الممشى'] && (
-            <div className="mb-2 text-[10px] md:text-xs text-text-muted">
-              الممشى: <span className="text-white font-semibold">{product.specs['الممشى']}</span>
+          {/* Specifications */}
+          {product.specifications?.model && (
+            <div className="mb-1 text-[10px] md:text-xs text-text-muted">
+              موديل: <span className="text-white font-semibold">{product.specifications.model}</span>
+            </div>
+          )}
+          {product.specifications?.specification && (
+            <div className="mb-1 text-[10px] md:text-xs text-text-muted">
+              <span className="text-white font-semibold">{product.specifications.specification}</span>
             </div>
           )}
 
-          {/* Price */}
+          {/* Availability Status */}
           <div className="mt-auto">
-            <div className="flex items-baseline gap-1 md:gap-2">
-              <span className="text-lg md:text-2xl font-black text-primary">
-                {product.price.toLocaleString('ar-SA')}
-              </span>
-              <span className="text-[10px] md:text-xs text-text-secondary font-semibold">
-                {product.currency}
-              </span>
-            </div>
             {isAvailable && (
-              <div className="flex items-center gap-1 mt-1 text-success text-[10px] md:text-xs font-semibold">
+              <div className="flex items-center gap-1 text-success text-[10px] md:text-xs font-semibold">
                 <span className="w-1.5 h-1.5 bg-success rounded-full animate-pulse"></span>
                 <span>متوفر</span>
               </div>
