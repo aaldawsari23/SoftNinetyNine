@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useCart } from '@/contexts/CartContext';
 import CartDrawer from '@/components/cart/CartDrawer';
 
@@ -11,10 +11,36 @@ export default function Navbar() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { getTotalItems } = useCart();
   const [mounted, setMounted] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Close mobile menu when clicking outside or pressing Escape
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleEscapeKey);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEscapeKey);
+    };
+  }, [isMobileMenuOpen]);
 
   const navLinks = [
     { href: '/', label: 'الرئيسية' },
@@ -89,7 +115,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-2 border-t border-gray-800 space-y-1">
+          <div ref={mobileMenuRef} className="md:hidden py-2 border-t border-gray-800 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}

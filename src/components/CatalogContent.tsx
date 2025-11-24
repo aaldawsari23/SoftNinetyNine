@@ -1,10 +1,12 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import ProductGrid from '@/components/products/ProductGrid';
 import { products, categories, brands } from '@/data/products';
 import { ProductType } from '@/types';
+
+const ITEMS_PER_PAGE = 20;
 
 export default function CatalogContent() {
   const searchParams = useSearchParams();
@@ -13,6 +15,7 @@ export default function CatalogContent() {
   const [selectedCategory, setSelectedCategory] = useState<string>(categoryParam || 'all');
   const [selectedBrand, setSelectedBrand] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
 
   const filteredProducts = useMemo(() => {
     let filtered = products.filter(p => p.status === 'published');
@@ -27,23 +30,65 @@ export default function CatalogContent() {
 
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
-      filtered = filtered.filter(p =>
-        p.name?.toLowerCase().includes(query) ||
-        p.description.toLowerCase().includes(query)
-      );
+      filtered = filtered.filter(p => {
+        // Search in name and description
+        const matchesNameOrDesc = p.name?.toLowerCase().includes(query) ||
+          p.description.toLowerCase().includes(query);
+
+        // Search in SKU
+        const matchesSku = p.sku?.toLowerCase().includes(query);
+
+        // Search in model (from specifications)
+        const matchesModel = p.specifications?.model?.toLowerCase().includes(query);
+
+        // Search in brand name
+        const brand = brands.find(b => b.id === p.brand_id);
+        const matchesBrand = brand?.name.toLowerCase().includes(query);
+
+        return matchesNameOrDesc || matchesSku || matchesModel || matchesBrand;
+      });
     }
 
     return filtered.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+  }, [selectedCategory, selectedBrand, searchQuery]);
+
+  // Reset to page 1 when filters change
+  useEffect(() => {
+    setCurrentPage(1);
   }, [selectedCategory, selectedBrand, searchQuery]);
 
   const availableCategories = useMemo(() => {
     return categories;
   }, []);
 
+  // Optimized: Calculate available brands from base products, not filtered
+  // This prevents unnecessary recalculation when filters change
   const availableBrands = useMemo(() => {
-    const brandIds = new Set(filteredProducts.map(p => p.brand_id));
+    const publishedProducts = products.filter(p => p.status === 'published');
+
+    // If category is selected, only show brands that have products in that category
+    if (selectedCategory !== 'all') {
+      const brandIds = new Set(
+        publishedProducts
+          .filter(p => p.category_id === selectedCategory)
+          .map(p => p.brand_id)
+      );
+      return brands.filter(b => brandIds.has(b.id));
+    }
+
+    // Otherwise show all brands that have published products
+    const brandIds = new Set(publishedProducts.map(p => p.brand_id));
     return brands.filter(b => brandIds.has(b.id));
-  }, [filteredProducts]);
+  }, [selectedCategory]);
+
+  // Paginate the filtered products
+  const paginatedProducts = useMemo(() => {
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    return filteredProducts.slice(start, start + ITEMS_PER_PAGE);
+  }, [filteredProducts, currentPage]);
+
+  // Calculate total pages
+  const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
 
   return (
     <div className="space-y-4">
@@ -152,7 +197,76 @@ export default function CatalogContent() {
       </div>
 
       {/* Products Grid */}
-      <ProductGrid products={filteredProducts} />
+      <ProductGrid products={paginatedProducts} />
+
+      {/* Pagination Controls */}
+      {totalPages > 1 && (
+        <div className="bg-white/5 backdrop-blur-md rounded-2xl p-4 border border-white/10">
+          <div className="flex items-center justify-between gap-4">
+            {/* Previous Button */}
+            <button
+              onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+              disabled={currentPage === 1}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-200 ${
+                currentPage === 1
+                  ? 'bg-background/30 text-text-muted cursor-not-allowed opacity-50'
+                  : 'bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 hover:shadow-lg hover:shadow-primary/20 active:scale-95'
+              }`}
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              <span className="text-sm font-semibold">السابق</span>
+            </button>
+
+            {/* Page Info */}
+            <div className="text-center">
+              <p className="text-sm text-text-muted">
+                صفحة <span className="text-primary font-bold text-lg mx-1">{currentPage}</span>
+                من <span className="text-primary font-bold text-lg mx-1">{totalPages}</span>
+              </p>
+              <p className="text-xs text-text-muted mt-1">
+                عرض {((currentPage - 1) * ITEMS_PER_PAGE) + 1} - {Math.min(currentPage * ITEMS_PER_PAGE, filteredProducts.length)} من {filteredProducts.length}
+              </p>
+            </div>
+
+            {/* Next Button */}
+            <button
+              onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+              disabled={currentPage === totalPages}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-200 ${
+                currentPage === totalPages
+                  ? 'bg-background/30 text-text-muted cursor-not-allowed opacity-50'
+                  : 'bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 hover:shadow-lg hover:shadow-primary/20 active:scale-95'
+              }`}
+            >
+              <span className="text-sm font-semibold">التالي</span>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Page Number Pills (for desktop) */}
+          {totalPages <= 10 && (
+            <div className="hidden md:flex items-center justify-center gap-2 mt-4 pt-4 border-t border-white/10">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                <button
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
+                  className={`w-10 h-10 rounded-lg transition-all duration-200 ${
+                    currentPage === page
+                      ? 'bg-primary text-white shadow-lg shadow-primary/30 scale-110'
+                      : 'bg-background/50 text-text-muted border border-white/10 hover:border-primary/30 hover:text-white active:scale-95'
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Product } from '@/types';
 import { LazyProductImage } from '@/components/ui/LazyProductImage';
 import { useCart } from '@/contexts/CartContext';
+import { useToast } from '@/contexts/ToastContext';
 import { categories, brands } from '@/data/products';
 
 interface ProductCardProps {
@@ -14,6 +15,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   const displayName = product.name_ar || product.name_en || 'منتج';
   const isAvailable = product.is_available ?? true;
   const { addToCart, isInCart } = useCart();
+  const { showToast } = useToast();
 
   const category = categories.find(c => c.id === product.category_id);
   const brand = brands.find(b => b.id === product.brand_id);
@@ -21,6 +23,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
     addToCart(product);
+    showToast(`تم إضافة "${displayName}" إلى السلة`, 'success');
   };
 
   return (
