@@ -19,8 +19,8 @@ export default function StructuredData() {
       "latitude": "16.9064",
       "longitude": "42.5525"
     },
-    "openingHours": "Mo-Su 08:00-22:00",
-    "telephone": "+966500000000",
+    "openingHours": "Mo-Su 17:30-03:00",
+    "telephone": "+966568663381",
     "priceRange": "$$",
     "acceptsReservations": false,
     "currenciesAccepted": "SAR",

@@ -80,11 +80,13 @@ export default function AdminLoginPage() {
             </button>
           </form>
 
-          <div className="mt-6 text-center">
-            <p className="text-text-secondary text-sm">
-              بيانات تجريبية: admin / admin123
-            </p>
-          </div>
+          {process.env.NODE_ENV === 'development' && (
+            <div className="mt-6 text-center">
+              <p className="text-text-secondary text-sm">
+                بيانات تجريبية: admin / admin123
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Back to Store */}

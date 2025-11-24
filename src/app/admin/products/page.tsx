@@ -1,12 +1,53 @@
 'use client';
 
-import { useState } from 'react';
-import { products } from '@/data/products';
+import { useState, useEffect } from 'react';
+import { products as initialProducts } from '@/data/products';
+import { Product } from '@/types';
 import Link from 'next/link';
+
+const STORAGE_KEY = 'soft99_admin_products';
 
 export default function AdminProductsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<'all' | 'published' | 'hidden'>('all');
+  const [products, setProducts] = useState<Product[]>([]);
+  const [mounted, setMounted] = useState(false);
+
+  // Load products from localStorage or use initial data
+  useEffect(() => {
+    setMounted(true);
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      try {
+        setProducts(JSON.parse(stored));
+      } catch {
+        setProducts(initialProducts);
+      }
+    } else {
+      setProducts(initialProducts);
+    }
+  }, []);
+
+  // Save products to localStorage whenever they change
+  useEffect(() => {
+    if (mounted && products.length > 0) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
+    }
+  }, [products, mounted]);
+
+  const handleDelete = (productId: string) => {
+    if (confirm('هل أنت متأكد من حذف هذا المنتج؟')) {
+      setProducts(prev => prev.filter(p => p.id !== productId));
+    }
+  };
+
+  const handleToggleStatus = (productId: string) => {
+    setProducts(prev => prev.map(p =>
+      p.id === productId
+        ? { ...p, status: p.status === 'published' ? 'hidden' : 'published' }
+        : p
+    ));
+  };
 
   const filteredProducts = products.filter(p => {
     const matchesSearch = p.name_ar?.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -14,6 +55,10 @@ export default function AdminProductsPage() {
     const matchesStatus = statusFilter === 'all' || p.status === statusFilter;
     return matchesSearch && matchesStatus;
   });
+
+  if (!mounted) {
+    return <div className="text-white">جاري التحميل...</div>;
+  }
 
   return (
     <div>
@@ -107,11 +152,24 @@ export default function AdminProductsPage() {
                 </td>
                 <td className="py-3 px-4">
                   <div className="flex gap-2">
-                    <button className="text-blue-500 hover:text-blue-400 text-sm">تعديل</button>
-                    <button className="text-primary hover:text-primary-hover text-sm">
+                    <Link
+                      href={`/admin/products/${product.id}`}
+                      className="text-blue-500 hover:text-blue-400 text-sm transition-colors"
+                    >
+                      تعديل
+                    </Link>
+                    <button
+                      onClick={() => handleToggleStatus(product.id)}
+                      className="text-primary hover:text-primary-hover text-sm transition-colors"
+                    >
                       {product.status === 'published' ? 'إخفاء' : 'نشر'}
                     </button>
-                    <button className="text-red-500 hover:text-red-400 text-sm">حذف</button>
+                    <button
+                      onClick={() => handleDelete(product.id)}
+                      className="text-red-500 hover:text-red-400 text-sm transition-colors"
+                    >
+                      حذف
+                    </button>
                   </div>
                 </td>
               </tr>

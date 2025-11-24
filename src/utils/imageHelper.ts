@@ -19,7 +19,7 @@ export function getProductImageSrc(product: Product): string {
     return product.image_url;
   }
 
-  return `/images/${product.sku}.png`;
+  return `/Images/${product.sku}.jpg`;
 }
 
 /**

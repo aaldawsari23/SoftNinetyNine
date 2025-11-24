@@ -58,8 +58,8 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
 
       {/* Drawer */}
       <div
-        className={`fixed left-0 top-0 h-full w-full max-w-md bg-background-card border-l border-border shadow-2xl z-50 transition-transform duration-300 ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
+        className={`fixed right-0 top-0 h-full w-full max-w-md bg-background-card border-l border-border shadow-2xl z-50 transition-transform duration-300 ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <div className="flex flex-col h-full">
