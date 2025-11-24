@@ -53,15 +53,15 @@ export default function ProductPage() {
         </nav>
 
         {/* Mobile-first responsive layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-10">
           {/* Image Section - Enhanced */}
-          <div className="space-y-4">
-            <div className="bg-gradient-to-b from-background-light to-background rounded-2xl overflow-hidden border border-white/10">
+          <div className="space-y-3 md:space-y-4">
+            <div className="bg-gradient-to-b from-background-light to-background rounded-xl md:rounded-2xl overflow-hidden border border-white/10 sticky top-20">
               <div className="aspect-square relative">
                 <LazyProductImage product={product} alt={displayName} />
                 {!isAvailable && (
                   <div className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center">
-                    <span className="px-4 py-2 bg-danger text-white text-lg font-bold rounded-xl">
+                    <span className="px-4 py-2 bg-danger text-white text-base md:text-lg font-bold rounded-xl">
                       غير متوفر
                     </span>
                   </div>
@@ -70,32 +70,29 @@ export default function ProductPage() {
             </div>
 
             {/* Product Meta - Mobile */}
-            <div className="lg:hidden bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-              <div className="flex flex-wrap gap-3 text-sm">
+            <div className="lg:hidden bg-white/5 backdrop-blur-sm rounded-xl p-3 border border-white/10">
+              <div className="flex flex-wrap gap-2 text-xs">
                 {brand && (
-                  <div className="flex items-center gap-2">
-                    <span className="text-text-muted">العلامة:</span>
-                    <span className="px-3 py-1 bg-primary/10 text-primary rounded-full font-semibold">{brand.name}</span>
-                  </div>
+                  <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-semibold">
+                    {brand.name}
+                  </span>
                 )}
                 {category && (
-                  <div className="flex items-center gap-2">
-                    <span className="text-text-muted">الفئة:</span>
-                    <span className="px-3 py-1 bg-white/10 text-white rounded-full">{category.name_ar}</span>
-                  </div>
+                  <span className="px-3 py-1.5 bg-white/10 text-white rounded-full">
+                    {category.name_ar}
+                  </span>
                 )}
                 {(product.sku || product.id) && (
-                  <div className="flex items-center gap-2">
-                    <span className="text-text-muted">SKU:</span>
-                    <span className="text-white font-mono">{product.sku || product.id}</span>
-                  </div>
+                  <span className="px-3 py-1.5 bg-white/5 text-text-muted rounded-full font-mono">
+                    {product.sku || product.id}
+                  </span>
                 )}
               </div>
             </div>
           </div>
 
           {/* Product Info Section - Redesigned */}
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             {/* Header */}
             <div>
               {/* Status Badges */}

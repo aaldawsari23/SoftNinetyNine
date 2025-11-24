@@ -27,15 +27,25 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     setIsClient(true);
-    const savedCart = localStorage.getItem('cart');
-    if (savedCart) {
-      setItems(JSON.parse(savedCart));
+    try {
+      const savedCart = localStorage.getItem('cart');
+      if (savedCart) {
+        setItems(JSON.parse(savedCart));
+      }
+    } catch (error) {
+      // localStorage not available (private mode, Safari restrictions, etc.)
+      console.warn('Failed to load cart from localStorage:', error);
+      setItems([]);
     }
   }, []);
 
   useEffect(() => {
     if (isClient) {
-      localStorage.setItem('cart', JSON.stringify(items));
+      try {
+        localStorage.setItem('cart', JSON.stringify(items));
+      } catch (error) {
+        console.warn('Failed to save cart to localStorage:', error);
+      }
     }
   }, [items, isClient]);
 
