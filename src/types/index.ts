@@ -25,6 +25,7 @@ export interface Product {
   description: string;
   images?: string[];
   image_url?: string; // For compatibility with realData.ts
+  remoteImageUrl?: string; // For external image URLs
   salla_url?: string;
   created_at: string;
   updated_at: string;
