@@ -1,5 +1,5 @@
+import React from 'react'
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
-import { useSearchParams } from 'next/navigation'
 import CatalogContent from '../CatalogContent'
 import { CartProvider } from '@/contexts/CartContext'
 
@@ -43,14 +43,24 @@ jest.mock('@/data/products', () => ({
   ],
 }))
 
-describe('CatalogContent - Filter Tests', () => {
-  beforeEach(() => {
-    // Reset mocks before each test
-    ;(useSearchParams as jest.Mock).mockReturnValue({
-      get: jest.fn().mockReturnValue(null),
-    })
-  })
+// Override the global mock for this test file
+jest.mock('next/navigation', () => {
+  const mockGet = jest.fn().mockReturnValue(null)
+  return {
+    useRouter: jest.fn(() => ({
+      push: jest.fn(),
+      replace: jest.fn(),
+      prefetch: jest.fn(),
+    })),
+    useSearchParams: jest.fn(() => ({
+      get: mockGet,
+    })),
+    usePathname: jest.fn(() => ''),
+    useParams: jest.fn(() => ({})),
+  }
+})
 
+describe('CatalogContent - Filter Tests', () => {
   const renderWithCart = (component: React.ReactElement) => {
     return render(<CartProvider>{component}</CartProvider>)
   }
@@ -127,7 +137,9 @@ describe('CatalogContent - Filter Tests', () => {
   })
 
   it('should respect initial category from URL params', () => {
-    ;(useSearchParams as jest.Mock).mockReturnValue({
+    // For this test, we need to mock the searchParams to return c1
+    const { useSearchParams } = require('next/navigation')
+    useSearchParams.mockReturnValueOnce({
       get: jest.fn((param) => (param === 'category' ? 'c1' : null)),
     })
 

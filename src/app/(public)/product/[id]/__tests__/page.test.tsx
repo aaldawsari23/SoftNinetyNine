@@ -1,3 +1,4 @@
+import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { useParams, notFound } from 'next/navigation'
 import ProductPage from '../page'
@@ -58,16 +59,21 @@ describe('ProductPage - Routing Tests', () => {
 
     renderWithCart(<ProductPage />)
 
-    expect(screen.getByText('زيت موتول 5W-40')).toBeInTheDocument()
-    expect(screen.getByText('150')).toBeInTheDocument()
-    expect(screen.getByText('Motul')).toBeInTheDocument()
+    // Product name appears multiple times (breadcrumb + h1)
+    expect(screen.getAllByText('زيت موتول 5W-40').length).toBeGreaterThan(0)
+
+    // Price is formatted in Arabic numerals "١٥٠"
+    expect(screen.getByText('١٥٠')).toBeInTheDocument()
+
+    // Brand appears multiple times (mobile + desktop)
+    expect(screen.getAllByText('Motul').length).toBeGreaterThan(0)
   })
 
   it('should call notFound() for invalid product ID', () => {
     ;(useParams as jest.Mock).mockReturnValue({ id: 'invalid-product-id' })
 
-    renderWithCart(<ProductPage />)
-
+    // notFound() throws, so we expect it to be called
+    expect(() => renderWithCart(<ProductPage />)).toThrow()
     expect(notFound).toHaveBeenCalled()
   })
 
@@ -86,7 +92,8 @@ describe('ProductPage - Routing Tests', () => {
 
     renderWithCart(<ProductPage />)
 
-    expect(screen.getByText('SKU001')).toBeInTheDocument()
+    // SKU appears in both mobile and desktop views
+    expect(screen.getAllByText('SKU001').length).toBeGreaterThan(0)
   })
 
   it('should show breadcrumb navigation', () => {
@@ -111,8 +118,8 @@ describe('ProductPage - Routing Tests', () => {
 
     renderWithCart(<ProductPage />)
 
-    // Price should be formatted with Arabic locale
-    expect(screen.getByText('150')).toBeInTheDocument()
+    // Price should be formatted with Arabic numerals
+    expect(screen.getByText('١٥٠')).toBeInTheDocument()
     expect(screen.getByText('ريال')).toBeInTheDocument()
   })
 
@@ -121,7 +128,8 @@ describe('ProductPage - Routing Tests', () => {
 
     renderWithCart(<ProductPage />)
 
-    expect(screen.getByText('Motul')).toBeInTheDocument()
-    expect(screen.getByText('زيوت')).toBeInTheDocument()
+    // Both may appear multiple times (mobile + desktop)
+    expect(screen.getAllByText('Motul').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('زيوت').length).toBeGreaterThan(0)
   })
 })
