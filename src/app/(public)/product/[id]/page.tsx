@@ -97,13 +97,9 @@ export default function ProductPage() {
             <div>
               {/* Status Badges */}
               <div className="flex flex-wrap gap-2 mb-3">
-                {product.is_new ? (
+                {product.is_new && (
                   <span className="px-3 py-1 bg-gradient-to-r from-accent to-yellow-500 text-background text-sm rounded-full font-bold">
                     جديد
-                  </span>
-                ) : (
-                  <span className="px-3 py-1 bg-orange-500/20 text-orange-500 text-sm rounded-full font-semibold">
-                    مستعمل
                   </span>
                 )}
                 {isAvailable ? (
