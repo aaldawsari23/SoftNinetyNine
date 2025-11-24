@@ -24,16 +24,12 @@ export default function ProductGrid({ products, title }: ProductGridProps) {
       {title && (
         <h2 className="section-title animate-slide-down">{title}</h2>
       )}
-      {/* Grid: 4 items per row on all devices, except bikes take full width */}
+      {/* Grid: Uniform layout for all products */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
         {products.map((product, index) => (
           <div
             key={product.id}
-            className={`animate-fade-in ${
-              product.type === 'bike'
-                ? 'col-span-2 md:col-span-3 lg:col-span-4'
-                : 'col-span-1'
-            }`}
+            className="animate-fade-in"
             style={{
               animationDelay: `${Math.min(index * 30, 300)}ms`,
               animationFillMode: 'both'
