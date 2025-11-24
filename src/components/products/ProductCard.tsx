@@ -1,6 +1,10 @@
+'use client';
+
 import Link from 'next/link';
 import { Product } from '@/types';
 import { LazyProductImage } from '@/components/ui/LazyProductImage';
+import { useCart } from '@/contexts/CartContext';
+import { categories, brands } from '@/data/products';
 
 interface ProductCardProps {
   product: Product;
@@ -9,13 +13,35 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   const displayName = product.name_ar || product.name_en || 'منتج';
   const isAvailable = product.is_available ?? true;
+  const { addToCart, isInCart } = useCart();
+
+  const category = categories.find(c => c.id === product.category_id);
+  const brand = brands.find(b => b.id === product.brand_id);
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    addToCart(product);
+  };
 
   return (
     <Link href={`/product/${product.id}`} className="group h-full block">
-      <div className="product-card h-full flex flex-col p-2 md:p-3 relative hover:scale-[1.02] transition-transform duration-300">
+      <div className="h-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
         {/* Image */}
-        <div className="relative overflow-hidden rounded-lg bg-background mb-2 md:mb-3 h-32 md:h-40">
+        <div className="relative overflow-hidden bg-gradient-to-b from-background to-background-light h-48 md:h-56">
           <LazyProductImage product={product} alt={displayName} />
+
+          {/* Quick Add Button */}
+          {isAvailable && (
+            <button
+              onClick={handleAddToCart}
+              className="absolute bottom-2 right-2 bg-primary/90 backdrop-blur-sm text-white p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-primary"
+              aria-label="أضف للسلة"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+              </svg>
+            </button>
+          )}
 
           {!isAvailable && (
             <div className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center">
@@ -27,29 +53,53 @@ export default function ProductCard({ product }: ProductCardProps) {
         </div>
 
         {/* Content - Compact */}
-        <div className="flex-1 flex flex-col">
-          <h3 className="text-sm md:text-base font-bold text-white mb-2 line-clamp-2 leading-snug group-hover:text-primary transition-colors">
+        <div className="p-4 space-y-2">
+          {/* Category & Brand */}
+          <div className="flex items-center gap-2 text-xs">
+            {category && (
+              <span className="px-2 py-0.5 bg-primary/10 text-primary rounded-full">
+                {category.name_ar}
+              </span>
+            )}
+            {brand && (
+              <span className="text-text-muted">{brand.name}</span>
+            )}
+          </div>
+
+          {/* Title */}
+          <h3 className="font-bold text-white line-clamp-2 leading-tight group-hover:text-primary transition-colors">
             {displayName}
           </h3>
 
-          {/* Specifications */}
-          {product.specifications?.model && (
-            <div className="mb-1 text-[10px] md:text-xs text-text-muted">
-              موديل: <span className="text-white font-semibold">{product.specifications.model}</span>
-            </div>
-          )}
-          {product.specifications?.specification && (
-            <div className="mb-1 text-[10px] md:text-xs text-text-muted">
-              <span className="text-white font-semibold">{product.specifications.specification}</span>
+          {/* SKU & Info */}
+          <div className="space-y-1 text-xs text-text-muted">
+            {(product.sku || product.id) && (
+              <div>SKU: <span className="text-white">{product.sku || product.id}</span></div>
+            )}
+            {product.specifications?.model && (
+              <div>موديل: <span className="text-white">{product.specifications.model}</span></div>
+            )}
+          </div>
+
+          {/* Price */}
+          {product.price > 0 && (
+            <div className="pt-2 border-t border-white/5">
+              <span className="text-xl font-bold text-green-500">{product.price.toLocaleString('ar-SA')} {product.currency}</span>
             </div>
           )}
 
-          {/* Availability Status */}
-          <div className="mt-auto">
+          {/* Status */}
+          <div className="flex items-center gap-2 flex-wrap">
             {isAvailable && (
               <div className="flex items-center gap-1 text-success text-[10px] md:text-xs font-semibold">
                 <span className="w-1.5 h-1.5 bg-success rounded-full animate-pulse"></span>
                 <span>متوفر</span>
+              </div>
+            )}
+            {isInCart(product.id) && (
+              <div className="flex items-center gap-1 text-yellow-500 text-[10px] md:text-xs font-semibold">
+                <span className="w-1.5 h-1.5 bg-yellow-500 rounded-full"></span>
+                <span>في السلة</span>
               </div>
             )}
           </div>
