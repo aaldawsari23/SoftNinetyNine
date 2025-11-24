@@ -8,7 +8,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   const displayName = product.name_ar || product.name_en || 'منتج';
-  const isAvailable = product.stock_status === 'available';
+  const isAvailable = product.is_available ?? true;
 
   return (
     <Link href={`/product/${product.id}`} className="group h-full block">

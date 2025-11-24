@@ -4,6 +4,7 @@ import { products, brands, categories } from '@/data/products';
 import { notFound, useParams } from 'next/navigation';
 import Link from 'next/link';
 import { WHATSAPP_NUMBER } from '@/data/config';
+import { LazyProductImage } from '@/components/ui/LazyProductImage';
 
 export default function ProductPage() {
   const params = useParams();
@@ -18,7 +19,7 @@ export default function ProductPage() {
   const category = categories.find(c => c.id === product.category_id);
 
   const displayName = product.name_ar || product.name_en || 'منتج';
-  const isAvailable = product.stock_status === 'available';
+  const isAvailable = product.is_available ?? true;
   // Preorder status removed from the store; treat only available vs unavailable.
 
   const handleBuyNow = () => {
@@ -48,18 +49,8 @@ export default function ProductPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Images Section */}
           <div>
-            <div className="card p-0 overflow-hidden mb-4">
-              {product.images && product.images.length > 0 ? (
-                <img
-                  src={product.images[0]}
-                  alt={displayName}
-                  className="w-full h-96 object-cover"
-                />
-              ) : (
-                <div className="w-full h-96 bg-gray-900 flex items-center justify-center">
-                  <span className="text-8xl">🏍️</span>
-                </div>
-              )}
+            <div className="card p-0 overflow-hidden mb-4 h-96">
+              <LazyProductImage product={product} alt={displayName} />
             </div>
 
             {/* Thumbnail Gallery */}
@@ -171,23 +162,16 @@ export default function ProductPage() {
               .filter(p =>
                 p.id !== product.id &&
                 p.category_id === product.category_id &&
-                p.stock_status === 'available'
+                (p.is_available ?? true)
               )
               .slice(0, 4)
               .map(p => {
                 const relatedProductLink = `/product/${p.id}`;
-                const relatedImage = p.images && p.images.length > 0 ? p.images[0] : '';
                 const relatedName = p.name_ar || p.name_en || 'منتج';
                 return (
                   <Link key={p.id} href={relatedProductLink} className="card p-4 hover:border-primary">
                     <div className="h-32 bg-gray-900 rounded-md mb-3 overflow-hidden">
-                      {relatedImage ? (
-                        <img src={relatedImage} alt={relatedName} className="w-full h-full object-cover" />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center">
-                          <span className="text-4xl">🏍️</span>
-                        </div>
-                      )}
+                      <LazyProductImage product={p} alt={relatedName} />
                     </div>
                     <h3 className="text-white font-semibold mb-2 line-clamp-2">{relatedName}</h3>
                     <p className="text-green-500 font-bold">{p.price.toLocaleString('ar-SA')} {p.currency}</p>
