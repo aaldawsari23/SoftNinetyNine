@@ -45,6 +45,7 @@ export default function Navbar() {
   const navLinks = [
     { href: '/', label: 'الرئيسية' },
     { href: '/catalog', label: 'جميع المنتجات' },
+    { href: '/motorcycles', label: 'دراجات نارية' },
     { href: '/parking', label: 'مواقف' },
     { href: '/contact', label: 'تواصل' },
   ];
@@ -80,6 +81,21 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-2">
+            {/* Google Maps Button */}
+            <a
+              href="https://www.google.com/maps?q=16.9064,42.5525"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-white hover:text-primary transition-colors"
+              aria-label="موقع المحل على الخريطة"
+              title="موقع المحل على الخريطة"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </a>
+
             {/* Cart Button */}
             <button
               onClick={() => setIsCartOpen(true)}
