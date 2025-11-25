@@ -29,5 +29,5 @@ export function getProductImageSrc(product: Product): string {
  * @returns The fallback image source URL as a string
  */
 export function getFallbackImageSrc(): string {
-  return '/Images/placeholder.png';
+  return '/Images/placeholder.svg';
 }

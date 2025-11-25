@@ -1,21 +1,50 @@
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import ProductGrid from '@/components/products/ProductGrid';
 import { products, categories, brands } from '@/data/products';
 import { ProductType } from '@/types';
+import ScrollToTop from '@/components/ui/ScrollToTop';
 
 const ITEMS_PER_PAGE = 20;
 
 export default function CatalogContent() {
   const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // Initialize from URL params
   const categoryParam = searchParams.get('category');
+  const brandParam = searchParams.get('brand');
+  const searchParam = searchParams.get('q');
 
   const [selectedCategory, setSelectedCategory] = useState<string>(categoryParam || 'all');
-  const [selectedBrand, setSelectedBrand] = useState<string>('all');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedBrand, setSelectedBrand] = useState<string>(brandParam || 'all');
+  const [searchQuery, setSearchQuery] = useState(searchParam || '');
   const [currentPage, setCurrentPage] = useState(1);
+
+  // Update URL when filters change
+  useEffect(() => {
+    const params = new URLSearchParams();
+
+    if (selectedCategory !== 'all') {
+      params.set('category', selectedCategory);
+    }
+
+    if (selectedBrand !== 'all') {
+      params.set('brand', selectedBrand);
+    }
+
+    if (searchQuery) {
+      params.set('q', searchQuery);
+    }
+
+    const queryString = params.toString();
+    const newUrl = queryString ? `${pathname}?${queryString}` : pathname;
+
+    router.replace(newUrl, { scroll: false });
+  }, [selectedCategory, selectedBrand, searchQuery, pathname, router]);
 
   const filteredProducts = useMemo(() => {
     let filtered = products.filter(p => p.status === 'published');
@@ -267,6 +296,9 @@ export default function CatalogContent() {
           )}
         </div>
       )}
+
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
     </div>
   );
 }
