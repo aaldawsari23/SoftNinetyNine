@@ -83,7 +83,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             {/* Google Maps Button */}
             <a
-              href="https://www.google.com/maps?q=16.9064,42.5525"
+              href="https://maps.app.goo.gl/t6pyLPj52d18BaPH6?g_st=ipc"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-white hover:text-primary transition-colors"
