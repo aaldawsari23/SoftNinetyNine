@@ -4,7 +4,7 @@ export default function StructuredData() {
     "@type": "LocalBusiness",
     "@id": "https://soft99bikes.com",
     "name": "سوفت تسعة وتسعين",
-    "alternateName": "SoftNinteyNine Bikes",
+    "alternateName": "Soft Ninety Nine Bikes",
     "description": "متجر متخصص في قطع الغيار الأصلية وزيوت الصيانة والإكسسوارات للدراجات النارية في جيزان",
     "url": "https://soft99bikes.com",
     "image": "https://soft99bikes.com/logo.svg",

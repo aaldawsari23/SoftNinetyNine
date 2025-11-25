@@ -7,16 +7,35 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {/* About / Branding */}
           <div className="space-y-3">
-            <div className="flex items-center gap-2">
-            <img src="/logo.svg" alt="سوفت تسعه وتسعين" className="w-10 h-10 rounded-md" />
-              <div className="flex flex-col leading-tight">
-                <span className="text-primary font-bold text-base">سوفت تسعه وتسعين</span>
-                <span className="text-text-muted text-xs">SoftNinteyNine</span>
-              </div>
+            <div className="flex flex-col leading-tight">
+              <span className="text-primary font-bold text-base">سوفت تسعة وتسعين</span>
+              <span className="text-text-muted text-xs">Soft Ninety Nine</span>
             </div>
             <p className="text-text-secondary text-xs md:text-sm leading-relaxed">
-              متجر متخصص في بيع الدراجات النارية (جديد ومستعمل)، قطع الغيار، الإكسسوارات، ومواقف للإيجار الشهري.
+              متجر متخصص في بيع الدراجات النارية والإكسسوارات ومواقف للإيجار
             </p>
+          </div>
+
+          {/* Quick Links */}
+          <div className="space-y-3">
+            <h4 className="text-white font-bold text-sm md:text-base mb-3">روابط سريعة</h4>
+            <div className="flex flex-col text-xs md:text-sm text-text-secondary space-y-2">
+              <Link href="/" className="hover:text-primary transition-colors">
+                الرئيسية
+              </Link>
+              <Link href="/catalog" className="hover:text-primary transition-colors">
+                المنتجات
+              </Link>
+              <Link href="/motorcycles" className="hover:text-primary transition-colors">
+                الدراجات النارية
+              </Link>
+              <Link href="/parking" className="hover:text-primary transition-colors">
+                مواقف
+              </Link>
+              <Link href="/contact" className="hover:text-primary transition-colors">
+                تواصل
+              </Link>
+            </div>
           </div>
 
           {/* Contact Numbers */}

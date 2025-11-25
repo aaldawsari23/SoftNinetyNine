@@ -37,6 +37,13 @@ export const brands: Brand[] = [
   { id: "b53", name: "Generic", logo_url: "", created_at: "2025-01-15T00:00:00Z" },
   { id: "b54", name: "Pirelli", logo_url: "", created_at: "2025-01-15T00:00:00Z" },
   { id: "b55", name: "Dunlop", logo_url: "", created_at: "2025-01-15T00:00:00Z" },
+  // Motorcycle brands
+  { id: "honda", name: "Honda", logo_url: "", created_at: "2025-01-15T00:00:00Z" },
+  { id: "suzuki", name: "Suzuki", logo_url: "", created_at: "2025-01-15T00:00:00Z" },
+  { id: "yamaha", name: "Yamaha", logo_url: "", created_at: "2025-01-15T00:00:00Z" },
+  { id: "kawasaki", name: "Kawasaki", logo_url: "", created_at: "2025-01-15T00:00:00Z" },
+  { id: "harley-davidson", name: "Harley-Davidson", logo_url: "", created_at: "2025-01-15T00:00:00Z" },
+  { id: "bmw", name: "BMW", logo_url: "", created_at: "2025-01-15T00:00:00Z" },
 ];
 
 // الفئات
@@ -57,7 +64,8 @@ export const categories: Category[] = [
   { id: "c14", name_ar: "قطع متفرقة", name_en: "Misc Parts", type: "part", created_at: "2025-01-15T00:00:00Z" },
   { id: "c15", name_ar: "ملابس", name_en: "Gear", type: "gear", created_at: "2025-01-15T00:00:00Z" },
   { id: "c16", name_ar: "عدد", name_en: "Tools", type: "part", created_at: "2025-01-15T00:00:00Z" },
+  { id: "motorcycles", name_ar: "دراجات نارية", name_en: "Motorcycles", type: "bike", created_at: "2025-01-15T00:00:00Z" },
 ];
 
 // المنتجات - من ملف JSON
-export const products: Product[] = productsData as Product[];
+export const products: Product[] = productsData as unknown as Product[];
