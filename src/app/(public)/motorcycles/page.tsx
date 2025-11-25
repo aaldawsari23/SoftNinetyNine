@@ -5,6 +5,7 @@ import { products, categories, brands } from '@/data/products';
 import { Product } from '@/types';
 import Link from 'next/link';
 import { LazyProductImage } from '@/components/ui/LazyProductImage';
+import ScrollToTop from '@/components/ui/ScrollToTop';
 
 const ITEMS_PER_PAGE = 12;
 
@@ -386,6 +387,9 @@ export default function MotorcyclesPage() {
             </div>
           </div>
         )}
+
+        {/* Scroll to Top Button */}
+        <ScrollToTop />
       </div>
     </div>
   );

@@ -2,16 +2,18 @@ export default function StructuredData() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://soft99bikes.com",
+    "@id": "https://softninetynine.com",
     "name": "سوفت تسعة وتسعين",
-    "alternateName": "Soft Ninety Nine Bikes",
-    "description": "متجر متخصص في قطع الغيار الأصلية وزيوت الصيانة والإكسسوارات للدراجات النارية في جيزان",
-    "url": "https://soft99bikes.com",
-    "image": "https://soft99bikes.com/logo.svg",
-    "logo": "https://soft99bikes.com/logo.svg",
+    "alternateName": "Soft Ninety Nine",
+    "description": "متجر متخصص في بيع الدراجات النارية وقطع الغيار الأصلية وزيوت الصيانة والإكسسوارات في جيزان",
+    "url": "https://softninetynine.com",
+    "image": "https://softninetynine.com/Logo.png",
+    "logo": "https://softninetynine.com/Logo.png",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "بجوار مستشفى العميس",
       "addressLocality": "جيزان",
+      "addressRegion": "منطقة جيزان",
       "addressCountry": "SA"
     },
     "geo": {
@@ -69,8 +71,7 @@ export default function StructuredData() {
       ]
     },
     "sameAs": [
-      "https://www.instagram.com/soft99bikes",
-      "https://twitter.com/soft99bikes"
+      "https://www.snapchat.com/add/h5jk6"
     ]
   };
 
