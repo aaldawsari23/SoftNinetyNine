@@ -10,9 +10,13 @@ export default function AdminDashboard() {
     hiddenProducts: products.filter(p => p.status === 'hidden').length,
     totalCategories: categories.length,
     totalBrands: brands.length,
+    lowStock: products.filter(p => p.stock_quantity !== undefined && p.stock_quantity <= 3).length,
   };
 
-  const recentProducts = products.slice(0, 5);
+  const recentProducts = products
+    .slice()
+    .sort((a, b) => (b.updated_at || '').localeCompare(a.updated_at || ''))
+    .slice(0, 5);
 
   return (
     <div>
@@ -53,6 +57,12 @@ export default function AdminDashboard() {
           <div className="text-3xl font-bold text-white mb-1">{stats.totalBrands}</div>
           <div className="text-sm text-text-secondary">الماركات</div>
         </div>
+
+        <div className="card">
+          <div className="text-orange-400 text-2xl mb-2">⚠️</div>
+          <div className="text-3xl font-bold text-white mb-1">{stats.lowStock}</div>
+          <div className="text-sm text-text-secondary">قطع منخفضة المخزون</div>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -86,16 +96,21 @@ export default function AdminDashboard() {
           <div className="space-y-3">
             {recentProducts.map(product => (
               <div key={product.id} className="flex items-center gap-3 p-3 bg-background rounded-md">
-                <div className="w-12 h-12 bg-gray-900 rounded-md flex items-center justify-center">
-                  {product.images && product.images[0] ? (
-                    <img src={product.images[0]} alt={product.name_ar} className="w-full h-full object-cover rounded-md" />
+                <div className="w-12 h-12 bg-gray-900 rounded-md flex items-center justify-center overflow-hidden">
+                  {product.image_url ? (
+                    <img src={product.image_url} alt={product.name} className="w-full h-full object-cover rounded-md" />
                   ) : (
                     <span>🏍️</span>
                   )}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-white font-semibold truncate">{product.name_ar}</div>
-                  <div className="text-sm text-text-secondary">{product.price} {product.currency}</div>
+                  <div className="text-white font-semibold truncate">{product.name}</div>
+                  <div className="text-sm text-text-secondary flex items-center gap-2">
+                    <span>
+                      {product.price} {product.currency}
+                    </span>
+                    <span className="text-xs text-text-muted">· المخزون {product.stock_quantity ?? 0}</span>
+                  </div>
                 </div>
                 <div>
                   {product.status === 'published' ? (

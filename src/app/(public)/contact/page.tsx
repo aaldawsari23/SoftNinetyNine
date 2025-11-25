@@ -48,7 +48,7 @@ export default function ContactPage() {
                 <h3 className="text-white font-semibold mb-1">الموقع</h3>
                 <p className="text-text-secondary">جيزان، بجوار مستشفى العميس، المملكة العربية السعودية</p>
                 <a
-                  href="https://maps.app.goo.gl/t6pyLPj52d18BaPH6?g_st=ipc"
+                  href="https://www.google.com/maps/search/?api=1&query=%D8%AC%D9%8A%D8%B2%D8%A7%D9%86%D8%8C%20%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%89%20%D8%A7%D9%84%D8%B9%D9%85%D9%8A%D8%B3"
                   className="text-primary hover:text-primary-hover text-sm"
                   target="_blank"
                   rel="noopener noreferrer"

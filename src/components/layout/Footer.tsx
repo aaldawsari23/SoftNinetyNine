@@ -57,7 +57,7 @@ export default function Footer() {
                 <span>جيزان، بجوار مستشفى العميس</span>
               </p>
               <Link
-                href="https://maps.app.goo.gl/t6pyLPj52d18BaPH6?g_st=ipc"
+                href="https://www.google.com/maps/search/?api=1&query=%D8%AC%D9%8A%D8%B2%D8%A7%D9%86%D8%8C%20%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%89%20%D8%A7%D9%84%D8%B9%D9%85%D9%8A%D8%B3"
                 target="_blank"
                 className="text-primary hover:text-primary-hover inline-flex items-center gap-1 mt-1"
               >

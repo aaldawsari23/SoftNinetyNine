@@ -4,7 +4,7 @@
     "sku": "1001",
     "name": "زيت موتول 7100 10W40",
     "name_en": "زيت موتول 7100 10W40",
-    "description": "1L\r - زيوت",
+    "description": "زيت موتول 7100 10W40 بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1001.jpg",
@@ -20,14 +20,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت موتول 7100 10W40 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1002",
     "sku": "1002",
     "name": "زيت موتول 7100 10W40",
     "name_en": "زيت موتول 7100 10W40",
-    "description": "4L\r - زيوت",
+    "description": "زيت موتول 7100 10W40 بمواصفة 4L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1002.jpg",
@@ -43,14 +44,15 @@
       "specification": "4L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت موتول 7100 10W40 4L لصيانة الدراجات النارية"
   },
   {
     "id": "1003",
     "sku": "1003",
     "name": "زيت موتول 7100 10W50",
     "name_en": "زيت موتول 7100 10W50",
-    "description": "1L\r - زيوت",
+    "description": "زيت موتول 7100 10W50 بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1003.jpg",
@@ -66,14 +68,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت موتول 7100 10W50 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1004",
     "sku": "1004",
     "name": "زيت موتول 7100 20W50",
     "name_en": "زيت موتول 7100 20W50",
-    "description": "1L\r - زيوت",
+    "description": "زيت موتول 7100 20W50 بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1004.jpg",
@@ -89,14 +92,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت موتول 7100 20W50 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1005",
     "sku": "1005",
     "name": "زيت موتول 300V 10W40",
     "name_en": "زيت موتول 300V 10W40",
-    "description": "1L\r - زيوت",
+    "description": "زيت موتول 300V 10W40 بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1005.jpg",
@@ -112,14 +116,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت موتول 300V 10W40 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1006",
     "sku": "1006",
     "name": "زيت موتول 300V 15W50",
     "name_en": "زيت موتول 300V 15W50",
-    "description": "1L\r - زيوت",
+    "description": "زيت موتول 300V 15W50 بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1006.png",
@@ -135,14 +140,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت موتول 300V 15W50 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1007",
     "sku": "1007",
     "name": "زيت موتول 300V 5W40",
     "name_en": "زيت موتول 300V 5W40",
-    "description": "1L\r - زيوت",
+    "description": "زيت موتول 300V 5W40 بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1007.png",
@@ -158,14 +164,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت موتول 300V 5W40 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1008",
     "sku": "1008",
     "name": "زيت موتول 5100 10W40",
     "name_en": "زيت موتول 5100 10W40",
-    "description": "1L\r - زيوت",
+    "description": "زيت موتول 5100 10W40 بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1008.jpg",
@@ -181,14 +188,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت موتول 5100 10W40 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1009",
     "sku": "1009",
     "name": "زيت موتول 5100 10W40",
     "name_en": "زيت موتول 5100 10W40",
-    "description": "4L\r - زيوت",
+    "description": "زيت موتول 5100 10W40 بمواصفة 4L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1009.jpg",
@@ -204,14 +212,15 @@
       "specification": "4L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت موتول 5100 10W40 4L لصيانة الدراجات النارية"
   },
   {
     "id": "1010",
     "sku": "1010",
     "name": "زيت موتول 5100 15W50",
     "name_en": "زيت موتول 5100 15W50",
-    "description": "1L\r - زيوت",
+    "description": "زيت موتول 5100 15W50 بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1010.jpg",
@@ -227,14 +236,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت موتول 5100 15W50 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1011",
     "sku": "1011",
     "name": "زيت موتول 5000 10W40",
     "name_en": "زيت موتول 5000 10W40",
-    "description": "1L\r - زيوت",
+    "description": "زيت موتول 5000 10W40 بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1011.jpg",
@@ -250,14 +260,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت موتول 5000 10W40 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1012",
     "sku": "1012",
     "name": "زيت موتول 3000 20W50",
     "name_en": "زيت موتول 3000 20W50",
-    "description": "1L\r - زيوت",
+    "description": "زيت موتول 3000 20W50 بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1012.jpg",
@@ -273,14 +284,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت موتول 3000 20W50 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1013",
     "sku": "1013",
     "name": "زيت موتول سكوتر 5W40",
     "name_en": "زيت موتول سكوتر 5W40",
-    "description": "1L\r - زيوت",
+    "description": "زيت موتول سكوتر 5W40 بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1013.jpg",
@@ -296,14 +308,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت موتول سكوتر 5W40 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1014",
     "sku": "1014",
     "name": "زيت سوزوكي R9000",
     "name_en": "زيت سوزوكي R9000",
-    "description": "1L\r - زيوت",
+    "description": "زيت سوزوكي R9000 بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1014.png",
@@ -319,14 +332,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت سوزوكي R9000 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1015",
     "sku": "1015",
     "name": "زيت سوزوكي R9000",
     "name_en": "زيت سوزوكي R9000",
-    "description": "4L\r - زيوت",
+    "description": "زيت سوزوكي R9000 بمواصفة 4L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1015.png",
@@ -342,14 +356,15 @@
       "specification": "4L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت سوزوكي R9000 4L لصيانة الدراجات النارية"
   },
   {
     "id": "1016",
     "sku": "1016",
     "name": "زيت سوزوكي R5000",
     "name_en": "زيت سوزوكي R5000",
-    "description": "1L\r - زيوت",
+    "description": "زيت سوزوكي R5000 بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1016.jpg",
@@ -365,14 +380,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت سوزوكي R5000 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1017",
     "sku": "1017",
     "name": "زيت كاسترول اكتيف",
     "name_en": "زيت كاسترول اكتيف",
-    "description": "1L\r - زيوت",
+    "description": "زيت كاسترول اكتيف بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1017.PNG",
@@ -388,14 +404,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت كاسترول اكتيف 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1018",
     "sku": "1018",
     "name": "زيت كاسترول باور1",
     "name_en": "زيت كاسترول باور1",
-    "description": "1L\r - زيوت",
+    "description": "زيت كاسترول باور1 بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1018.jpg",
@@ -411,14 +428,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت كاسترول باور1 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1019",
     "sku": "1019",
     "name": "زيت بوتولين N-Tech",
     "name_en": "زيت بوتولين N-Tech",
-    "description": "1L\r - زيوت",
+    "description": "زيت بوتولين N-Tech بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1019.png",
@@ -434,14 +452,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت بوتولين N-Tech 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1020",
     "sku": "1020",
     "name": "زيت بوتولين N-Tech",
     "name_en": "زيت بوتولين N-Tech",
-    "description": "1L\r - زيوت",
+    "description": "زيت بوتولين N-Tech بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1020.png",
@@ -457,14 +476,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت بوتولين N-Tech 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1021",
     "sku": "1021",
     "name": "زيت بوتولين S4",
     "name_en": "زيت بوتولين S4",
-    "description": "1L\r - زيوت",
+    "description": "زيت بوتولين S4 بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1021.png",
@@ -480,14 +500,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت بوتولين S4 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1022",
     "sku": "1022",
     "name": "زيت ياماها",
     "name_en": "زيت ياماها",
-    "description": "1L\r - زيوت",
+    "description": "زيت ياماها بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1022.jpg",
@@ -503,14 +524,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت ياماها 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1023",
     "sku": "1023",
     "name": "زيت امزويل متري",
     "name_en": "زيت امزويل متري",
-    "description": "1Q\r - زيوت",
+    "description": "زيت امزويل متري بمواصفة 1Q يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1023.jpg",
@@ -526,14 +548,15 @@
       "specification": "1Q\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت امزويل متري 1Q لصيانة الدراجات النارية"
   },
   {
     "id": "1024",
     "sku": "1024",
     "name": "زيت امزويل في توين",
     "name_en": "زيت امزويل في توين",
-    "description": "1Q\r - زيوت",
+    "description": "زيت امزويل في توين بمواصفة 1Q يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1024.jpg",
@@ -549,14 +572,15 @@
       "specification": "1Q\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت امزويل في توين 1Q لصيانة الدراجات النارية"
   },
   {
     "id": "1025",
     "sku": "1025",
     "name": "زيت ليكوي مولي ستريت",
     "name_en": "زيت ليكوي مولي ستريت",
-    "description": "1L\r - زيوت",
+    "description": "زيت ليكوي مولي ستريت بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1025.jpg",
@@ -572,14 +596,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت ليكوي مولي ستريت 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1026",
     "sku": "1026",
     "name": "زيت ليكوي مولي ريس",
     "name_en": "زيت ليكوي مولي ريس",
-    "description": "1L\r - زيوت",
+    "description": "زيت ليكوي مولي ريس بمواصفة 1L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1026.png",
@@ -595,14 +620,15 @@
       "specification": "1L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت ليكوي مولي ريس 1L لصيانة الدراجات النارية"
   },
   {
     "id": "1027",
     "sku": "1027",
     "name": "فلتر زيت هيفلو",
     "name_en": "فلتر زيت هيفلو",
-    "description": "Black\r - فلاتر",
+    "description": "فلتر زيت هيفلو بمواصفة Black يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1027.png",
@@ -618,14 +644,15 @@
       "specification": "Black\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر زيت هيفلو Black لصيانة الدراجات النارية"
   },
   {
     "id": "1028",
     "sku": "1028",
     "name": "فلتر زيت هيفلو ريسينج",
     "name_en": "فلتر زيت هيفلو ريسينج",
-    "description": "Nut\r - فلاتر",
+    "description": "فلتر زيت هيفلو ريسينج بمواصفة Nut يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1028.png",
@@ -641,14 +668,15 @@
       "specification": "Nut\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر زيت هيفلو ريسينج Nut لصيانة الدراجات النارية"
   },
   {
     "id": "1029",
     "sku": "1029",
     "name": "فلتر زيت هيفلو",
     "name_en": "فلتر زيت هيفلو",
-    "description": "Black\r - فلاتر",
+    "description": "فلتر زيت هيفلو بمواصفة Black يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1029.jpg",
@@ -664,14 +692,15 @@
       "specification": "Black\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر زيت هيفلو Black لصيانة الدراجات النارية"
   },
   {
     "id": "1030",
     "sku": "1030",
     "name": "فلتر زيت هيفلو ريسينج",
     "name_en": "فلتر زيت هيفلو ريسينج",
-    "description": "Nut\r - فلاتر",
+    "description": "فلتر زيت هيفلو ريسينج بمواصفة Nut يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1030.png",
@@ -687,14 +716,15 @@
       "specification": "Nut\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر زيت هيفلو ريسينج Nut لصيانة الدراجات النارية"
   },
   {
     "id": "1031",
     "sku": "1031",
     "name": "فلتر زيت هيفلو",
     "name_en": "فلتر زيت هيفلو",
-    "description": "Black\r - فلاتر",
+    "description": "فلتر زيت هيفلو بمواصفة Black يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1031.jpg",
@@ -710,14 +740,15 @@
       "specification": "Black\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر زيت هيفلو Black لصيانة الدراجات النارية"
   },
   {
     "id": "1032",
     "sku": "1032",
     "name": "فلتر زيت هيفلو ريسينج",
     "name_en": "فلتر زيت هيفلو ريسينج",
-    "description": "Nut\r - فلاتر",
+    "description": "فلتر زيت هيفلو ريسينج بمواصفة Nut يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1032.png",
@@ -733,14 +764,15 @@
       "specification": "Nut\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر زيت هيفلو ريسينج Nut لصيانة الدراجات النارية"
   },
   {
     "id": "1033",
     "sku": "1033",
     "name": "فلتر زيت هيفلو",
     "name_en": "فلتر زيت هيفلو",
-    "description": "Paper\r - فلاتر",
+    "description": "فلتر زيت هيفلو بمواصفة Paper يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1033.jpg",
@@ -756,14 +788,15 @@
       "specification": "Paper\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر زيت هيفلو Paper لصيانة الدراجات النارية"
   },
   {
     "id": "1034",
     "sku": "1034",
     "name": "فلتر زيت هيفلو",
     "name_en": "فلتر زيت هيفلو",
-    "description": "Paper\r - فلاتر",
+    "description": "فلتر زيت هيفلو بمواصفة Paper يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1034.jpg",
@@ -779,14 +812,15 @@
       "specification": "Paper\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر زيت هيفلو Paper لصيانة الدراجات النارية"
   },
   {
     "id": "1035",
     "sku": "1035",
     "name": "فلتر زيت هيفلو",
     "name_en": "فلتر زيت هيفلو",
-    "description": "Paper\r - فلاتر",
+    "description": "فلتر زيت هيفلو بمواصفة Paper يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1035.jpg",
@@ -802,14 +836,15 @@
       "specification": "Paper\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر زيت هيفلو Paper لصيانة الدراجات النارية"
   },
   {
     "id": "1036",
     "sku": "1036",
     "name": "فلتر زيت هيفلو",
     "name_en": "فلتر زيت هيفلو",
-    "description": "Metal\r - فلاتر",
+    "description": "فلتر زيت هيفلو بمواصفة Metal يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1036.jpg",
@@ -825,14 +860,15 @@
       "specification": "Metal\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر زيت هيفلو Metal لصيانة الدراجات النارية"
   },
   {
     "id": "1037",
     "sku": "1037",
     "name": "فلتر زيت هيفلو",
     "name_en": "فلتر زيت هيفلو",
-    "description": "Paper\r - فلاتر",
+    "description": "فلتر زيت هيفلو بمواصفة Paper يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1037.jpg",
@@ -848,14 +884,15 @@
       "specification": "Paper\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر زيت هيفلو Paper لصيانة الدراجات النارية"
   },
   {
     "id": "1038",
     "sku": "1038",
     "name": "فلتر زيت هيفلو",
     "name_en": "فلتر زيت هيفلو",
-    "description": "Scooter\r - فلاتر",
+    "description": "فلتر زيت هيفلو بمواصفة Scooter يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1038.png",
@@ -871,14 +908,15 @@
       "specification": "Scooter\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر زيت هيفلو Scooter لصيانة الدراجات النارية"
   },
   {
     "id": "1039",
     "sku": "1039",
     "name": "فلتر زيت هيفلو",
     "name_en": "فلتر زيت هيفلو",
-    "description": "Bombardier\r - فلاتر",
+    "description": "فلتر زيت هيفلو بمواصفة Bombardier يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1039.png",
@@ -894,14 +932,15 @@
       "specification": "Bombardier\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر زيت هيفلو Bombardier لصيانة الدراجات النارية"
   },
   {
     "id": "1040",
     "sku": "1040",
     "name": "فلتر زيت KN",
     "name_en": "فلتر زيت KN",
-    "description": "Black\r - فلاتر",
+    "description": "فلتر زيت KN بمواصفة Black يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1040.jpg",
@@ -917,14 +956,15 @@
       "specification": "Black\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر زيت KN Black لصيانة الدراجات النارية"
   },
   {
     "id": "1041",
     "sku": "1041",
     "name": "فلتر زيت KN",
     "name_en": "فلتر زيت KN",
-    "description": "Chrome\r - فلاتر",
+    "description": "فلتر زيت KN بمواصفة Chrome يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1041.jpg",
@@ -940,14 +980,15 @@
       "specification": "Chrome\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر زيت KN Chrome لصيانة الدراجات النارية"
   },
   {
     "id": "1042",
     "sku": "1042",
     "name": "فلتر زيت KN",
     "name_en": "فلتر زيت KN",
-    "description": "Black\r - فلاتر",
+    "description": "فلتر زيت KN بمواصفة Black يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1042.jpg",
@@ -963,14 +1004,15 @@
       "specification": "Black\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر زيت KN Black لصيانة الدراجات النارية"
   },
   {
     "id": "1043",
     "sku": "1043",
     "name": "فلتر زيت KN",
     "name_en": "فلتر زيت KN",
-    "description": "Black\r - فلاتر",
+    "description": "فلتر زيت KN بمواصفة Black يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1043.jpg",
@@ -986,14 +1028,15 @@
       "specification": "Black\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر زيت KN Black لصيانة الدراجات النارية"
   },
   {
     "id": "1044",
     "sku": "1044",
     "name": "فلتر وكالة سوزوكي",
     "name_en": "فلتر وكالة سوزوكي",
-    "description": "OEM\r - فلاتر",
+    "description": "فلتر وكالة سوزوكي بمواصفة OEM يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1044.jpg",
@@ -1009,14 +1052,15 @@
       "specification": "OEM\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر وكالة سوزوكي OEM لصيانة الدراجات النارية"
   },
   {
     "id": "1045",
     "sku": "1045",
     "name": "فلتر وكالة ياماها",
     "name_en": "فلتر وكالة ياماها",
-    "description": "OEM\r - فلاتر",
+    "description": "فلتر وكالة ياماها بمواصفة OEM يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1045.jpg",
@@ -1032,14 +1076,15 @@
       "specification": "OEM\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر وكالة ياماها OEM لصيانة الدراجات النارية"
   },
   {
     "id": "1046",
     "sku": "1046",
     "name": "فلتر وكالة هوندا",
     "name_en": "فلتر وكالة هوندا",
-    "description": "OEM\r - فلاتر",
+    "description": "فلتر وكالة هوندا بمواصفة OEM يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1046.jpg",
@@ -1055,14 +1100,15 @@
       "specification": "OEM\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر وكالة هوندا OEM لصيانة الدراجات النارية"
   },
   {
     "id": "1047",
     "sku": "1047",
     "name": "فلتر وكالة كاواساكي",
     "name_en": "فلتر وكالة كاواساكي",
-    "description": "OEM\r - فلاتر",
+    "description": "فلتر وكالة كاواساكي بمواصفة OEM يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1047.jpg",
@@ -1078,14 +1124,15 @@
       "specification": "OEM\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر وكالة كاواساكي OEM لصيانة الدراجات النارية"
   },
   {
     "id": "1048",
     "sku": "1048",
     "name": "فلتر هواء KN",
     "name_en": "فلتر هواء KN",
-    "description": "Hayabusa\r - فلاتر",
+    "description": "فلتر هواء KN بمواصفة Hayabusa يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1048.jpg",
@@ -1101,14 +1148,15 @@
       "specification": "Hayabusa\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر هواء KN Hayabusa لصيانة الدراجات النارية"
   },
   {
     "id": "1049",
     "sku": "1049",
     "name": "فلتر هواء KN",
     "name_en": "فلتر هواء KN",
-    "description": "GSXR\r - فلاتر",
+    "description": "فلتر هواء KN بمواصفة GSXR يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1049.jpg",
@@ -1124,14 +1172,15 @@
       "specification": "GSXR\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر هواء KN GSXR لصيانة الدراجات النارية"
   },
   {
     "id": "1050",
     "sku": "1050",
     "name": "فلتر هواء KN",
     "name_en": "فلتر هواء KN",
-    "description": "GSXR\r - فلاتر",
+    "description": "فلتر هواء KN بمواصفة GSXR يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1050.png",
@@ -1147,14 +1196,15 @@
       "specification": "GSXR\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر هواء KN GSXR لصيانة الدراجات النارية"
   },
   {
     "id": "1051",
     "sku": "1051",
     "name": "فلتر هواء KN",
     "name_en": "فلتر هواء KN",
-    "description": "CBR\r - فلاتر",
+    "description": "فلتر هواء KN بمواصفة CBR يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1051.jpg",
@@ -1170,14 +1220,15 @@
       "specification": "CBR\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر هواء KN CBR لصيانة الدراجات النارية"
   },
   {
     "id": "1052",
     "sku": "1052",
     "name": "فلتر هواء KN",
     "name_en": "فلتر هواء KN",
-    "description": "R1\r - فلاتر",
+    "description": "فلتر هواء KN بمواصفة R1 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1052.jpg",
@@ -1193,14 +1244,15 @@
       "specification": "R1\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر هواء KN R1 لصيانة الدراجات النارية"
   },
   {
     "id": "1053",
     "sku": "1053",
     "name": "فلتر هواء وكالة",
     "name_en": "فلتر هواء وكالة",
-    "description": "GSXR\r - فلاتر",
+    "description": "فلتر هواء وكالة بمواصفة GSXR يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1053.jpg",
@@ -1216,14 +1268,15 @@
       "specification": "GSXR\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر هواء وكالة GSXR لصيانة الدراجات النارية"
   },
   {
     "id": "1054",
     "sku": "1054",
     "name": "فلتر هواء وكالة",
     "name_en": "فلتر هواء وكالة",
-    "description": "Hayabusa\r - فلاتر",
+    "description": "فلتر هواء وكالة بمواصفة Hayabusa يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1054.jpeg",
@@ -1239,14 +1292,15 @@
       "specification": "Hayabusa\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر هواء وكالة Hayabusa لصيانة الدراجات النارية"
   },
   {
     "id": "1055",
     "sku": "1055",
     "name": "فلتر هواء هيفلو",
     "name_en": "فلتر هواء هيفلو",
-    "description": "GSXR\r - فلاتر",
+    "description": "فلتر هواء هيفلو بمواصفة GSXR يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1055.png",
@@ -1262,14 +1316,15 @@
       "specification": "GSXR\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر هواء هيفلو GSXR لصيانة الدراجات النارية"
   },
   {
     "id": "1056",
     "sku": "1056",
     "name": "فلتر هواء هيفلو",
     "name_en": "فلتر هواء هيفلو",
-    "description": "GSXR\r - فلاتر",
+    "description": "فلتر هواء هيفلو بمواصفة GSXR يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1056.jpg",
@@ -1285,14 +1340,15 @@
       "specification": "GSXR\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر هواء هيفلو GSXR لصيانة الدراجات النارية"
   },
   {
     "id": "1057",
     "sku": "1057",
     "name": "بوجي NGK",
     "name_en": "بوجي NGK",
-    "description": "Std\r - إشعال",
+    "description": "بوجي NGK بمواصفة Std يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1057.png",
@@ -1308,14 +1364,15 @@
       "specification": "Std\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بوجي NGK Std لصيانة الدراجات النارية"
   },
   {
     "id": "1058",
     "sku": "1058",
     "name": "بوجي NGK",
     "name_en": "بوجي NGK",
-    "description": "Std\r - إشعال",
+    "description": "بوجي NGK بمواصفة Std يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1058.jpg",
@@ -1331,14 +1388,15 @@
       "specification": "Std\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بوجي NGK Std لصيانة الدراجات النارية"
   },
   {
     "id": "1059",
     "sku": "1059",
     "name": "بوجي NGK",
     "name_en": "بوجي NGK",
-    "description": "Std\r - إشعال",
+    "description": "بوجي NGK بمواصفة Std يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1059.jpg",
@@ -1354,14 +1412,15 @@
       "specification": "Std\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بوجي NGK Std لصيانة الدراجات النارية"
   },
   {
     "id": "1060",
     "sku": "1060",
     "name": "بوجي ايريديوم",
     "name_en": "بوجي ايريديوم",
-    "description": "Iridium\r - إشعال",
+    "description": "بوجي ايريديوم بمواصفة Iridium يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1060.jpeg",
@@ -1377,14 +1436,15 @@
       "specification": "Iridium\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بوجي ايريديوم Iridium لصيانة الدراجات النارية"
   },
   {
     "id": "1061",
     "sku": "1061",
     "name": "بوجي ايريديوم",
     "name_en": "بوجي ايريديوم",
-    "description": "Iridium\r - إشعال",
+    "description": "بوجي ايريديوم بمواصفة Iridium يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1061.webp",
@@ -1400,14 +1460,15 @@
       "specification": "Iridium\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بوجي ايريديوم Iridium لصيانة الدراجات النارية"
   },
   {
     "id": "1062",
     "sku": "1062",
     "name": "بوجي NGK",
     "name_en": "بوجي NGK",
-    "description": "Std\r - إشعال",
+    "description": "بوجي NGK بمواصفة Std يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1062.jpg",
@@ -1423,14 +1484,15 @@
       "specification": "Std\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بوجي NGK Std لصيانة الدراجات النارية"
   },
   {
     "id": "1063",
     "sku": "1063",
     "name": "بوجي NGK",
     "name_en": "بوجي NGK",
-    "description": "Std\r - إشعال",
+    "description": "بوجي NGK بمواصفة Std يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1063.jpg",
@@ -1446,14 +1508,15 @@
       "specification": "Std\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بوجي NGK Std لصيانة الدراجات النارية"
   },
   {
     "id": "1064",
     "sku": "1064",
     "name": "بوجي NGK",
     "name_en": "بوجي NGK",
-    "description": "Std\r - إشعال",
+    "description": "بوجي NGK بمواصفة Std يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1064.jpg",
@@ -1469,14 +1532,15 @@
       "specification": "Std\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بوجي NGK Std لصيانة الدراجات النارية"
   },
   {
     "id": "1065",
     "sku": "1065",
     "name": "بوجي NGK ليزر",
     "name_en": "بوجي NGK ليزر",
-    "description": "Laser\r - إشعال",
+    "description": "بوجي NGK ليزر بمواصفة Laser يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1065.jpg",
@@ -1492,14 +1556,15 @@
       "specification": "Laser\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بوجي NGK ليزر Laser لصيانة الدراجات النارية"
   },
   {
     "id": "1066",
     "sku": "1066",
     "name": "بوجي NGK ليزر",
     "name_en": "بوجي NGK ليزر",
-    "description": "Laser\r - إشعال",
+    "description": "بوجي NGK ليزر بمواصفة Laser يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1066.jpg",
@@ -1515,14 +1580,15 @@
       "specification": "Laser\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بوجي NGK ليزر Laser لصيانة الدراجات النارية"
   },
   {
     "id": "1067",
     "sku": "1067",
     "name": "بوجي NGK",
     "name_en": "بوجي NGK",
-    "description": "R1\r - إشعال",
+    "description": "بوجي NGK بمواصفة R1 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1067.jpg",
@@ -1538,14 +1604,15 @@
       "specification": "R1\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بوجي NGK R1 لصيانة الدراجات النارية"
   },
   {
     "id": "1068",
     "sku": "1068",
     "name": "بوجي NGK",
     "name_en": "بوجي NGK",
-    "description": "Std\r - إشعال",
+    "description": "بوجي NGK بمواصفة Std يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1068.jpg",
@@ -1561,14 +1628,15 @@
       "specification": "Std\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بوجي NGK Std لصيانة الدراجات النارية"
   },
   {
     "id": "1069",
     "sku": "1069",
     "name": "بوجي NGK",
     "name_en": "بوجي NGK",
-    "description": "Std\r - إشعال",
+    "description": "بوجي NGK بمواصفة Std يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1069.jpg",
@@ -1584,14 +1652,15 @@
       "specification": "Std\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بوجي NGK Std لصيانة الدراجات النارية"
   },
   {
     "id": "1070",
     "sku": "1070",
     "name": "بوجي ايريديوم",
     "name_en": "بوجي ايريديوم",
-    "description": "Iridium\r - إشعال",
+    "description": "بوجي ايريديوم بمواصفة Iridium يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1070.jpg",
@@ -1607,14 +1676,15 @@
       "specification": "Iridium\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بوجي ايريديوم Iridium لصيانة الدراجات النارية"
   },
   {
     "id": "1071",
     "sku": "1071",
     "name": "كوع بوجي",
     "name_en": "كوع بوجي",
-    "description": "Black\r - إشعال",
+    "description": "كوع بوجي بمواصفة Black يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1071.png",
@@ -1630,14 +1700,15 @@
       "specification": "Black\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كوع بوجي Black لصيانة الدراجات النارية"
   },
   {
     "id": "1072",
     "sku": "1072",
     "name": "بطارية كوبرا",
     "name_en": "بطارية كوبرا",
-    "description": "4L\r - بطاريات",
+    "description": "بطارية كوبرا بمواصفة 4L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1072.jpg",
@@ -1653,14 +1724,15 @@
       "specification": "4L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بطارية كوبرا 4L لصيانة الدراجات النارية"
   },
   {
     "id": "1073",
     "sku": "1073",
     "name": "بطارية كوبرا",
     "name_en": "بطارية كوبرا",
-    "description": "5L\r - بطاريات",
+    "description": "بطارية كوبرا بمواصفة 5L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1073.jpg",
@@ -1676,14 +1748,15 @@
       "specification": "5L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بطارية كوبرا 5L لصيانة الدراجات النارية"
   },
   {
     "id": "1074",
     "sku": "1074",
     "name": "بطارية كوبرا",
     "name_en": "بطارية كوبرا",
-    "description": "7L\r - بطاريات",
+    "description": "بطارية كوبرا بمواصفة 7L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1074.jpg",
@@ -1699,14 +1772,15 @@
       "specification": "7L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بطارية كوبرا 7L لصيانة الدراجات النارية"
   },
   {
     "id": "1075",
     "sku": "1075",
     "name": "بطارية كوبرا",
     "name_en": "بطارية كوبرا",
-    "description": "7A\r - بطاريات",
+    "description": "بطارية كوبرا بمواصفة 7A يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1075.webp",
@@ -1722,14 +1796,15 @@
       "specification": "7A\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بطارية كوبرا 7A لصيانة الدراجات النارية"
   },
   {
     "id": "1076",
     "sku": "1076",
     "name": "بطارية كوبرا",
     "name_en": "بطارية كوبرا",
-    "description": "9BS\r - بطاريات",
+    "description": "بطارية كوبرا بمواصفة 9BS يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1076.jpg",
@@ -1745,14 +1820,15 @@
       "specification": "9BS\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بطارية كوبرا 9BS لصيانة الدراجات النارية"
   },
   {
     "id": "1077",
     "sku": "1077",
     "name": "بطارية كوبرا",
     "name_en": "بطارية كوبرا",
-    "description": "10S\r - بطاريات",
+    "description": "بطارية كوبرا بمواصفة 10S يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1077.png",
@@ -1768,14 +1844,15 @@
       "specification": "10S\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بطارية كوبرا 10S لصيانة الدراجات النارية"
   },
   {
     "id": "1078",
     "sku": "1078",
     "name": "بطارية كوبرا",
     "name_en": "بطارية كوبرا",
-    "description": "12BS\r - بطاريات",
+    "description": "بطارية كوبرا بمواصفة 12BS يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1078.jpg",
@@ -1791,14 +1868,15 @@
       "specification": "12BS\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بطارية كوبرا 12BS لصيانة الدراجات النارية"
   },
   {
     "id": "1079",
     "sku": "1079",
     "name": "بطارية كوبرا",
     "name_en": "بطارية كوبرا",
-    "description": "14BS\r - بطاريات",
+    "description": "بطارية كوبرا بمواصفة 14BS يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1079.jpg",
@@ -1814,14 +1892,15 @@
       "specification": "14BS\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بطارية كوبرا 14BS لصيانة الدراجات النارية"
   },
   {
     "id": "1080",
     "sku": "1080",
     "name": "بطارية كوبرا",
     "name_en": "بطارية كوبرا",
-    "description": "14S\r - بطاريات",
+    "description": "بطارية كوبرا بمواصفة 14S يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1080.png",
@@ -1837,14 +1916,15 @@
       "specification": "14S\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بطارية كوبرا 14S لصيانة الدراجات النارية"
   },
   {
     "id": "1081",
     "sku": "1081",
     "name": "بطارية كوبرا",
     "name_en": "بطارية كوبرا",
-    "description": "20L\r - بطاريات",
+    "description": "بطارية كوبرا بمواصفة 20L يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1081.jpg",
@@ -1860,14 +1940,15 @@
       "specification": "20L\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بطارية كوبرا 20L لصيانة الدراجات النارية"
   },
   {
     "id": "1082",
     "sku": "1082",
     "name": "بطارية BS",
     "name_en": "بطارية BS",
-    "description": "9BS\r - بطاريات",
+    "description": "بطارية BS بمواصفة 9BS يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1082.webp",
@@ -1883,14 +1964,15 @@
       "specification": "9BS\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بطارية BS 9BS لصيانة الدراجات النارية"
   },
   {
     "id": "1083",
     "sku": "1083",
     "name": "بطارية BS",
     "name_en": "بطارية BS",
-    "description": "10S\r - بطاريات",
+    "description": "بطارية BS بمواصفة 10S يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1083.png",
@@ -1906,14 +1988,15 @@
       "specification": "10S\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بطارية BS 10S لصيانة الدراجات النارية"
   },
   {
     "id": "1084",
     "sku": "1084",
     "name": "كفر S22 امامي",
     "name_en": "كفر S22 امامي",
-    "description": "Front\r - إطارات",
+    "description": "كفر S22 امامي بمواصفة Front يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1084.jpg",
@@ -1929,14 +2012,15 @@
       "specification": "Front\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كفر S22 امامي Front لصيانة الدراجات النارية"
   },
   {
     "id": "1085",
     "sku": "1085",
     "name": "كفر S22 خلفي",
     "name_en": "كفر S22 خلفي",
-    "description": "Rear\r - إطارات",
+    "description": "كفر S22 خلفي بمواصفة Rear يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1085.jpg",
@@ -1952,14 +2036,15 @@
       "specification": "Rear\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كفر S22 خلفي Rear لصيانة الدراجات النارية"
   },
   {
     "id": "1086",
     "sku": "1086",
     "name": "كفر S22 خلفي",
     "name_en": "كفر S22 خلفي",
-    "description": "Rear\r - إطارات",
+    "description": "كفر S22 خلفي بمواصفة Rear يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1086.jpg",
@@ -1975,14 +2060,15 @@
       "specification": "Rear\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كفر S22 خلفي Rear لصيانة الدراجات النارية"
   },
   {
     "id": "1087",
     "sku": "1087",
     "name": "كفر S22 خلفي",
     "name_en": "كفر S22 خلفي",
-    "description": "Rear\r - إطارات",
+    "description": "كفر S22 خلفي بمواصفة Rear يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1087.jpg",
@@ -1998,14 +2084,15 @@
       "specification": "Rear\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كفر S22 خلفي Rear لصيانة الدراجات النارية"
   },
   {
     "id": "1088",
     "sku": "1088",
     "name": "كفر S22 خلفي",
     "name_en": "كفر S22 خلفي",
-    "description": "Rear\r - إطارات",
+    "description": "كفر S22 خلفي بمواصفة Rear يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1088.jpg",
@@ -2021,14 +2108,15 @@
       "specification": "Rear\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كفر S22 خلفي Rear لصيانة الدراجات النارية"
   },
   {
     "id": "1089",
     "sku": "1089",
     "name": "كفر ميشلان امامي",
     "name_en": "كفر ميشلان امامي",
-    "description": "Front\r - إطارات",
+    "description": "كفر ميشلان امامي بمواصفة Front يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1089.jpg",
@@ -2044,14 +2132,15 @@
       "specification": "Front\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كفر ميشلان امامي Front لصيانة الدراجات النارية"
   },
   {
     "id": "1090",
     "sku": "1090",
     "name": "كفر ميشلان خلفي",
     "name_en": "كفر ميشلان خلفي",
-    "description": "Rear\r - إطارات",
+    "description": "كفر ميشلان خلفي بمواصفة Rear يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1090.jpg",
@@ -2067,14 +2156,15 @@
       "specification": "Rear\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كفر ميشلان خلفي Rear لصيانة الدراجات النارية"
   },
   {
     "id": "1091",
     "sku": "1091",
     "name": "كفر جبلي امامي",
     "name_en": "كفر جبلي امامي",
-    "description": "Offroad\r - إطارات",
+    "description": "كفر جبلي امامي بمواصفة Offroad يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1091.jpg",
@@ -2090,14 +2180,15 @@
       "specification": "Offroad\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كفر جبلي امامي Offroad لصيانة الدراجات النارية"
   },
   {
     "id": "1092",
     "sku": "1092",
     "name": "كفر جبلي خلفي",
     "name_en": "كفر جبلي خلفي",
-    "description": "Offroad\r - إطارات",
+    "description": "كفر جبلي خلفي بمواصفة Offroad يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1092.jpg",
@@ -2113,14 +2204,15 @@
       "specification": "Offroad\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كفر جبلي خلفي Offroad لصيانة الدراجات النارية"
   },
   {
     "id": "1093",
     "sku": "1093",
     "name": "كفر دباب عادي",
     "name_en": "كفر دباب عادي",
-    "description": "Street\r - إطارات",
+    "description": "كفر دباب عادي بمواصفة Street يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1093.jpg",
@@ -2136,14 +2228,15 @@
       "specification": "Street\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كفر دباب عادي Street لصيانة الدراجات النارية"
   },
   {
     "id": "1094",
     "sku": "1094",
     "name": "كفر دباب عادي",
     "name_en": "كفر دباب عادي",
-    "description": "Street\r - إطارات",
+    "description": "كفر دباب عادي بمواصفة Street يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1094.jpg",
@@ -2159,14 +2252,15 @@
       "specification": "Street\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كفر دباب عادي Street لصيانة الدراجات النارية"
   },
   {
     "id": "1095",
     "sku": "1095",
     "name": "كفر T32 تورينق",
     "name_en": "كفر T32 تورينق",
-    "description": "Front\r - إطارات",
+    "description": "كفر T32 تورينق بمواصفة Front يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1095.jpg",
@@ -2182,14 +2276,15 @@
       "specification": "Front\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كفر T32 تورينق Front لصيانة الدراجات النارية"
   },
   {
     "id": "1096",
     "sku": "1096",
     "name": "فحمات EBC",
     "name_en": "فحمات EBC",
-    "description": "Rear\r - فرامل",
+    "description": "فحمات EBC بمواصفة Rear يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1096.jpg",
@@ -2205,14 +2300,15 @@
       "specification": "Rear\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فحمات EBC Rear لصيانة الدراجات النارية"
   },
   {
     "id": "1097",
     "sku": "1097",
     "name": "فحمات EBC",
     "name_en": "فحمات EBC",
-    "description": "Front\r - فرامل",
+    "description": "فحمات EBC بمواصفة Front يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1097.jpg",
@@ -2228,14 +2324,15 @@
       "specification": "Front\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فحمات EBC Front لصيانة الدراجات النارية"
   },
   {
     "id": "1098",
     "sku": "1098",
     "name": "فحمات EBC",
     "name_en": "فحمات EBC",
-    "description": "Front\r - فرامل",
+    "description": "فحمات EBC بمواصفة Front يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1098.jpg",
@@ -2251,14 +2348,15 @@
       "specification": "Front\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فحمات EBC Front لصيانة الدراجات النارية"
   },
   {
     "id": "1099",
     "sku": "1099",
     "name": "فحمات EBC",
     "name_en": "فحمات EBC",
-    "description": "Front\r - فرامل",
+    "description": "فحمات EBC بمواصفة Front يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1099.jpg",
@@ -2274,14 +2372,15 @@
       "specification": "Front\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فحمات EBC Front لصيانة الدراجات النارية"
   },
   {
     "id": "1100",
     "sku": "1100",
     "name": "فحمات EBC",
     "name_en": "فحمات EBC",
-    "description": "Front\r - فرامل",
+    "description": "فحمات EBC بمواصفة Front يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1100.jpg",
@@ -2297,14 +2396,15 @@
       "specification": "Front\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فحمات EBC Front لصيانة الدراجات النارية"
   },
   {
     "id": "1101",
     "sku": "1101",
     "name": "فحمات EBC",
     "name_en": "فحمات EBC",
-    "description": "Front\r - فرامل",
+    "description": "فحمات EBC بمواصفة Front يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1101.jpg",
@@ -2320,14 +2420,15 @@
       "specification": "Front\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فحمات EBC Front لصيانة الدراجات النارية"
   },
   {
     "id": "1102",
     "sku": "1102",
     "name": "فحمات EBC",
     "name_en": "فحمات EBC",
-    "description": "Rear\r - فرامل",
+    "description": "فحمات EBC بمواصفة Rear يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1102.jpg",
@@ -2343,14 +2444,15 @@
       "specification": "Rear\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فحمات EBC Rear لصيانة الدراجات النارية"
   },
   {
     "id": "1103",
     "sku": "1103",
     "name": "فحمات EBC",
     "name_en": "فحمات EBC",
-    "description": "Front\r - فرامل",
+    "description": "فحمات EBC بمواصفة Front يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1103.jpg",
@@ -2366,14 +2468,15 @@
       "specification": "Front\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فحمات EBC Front لصيانة الدراجات النارية"
   },
   {
     "id": "1104",
     "sku": "1104",
     "name": "فحمات سوزوكي اصلي",
     "name_en": "فحمات سوزوكي اصلي",
-    "description": "Front\r - فرامل",
+    "description": "فحمات سوزوكي اصلي بمواصفة Front يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1104.png",
@@ -2389,14 +2492,15 @@
       "specification": "Front\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فحمات سوزوكي اصلي Front لصيانة الدراجات النارية"
   },
   {
     "id": "1105",
     "sku": "1105",
     "name": "فحمات سوزوكي اصلي",
     "name_en": "فحمات سوزوكي اصلي",
-    "description": "Front\r - فرامل",
+    "description": "فحمات سوزوكي اصلي بمواصفة Front يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1105.jpg",
@@ -2412,14 +2516,15 @@
       "specification": "Front\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فحمات سوزوكي اصلي Front لصيانة الدراجات النارية"
   },
   {
     "id": "1106",
     "sku": "1106",
     "name": "فحمات سوزوكي اصلي",
     "name_en": "فحمات سوزوكي اصلي",
-    "description": "Rear\r - فرامل",
+    "description": "فحمات سوزوكي اصلي بمواصفة Rear يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1106.png",
@@ -2435,14 +2540,15 @@
       "specification": "Rear\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فحمات سوزوكي اصلي Rear لصيانة الدراجات النارية"
   },
   {
     "id": "1107",
     "sku": "1107",
     "name": "فحمات هوندا اصلي",
     "name_en": "فحمات هوندا اصلي",
-    "description": "Front\r - فرامل",
+    "description": "فحمات هوندا اصلي بمواصفة Front يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1107.jpg",
@@ -2458,14 +2564,15 @@
       "specification": "Front\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فحمات هوندا اصلي Front لصيانة الدراجات النارية"
   },
   {
     "id": "1108",
     "sku": "1108",
     "name": "قماش فرامل خلفي",
     "name_en": "قماش فرامل خلفي",
-    "description": "Drum\r - فرامل",
+    "description": "قماش فرامل خلفي بمواصفة Drum يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1108.jpg",
@@ -2481,14 +2588,15 @@
       "specification": "Drum\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "قماش فرامل خلفي Drum لصيانة الدراجات النارية"
   },
   {
     "id": "1109",
     "sku": "1109",
     "name": "قماش فرامل خلفي",
     "name_en": "قماش فرامل خلفي",
-    "description": "Drum\r - فرامل",
+    "description": "قماش فرامل خلفي بمواصفة Drum يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1109.jpg",
@@ -2504,14 +2612,15 @@
       "specification": "Drum\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "قماش فرامل خلفي Drum لصيانة الدراجات النارية"
   },
   {
     "id": "1110",
     "sku": "1110",
     "name": "جنزير RK ذهبي",
     "name_en": "جنزير RK ذهبي",
-    "description": "520\r - نقل الحركة",
+    "description": "جنزير RK ذهبي بمواصفة 520 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1110.jpg",
@@ -2527,14 +2636,15 @@
       "specification": "520\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "جنزير RK ذهبي 520 لصيانة الدراجات النارية"
   },
   {
     "id": "1111",
     "sku": "1111",
     "name": "جنزير RK ذهبي",
     "name_en": "جنزير RK ذهبي",
-    "description": "525\r - نقل الحركة",
+    "description": "جنزير RK ذهبي بمواصفة 525 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1111.jpg",
@@ -2550,14 +2660,15 @@
       "specification": "525\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "جنزير RK ذهبي 525 لصيانة الدراجات النارية"
   },
   {
     "id": "1112",
     "sku": "1112",
     "name": "جنزير RK ذهبي",
     "name_en": "جنزير RK ذهبي",
-    "description": "530\r - نقل الحركة",
+    "description": "جنزير RK ذهبي بمواصفة 530 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1112.jpg",
@@ -2573,14 +2684,15 @@
       "specification": "530\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "جنزير RK ذهبي 530 لصيانة الدراجات النارية"
   },
   {
     "id": "1113",
     "sku": "1113",
     "name": "جنزير DID ذهبي",
     "name_en": "جنزير DID ذهبي",
-    "description": "520\r - نقل الحركة",
+    "description": "جنزير DID ذهبي بمواصفة 520 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1113.jpg",
@@ -2596,14 +2708,15 @@
       "specification": "520\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "جنزير DID ذهبي 520 لصيانة الدراجات النارية"
   },
   {
     "id": "1114",
     "sku": "1114",
     "name": "جنزير DID ذهبي",
     "name_en": "جنزير DID ذهبي",
-    "description": "525\r - نقل الحركة",
+    "description": "جنزير DID ذهبي بمواصفة 525 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1114.jpg",
@@ -2619,14 +2732,15 @@
       "specification": "525\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "جنزير DID ذهبي 525 لصيانة الدراجات النارية"
   },
   {
     "id": "1115",
     "sku": "1115",
     "name": "جنزير عادي",
     "name_en": "جنزير عادي",
-    "description": "520\r - نقل الحركة",
+    "description": "جنزير عادي بمواصفة 520 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1115.jpg",
@@ -2642,14 +2756,15 @@
       "specification": "520\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "جنزير عادي 520 لصيانة الدراجات النارية"
   },
   {
     "id": "1116",
     "sku": "1116",
     "name": "جنزير دباب صغير",
     "name_en": "جنزير دباب صغير",
-    "description": "428\r - نقل الحركة",
+    "description": "جنزير دباب صغير بمواصفة 428 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1116.jpg",
@@ -2665,14 +2780,15 @@
       "specification": "428\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "جنزير دباب صغير 428 لصيانة الدراجات النارية"
   },
   {
     "id": "1117",
     "sku": "1117",
     "name": "ترس امامي JT",
     "name_en": "ترس امامي JT",
-    "description": "15T\r - نقل الحركة",
+    "description": "ترس امامي JT بمواصفة 15T يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1117.png",
@@ -2688,14 +2804,15 @@
       "specification": "15T\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "ترس امامي JT 15T لصيانة الدراجات النارية"
   },
   {
     "id": "1118",
     "sku": "1118",
     "name": "ترس امامي JT",
     "name_en": "ترس امامي JT",
-    "description": "16T\r - نقل الحركة",
+    "description": "ترس امامي JT بمواصفة 16T يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1118.png",
@@ -2711,14 +2828,15 @@
       "specification": "16T\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "ترس امامي JT 16T لصيانة الدراجات النارية"
   },
   {
     "id": "1119",
     "sku": "1119",
     "name": "ترس امامي JT",
     "name_en": "ترس امامي JT",
-    "description": "17T\r - نقل الحركة",
+    "description": "ترس امامي JT بمواصفة 17T يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1119.png",
@@ -2734,14 +2852,15 @@
       "specification": "17T\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "ترس امامي JT 17T لصيانة الدراجات النارية"
   },
   {
     "id": "1120",
     "sku": "1120",
     "name": "ترس خلفي JT",
     "name_en": "ترس خلفي JT",
-    "description": "42T\r - نقل الحركة",
+    "description": "ترس خلفي JT بمواصفة 42T يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1120.png",
@@ -2757,14 +2876,15 @@
       "specification": "42T\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "ترس خلفي JT 42T لصيانة الدراجات النارية"
   },
   {
     "id": "1121",
     "sku": "1121",
     "name": "ترس خلفي JT",
     "name_en": "ترس خلفي JT",
-    "description": "45T\r - نقل الحركة",
+    "description": "ترس خلفي JT بمواصفة 45T يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1121.png",
@@ -2780,14 +2900,15 @@
       "specification": "45T\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "ترس خلفي JT 45T لصيانة الدراجات النارية"
   },
   {
     "id": "1122",
     "sku": "1122",
     "name": "ترس خلفي JT",
     "name_en": "ترس خلفي JT",
-    "description": "43T\r - نقل الحركة",
+    "description": "ترس خلفي JT بمواصفة 43T يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1122.png",
@@ -2803,14 +2924,15 @@
       "specification": "43T\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "ترس خلفي JT 43T لصيانة الدراجات النارية"
   },
   {
     "id": "1123",
     "sku": "1123",
     "name": "طقم تروس CG125",
     "name_en": "طقم تروس CG125",
-    "description": "Kit\r - نقل الحركة",
+    "description": "طقم تروس CG125 بمواصفة Kit يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1123.jpg",
@@ -2826,14 +2948,15 @@
       "specification": "Kit\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "طقم تروس CG125 Kit لصيانة الدراجات النارية"
   },
   {
     "id": "1124",
     "sku": "1124",
     "name": "جلدة ترس",
     "name_en": "جلدة ترس",
-    "description": "Rubber\r - نقل الحركة",
+    "description": "جلدة ترس بمواصفة Rubber يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1124.jpg",
@@ -2849,14 +2972,15 @@
       "specification": "Rubber\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "جلدة ترس Rubber لصيانة الدراجات النارية"
   },
   {
     "id": "1125",
     "sku": "1125",
     "name": "ماء رديتر هوندا",
     "name_en": "ماء رديتر هوندا",
-    "description": "Blue\r - سوائل",
+    "description": "ماء رديتر هوندا بمواصفة Blue يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1125.jpg",
@@ -2872,14 +2996,15 @@
       "specification": "Blue\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "ماء رديتر هوندا Blue لصيانة الدراجات النارية"
   },
   {
     "id": "1126",
     "sku": "1126",
     "name": "ماء رديتر ميتسوبيشي",
     "name_en": "ماء رديتر ميتسوبيشي",
-    "description": "Green\r - سوائل",
+    "description": "ماء رديتر ميتسوبيشي بمواصفة Green يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1126.jpeg",
@@ -2895,14 +3020,15 @@
       "specification": "Green\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "ماء رديتر ميتسوبيشي Green لصيانة الدراجات النارية"
   },
   {
     "id": "1127",
     "sku": "1127",
     "name": "ماء رديتر امزويل",
     "name_en": "ماء رديتر امزويل",
-    "description": "Yellow\r - سوائل",
+    "description": "ماء رديتر امزويل بمواصفة Yellow يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1127.jpg",
@@ -2918,14 +3044,15 @@
       "specification": "Yellow\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "ماء رديتر امزويل Yellow لصيانة الدراجات النارية"
   },
   {
     "id": "1128",
     "sku": "1128",
     "name": "ماء رديتر موتول",
     "name_en": "ماء رديتر موتول",
-    "description": "Red\r - سوائل",
+    "description": "ماء رديتر موتول بمواصفة Red يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1128.png",
@@ -2941,14 +3068,15 @@
       "specification": "Red\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "ماء رديتر موتول Red لصيانة الدراجات النارية"
   },
   {
     "id": "1129",
     "sku": "1129",
     "name": "ماء رديتر موتول",
     "name_en": "ماء رديتر موتول",
-    "description": "Yellow\r - سوائل",
+    "description": "ماء رديتر موتول بمواصفة Yellow يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1129.jpg",
@@ -2964,14 +3092,15 @@
       "specification": "Yellow\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "ماء رديتر موتول Yellow لصيانة الدراجات النارية"
   },
   {
     "id": "1130",
     "sku": "1130",
     "name": "زيت فرامل موتول",
     "name_en": "زيت فرامل موتول",
-    "description": "DOT4\r - سوائل",
+    "description": "زيت فرامل موتول بمواصفة DOT4 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1130.jpg",
@@ -2987,14 +3116,15 @@
       "specification": "DOT4\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت فرامل موتول DOT4 لصيانة الدراجات النارية"
   },
   {
     "id": "1131",
     "sku": "1131",
     "name": "زيت فرامل ريسينج",
     "name_en": "زيت فرامل ريسينج",
-    "description": "RBF600\r - سوائل",
+    "description": "زيت فرامل ريسينج بمواصفة RBF600 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1131.jpeg",
@@ -3010,14 +3140,15 @@
       "specification": "RBF600\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت فرامل ريسينج RBF600 لصيانة الدراجات النارية"
   },
   {
     "id": "1132",
     "sku": "1132",
     "name": "زيت فرامل ريسينج",
     "name_en": "زيت فرامل ريسينج",
-    "description": "RBF660\r - سوائل",
+    "description": "زيت فرامل ريسينج بمواصفة RBF660 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1132.jpg",
@@ -3033,14 +3164,15 @@
       "specification": "RBF660\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت فرامل ريسينج RBF660 لصيانة الدراجات النارية"
   },
   {
     "id": "1133",
     "sku": "1133",
     "name": "منظف بخاخات",
     "name_en": "منظف بخاخات",
-    "description": "80ml\r - سوائل",
+    "description": "منظف بخاخات بمواصفة 80ml يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1133.jpeg",
@@ -3056,14 +3188,15 @@
       "specification": "80ml\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "منظف بخاخات 80ml لصيانة الدراجات النارية"
   },
   {
     "id": "1134",
     "sku": "1134",
     "name": "محسن اداء",
     "name_en": "محسن اداء",
-    "description": "Can\r - سوائل",
+    "description": "محسن اداء بمواصفة Can يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1134.jpg",
@@ -3079,14 +3212,15 @@
       "specification": "Can\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "محسن اداء Can لصيانة الدراجات النارية"
   },
   {
     "id": "1135",
     "sku": "1135",
     "name": "غسيل مكينة",
     "name_en": "غسيل مكينة",
-    "description": "Can\r - سوائل",
+    "description": "غسيل مكينة بمواصفة Can يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1135.jpg",
@@ -3102,14 +3236,15 @@
       "specification": "Can\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "غسيل مكينة Can لصيانة الدراجات النارية"
   },
   {
     "id": "1136",
     "sku": "1136",
     "name": "منظف جنزير",
     "name_en": "منظف جنزير",
-    "description": "C1\r - عناية",
+    "description": "منظف جنزير بمواصفة C1 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1136.jpg",
@@ -3125,14 +3260,15 @@
       "specification": "C1\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "منظف جنزير C1 لصيانة الدراجات النارية"
   },
   {
     "id": "1137",
     "sku": "1137",
     "name": "مشحم جنزير",
     "name_en": "مشحم جنزير",
-    "description": "C4\r - عناية",
+    "description": "مشحم جنزير بمواصفة C4 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1137.webp",
@@ -3148,14 +3284,15 @@
       "specification": "C4\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "مشحم جنزير C4 لصيانة الدراجات النارية"
   },
   {
     "id": "1138",
     "sku": "1138",
     "name": "مشحم جنزير",
     "name_en": "مشحم جنزير",
-    "description": "C2\r - عناية",
+    "description": "مشحم جنزير بمواصفة C2 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1138.webp",
@@ -3171,14 +3308,15 @@
       "specification": "C2\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "مشحم جنزير C2 لصيانة الدراجات النارية"
   },
   {
     "id": "1139",
     "sku": "1139",
     "name": "منظف خوذة",
     "name_en": "منظف خوذة",
-    "description": "M1\r - عناية",
+    "description": "منظف خوذة بمواصفة M1 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1139.jpg",
@@ -3194,14 +3332,15 @@
       "specification": "M1\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "منظف خوذة M1 لصيانة الدراجات النارية"
   },
   {
     "id": "1140",
     "sku": "1140",
     "name": "منظف خوذة داخلي",
     "name_en": "منظف خوذة داخلي",
-    "description": "M2\r - عناية",
+    "description": "منظف خوذة داخلي بمواصفة M2 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1140.jpg",
@@ -3217,14 +3356,15 @@
       "specification": "M2\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "منظف خوذة داخلي M2 لصيانة الدراجات النارية"
   },
   {
     "id": "1141",
     "sku": "1141",
     "name": "غسيل دباب",
     "name_en": "غسيل دباب",
-    "description": "Wash\r - عناية",
+    "description": "غسيل دباب بمواصفة Wash يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1141.jpg",
@@ -3240,14 +3380,15 @@
       "specification": "Wash\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "غسيل دباب Wash لصيانة الدراجات النارية"
   },
   {
     "id": "1142",
     "sku": "1142",
     "name": "ملمع فيبر",
     "name_en": "ملمع فيبر",
-    "description": "Shine\r - عناية",
+    "description": "ملمع فيبر بمواصفة Shine يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1142.jpg",
@@ -3263,14 +3404,15 @@
       "specification": "Shine\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "ملمع فيبر Shine لصيانة الدراجات النارية"
   },
   {
     "id": "1143",
     "sku": "1143",
     "name": "زيت مساعدات",
     "name_en": "زيت مساعدات",
-    "description": "10W\r - زيوت",
+    "description": "زيت مساعدات بمواصفة 10W يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1143.png",
@@ -3286,14 +3428,15 @@
       "specification": "10W\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت مساعدات 10W لصيانة الدراجات النارية"
   },
   {
     "id": "1144",
     "sku": "1144",
     "name": "زيت مساعدات",
     "name_en": "زيت مساعدات",
-    "description": "15W\r - زيوت",
+    "description": "زيت مساعدات بمواصفة 15W يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1144.png",
@@ -3309,14 +3452,15 @@
       "specification": "15W\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت مساعدات 15W لصيانة الدراجات النارية"
   },
   {
     "id": "1145",
     "sku": "1145",
     "name": "صحون كلتش",
     "name_en": "صحون كلتش",
-    "description": "OEM\r - محرك",
+    "description": "صحون كلتش بمواصفة OEM يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1145.jpg",
@@ -3332,14 +3476,15 @@
       "specification": "OEM\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "صحون كلتش OEM لصيانة الدراجات النارية"
   },
   {
     "id": "1146",
     "sku": "1146",
     "name": "صحون كلتش",
     "name_en": "صحون كلتش",
-    "description": "CG\r - محرك",
+    "description": "صحون كلتش بمواصفة CG يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1146.jpg",
@@ -3355,14 +3500,15 @@
       "specification": "CG\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "صحون كلتش CG لصيانة الدراجات النارية"
   },
   {
     "id": "1147",
     "sku": "1147",
     "name": "وجه كلتش",
     "name_en": "وجه كلتش",
-    "description": "OEM\r - محرك",
+    "description": "وجه كلتش بمواصفة OEM يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1147.jpg",
@@ -3378,14 +3524,15 @@
       "specification": "OEM\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "وجه كلتش OEM لصيانة الدراجات النارية"
   },
   {
     "id": "1148",
     "sku": "1148",
     "name": "وجه كهرباء",
     "name_en": "وجه كهرباء",
-    "description": "OEM\r - محرك",
+    "description": "وجه كهرباء بمواصفة OEM يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1148.jpg",
@@ -3401,14 +3548,15 @@
       "specification": "OEM\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "وجه كهرباء OEM لصيانة الدراجات النارية"
   },
   {
     "id": "1149",
     "sku": "1149",
     "name": "طقم وجيه",
     "name_en": "طقم وجيه",
-    "description": "Full\r - محرك",
+    "description": "طقم وجيه بمواصفة Full يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1149.jpg",
@@ -3424,14 +3572,15 @@
       "specification": "Full\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "طقم وجيه Full لصيانة الدراجات النارية"
   },
   {
     "id": "1150",
     "sku": "1150",
     "name": "بستم ستاندر",
     "name_en": "بستم ستاندر",
-    "description": "CG125\r - محرك",
+    "description": "بستم ستاندر بمواصفة CG125 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1150.JPG",
@@ -3447,14 +3596,15 @@
       "specification": "CG125\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بستم ستاندر CG125 لصيانة الدراجات النارية"
   },
   {
     "id": "1151",
     "sku": "1151",
     "name": "شنابر ستاندر",
     "name_en": "شنابر ستاندر",
-    "description": "CG125\r - محرك",
+    "description": "شنابر ستاندر بمواصفة CG125 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1151.jpg",
@@ -3470,14 +3620,15 @@
       "specification": "CG125\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "شنابر ستاندر CG125 لصيانة الدراجات النارية"
   },
   {
     "id": "1152",
     "sku": "1152",
     "name": "بلوف",
     "name_en": "بلوف",
-    "description": "Set\r - محرك",
+    "description": "بلوف بمواصفة Set يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1152.jpg",
@@ -3493,14 +3644,15 @@
       "specification": "Set\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بلوف Set لصيانة الدراجات النارية"
   },
   {
     "id": "1153",
     "sku": "1153",
     "name": "جنزير تيمن",
     "name_en": "جنزير تيمن",
-    "description": "CG125\r - محرك",
+    "description": "جنزير تيمن بمواصفة CG125 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1153.jpg",
@@ -3516,14 +3668,15 @@
       "specification": "CG125\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "جنزير تيمن CG125 لصيانة الدراجات النارية"
   },
   {
     "id": "1154",
     "sku": "1154",
     "name": "كربريتر 125",
     "name_en": "كربريتر 125",
-    "description": "PZ26\r - محرك",
+    "description": "كربريتر 125 بمواصفة PZ26 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1154.jpg",
@@ -3539,14 +3692,15 @@
       "specification": "PZ26\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كربريتر 125 PZ26 لصيانة الدراجات النارية"
   },
   {
     "id": "1155",
     "sku": "1155",
     "name": "كربريتر 200",
     "name_en": "كربريتر 200",
-    "description": "PZ30\r - محرك",
+    "description": "كربريتر 200 بمواصفة PZ30 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1155.jpg",
@@ -3562,14 +3716,15 @@
       "specification": "PZ30\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كربريتر 200 PZ30 لصيانة الدراجات النارية"
   },
   {
     "id": "1156",
     "sku": "1156",
     "name": "ملف كهرباء",
     "name_en": "ملف كهرباء",
-    "description": "CG125\r - كهرباء",
+    "description": "ملف كهرباء بمواصفة CG125 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1156.jpg",
@@ -3585,14 +3740,15 @@
       "specification": "CG125\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "ملف كهرباء CG125 لصيانة الدراجات النارية"
   },
   {
     "id": "1157",
     "sku": "1157",
     "name": "منظم كهرباء",
     "name_en": "منظم كهرباء",
-    "description": "Univ\r - كهرباء",
+    "description": "منظم كهرباء بمواصفة Univ يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1157.jpg",
@@ -3608,14 +3764,15 @@
       "specification": "Univ\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "منظم كهرباء Univ لصيانة الدراجات النارية"
   },
   {
     "id": "1158",
     "sku": "1158",
     "name": "سي دي اي",
     "name_en": "سي دي اي",
-    "description": "Univ\r - كهرباء",
+    "description": "سي دي اي بمواصفة Univ يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1158.png",
@@ -3631,14 +3788,15 @@
       "specification": "Univ\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "سي دي اي Univ لصيانة الدراجات النارية"
   },
   {
     "id": "1159",
     "sku": "1159",
     "name": "كويل كهرباء",
     "name_en": "كويل كهرباء",
-    "description": "Univ\r - كهرباء",
+    "description": "كويل كهرباء بمواصفة Univ يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1159.jpg",
@@ -3654,14 +3812,15 @@
       "specification": "Univ\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كويل كهرباء Univ لصيانة الدراجات النارية"
   },
   {
     "id": "1160",
     "sku": "1160",
     "name": "دقمة سلف",
     "name_en": "دقمة سلف",
-    "description": "Univ\r - كهرباء",
+    "description": "دقمة سلف بمواصفة Univ يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1160.png",
@@ -3677,14 +3836,15 @@
       "specification": "Univ\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "دقمة سلف Univ لصيانة الدراجات النارية"
   },
   {
     "id": "1161",
     "sku": "1161",
     "name": "بوري",
     "name_en": "بوري",
-    "description": "12V\r - كهرباء",
+    "description": "بوري بمواصفة 12V يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1161.jpg",
@@ -3700,14 +3860,15 @@
       "specification": "12V\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بوري 12V لصيانة الدراجات النارية"
   },
   {
     "id": "1162",
     "sku": "1162",
     "name": "فليشر اشارات",
     "name_en": "فليشر اشارات",
-    "description": "Univ\r - كهرباء",
+    "description": "فليشر اشارات بمواصفة Univ يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1162.png",
@@ -3723,14 +3884,15 @@
       "specification": "Univ\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فليشر اشارات Univ لصيانة الدراجات النارية"
   },
   {
     "id": "1163",
     "sku": "1163",
     "name": "فيوزات 10",
     "name_en": "فيوزات 10",
-    "description": "Red\r - كهرباء",
+    "description": "فيوزات 10 بمواصفة Red يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1163.jpg",
@@ -3746,14 +3908,15 @@
       "specification": "Red\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فيوزات 10 Red لصيانة الدراجات النارية"
   },
   {
     "id": "1164",
     "sku": "1164",
     "name": "فيوزات 15",
     "name_en": "فيوزات 15",
-    "description": "Blue\r - كهرباء",
+    "description": "فيوزات 15 بمواصفة Blue يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1164.jpg",
@@ -3769,14 +3932,15 @@
       "specification": "Blue\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فيوزات 15 Blue لصيانة الدراجات النارية"
   },
   {
     "id": "1165",
     "sku": "1165",
     "name": "فيوزات 20",
     "name_en": "فيوزات 20",
-    "description": "Yellow\r - كهرباء",
+    "description": "فيوزات 20 بمواصفة Yellow يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1165.jpg",
@@ -3792,14 +3956,15 @@
       "specification": "Yellow\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فيوزات 20 Yellow لصيانة الدراجات النارية"
   },
   {
     "id": "1166",
     "sku": "1166",
     "name": "لمبة امامية",
     "name_en": "لمبة امامية",
-    "description": "H4\r - كهرباء",
+    "description": "لمبة امامية بمواصفة H4 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1166.jpg",
@@ -3815,14 +3980,15 @@
       "specification": "H4\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "لمبة امامية H4 لصيانة الدراجات النارية"
   },
   {
     "id": "1167",
     "sku": "1167",
     "name": "لمبة اشارة",
     "name_en": "لمبة اشارة",
-    "description": "10W\r - كهرباء",
+    "description": "لمبة اشارة بمواصفة 10W يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1167.jpg",
@@ -3838,14 +4004,15 @@
       "specification": "10W\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "لمبة اشارة 10W لصيانة الدراجات النارية"
   },
   {
     "id": "1168",
     "sku": "1168",
     "name": "دبة بروكس الين",
     "name_en": "دبة بروكس الين",
-    "description": "SlipOn\r - عوادم",
+    "description": "دبة بروكس الين بمواصفة SlipOn يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1168.jpg",
@@ -3861,14 +4028,15 @@
       "specification": "SlipOn\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "دبة بروكس الين SlipOn لصيانة الدراجات النارية"
   },
   {
     "id": "1169",
     "sku": "1169",
     "name": "دبة بروكس ميقا",
     "name_en": "دبة بروكس ميقا",
-    "description": "Short\r - عوادم",
+    "description": "دبة بروكس ميقا بمواصفة Short يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1169.jpg",
@@ -3884,14 +4052,15 @@
       "specification": "Short\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "دبة بروكس ميقا Short لصيانة الدراجات النارية"
   },
   {
     "id": "1170",
     "sku": "1170",
     "name": "دبة اكرا كاربون",
     "name_en": "دبة اكرا كاربون",
-    "description": "Replica\r - عوادم",
+    "description": "دبة اكرا كاربون بمواصفة Replica يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1170.jpg",
@@ -3907,14 +4076,15 @@
       "specification": "Replica\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "دبة اكرا كاربون Replica لصيانة الدراجات النارية"
   },
   {
     "id": "1171",
     "sku": "1171",
     "name": "دبة اس سي",
     "name_en": "دبة اس سي",
-    "description": "Replica\r - عوادم",
+    "description": "دبة اس سي بمواصفة Replica يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1171.webp",
@@ -3930,14 +4100,15 @@
       "specification": "Replica\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "دبة اس سي Replica لصيانة الدراجات النارية"
   },
   {
     "id": "1172",
     "sku": "1172",
     "name": "دبة يوشيمورا",
     "name_en": "دبة يوشيمورا",
-    "description": "Replica\r - عوادم",
+    "description": "دبة يوشيمورا بمواصفة Replica يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1172.jpg",
@@ -3953,14 +4124,15 @@
       "specification": "Replica\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "دبة يوشيمورا Replica لصيانة الدراجات النارية"
   },
   {
     "id": "1173",
     "sku": "1173",
     "name": "وصلة شكمان R6",
     "name_en": "وصلة شكمان R6",
-    "description": "Pipe\r - عوادم",
+    "description": "وصلة شكمان R6 بمواصفة Pipe يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1173.jpg",
@@ -3976,14 +4148,15 @@
       "specification": "Pipe\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "وصلة شكمان R6 Pipe لصيانة الدراجات النارية"
   },
   {
     "id": "1174",
     "sku": "1174",
     "name": "وصلة شكمان BMW",
     "name_en": "وصلة شكمان BMW",
-    "description": "Pipe\r - عوادم",
+    "description": "وصلة شكمان BMW بمواصفة Pipe يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1174.jpg",
@@ -3999,14 +4172,15 @@
       "specification": "Pipe\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "وصلة شكمان BMW Pipe لصيانة الدراجات النارية"
   },
   {
     "id": "1175",
     "sku": "1175",
     "name": "وصلة شكمان GSXR",
     "name_en": "وصلة شكمان GSXR",
-    "description": "Pipe\r - عوادم",
+    "description": "وصلة شكمان GSXR بمواصفة Pipe يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1175.jpg",
@@ -4022,14 +4196,15 @@
       "specification": "Pipe\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "وصلة شكمان GSXR Pipe لصيانة الدراجات النارية"
   },
   {
     "id": "1176",
     "sku": "1176",
     "name": "سبرنج شكمان",
     "name_en": "سبرنج شكمان",
-    "description": "Spring\r - عوادم",
+    "description": "سبرنج شكمان بمواصفة Spring يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1176.jpg",
@@ -4045,14 +4220,15 @@
       "specification": "Spring\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "سبرنج شكمان Spring لصيانة الدراجات النارية"
   },
   {
     "id": "1177",
     "sku": "1177",
     "name": "كاتم صوت",
     "name_en": "كاتم صوت",
-    "description": "DB\r - عوادم",
+    "description": "كاتم صوت بمواصفة DB يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1177.jpg",
@@ -4068,14 +4244,15 @@
       "specification": "DB\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كاتم صوت DB لصيانة الدراجات النارية"
   },
   {
     "id": "1178",
     "sku": "1178",
     "name": "حامل جوال شاحن",
     "name_en": "حامل جوال شاحن",
-    "description": "USB\r - إكسسوارات",
+    "description": "حامل جوال شاحن بمواصفة USB يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1178.jpg",
@@ -4091,14 +4268,15 @@
       "specification": "USB\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "حامل جوال شاحن USB لصيانة الدراجات النارية"
   },
   {
     "id": "1179",
     "sku": "1179",
     "name": "حامل جوال اكس",
     "name_en": "حامل جوال اكس",
-    "description": "X\r - إكسسوارات",
+    "description": "حامل جوال اكس بمواصفة X يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1179.jpg",
@@ -4114,14 +4292,15 @@
       "specification": "X\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "حامل جوال اكس X لصيانة الدراجات النارية"
   },
   {
     "id": "1180",
     "sku": "1180",
     "name": "مقابض يد اسود",
     "name_en": "مقابض يد اسود",
-    "description": "Grips\r - إكسسوارات",
+    "description": "مقابض يد اسود بمواصفة Grips يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1180.jpg",
@@ -4137,14 +4316,15 @@
       "specification": "Grips\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "مقابض يد اسود Grips لصيانة الدراجات النارية"
   },
   {
     "id": "1181",
     "sku": "1181",
     "name": "مقابض يد احمر",
     "name_en": "مقابض يد احمر",
-    "description": "CNC\r - إكسسوارات",
+    "description": "مقابض يد احمر بمواصفة CNC يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1181.jpeg",
@@ -4160,14 +4340,15 @@
       "specification": "CNC\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "مقابض يد احمر CNC لصيانة الدراجات النارية"
   },
   {
     "id": "1182",
     "sku": "1182",
     "name": "مقابض يد ذهبي",
     "name_en": "مقابض يد ذهبي",
-    "description": "CNC\r - إكسسوارات",
+    "description": "مقابض يد ذهبي بمواصفة CNC يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1182.jpg",
@@ -4183,14 +4364,15 @@
       "specification": "CNC\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "مقابض يد ذهبي CNC لصيانة الدراجات النارية"
   },
   {
     "id": "1183",
     "sku": "1183",
     "name": "مقابض يد ازرق",
     "name_en": "مقابض يد ازرق",
-    "description": "CNC\r - إكسسوارات",
+    "description": "مقابض يد ازرق بمواصفة CNC يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1183.jpg",
@@ -4206,14 +4388,15 @@
       "specification": "CNC\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "مقابض يد ازرق CNC لصيانة الدراجات النارية"
   },
   {
     "id": "1184",
     "sku": "1184",
     "name": "مقبض فرامل تعديل",
     "name_en": "مقبض فرامل تعديل",
-    "description": "Black\r - إكسسوارات",
+    "description": "مقبض فرامل تعديل بمواصفة Black يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1184.jpg",
@@ -4229,14 +4412,15 @@
       "specification": "Black\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "مقبض فرامل تعديل Black لصيانة الدراجات النارية"
   },
   {
     "id": "1185",
     "sku": "1185",
     "name": "مقبض فرامل طي",
     "name_en": "مقبض فرامل طي",
-    "description": "Foldable\r - إكسسوارات",
+    "description": "مقبض فرامل طي بمواصفة Foldable يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1185.jpg",
@@ -4252,14 +4436,15 @@
       "specification": "Foldable\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "مقبض فرامل طي Foldable لصيانة الدراجات النارية"
   },
   {
     "id": "1186",
     "sku": "1186",
     "name": "مرايا طرفية",
     "name_en": "مرايا طرفية",
-    "description": "Round\r - إكسسوارات",
+    "description": "مرايا طرفية بمواصفة Round يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1186.jpg",
@@ -4275,14 +4460,15 @@
       "specification": "Round\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "مرايا طرفية Round لصيانة الدراجات النارية"
   },
   {
     "id": "1187",
     "sku": "1187",
     "name": "مرايا انسيابية",
     "name_en": "مرايا انسيابية",
-    "description": "Wing\r - إكسسوارات",
+    "description": "مرايا انسيابية بمواصفة Wing يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1187.jpg",
@@ -4298,14 +4484,15 @@
       "specification": "Wing\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "مرايا انسيابية Wing لصيانة الدراجات النارية"
   },
   {
     "id": "1188",
     "sku": "1188",
     "name": "اغطية مرايا",
     "name_en": "اغطية مرايا",
-    "description": "CNC\r - إكسسوارات",
+    "description": "اغطية مرايا بمواصفة CNC يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1188.jpg",
@@ -4321,14 +4508,15 @@
       "specification": "CNC\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "اغطية مرايا CNC لصيانة الدراجات النارية"
   },
   {
     "id": "1189",
     "sku": "1189",
     "name": "استيكر خزان",
     "name_en": "استيكر خزان",
-    "description": "Carbon\r - إكسسوارات",
+    "description": "استيكر خزان بمواصفة Carbon يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1189.jpg",
@@ -4344,14 +4532,15 @@
       "specification": "Carbon\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "استيكر خزان Carbon لصيانة الدراجات النارية"
   },
   {
     "id": "1190",
     "sku": "1190",
     "name": "استيكر جوانب",
     "name_en": "استيكر جوانب",
-    "description": "Grips\r - إكسسوارات",
+    "description": "استيكر جوانب بمواصفة Grips يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1190.jpg",
@@ -4367,14 +4556,15 @@
       "specification": "Grips\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "استيكر جوانب Grips لصيانة الدراجات النارية"
   },
   {
     "id": "1191",
     "sku": "1191",
     "name": "شريط جنوط احمر",
     "name_en": "شريط جنوط احمر",
-    "description": "Red\r - إكسسوارات",
+    "description": "شريط جنوط احمر بمواصفة Red يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1191.jpg",
@@ -4390,14 +4580,15 @@
       "specification": "Red\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "شريط جنوط احمر Red لصيانة الدراجات النارية"
   },
   {
     "id": "1192",
     "sku": "1192",
     "name": "شريط جنوط ازرق",
     "name_en": "شريط جنوط ازرق",
-    "description": "Blue\r - إكسسوارات",
+    "description": "شريط جنوط ازرق بمواصفة Blue يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1192.jpg",
@@ -4413,14 +4604,15 @@
       "specification": "Blue\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "شريط جنوط ازرق Blue لصيانة الدراجات النارية"
   },
   {
     "id": "1193",
     "sku": "1193",
     "name": "بكرات رفع ياماها",
     "name_en": "بكرات رفع ياماها",
-    "description": "6mm\r - إكسسوارات",
+    "description": "بكرات رفع ياماها بمواصفة 6mm يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1193.jpg",
@@ -4436,14 +4628,15 @@
       "specification": "6mm\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بكرات رفع ياماها 6mm لصيانة الدراجات النارية"
   },
   {
     "id": "1194",
     "sku": "1194",
     "name": "بكرات رفع سوزوكي",
     "name_en": "بكرات رفع سوزوكي",
-    "description": "8mm\r - إكسسوارات",
+    "description": "بكرات رفع سوزوكي بمواصفة 8mm يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1194.jpg",
@@ -4459,14 +4652,15 @@
       "specification": "8mm\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بكرات رفع سوزوكي 8mm لصيانة الدراجات النارية"
   },
   {
     "id": "1195",
     "sku": "1195",
     "name": "بكرات رفع كاواساكي",
     "name_en": "بكرات رفع كاواساكي",
-    "description": "10mm\r - إكسسوارات",
+    "description": "بكرات رفع كاواساكي بمواصفة 10mm يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1195.jpg",
@@ -4482,14 +4676,15 @@
       "specification": "10mm\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بكرات رفع كاواساكي 10mm لصيانة الدراجات النارية"
   },
   {
     "id": "1196",
     "sku": "1196",
     "name": "غطاء زيت ملون",
     "name_en": "غطاء زيت ملون",
-    "description": "CNC\r - إكسسوارات",
+    "description": "غطاء زيت ملون بمواصفة CNC يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1196.jpg",
@@ -4505,14 +4700,15 @@
       "specification": "CNC\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "غطاء زيت ملون CNC لصيانة الدراجات النارية"
   },
   {
     "id": "1197",
     "sku": "1197",
     "name": "غطاء بلف هواء",
     "name_en": "غطاء بلف هواء",
-    "description": "CNC\r - إكسسوارات",
+    "description": "غطاء بلف هواء بمواصفة CNC يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1197.jpg",
@@ -4528,14 +4724,15 @@
       "specification": "CNC\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "غطاء بلف هواء CNC لصيانة الدراجات النارية"
   },
   {
     "id": "1198",
     "sku": "1198",
     "name": "شمعة دائرية",
     "name_en": "شمعة دائرية",
-    "description": "LED\r - إكسسوارات",
+    "description": "شمعة دائرية بمواصفة LED يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1198.jpg",
@@ -4551,14 +4748,15 @@
       "specification": "LED\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "شمعة دائرية LED لصيانة الدراجات النارية"
   },
   {
     "id": "1199",
     "sku": "1199",
     "name": "اشارات تتابعية",
     "name_en": "اشارات تتابعية",
-    "description": "LED\r - إكسسوارات",
+    "description": "اشارات تتابعية بمواصفة LED يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1199.jpg",
@@ -4574,14 +4772,15 @@
       "specification": "LED\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "اشارات تتابعية LED لصيانة الدراجات النارية"
   },
   {
     "id": "1200",
     "sku": "1200",
     "name": "حامل لوحة",
     "name_en": "حامل لوحة",
-    "description": "TailTidy\r - إكسسوارات",
+    "description": "حامل لوحة بمواصفة TailTidy يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1200.jpg",
@@ -4597,14 +4796,15 @@
       "specification": "TailTidy\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "حامل لوحة TailTidy لصيانة الدراجات النارية"
   },
   {
     "id": "1201",
     "sku": "1201",
     "name": "سلايدرات حماية",
     "name_en": "سلايدرات حماية",
-    "description": "Sliders\r - إكسسوارات",
+    "description": "سلايدرات حماية بمواصفة Sliders يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1201.jpg",
@@ -4620,14 +4820,15 @@
       "specification": "Sliders\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "سلايدرات حماية Sliders لصيانة الدراجات النارية"
   },
   {
     "id": "1202",
     "sku": "1202",
     "name": "شداد جنزير",
     "name_en": "شداد جنزير",
-    "description": "CNC\r - إكسسوارات",
+    "description": "شداد جنزير بمواصفة CNC يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1202.jpg",
@@ -4643,14 +4844,15 @@
       "specification": "CNC\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "شداد جنزير CNC لصيانة الدراجات النارية"
   },
   {
     "id": "1203",
     "sku": "1203",
     "name": "سلك كلتش",
     "name_en": "سلك كلتش",
-    "description": "CG\r - قطع",
+    "description": "سلك كلتش بمواصفة CG يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1203.jpeg",
@@ -4666,14 +4868,15 @@
       "specification": "CG\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "سلك كلتش CG لصيانة الدراجات النارية"
   },
   {
     "id": "1204",
     "sku": "1204",
     "name": "سلك بنزين",
     "name_en": "سلك بنزين",
-    "description": "CG\r - قطع",
+    "description": "سلك بنزين بمواصفة CG يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1204.png",
@@ -4689,14 +4892,15 @@
       "specification": "CG\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "سلك بنزين CG لصيانة الدراجات النارية"
   },
   {
     "id": "1205",
     "sku": "1205",
     "name": "سلك فرامل",
     "name_en": "سلك فرامل",
-    "description": "Drum\r - قطع",
+    "description": "سلك فرامل بمواصفة Drum يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1205.png",
@@ -4712,14 +4916,15 @@
       "specification": "Drum\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "سلك فرامل Drum لصيانة الدراجات النارية"
   },
   {
     "id": "1206",
     "sku": "1206",
     "name": "سلك عداد",
     "name_en": "سلك عداد",
-    "description": "Cable\r - قطع",
+    "description": "سلك عداد بمواصفة Cable يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1206.jpg",
@@ -4735,14 +4940,15 @@
       "specification": "Cable\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "سلك عداد Cable لصيانة الدراجات النارية"
   },
   {
     "id": "1207",
     "sku": "1207",
     "name": "قاعدة كلتش",
     "name_en": "قاعدة كلتش",
-    "description": "Assy\r - قطع",
+    "description": "قاعدة كلتش بمواصفة Assy يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1207.webp",
@@ -4758,14 +4964,15 @@
       "specification": "Assy\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "قاعدة كلتش Assy لصيانة الدراجات النارية"
   },
   {
     "id": "1208",
     "sku": "1208",
     "name": "علبة فرامل",
     "name_en": "علبة فرامل",
-    "description": "Pump\r - قطع",
+    "description": "علبة فرامل بمواصفة Pump يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1208.jpg",
@@ -4781,14 +4988,15 @@
       "specification": "Pump\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "علبة فرامل Pump لصيانة الدراجات النارية"
   },
   {
     "id": "1209",
     "sku": "1209",
     "name": "ازرار يسار",
     "name_en": "ازرار يسار",
-    "description": "Switch\r - قطع",
+    "description": "ازرار يسار بمواصفة Switch يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1209.jpeg",
@@ -4804,14 +5012,15 @@
       "specification": "Switch\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "ازرار يسار Switch لصيانة الدراجات النارية"
   },
   {
     "id": "1210",
     "sku": "1210",
     "name": "ازرار يمين",
     "name_en": "ازرار يمين",
-    "description": "Switch\r - قطع",
+    "description": "ازرار يمين بمواصفة Switch يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1210.jpg",
@@ -4827,14 +5036,15 @@
       "specification": "Switch\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "ازرار يمين Switch لصيانة الدراجات النارية"
   },
   {
     "id": "1211",
     "sku": "1211",
     "name": "دعاسات سائق",
     "name_en": "دعاسات سائق",
-    "description": "Pegs\r - قطع",
+    "description": "دعاسات سائق بمواصفة Pegs يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1211.jpg",
@@ -4850,14 +5060,15 @@
       "specification": "Pegs\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "دعاسات سائق Pegs لصيانة الدراجات النارية"
   },
   {
     "id": "1212",
     "sku": "1212",
     "name": "دعاسات رديف",
     "name_en": "دعاسات رديف",
-    "description": "Pegs\r - قطع",
+    "description": "دعاسات رديف بمواصفة Pegs يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1212.jpg",
@@ -4873,14 +5084,15 @@
       "specification": "Pegs\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "دعاسات رديف Pegs لصيانة الدراجات النارية"
   },
   {
     "id": "1213",
     "sku": "1213",
     "name": "دواسة قير",
     "name_en": "دواسة قير",
-    "description": "Pedal\r - قطع",
+    "description": "دواسة قير بمواصفة Pedal يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1213.jpg",
@@ -4896,14 +5108,15 @@
       "specification": "Pedal\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "دواسة قير Pedal لصيانة الدراجات النارية"
   },
   {
     "id": "1214",
     "sku": "1214",
     "name": "هندل",
     "name_en": "هندل",
-    "description": "Kick\r - قطع",
+    "description": "هندل بمواصفة Kick يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1214.jpg",
@@ -4919,14 +5132,15 @@
       "specification": "Kick\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "هندل Kick لصيانة الدراجات النارية"
   },
   {
     "id": "1215",
     "sku": "1215",
     "name": "جك جانبي",
     "name_en": "جك جانبي",
-    "description": "Stand\r - قطع",
+    "description": "جك جانبي بمواصفة Stand يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1215.jpg",
@@ -4942,14 +5156,15 @@
       "specification": "Stand\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "جك جانبي Stand لصيانة الدراجات النارية"
   },
   {
     "id": "1216",
     "sku": "1216",
     "name": "جك وسط",
     "name_en": "جك وسط",
-    "description": "Stand\r - قطع",
+    "description": "جك وسط بمواصفة Stand يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1216.jpg",
@@ -4965,14 +5180,15 @@
       "specification": "Stand\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "جك وسط Stand لصيانة الدراجات النارية"
   },
   {
     "id": "1217",
     "sku": "1217",
     "name": "محبس بنزين",
     "name_en": "محبس بنزين",
-    "description": "Tap\r - قطع",
+    "description": "محبس بنزين بمواصفة Tap يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1217.jpg",
@@ -4988,14 +5204,15 @@
       "specification": "Tap\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "محبس بنزين Tap لصيانة الدراجات النارية"
   },
   {
     "id": "1218",
     "sku": "1218",
     "name": "فلتر بنزين",
     "name_en": "فلتر بنزين",
-    "description": "Filter\r - قطع",
+    "description": "فلتر بنزين بمواصفة Filter يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1218.jpg",
@@ -5011,14 +5228,15 @@
       "specification": "Filter\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر بنزين Filter لصيانة الدراجات النارية"
   },
   {
     "id": "1219",
     "sku": "1219",
     "name": "رمان بلي 6301",
     "name_en": "رمان بلي 6301",
-    "description": "Bearing\r - قطع",
+    "description": "رمان بلي 6301 بمواصفة Bearing يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1219.jpg",
@@ -5034,14 +5252,15 @@
       "specification": "Bearing\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "رمان بلي 6301 Bearing لصيانة الدراجات النارية"
   },
   {
     "id": "1220",
     "sku": "1220",
     "name": "رمان بلي 6202",
     "name_en": "رمان بلي 6202",
-    "description": "Bearing\r - قطع",
+    "description": "رمان بلي 6202 بمواصفة Bearing يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1220.webp",
@@ -5057,14 +5276,15 @@
       "specification": "Bearing\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "رمان بلي 6202 Bearing لصيانة الدراجات النارية"
   },
   {
     "id": "1221",
     "sku": "1221",
     "name": "صوف مساعدات",
     "name_en": "صوف مساعدات",
-    "description": "Seal\r - قطع",
+    "description": "صوف مساعدات بمواصفة Seal يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1221.jpg",
@@ -5080,14 +5300,15 @@
       "specification": "Seal\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "صوف مساعدات Seal لصيانة الدراجات النارية"
   },
   {
     "id": "1222",
     "sku": "1222",
     "name": "غبار مساعدات",
     "name_en": "غبار مساعدات",
-    "description": "Seal\r - قطع",
+    "description": "غبار مساعدات بمواصفة Seal يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1222.jpg",
@@ -5103,14 +5324,15 @@
       "specification": "Seal\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "غبار مساعدات Seal لصيانة الدراجات النارية"
   },
   {
     "id": "1223",
     "sku": "1223",
     "name": "قفازات الباين",
     "name_en": "قفازات الباين",
-    "description": "SP8\r - ملابس",
+    "description": "قفازات الباين بمواصفة SP8 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1223.jpg",
@@ -5126,14 +5348,15 @@
       "specification": "SP8\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "قفازات الباين SP8 لصيانة الدراجات النارية"
   },
   {
     "id": "1224",
     "sku": "1224",
     "name": "قفازات الباين",
     "name_en": "قفازات الباين",
-    "description": "SMX\r - ملابس",
+    "description": "قفازات الباين بمواصفة SMX يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1224.jpg",
@@ -5149,14 +5372,15 @@
       "specification": "SMX\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "قفازات الباين SMX لصيانة الدراجات النارية"
   },
   {
     "id": "1225",
     "sku": "1225",
     "name": "قفازات سكويكو",
     "name_en": "قفازات سكويكو",
-    "description": "MC29\r - ملابس",
+    "description": "قفازات سكويكو بمواصفة MC29 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1225.png",
@@ -5172,14 +5396,15 @@
       "specification": "MC29\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "قفازات سكويكو MC29 لصيانة الدراجات النارية"
   },
   {
     "id": "1226",
     "sku": "1226",
     "name": "قفازات شبك",
     "name_en": "قفازات شبك",
-    "description": "Mesh\r - ملابس",
+    "description": "قفازات شبك بمواصفة Mesh يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1226.jpg",
@@ -5195,14 +5420,15 @@
       "specification": "Mesh\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "قفازات شبك Mesh لصيانة الدراجات النارية"
   },
   {
     "id": "1227",
     "sku": "1227",
     "name": "قفازات برو بايكر",
     "name_en": "قفازات برو بايكر",
-    "description": "Pro\r - ملابس",
+    "description": "قفازات برو بايكر بمواصفة Pro يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1227.jpg",
@@ -5218,14 +5444,15 @@
       "specification": "Pro\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "قفازات برو بايكر Pro لصيانة الدراجات النارية"
   },
   {
     "id": "1228",
     "sku": "1228",
     "name": "خوذة AGV K3",
     "name_en": "خوذة AGV K3",
-    "description": "Helmet\r - ملابس",
+    "description": "خوذة AGV K3 بمواصفة Helmet يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1228.png",
@@ -5241,14 +5468,15 @@
       "specification": "Helmet\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "خوذة AGV K3 Helmet لصيانة الدراجات النارية"
   },
   {
     "id": "1229",
     "sku": "1229",
     "name": "خوذة AGV K1",
     "name_en": "خوذة AGV K1",
-    "description": "Helmet\r - ملابس",
+    "description": "خوذة AGV K1 بمواصفة Helmet يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1229.png",
@@ -5264,14 +5492,15 @@
       "specification": "Helmet\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "خوذة AGV K1 Helmet لصيانة الدراجات النارية"
   },
   {
     "id": "1230",
     "sku": "1230",
     "name": "خوذة LS2",
     "name_en": "خوذة LS2",
-    "description": "Helmet\r - ملابس",
+    "description": "خوذة LS2 بمواصفة Helmet يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1230.jpg",
@@ -5287,14 +5516,15 @@
       "specification": "Helmet\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "خوذة LS2 Helmet لصيانة الدراجات النارية"
   },
   {
     "id": "1231",
     "sku": "1231",
     "name": "زجاج خوذة",
     "name_en": "زجاج خوذة",
-    "description": "Visor\r - ملابس",
+    "description": "زجاج خوذة بمواصفة Visor يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1231.jpg",
@@ -5310,14 +5540,15 @@
       "specification": "Visor\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زجاج خوذة Visor لصيانة الدراجات النارية"
   },
   {
     "id": "1232",
     "sku": "1232",
     "name": "قناع وجه",
     "name_en": "قناع وجه",
-    "description": "Mask\r - ملابس",
+    "description": "قناع وجه بمواصفة Mask يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1232.jpeg",
@@ -5333,14 +5564,15 @@
       "specification": "Mask\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "قناع وجه Mask لصيانة الدراجات النارية"
   },
   {
     "id": "1233",
     "sku": "1233",
     "name": "حماية ركب",
     "name_en": "حماية ركب",
-    "description": "Pads\r - ملابس",
+    "description": "حماية ركب بمواصفة Pads يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1233.jpg",
@@ -5356,14 +5588,15 @@
       "specification": "Pads\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "حماية ركب Pads لصيانة الدراجات النارية"
   },
   {
     "id": "1234",
     "sku": "1234",
     "name": "جاكيت حماية",
     "name_en": "جاكيت حماية",
-    "description": "Jacket\r - ملابس",
+    "description": "جاكيت حماية بمواصفة Jacket يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1234.jpg",
@@ -5379,14 +5612,15 @@
       "specification": "Jacket\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "جاكيت حماية Jacket لصيانة الدراجات النارية"
   },
   {
     "id": "1235",
     "sku": "1235",
     "name": "بدلة مطر",
     "name_en": "بدلة مطر",
-    "description": "Suit\r - ملابس",
+    "description": "بدلة مطر بمواصفة Suit يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1235.jpg",
@@ -5402,14 +5636,15 @@
       "specification": "Suit\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بدلة مطر Suit لصيانة الدراجات النارية"
   },
   {
     "id": "1236",
     "sku": "1236",
     "name": "غطاء مفتاح",
     "name_en": "غطاء مفتاح",
-    "description": "Suzuki\r - ملابس",
+    "description": "غطاء مفتاح بمواصفة Suzuki يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1236.jpg",
@@ -5425,14 +5660,15 @@
       "specification": "Suzuki\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "غطاء مفتاح Suzuki لصيانة الدراجات النارية"
   },
   {
     "id": "1237",
     "sku": "1237",
     "name": "ميدالية قماش",
     "name_en": "ميدالية قماش",
-    "description": "Tag\r - ملابس",
+    "description": "ميدالية قماش بمواصفة Tag يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1237.jpg",
@@ -5448,14 +5684,15 @@
       "specification": "Tag\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "ميدالية قماش Tag لصيانة الدراجات النارية"
   },
   {
     "id": "1238",
     "sku": "1238",
     "name": "زرقينة جنزير",
     "name_en": "زرقينة جنزير",
-    "description": "Tool\r - عدد",
+    "description": "زرقينة جنزير بمواصفة Tool يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1238.jpg",
@@ -5471,14 +5708,15 @@
       "specification": "Tool\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زرقينة جنزير Tool لصيانة الدراجات النارية"
   },
   {
     "id": "1239",
     "sku": "1239",
     "name": "مفاتيح تي",
     "name_en": "مفاتيح تي",
-    "description": "Tools\r - عدد",
+    "description": "مفاتيح تي بمواصفة Tools يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1239.jpg",
@@ -5494,14 +5732,15 @@
       "specification": "Tools\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "مفاتيح تي Tools لصيانة الدراجات النارية"
   },
   {
     "id": "1240",
     "sku": "1240",
     "name": "ستاند رفع",
     "name_en": "ستاند رفع",
-    "description": "Stand\r - عدد",
+    "description": "ستاند رفع بمواصفة Stand يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1240.jpg",
@@ -5517,14 +5756,15 @@
       "specification": "Stand\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "ستاند رفع Stand لصيانة الدراجات النارية"
   },
   {
     "id": "1241",
     "sku": "1241",
     "name": "عيار هواء",
     "name_en": "عيار هواء",
-    "description": "Gauge\r - عدد",
+    "description": "عيار هواء بمواصفة Gauge يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1241.jpg",
@@ -5540,14 +5780,15 @@
       "specification": "Gauge\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "عيار هواء Gauge لصيانة الدراجات النارية"
   },
   {
     "id": "1242",
     "sku": "1242",
     "name": "فرش تنظيف",
     "name_en": "فرش تنظيف",
-    "description": "Brush\r - عدد",
+    "description": "فرش تنظيف بمواصفة Brush يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1242.jpg",
@@ -5563,14 +5804,15 @@
       "specification": "Brush\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فرش تنظيف Brush لصيانة الدراجات النارية"
   },
   {
     "id": "1243",
     "sku": "1243",
     "name": "حماية حذاء",
     "name_en": "حماية حذاء",
-    "description": "Rubber\r - ملابس",
+    "description": "حماية حذاء بمواصفة Rubber يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1243.jpg",
@@ -5586,14 +5828,15 @@
       "specification": "Rubber\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "حماية حذاء Rubber لصيانة الدراجات النارية"
   },
   {
     "id": "1244",
     "sku": "1244",
     "name": "شبكة عفش",
     "name_en": "شبكة عفش",
-    "description": "Net\r - إكسسوارات",
+    "description": "شبكة عفش بمواصفة Net يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1244.jpg",
@@ -5609,14 +5852,15 @@
       "specification": "Net\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "شبكة عفش Net لصيانة الدراجات النارية"
   },
   {
     "id": "1245",
     "sku": "1245",
     "name": "مسامير فيبر",
     "name_en": "مسامير فيبر",
-    "description": "Bolts\r - إكسسوارات",
+    "description": "مسامير فيبر بمواصفة Bolts يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1245.jpg",
@@ -5632,14 +5876,15 @@
       "specification": "Bolts\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "مسامير فيبر Bolts لصيانة الدراجات النارية"
   },
   {
     "id": "1246",
     "sku": "1246",
     "name": "مبرد زيت",
     "name_en": "مبرد زيت",
-    "description": "Cooler\r - محرك",
+    "description": "مبرد زيت بمواصفة Cooler يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1246.jpg",
@@ -5655,14 +5900,15 @@
       "specification": "Cooler\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "مبرد زيت Cooler لصيانة الدراجات النارية"
   },
   {
     "id": "1247",
     "sku": "1247",
     "name": "فلتر رياضي",
     "name_en": "فلتر رياضي",
-    "description": "Pod\r - محرك",
+    "description": "فلتر رياضي بمواصفة Pod يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1247.jpg",
@@ -5678,14 +5924,15 @@
       "specification": "Pod\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "فلتر رياضي Pod لصيانة الدراجات النارية"
   },
   {
     "id": "1248",
     "sku": "1248",
     "name": "لي بنزين",
     "name_en": "لي بنزين",
-    "description": "Hose\r - محرك",
+    "description": "لي بنزين بمواصفة Hose يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1248.jpg",
@@ -5701,14 +5948,15 @@
       "specification": "Hose\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "لي بنزين Hose لصيانة الدراجات النارية"
   },
   {
     "id": "1249",
     "sku": "1249",
     "name": "شاحن يو اس بي",
     "name_en": "شاحن يو اس بي",
-    "description": "USB\r - كهرباء",
+    "description": "شاحن يو اس بي بمواصفة USB يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1249.jpg",
@@ -5724,14 +5972,15 @@
       "specification": "USB\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "شاحن يو اس بي USB لصيانة الدراجات النارية"
   },
   {
     "id": "1250",
     "sku": "1250",
     "name": "كشافات ضباب",
     "name_en": "كشافات ضباب",
-    "description": "LED\r - كهرباء",
+    "description": "كشافات ضباب بمواصفة LED يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1250.jpg",
@@ -5747,14 +5996,15 @@
       "specification": "LED\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كشافات ضباب LED لصيانة الدراجات النارية"
   },
   {
     "id": "1251",
     "sku": "1251",
     "name": "جلدة غطاء",
     "name_en": "جلدة غطاء",
-    "description": "Rubber\r - قطع",
+    "description": "جلدة غطاء بمواصفة Rubber يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1251.png",
@@ -5770,14 +6020,15 @@
       "specification": "Rubber\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "جلدة غطاء Rubber لصيانة الدراجات النارية"
   },
   {
     "id": "1252",
     "sku": "1252",
     "name": "صرة زيت",
     "name_en": "صرة زيت",
-    "description": "Bolt\r - قطع",
+    "description": "صرة زيت بمواصفة Bolt يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1252.jpg",
@@ -5793,14 +6044,15 @@
       "specification": "Bolt\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "صرة زيت Bolt لصيانة الدراجات النارية"
   },
   {
     "id": "1253",
     "sku": "1253",
     "name": "وردة زيت",
     "name_en": "وردة زيت",
-    "description": "Washer\r - قطع",
+    "description": "وردة زيت بمواصفة Washer يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1253.jpg",
@@ -5816,14 +6068,15 @@
       "specification": "Washer\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "وردة زيت Washer لصيانة الدراجات النارية"
   },
   {
     "id": "1254",
     "sku": "1254",
     "name": "وردة زيت",
     "name_en": "وردة زيت",
-    "description": "Washer\r - قطع",
+    "description": "وردة زيت بمواصفة Washer يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1254.jpg",
@@ -5839,14 +6092,15 @@
       "specification": "Washer\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "وردة زيت Washer لصيانة الدراجات النارية"
   },
   {
     "id": "1255",
     "sku": "1255",
     "name": "زيت تروس",
     "name_en": "زيت تروس",
-    "description": "80W90\r - زيوت",
+    "description": "زيت تروس بمواصفة 80W90 يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1255.jpg",
@@ -5862,14 +6116,15 @@
       "specification": "80W90\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت تروس 80W90 لصيانة الدراجات النارية"
   },
   {
     "id": "1256",
     "sku": "1256",
     "name": "زيت جيربوكس",
     "name_en": "زيت جيربوكس",
-    "description": "2T\r - زيوت",
+    "description": "زيت جيربوكس بمواصفة 2T يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1256.jpg",
@@ -5885,14 +6140,15 @@
       "specification": "2T\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت جيربوكس 2T لصيانة الدراجات النارية"
   },
   {
     "id": "1257",
     "sku": "1257",
     "name": "زيت فلتر هواء",
     "name_en": "زيت فلتر هواء",
-    "description": "Spray\r - زيوت",
+    "description": "زيت فلتر هواء بمواصفة Spray يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1257.jpeg",
@@ -5908,14 +6164,15 @@
       "specification": "Spray\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زيت فلتر هواء Spray لصيانة الدراجات النارية"
   },
   {
     "id": "1258",
     "sku": "1258",
     "name": "بخاخ سيليكون",
     "name_en": "بخاخ سيليكون",
-    "description": "Spray\r - عناية",
+    "description": "بخاخ سيليكون بمواصفة Spray يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1258.jpg",
@@ -5931,14 +6188,15 @@
       "specification": "Spray\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بخاخ سيليكون Spray لصيانة الدراجات النارية"
   },
   {
     "id": "1259",
     "sku": "1259",
     "name": "منظف الكترونيات",
     "name_en": "منظف الكترونيات",
-    "description": "Spray\r - عناية",
+    "description": "منظف الكترونيات بمواصفة Spray يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1259.jpg",
@@ -5954,14 +6212,15 @@
       "specification": "Spray\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "منظف الكترونيات Spray لصيانة الدراجات النارية"
   },
   {
     "id": "1260",
     "sku": "1260",
     "name": "منظف فرامل",
     "name_en": "منظف فرامل",
-    "description": "Spray\r - عناية",
+    "description": "منظف فرامل بمواصفة Spray يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1260.png",
@@ -5977,14 +6236,15 @@
       "specification": "Spray\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "منظف فرامل Spray لصيانة الدراجات النارية"
   },
   {
     "id": "1261",
     "sku": "1261",
     "name": "مزيل صدا",
     "name_en": "مزيل صدا",
-    "description": "Spray\r - عناية",
+    "description": "مزيل صدا بمواصفة Spray يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1261.png",
@@ -6000,14 +6260,15 @@
       "specification": "Spray\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "مزيل صدا Spray لصيانة الدراجات النارية"
   },
   {
     "id": "1262",
     "sku": "1262",
     "name": "لستك",
     "name_en": "لستك",
-    "description": "Tube\r - إطارات",
+    "description": "لستك بمواصفة Tube يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1262.jpg",
@@ -6023,14 +6284,15 @@
       "specification": "Tube\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "لستك Tube لصيانة الدراجات النارية"
   },
   {
     "id": "1263",
     "sku": "1263",
     "name": "لستك",
     "name_en": "لستك",
-    "description": "Tube\r - إطارات",
+    "description": "لستك بمواصفة Tube يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1263.png",
@@ -6046,14 +6308,15 @@
       "specification": "Tube\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "لستك Tube لصيانة الدراجات النارية"
   },
   {
     "id": "1264",
     "sku": "1264",
     "name": "لستك",
     "name_en": "لستك",
-    "description": "Tube\r - إطارات",
+    "description": "لستك بمواصفة Tube يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1264.jpg",
@@ -6069,14 +6332,15 @@
       "specification": "Tube\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "لستك Tube لصيانة الدراجات النارية"
   },
   {
     "id": "1265",
     "sku": "1265",
     "name": "بلف تيوبلس",
     "name_en": "بلف تيوبلس",
-    "description": "Valve\r - إطارات",
+    "description": "بلف تيوبلس بمواصفة Valve يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1265.jpg",
@@ -6092,14 +6356,15 @@
       "specification": "Valve\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بلف تيوبلس Valve لصيانة الدراجات النارية"
   },
   {
     "id": "1266",
     "sku": "1266",
     "name": "بلف زاوية",
     "name_en": "بلف زاوية",
-    "description": "Valve\r - إطارات",
+    "description": "بلف زاوية بمواصفة Valve يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1266.jpg",
@@ -6115,14 +6380,15 @@
       "specification": "Valve\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بلف زاوية Valve لصيانة الدراجات النارية"
   },
   {
     "id": "1267",
     "sku": "1267",
     "name": "كفر RS11 امامي",
     "name_en": "كفر RS11 امامي",
-    "description": "Front\r - إطارات",
+    "description": "كفر RS11 امامي بمواصفة Front يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1267.jpg",
@@ -6138,14 +6404,15 @@
       "specification": "Front\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كفر RS11 امامي Front لصيانة الدراجات النارية"
   },
   {
     "id": "1268",
     "sku": "1268",
     "name": "كفر RS11 خلفي",
     "name_en": "كفر RS11 خلفي",
-    "description": "Rear\r - إطارات",
+    "description": "كفر RS11 خلفي بمواصفة Rear يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1268.jpg",
@@ -6161,14 +6428,15 @@
       "specification": "Rear\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كفر RS11 خلفي Rear لصيانة الدراجات النارية"
   },
   {
     "id": "1269",
     "sku": "1269",
     "name": "كفر روسو امامي",
     "name_en": "كفر روسو امامي",
-    "description": "Front\r - إطارات",
+    "description": "كفر روسو امامي بمواصفة Front يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1269.jpg",
@@ -6184,14 +6452,15 @@
       "specification": "Front\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كفر روسو امامي Front لصيانة الدراجات النارية"
   },
   {
     "id": "1270",
     "sku": "1270",
     "name": "كفر روسو خلفي",
     "name_en": "كفر روسو خلفي",
-    "description": "Rear\r - إطارات",
+    "description": "كفر روسو خلفي بمواصفة Rear يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1270.jpg",
@@ -6207,14 +6476,15 @@
       "specification": "Rear\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كفر روسو خلفي Rear لصيانة الدراجات النارية"
   },
   {
     "id": "1271",
     "sku": "1271",
     "name": "كفر دنلوب امامي",
     "name_en": "كفر دنلوب امامي",
-    "description": "Front\r - إطارات",
+    "description": "كفر دنلوب امامي بمواصفة Front يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1271.jpg",
@@ -6230,14 +6500,15 @@
       "specification": "Front\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كفر دنلوب امامي Front لصيانة الدراجات النارية"
   },
   {
     "id": "1272",
     "sku": "1272",
     "name": "كفر دنلوب خلفي",
     "name_en": "كفر دنلوب خلفي",
-    "description": "Rear\r - إطارات",
+    "description": "كفر دنلوب خلفي بمواصفة Rear يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1272.jpg",
@@ -6253,14 +6524,15 @@
       "specification": "Rear\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كفر دنلوب خلفي Rear لصيانة الدراجات النارية"
   },
   {
     "id": "1273",
     "sku": "1273",
     "name": "كفر سكوتر",
     "name_en": "كفر سكوتر",
-    "description": "Scooter\r - إطارات",
+    "description": "كفر سكوتر بمواصفة Scooter يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1273.jpg",
@@ -6276,14 +6548,15 @@
       "specification": "Scooter\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كفر سكوتر Scooter لصيانة الدراجات النارية"
   },
   {
     "id": "1274",
     "sku": "1274",
     "name": "كفر سكوتر",
     "name_en": "كفر سكوتر",
-    "description": "Scooter\r - إطارات",
+    "description": "كفر سكوتر بمواصفة Scooter يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1274.jpg",
@@ -6299,14 +6572,15 @@
       "specification": "Scooter\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كفر سكوتر Scooter لصيانة الدراجات النارية"
   },
   {
     "id": "1275",
     "sku": "1275",
     "name": "اسلاك بوجي",
     "name_en": "اسلاك بوجي",
-    "description": "Wires\r - إشعال",
+    "description": "اسلاك بوجي بمواصفة Wires يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1275.jpg",
@@ -6322,14 +6596,15 @@
       "specification": "Wires\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "اسلاك بوجي Wires لصيانة الدراجات النارية"
   },
   {
     "id": "1276",
     "sku": "1276",
     "name": "حزام بطارية",
     "name_en": "حزام بطارية",
-    "description": "Strap\r - قطع",
+    "description": "حزام بطارية بمواصفة Strap يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1276.jpg",
@@ -6345,14 +6620,15 @@
       "specification": "Strap\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "حزام بطارية Strap لصيانة الدراجات النارية"
   },
   {
     "id": "1277",
     "sku": "1277",
     "name": "لمبة لوحة",
     "name_en": "لمبة لوحة",
-    "description": "LED\r - قطع",
+    "description": "لمبة لوحة بمواصفة LED يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1277.jpg",
@@ -6368,14 +6644,15 @@
       "specification": "LED\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "لمبة لوحة LED لصيانة الدراجات النارية"
   },
   {
     "id": "1278",
     "sku": "1278",
     "name": "غطاء مقعد",
     "name_en": "غطاء مقعد",
-    "description": "Mesh\r - إكسسوارات",
+    "description": "غطاء مقعد بمواصفة Mesh يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1278.jpg",
@@ -6391,14 +6668,15 @@
       "specification": "Mesh\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "غطاء مقعد Mesh لصيانة الدراجات النارية"
   },
   {
     "id": "1279",
     "sku": "1279",
     "name": "وسادة جل",
     "name_en": "وسادة جل",
-    "description": "Gel\r - إكسسوارات",
+    "description": "وسادة جل بمواصفة Gel يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1279.jpg",
@@ -6414,14 +6692,15 @@
       "specification": "Gel\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "وسادة جل Gel لصيانة الدراجات النارية"
   },
   {
     "id": "1280",
     "sku": "1280",
     "name": "اكمام",
     "name_en": "اكمام",
-    "description": "Sleeves\r - ملابس",
+    "description": "اكمام بمواصفة Sleeves يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1280.jpg",
@@ -6437,14 +6716,15 @@
       "specification": "Sleeves\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "اكمام Sleeves لصيانة الدراجات النارية"
   },
   {
     "id": "1281",
     "sku": "1281",
     "name": "شنطة فخذ",
     "name_en": "شنطة فخذ",
-    "description": "Bag\r - ملابس",
+    "description": "شنطة فخذ بمواصفة Bag يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1281.jpg",
@@ -6460,14 +6740,15 @@
       "specification": "Bag\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "شنطة فخذ Bag لصيانة الدراجات النارية"
   },
   {
     "id": "1282",
     "sku": "1282",
     "name": "شنطة تانك",
     "name_en": "شنطة تانك",
-    "description": "Bag\r - ملابس",
+    "description": "شنطة تانك بمواصفة Bag يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1282.jpg",
@@ -6483,14 +6764,15 @@
       "specification": "Bag\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "شنطة تانك Bag لصيانة الدراجات النارية"
   },
   {
     "id": "1283",
     "sku": "1283",
     "name": "شنطة ظهر",
     "name_en": "شنطة ظهر",
-    "description": "Bag\r - ملابس",
+    "description": "شنطة ظهر بمواصفة Bag يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1283.jpg",
@@ -6506,14 +6788,15 @@
       "specification": "Bag\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "شنطة ظهر Bag لصيانة الدراجات النارية"
   },
   {
     "id": "1284",
     "sku": "1284",
     "name": "شطرطون حراري",
     "name_en": "شطرطون حراري",
-    "description": "Wrap\r - قطع",
+    "description": "شطرطون حراري بمواصفة Wrap يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1284.jpg",
@@ -6529,14 +6812,15 @@
       "specification": "Wrap\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "شطرطون حراري Wrap لصيانة الدراجات النارية"
   },
   {
     "id": "1285",
     "sku": "1285",
     "name": "شبك رديتر",
     "name_en": "شبك رديتر",
-    "description": "Mesh\r - قطع",
+    "description": "شبك رديتر بمواصفة Mesh يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1285.jpg",
@@ -6552,14 +6836,15 @@
       "specification": "Mesh\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "شبك رديتر Mesh لصيانة الدراجات النارية"
   },
   {
     "id": "1286",
     "sku": "1286",
     "name": "كلبسات فيبر",
     "name_en": "كلبسات فيبر",
-    "description": "Clips\r - قطع",
+    "description": "كلبسات فيبر بمواصفة Clips يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1286.jpg",
@@ -6575,14 +6860,15 @@
       "specification": "Clips\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كلبسات فيبر Clips لصيانة الدراجات النارية"
   },
   {
     "id": "1287",
     "sku": "1287",
     "name": "اربطة بلاستيك",
     "name_en": "اربطة بلاستيك",
-    "description": "Ties\r - قطع",
+    "description": "اربطة بلاستيك بمواصفة Ties يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1287.jpg",
@@ -6598,14 +6884,15 @@
       "specification": "Ties\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "اربطة بلاستيك Ties لصيانة الدراجات النارية"
   },
   {
     "id": "1288",
     "sku": "1288",
     "name": "شطرطون كهرباء",
     "name_en": "شطرطون كهرباء",
-    "description": "Tape\r - قطع",
+    "description": "شطرطون كهرباء بمواصفة Tape يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1288.jpg",
@@ -6621,14 +6908,15 @@
       "specification": "Tape\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "شطرطون كهرباء Tape لصيانة الدراجات النارية"
   },
   {
     "id": "1289",
     "sku": "1289",
     "name": "بيت فيوز",
     "name_en": "بيت فيوز",
-    "description": "Holder\r - قطع",
+    "description": "بيت فيوز بمواصفة Holder يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1289.jpg",
@@ -6644,14 +6932,15 @@
       "specification": "Holder\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "بيت فيوز Holder لصيانة الدراجات النارية"
   },
   {
     "id": "1290",
     "sku": "1290",
     "name": "كتاوت",
     "name_en": "كتاوت",
-    "description": "Relay\r - قطع",
+    "description": "كتاوت بمواصفة Relay يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1290.jpg",
@@ -6667,14 +6956,15 @@
       "specification": "Relay\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "كتاوت Relay لصيانة الدراجات النارية"
   },
   {
     "id": "1291",
     "sku": "1291",
     "name": "زر اطفاء",
     "name_en": "زر اطفاء",
-    "description": "Switch\r - قطع",
+    "description": "زر اطفاء بمواصفة Switch يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1291.jpg",
@@ -6690,14 +6980,15 @@
       "specification": "Switch\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زر اطفاء Switch لصيانة الدراجات النارية"
   },
   {
     "id": "1292",
     "sku": "1292",
     "name": "زر تشغيل",
     "name_en": "زر تشغيل",
-    "description": "Button\r - قطع",
+    "description": "زر تشغيل بمواصفة Button يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1292.jpg",
@@ -6713,14 +7004,15 @@
       "specification": "Button\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "زر تشغيل Button لصيانة الدراجات النارية"
   },
   {
     "id": "1293",
     "sku": "1293",
     "name": "عداد ديجيتال",
     "name_en": "عداد ديجيتال",
-    "description": "Speedo\r - قطع",
+    "description": "عداد ديجيتال بمواصفة Speedo يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1293.jpg",
@@ -6736,14 +7028,15 @@
       "specification": "Speedo\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "عداد ديجيتال Speedo لصيانة الدراجات النارية"
   },
   {
     "id": "1294",
     "sku": "1294",
     "name": "عداد ضغط",
     "name_en": "عداد ضغط",
-    "description": "RPM\r - قطع",
+    "description": "عداد ضغط بمواصفة RPM يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1294.jpg",
@@ -6759,14 +7052,15 @@
       "specification": "RPM\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "عداد ضغط RPM لصيانة الدراجات النارية"
   },
   {
     "id": "1295",
     "sku": "1295",
     "name": "ساعة حرارة",
     "name_en": "ساعة حرارة",
-    "description": "Temp\r - قطع",
+    "description": "ساعة حرارة بمواصفة Temp يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1295.jpg",
@@ -6782,14 +7076,15 @@
       "specification": "Temp\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "ساعة حرارة Temp لصيانة الدراجات النارية"
   },
   {
     "id": "1296",
     "sku": "1296",
     "name": "ساعة",
     "name_en": "ساعة",
-    "description": "Clock\r - إكسسوارات",
+    "description": "ساعة بمواصفة Clock يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1296.jpg",
@@ -6805,14 +7100,15 @@
       "specification": "Clock\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "ساعة Clock لصيانة الدراجات النارية"
   },
   {
     "id": "1297",
     "sku": "1297",
     "name": "قارئ فولت",
     "name_en": "قارئ فولت",
-    "description": "Volt\r - إكسسوارات",
+    "description": "قارئ فولت بمواصفة Volt يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1297.jpg",
@@ -6828,14 +7124,15 @@
       "specification": "Volt\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "قارئ فولت Volt لصيانة الدراجات النارية"
   },
   {
     "id": "1298",
     "sku": "1298",
     "name": "حامل اكواب",
     "name_en": "حامل اكواب",
-    "description": "Holder\r - إكسسوارات",
+    "description": "حامل اكواب بمواصفة Holder يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1298.jpg",
@@ -6851,14 +7148,15 @@
       "specification": "Holder\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "حامل اكواب Holder لصيانة الدراجات النارية"
   },
   {
     "id": "1299",
     "sku": "1299",
     "name": "سارية علم",
     "name_en": "سارية علم",
-    "description": "Pole\r - إكسسوارات",
+    "description": "سارية علم بمواصفة Pole يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1299.jpg",
@@ -6874,14 +7172,15 @@
       "specification": "Pole\r"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "سارية علم Pole لصيانة الدراجات النارية"
   },
   {
     "id": "1300",
     "sku": "1300",
     "name": "قفل خوذة",
     "name_en": "قفل خوذة",
-    "description": "Lock - إكسسوارات",
+    "description": "قفل خوذة بمواصفة Lock يوفر أداءً ثابتاً ويحافظ على المحرك مع الاستخدام اليومي والصيانة الدورية.",
     "price": 0,
     "currency": "ريال",
     "image_url": "/Images/1300.jpg",
@@ -6897,6 +7196,7 @@
       "specification": "Lock"
     },
     "created_at": "2025-01-15T00:00:00Z",
-    "updated_at": "2025-01-15T00:00:00Z"
+    "updated_at": "2025-01-15T00:00:00Z",
+    "short_description": "قفل خوذة Lock لصيانة الدراجات النارية"
   }
 ]
