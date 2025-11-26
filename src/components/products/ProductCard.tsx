@@ -33,8 +33,8 @@ export default function ProductCard({ product }: ProductCardProps) {
         <div className="relative overflow-hidden bg-gradient-to-b from-background to-background-light aspect-square">
           <LazyProductImage product={product} alt={displayName} />
 
-          {/* Quick Add Button - visible on mobile, enhanced on hover */}
-          {isAvailable && (
+          {/* Quick Add Button - visible on mobile, enhanced on hover - Hidden for motorcycles */}
+          {isAvailable && product.type !== 'bike' && (
             <button
               onClick={handleAddToCart}
               className="absolute bottom-2 right-2 bg-primary/90 backdrop-blur-sm text-white p-2 rounded-lg opacity-70 md:opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary hover:scale-110 active:scale-95"
