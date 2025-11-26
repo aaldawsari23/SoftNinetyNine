@@ -26,6 +26,8 @@ export default function CatalogContent() {
   const [selectedBrand, setSelectedBrand] = useState<string>(brandParam || 'all');
   const [searchQuery, setSearchQuery] = useState(searchParam || '');
   const [currentPage, setCurrentPage] = useState(1);
+  const [sortBy, setSortBy] = useState<'newest' | 'price-asc' | 'price-desc' | 'name'>('newest');
+  const [priceRange, setPriceRange] = useState<{ min: number; max: number }>({ min: 0, max: 10000 });
 
   // State for data from provider
   const [products, setProducts] = useState<Product[]>([]);
@@ -90,16 +92,37 @@ export default function CatalogContent() {
       status: 'published',
     });
 
-    // Sort by newest
-    filtered = sortProducts(filtered, 'newest');
+    // Apply price range filter
+    filtered = filtered.filter(p => p.price >= priceRange.min && p.price <= priceRange.max);
+
+    // Apply sorting
+    filtered = sortProducts(filtered, sortBy);
 
     return filtered;
-  }, [products, selectedCategory, selectedBrand, searchQuery, isLoading]);
+  }, [products, selectedCategory, selectedBrand, searchQuery, priceRange, sortBy, isLoading]);
 
   // Reset to page 1 when filters change
   useEffect(() => {
     setCurrentPage(1);
-  }, [selectedCategory, selectedBrand, searchQuery]);
+  }, [selectedCategory, selectedBrand, searchQuery, priceRange, sortBy]);
+
+  // Calculate price range from available products
+  const actualPriceRange = useMemo(() => {
+    if (products.length === 0) return { min: 0, max: 10000 };
+
+    const prices = products.filter(p => p.status === 'published').map(p => p.price);
+    return {
+      min: Math.floor(Math.min(...prices) / 10) * 10,
+      max: Math.ceil(Math.max(...prices) / 10) * 10,
+    };
+  }, [products]);
+
+  // Initialize price range when products load
+  useEffect(() => {
+    if (products.length > 0 && priceRange.min === 0 && priceRange.max === 10000) {
+      setPriceRange(actualPriceRange);
+    }
+  }, [products, actualPriceRange]);
 
   const availableCategories = useMemo(() => {
     return categories;
@@ -164,6 +187,52 @@ export default function CatalogContent() {
           <svg className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
+        </div>
+
+        {/* Sort and Price Filter */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+          {/* Sort Dropdown */}
+          <div>
+            <label className="block text-xs text-text-muted font-semibold mb-2">الترتيب:</label>
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value as any)}
+              className="w-full bg-background/50 text-white px-3 py-2 rounded-xl border border-white/10 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all text-sm"
+            >
+              <option value="newest">الأحدث</option>
+              <option value="price-asc">السعر: من الأقل للأعلى</option>
+              <option value="price-desc">السعر: من الأعلى للأقل</option>
+              <option value="name">الاسم (أ-ي)</option>
+            </select>
+          </div>
+
+          {/* Price Range */}
+          <div>
+            <label className="block text-xs text-text-muted font-semibold mb-2">
+              نطاق السعر: {priceRange.min} - {priceRange.max} ريال
+            </label>
+            <div className="flex gap-2 items-center">
+              <input
+                type="number"
+                min={actualPriceRange.min}
+                max={actualPriceRange.max}
+                value={priceRange.min}
+                onChange={(e) => setPriceRange({ ...priceRange, min: Number(e.target.value) })}
+                className="w-1/2 bg-background/50 text-white px-2 py-1.5 rounded-lg border border-white/10 focus:border-primary/50 focus:outline-none text-sm"
+                placeholder="من"
+              />
+              <span className="text-text-muted">-</span>
+              <input
+                type="number"
+                min={actualPriceRange.min}
+                max={actualPriceRange.max}
+                value={priceRange.max}
+                onChange={(e) => setPriceRange({ ...priceRange, max: Number(e.target.value) })}
+                className="w-1/2 bg-background/50 text-white px-2 py-1.5 rounded-lg border border-white/10 focus:border-primary/50 focus:outline-none text-sm"
+                placeholder="إلى"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Category Chips */}
@@ -239,12 +308,14 @@ export default function CatalogContent() {
           <p className="text-xs md:text-sm text-text-muted">
             <span className="text-primary font-bold">{filteredProducts.length}</span> منتج
           </p>
-          {(selectedCategory !== 'all' || selectedBrand !== 'all' || searchQuery) && (
+          {(selectedCategory !== 'all' || selectedBrand !== 'all' || searchQuery || priceRange.min !== actualPriceRange.min || priceRange.max !== actualPriceRange.max || sortBy !== 'newest') && (
             <button
               onClick={() => {
                 setSelectedCategory('all');
                 setSelectedBrand('all');
                 setSearchQuery('');
+                setPriceRange(actualPriceRange);
+                setSortBy('newest');
               }}
               className="text-xs text-primary hover:text-primary/80 transition-colors"
             >
