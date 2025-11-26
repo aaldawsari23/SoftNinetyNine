@@ -29,7 +29,7 @@ export default function ProductDetailPage() {
         const foundProduct = await dataProvider.getProductById(productId);
 
         if (!foundProduct) {
-          setError(''DEF*, :J1 EH,H/');
+          setError("المنتج غير موجود");
           return;
         }
 
@@ -54,7 +54,7 @@ export default function ProductDetailPage() {
         setRelatedProducts(related);
       } catch (err) {
         console.error('Error loading product:', err);
-        setError('-/+ .7# #+F'! *-EJD 'DEF*,');
+        setError("حدث خطأ أثناء تحميل المنتج");
       } finally {
         setIsLoading(false);
       }

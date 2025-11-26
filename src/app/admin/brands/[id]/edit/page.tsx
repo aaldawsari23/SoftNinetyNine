@@ -23,13 +23,13 @@ export default function EditBrandPage() {
       try {
         const found = await dataProvider.getBrandById(id);
         if (!found) {
-          setError('DE J*E 'D9+H1 9DI 'D9D'E) 'D*,'1J)');
+          setError("لم يتم العثور على العلامة التجارية");
           return;
         }
         setBrand(found);
       } catch (loadError) {
         console.error('Error loading brand', loadError);
-        setError('-/+ .7# #+F'! *-EJD 'D9D'E) 'D*,'1J)');
+        setError("حدث خطأ أثناء تحميل العلامة التجارية");
       } finally {
         setIsLoading(false);
       }
@@ -44,7 +44,7 @@ export default function EditBrandPage() {
       router.push('/admin/brands');
     } catch (error) {
       console.error('Error updating brand', error);
-      setSubmitError('-/+ .7# #+F'! *-/J+ 'D9D'E) 'D*,'1J)');
+      setSubmitError("حدث خطأ أثناء تحديث العلامة التجارية");
     }
   };
 

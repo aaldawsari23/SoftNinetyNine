@@ -22,7 +22,7 @@ export default function NewCategoryPage() {
       router.push('/admin/categories');
     } catch (error) {
       console.error('Error creating category', error);
-      setSubmitError('-/+ .7# #+F'! %6'A) 'DA&)');
+      setSubmitError("حدث خطأ أثناء إضافة الفئة");
     } finally {
       setIsSaving(false);
     }

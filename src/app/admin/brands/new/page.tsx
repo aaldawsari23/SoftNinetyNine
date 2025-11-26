@@ -22,7 +22,7 @@ export default function NewBrandPage() {
       router.push('/admin/brands');
     } catch (error) {
       console.error('Error creating brand', error);
-      setSubmitError('-/+ .7# #+F'! %6'A) 'D9D'E) 'D*,'1J)');
+      setSubmitError("حدث خطأ أثناء إضافة العلامة التجارية");
     } finally {
       setIsSaving(false);
     }

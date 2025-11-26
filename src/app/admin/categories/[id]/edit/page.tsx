@@ -23,13 +23,13 @@ export default function EditCategoryPage() {
       try {
         const found = await dataProvider.getCategoryById(id);
         if (!found) {
-          setError('DE J*E 'D9+H1 9DI 'DA&)');
+          setError("لم يتم العثور على الفئة");
           return;
         }
         setCategory(found);
       } catch (loadError) {
         console.error('Error loading category', loadError);
-        setError('-/+ .7# #+F'! *-EJD 'DA&)');
+        setError("حدث خطأ أثناء تحميل الفئة");
       } finally {
         setIsLoading(false);
       }
@@ -44,7 +44,7 @@ export default function EditCategoryPage() {
       router.push('/admin/categories');
     } catch (error) {
       console.error('Error updating category', error);
-      setSubmitError('-/+ .7# #+F'! *-/J+ 'DA&)');
+      setSubmitError("حدث خطأ أثناء تحديث الفئة");
     }
   };
 
