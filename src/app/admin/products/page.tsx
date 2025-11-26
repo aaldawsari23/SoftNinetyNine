@@ -1,63 +1,78 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { products as initialProducts } from '@/data/products';
 import { Product } from '@/types';
 import Link from 'next/link';
-
-const STORAGE_KEY = 'soft99_admin_products';
+import { localProvider } from '@/lib/data-providers';
+import { filterProducts } from '@/utils/catalog';
 
 export default function AdminProductsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<'all' | 'published' | 'hidden'>('all');
   const [products, setProducts] = useState<Product[]>([]);
-  const [mounted, setMounted] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Load products from localStorage or use initial data
+  // Load products from provider
   useEffect(() => {
-    setMounted(true);
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
+    async function loadProducts() {
       try {
-        setProducts(JSON.parse(stored));
-      } catch {
-        setProducts(initialProducts);
+        setIsLoading(true);
+        const data = await localProvider.getProducts();
+        setProducts(data);
+      } catch (error) {
+        console.error('Error loading products:', error);
+      } finally {
+        setIsLoading(false);
       }
-    } else {
-      setProducts(initialProducts);
     }
+    loadProducts();
   }, []);
 
-  // Save products to localStorage whenever they change
-  useEffect(() => {
-    if (mounted && products.length > 0) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
-    }
-  }, [products, mounted]);
-
-  const handleDelete = (productId: string) => {
+  const handleDelete = async (productId: string) => {
     if (confirm('هل أنت متأكد من حذف هذا المنتج؟')) {
-      setProducts(prev => prev.filter(p => p.id !== productId));
+      try {
+        const success = await localProvider.deleteProduct(productId);
+        if (success) {
+          setProducts(prev => prev.filter(p => p.id !== productId));
+        }
+      } catch (error) {
+        console.error('Error deleting product:', error);
+        alert('حدث خطأ أثناء حذف المنتج');
+      }
     }
   };
 
-  const handleToggleStatus = (productId: string) => {
-    setProducts(prev => prev.map(p =>
-      p.id === productId
-        ? { ...p, status: p.status === 'published' ? 'hidden' : 'published' }
-        : p
-    ));
+  const handleToggleStatus = async (productId: string) => {
+    try {
+      const product = products.find(p => p.id === productId);
+      if (!product) return;
+
+      const newStatus = product.status === 'published' ? 'hidden' : 'published';
+      const updated = await localProvider.updateProduct(productId, { status: newStatus });
+
+      setProducts(prev => prev.map(p =>
+        p.id === productId ? updated : p
+      ));
+    } catch (error) {
+      console.error('Error updating product status:', error);
+      alert('حدث خطأ أثناء تحديث حالة المنتج');
+    }
   };
 
-  const filteredProducts = products.filter(p => {
-    const matchesSearch = p.name_ar?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         p.name_en?.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesStatus = statusFilter === 'all' || p.status === statusFilter;
-    return matchesSearch && matchesStatus;
+  const filteredProducts = filterProducts(products, {
+    search: searchQuery || undefined,
+    status: statusFilter === 'all' ? undefined : statusFilter,
   });
 
-  if (!mounted) {
-    return <div className="text-white">جاري التحميل...</div>;
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-[400px]">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+          <p className="mt-4 text-text-muted">جاري التحميل...</p>
+        </div>
+      </div>
+    );
   }
 
   return (
