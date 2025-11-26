@@ -3,9 +3,10 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import ProductGrid from '@/components/products/ProductGrid';
-import { products, categories, brands } from '@/data/products';
-import { ProductType } from '@/types';
+import { Product, Category, Brand } from '@/types';
 import ScrollToTop from '@/components/ui/ScrollToTop';
+import { localProvider } from '@/lib/data-providers';
+import { filterProducts, sortProducts, searchProducts, paginateProducts } from '@/utils/catalog';
 
 const ITEMS_PER_PAGE = 20;
 
@@ -23,6 +24,34 @@ export default function CatalogContent() {
   const [selectedBrand, setSelectedBrand] = useState<string>(brandParam || 'all');
   const [searchQuery, setSearchQuery] = useState(searchParam || '');
   const [currentPage, setCurrentPage] = useState(1);
+
+  // State for data from provider
+  const [products, setProducts] = useState<Product[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [brands, setBrands] = useState<Brand[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Load data from provider on mount
+  useEffect(() => {
+    async function loadData() {
+      try {
+        setIsLoading(true);
+        const [productsData, categoriesData, brandsData] = await Promise.all([
+          localProvider.getProducts({ status: 'published' }),
+          localProvider.getCategories(),
+          localProvider.getBrands(),
+        ]);
+        setProducts(productsData);
+        setCategories(categoriesData);
+        setBrands(brandsData);
+      } catch (error) {
+        console.error('Error loading data:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    loadData();
+  }, []);
 
   // Update URL when filters change
   useEffect(() => {
@@ -47,39 +76,23 @@ export default function CatalogContent() {
   }, [selectedCategory, selectedBrand, searchQuery, pathname, router]);
 
   const filteredProducts = useMemo(() => {
-    let filtered = products.filter(p => p.status === 'published');
-
-    if (selectedCategory !== 'all') {
-      filtered = filtered.filter(p => p.category_id === selectedCategory);
+    if (isLoading || products.length === 0) {
+      return [];
     }
 
-    if (selectedBrand !== 'all') {
-      filtered = filtered.filter(p => p.brand_id === selectedBrand);
-    }
+    // Apply filters using utility functions
+    let filtered = filterProducts(products, {
+      category: selectedCategory !== 'all' ? selectedCategory : undefined,
+      brand: selectedBrand !== 'all' ? selectedBrand : undefined,
+      search: searchQuery || undefined,
+      status: 'published',
+    });
 
-    if (searchQuery) {
-      const query = searchQuery.toLowerCase();
-      filtered = filtered.filter(p => {
-        // Search in name and description
-        const matchesNameOrDesc = p.name?.toLowerCase().includes(query) ||
-          p.description.toLowerCase().includes(query);
+    // Sort by newest
+    filtered = sortProducts(filtered, 'newest');
 
-        // Search in SKU
-        const matchesSku = p.sku?.toLowerCase().includes(query);
-
-        // Search in model (from specifications)
-        const matchesModel = p.specifications?.model?.toLowerCase().includes(query);
-
-        // Search in brand name
-        const brand = brands.find(b => b.id === p.brand_id);
-        const matchesBrand = brand?.name.toLowerCase().includes(query);
-
-        return matchesNameOrDesc || matchesSku || matchesModel || matchesBrand;
-      });
-    }
-
-    return filtered.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
-  }, [selectedCategory, selectedBrand, searchQuery]);
+    return filtered;
+  }, [products, selectedCategory, selectedBrand, searchQuery, isLoading]);
 
   // Reset to page 1 when filters change
   useEffect(() => {
@@ -88,11 +101,13 @@ export default function CatalogContent() {
 
   const availableCategories = useMemo(() => {
     return categories;
-  }, []);
+  }, [categories]);
 
   // Optimized: Calculate available brands from base products, not filtered
   // This prevents unnecessary recalculation when filters change
   const availableBrands = useMemo(() => {
+    if (products.length === 0) return [];
+
     const publishedProducts = products.filter(p => p.status === 'published');
 
     // If category is selected, only show brands that have products in that category
@@ -108,7 +123,7 @@ export default function CatalogContent() {
     // Otherwise show all brands that have published products
     const brandIds = new Set(publishedProducts.map(p => p.brand_id));
     return brands.filter(b => brandIds.has(b.id));
-  }, [selectedCategory]);
+  }, [selectedCategory, products, brands]);
 
   // Paginate the filtered products
   const paginatedProducts = useMemo(() => {
@@ -118,6 +133,18 @@ export default function CatalogContent() {
 
   // Calculate total pages
   const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
+
+  // Show loading state
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-[400px]">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+          <p className="mt-4 text-text-muted">جاري التحميل...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-4">
