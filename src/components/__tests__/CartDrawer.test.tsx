@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
 import CartDrawer from '../cart/CartDrawer'
-import { CartProvider, useCart } from '@/contexts/CartContext'
+import { CartProvider } from '@/contexts/CartContext'
 
 // Mock window.open
 const mockWindowOpen = jest.fn()

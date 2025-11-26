@@ -1,5 +1,6 @@
 import React from 'react'
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+import { useSearchParams } from 'next/navigation'
 import CatalogContent from '../CatalogContent'
 import { CartProvider } from '@/contexts/CartContext'
 
@@ -61,6 +62,8 @@ jest.mock('next/navigation', () => {
 })
 
 describe('CatalogContent - Filter Tests', () => {
+  const searchParamsMock = useSearchParams as unknown as jest.Mock;
+
   const renderWithCart = (component: React.ReactElement) => {
     return render(<CartProvider>{component}</CartProvider>)
   }
@@ -138,8 +141,7 @@ describe('CatalogContent - Filter Tests', () => {
 
   it('should respect initial category from URL params', () => {
     // For this test, we need to mock the searchParams to return c1
-    const { useSearchParams } = require('next/navigation')
-    useSearchParams.mockReturnValueOnce({
+    searchParamsMock.mockReturnValueOnce({
       get: jest.fn((param) => (param === 'category' ? 'c1' : null)),
     })
 

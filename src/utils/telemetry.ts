@@ -7,7 +7,7 @@
 
 type TelemetryEvent = {
   name: string;
-  payload?: Record<string, any>;
+  payload?: Record<string, unknown>;
   timestamp: string;
 };
 
@@ -16,7 +16,7 @@ const inMemoryEvents: TelemetryEvent[] = [];
 /**
  * تسجيل حدث عام
  */
-export function trackEvent(name: string, payload?: Record<string, any>): void {
+export function trackEvent(name: string, payload?: Record<string, unknown>): void {
   const event: TelemetryEvent = {
     name,
     payload,
@@ -33,7 +33,7 @@ export function trackEvent(name: string, payload?: Record<string, any>): void {
 /**
  * تسجيل عرض صفحة/شاشة
  */
-export function trackView(view: string, meta?: Record<string, any>): void {
+export function trackView(view: string, meta?: Record<string, unknown>): void {
   trackEvent(`view:${view}`, meta);
 }
 

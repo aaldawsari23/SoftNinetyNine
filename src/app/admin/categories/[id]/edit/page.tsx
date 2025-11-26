@@ -35,7 +35,7 @@ export default function EditCategoryPage() {
       }
     }
     loadCategory();
-  }, [id]);
+  }, [id, dataProvider]);
 
   const handleSubmit = async (categoryData: Omit<Category, 'id' | 'created_at'>) => {
     try {
@@ -51,7 +51,7 @@ export default function EditCategoryPage() {
   if (isLoading) {
     return (
       <div className="min-h-[300px] flex items-center justify-center">
-        <p className="text-text-secondary">,'1M *-EJD (J'F'* 'DA&)...</p>
+        <p className="text-text-secondary">جاري تحميل بيانات الفئة...</p>
       </div>
     );
   }
@@ -65,7 +65,7 @@ export default function EditCategoryPage() {
             href="/admin/categories"
             className="text-primary hover:text-primary-hover text-sm"
           >
-            � 'D1,H9 DDA&'*
+            ← العودة إلى الفئات
           </Link>
         </div>
       </div>
@@ -77,19 +77,19 @@ export default function EditCategoryPage() {
   }
 
   return (
-    <div className="px-2 sm:px-4 pb-8 space-y-6">
-      <div className="flex items-center justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-bold text-white">*9/JD 'DA&)</h1>
-          <p className="text-text-secondary text-sm">BE (*-/J+ (J'F'* 'DA&) +E '-A8 'D*:JJ1'*.</p>
+      <div className="px-2 sm:px-4 pb-8 space-y-6">
+        <div className="flex items-center justify-between gap-3">
+          <div>
+          <h1 className="text-2xl font-bold text-white">تعديل الفئة</h1>
+          <p className="text-text-secondary text-sm">قم بتحديث بيانات الفئة الحالية لضمان دقة التصنيف.</p>
+          </div>
+          <Link
+            href="/admin/categories"
+            className="text-text-secondary hover:text-white text-sm border border-white/10 px-3 py-1.5 rounded-md"
+          >
+          ← العودة إلى الفئات
+          </Link>
         </div>
-        <Link
-          href="/admin/categories"
-          className="text-text-secondary hover:text-white text-sm border border-white/10 px-3 py-1.5 rounded-md"
-        >
-          � 'D1,H9 DDA&'*
-        </Link>
-      </div>
 
       {submitError && (
         <div className="card p-4 bg-red-500/10 border-red-500/20">

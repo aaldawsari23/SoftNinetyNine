@@ -35,7 +35,7 @@ export default function EditBrandPage() {
       }
     }
     loadBrand();
-  }, [id]);
+  }, [id, dataProvider]);
 
   const handleSubmit = async (brandData: Omit<Brand, 'id' | 'created_at'>) => {
     try {
@@ -51,7 +51,7 @@ export default function EditBrandPage() {
   if (isLoading) {
     return (
       <div className="min-h-[300px] flex items-center justify-center">
-        <p className="text-text-secondary">,'1M *-EJD (J'F'* 'D9D'E) 'D*,'1J)...</p>
+        <p className="text-text-secondary">جاري تحميل بيانات العلامة التجارية...</p>
       </div>
     );
   }
@@ -65,7 +65,7 @@ export default function EditBrandPage() {
             href="/admin/brands"
             className="text-primary hover:text-primary-hover text-sm"
           >
-            � 'D1,H9 DD9D'E'* 'D*,'1J)
+            ← العودة إلى العلامات التجارية
           </Link>
         </div>
       </div>
@@ -80,14 +80,14 @@ export default function EditBrandPage() {
     <div className="px-2 sm:px-4 pb-8 space-y-6">
       <div className="flex items-center justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-white">*9/JD 'D9D'E) 'D*,'1J)</h1>
-          <p className="text-text-secondary text-sm">BE (*-/J+ (J'F'* 'D9D'E) 'D*,'1J) +E '-A8 'D*:JJ1'*.</p>
+          <h1 className="text-2xl font-bold text-white">تعديل العلامة التجارية</h1>
+          <p className="text-text-secondary text-sm">قم بتحديث بيانات العلامة التجارية مع الحفاظ على الاتساق.</p>
         </div>
         <Link
           href="/admin/brands"
           className="text-text-secondary hover:text-white text-sm border border-white/10 px-3 py-1.5 rounded-md"
         >
-          � 'D1,H9 DD9D'E'* 'D*,'1J)
+          ← العودة إلى العلامات التجارية
         </Link>
       </div>
 

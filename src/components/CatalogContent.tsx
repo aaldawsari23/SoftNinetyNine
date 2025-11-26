@@ -6,7 +6,7 @@ import ProductGrid from '@/components/products/ProductGrid';
 import { Product, Category, Brand } from '@/types';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import { getDataProvider } from '@/lib/data-providers';
-import { filterProducts, sortProducts, searchProducts, paginateProducts } from '@/utils/catalog';
+import { filterProducts, sortProducts } from '@/utils/catalog';
 
 const ITEMS_PER_PAGE = 20;
 
@@ -55,7 +55,7 @@ export default function CatalogContent() {
       }
     }
     loadData();
-  }, []);
+  }, [dataProvider]);
 
   // Update URL when filters change
   useEffect(() => {
@@ -104,7 +104,7 @@ export default function CatalogContent() {
   // Reset to page 1 when filters change
   useEffect(() => {
     setCurrentPage(1);
-  }, [selectedCategory, selectedBrand, searchQuery, priceRange, sortBy]);
+  }, [selectedCategory, selectedBrand, searchQuery, priceRange.min, priceRange.max, sortBy]);
 
   // Calculate price range from available products
   const actualPriceRange = useMemo(() => {
@@ -122,7 +122,7 @@ export default function CatalogContent() {
     if (products.length > 0 && priceRange.min === 0 && priceRange.max === 10000) {
       setPriceRange(actualPriceRange);
     }
-  }, [products, actualPriceRange]);
+  }, [products, actualPriceRange, priceRange.min, priceRange.max]);
 
   const availableCategories = useMemo(() => {
     return categories;
@@ -196,7 +196,11 @@ export default function CatalogContent() {
             <label className="block text-xs text-text-muted font-semibold mb-2">الترتيب:</label>
             <select
               value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as any)}
+              onChange={(e) =>
+                setSortBy(
+                  e.target.value as 'newest' | 'price-asc' | 'price-desc' | 'name'
+                )
+              }
               className="w-full bg-background/50 text-white px-3 py-2 rounded-xl border border-white/10 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all text-sm"
             >
               <option value="newest">الأحدث</option>

@@ -29,7 +29,7 @@ export default function AdminProductsPage() {
       }
     }
     loadProducts();
-  }, []);
+  }, [dataProvider]);
 
   const handleDelete = async (productId: string) => {
     if (confirm('هل أنت متأكد من حذف هذا المنتج؟')) {
@@ -106,7 +106,9 @@ export default function AdminProductsPage() {
           <div>
             <select
               value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value as any)}
+              onChange={(e) =>
+                setStatusFilter(e.target.value as 'all' | 'published' | 'hidden')
+              }
               className="input-field w-full text-sm md:text-base"
             >
               <option value="all">كل الحالات</option>

@@ -25,7 +25,8 @@ export default function AdminLoginPage() {
       } else {
         setError('البريد الإلكتروني أو كلمة المرور غير صحيحة');
       }
-    } catch (err) {
+    } catch (loginError) {
+      console.error('Login failed', loginError);
       setError('حدث خطأ أثناء تسجيل الدخول. الرجاء المحاولة مرة أخرى.');
     }
   };
