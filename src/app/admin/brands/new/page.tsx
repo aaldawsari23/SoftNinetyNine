@@ -22,7 +22,7 @@ export default function NewBrandPage() {
       router.push('/admin/brands');
     } catch (error) {
       console.error('Error creating brand', error);
-      setSubmitError("حدث خطأ أثناء إضافة العلامة التجارية");
+      setSubmitError("حدث خطأ أثناء إضافة العلامة التجارية. يرجى المحاولة مرة أخرى.");
     } finally {
       setIsSaving(false);
     }
