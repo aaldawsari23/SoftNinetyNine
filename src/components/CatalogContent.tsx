@@ -5,12 +5,14 @@ import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import ProductGrid from '@/components/products/ProductGrid';
 import { Product, Category, Brand } from '@/types';
 import ScrollToTop from '@/components/ui/ScrollToTop';
-import { localProvider } from '@/lib/data-providers';
+import { getDataProvider } from '@/lib/data-providers';
 import { filterProducts, sortProducts, searchProducts, paginateProducts } from '@/utils/catalog';
 
 const ITEMS_PER_PAGE = 20;
 
 export default function CatalogContent() {
+  const dataProvider = getDataProvider();
+
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -37,9 +39,9 @@ export default function CatalogContent() {
       try {
         setIsLoading(true);
         const [productsData, categoriesData, brandsData] = await Promise.all([
-          localProvider.getProducts({ status: 'published' }),
-          localProvider.getCategories(),
-          localProvider.getBrands(),
+          dataProvider.getProducts({ status: 'published' }),
+          dataProvider.getCategories(),
+          dataProvider.getBrands(),
         ]);
         setProducts(productsData);
         setCategories(categoriesData);

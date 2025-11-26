@@ -28,12 +28,41 @@ export default async function ProductPage({ params }: ProductPageProps) {
     )
     .slice(0, 5);
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name_ar || product.name_en || product.name || 'منتج',
+    description: product.short_description || product.description,
+    sku: product.sku || product.id,
+    image: product.images?.length ? product.images : product.image_url ? [product.image_url] : undefined,
+    brand: brand
+      ? {
+          '@type': 'Brand',
+          name: brand.name,
+        }
+      : undefined,
+    category: category?.name_ar,
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: product.currency || 'SAR',
+      price: product.price,
+      availability: product.is_available === false ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock',
+    },
+  };
+
   return (
-    <ProductDetails
-      product={product}
-      brand={brand || null}
-      category={category}
-      relatedProducts={relatedProducts}
-    />
+    <>
+      <ProductDetails
+        product={product}
+        brand={brand || null}
+        category={category}
+        relatedProducts={relatedProducts}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+    </>
   );
 }

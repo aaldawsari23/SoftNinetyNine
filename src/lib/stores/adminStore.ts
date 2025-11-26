@@ -8,7 +8,9 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { Product, Category, Brand } from '@/types';
-import { localProvider } from '@/lib/data-providers';
+import { getDataProvider } from '@/lib/data-providers';
+
+const dataProvider = getDataProvider();
 
 interface AdminState {
   // البيانات
@@ -58,7 +60,7 @@ export const useAdminStore = create<AdminState>()(
       loadProducts: async () => {
         try {
           set({ isLoading: true, error: null });
-          const products = await localProvider.getProducts();
+          const products = await dataProvider.getProducts();
           set({ products, isLoading: false });
         } catch (error) {
           set({
@@ -72,7 +74,7 @@ export const useAdminStore = create<AdminState>()(
       addProduct: async (productData) => {
         try {
           set({ isLoading: true, error: null });
-          const newProduct = await localProvider.createProduct(productData);
+          const newProduct = await dataProvider.createProduct(productData);
           set((state) => ({
             products: [...state.products, newProduct],
             isLoading: false,
@@ -91,7 +93,7 @@ export const useAdminStore = create<AdminState>()(
       updateProduct: async (id, updates) => {
         try {
           set({ isLoading: true, error: null });
-          const updatedProduct = await localProvider.updateProduct(id, updates);
+          const updatedProduct = await dataProvider.updateProduct(id, updates);
           set((state) => ({
             products: state.products.map((p) => (p.id === id ? updatedProduct : p)),
             isLoading: false,
@@ -110,7 +112,7 @@ export const useAdminStore = create<AdminState>()(
       deleteProduct: async (id) => {
         try {
           set({ isLoading: true, error: null });
-          const success = await localProvider.deleteProduct(id);
+          const success = await dataProvider.deleteProduct(id);
           if (success) {
             set((state) => ({
               products: state.products.filter((p) => p.id !== id),
@@ -136,7 +138,7 @@ export const useAdminStore = create<AdminState>()(
       loadCategories: async () => {
         try {
           set({ isLoading: true, error: null });
-          const categories = await localProvider.getCategories();
+          const categories = await dataProvider.getCategories();
           set({ categories, isLoading: false });
         } catch (error) {
           set({
@@ -150,7 +152,7 @@ export const useAdminStore = create<AdminState>()(
       addCategory: async (categoryData) => {
         try {
           set({ isLoading: true, error: null });
-          const newCategory = await localProvider.createCategory(categoryData);
+          const newCategory = await dataProvider.createCategory(categoryData);
           set((state) => ({
             categories: [...state.categories, newCategory],
             isLoading: false,
@@ -169,7 +171,7 @@ export const useAdminStore = create<AdminState>()(
       updateCategory: async (id, updates) => {
         try {
           set({ isLoading: true, error: null });
-          const updatedCategory = await localProvider.updateCategory(id, updates);
+          const updatedCategory = await dataProvider.updateCategory(id, updates);
           set((state) => ({
             categories: state.categories.map((c) => (c.id === id ? updatedCategory : c)),
             isLoading: false,
@@ -188,7 +190,7 @@ export const useAdminStore = create<AdminState>()(
       deleteCategory: async (id) => {
         try {
           set({ isLoading: true, error: null });
-          const success = await localProvider.deleteCategory(id);
+          const success = await dataProvider.deleteCategory(id);
           if (success) {
             set((state) => ({
               categories: state.categories.filter((c) => c.id !== id),
@@ -209,7 +211,7 @@ export const useAdminStore = create<AdminState>()(
       loadBrands: async () => {
         try {
           set({ isLoading: true, error: null });
-          const brands = await localProvider.getBrands();
+          const brands = await dataProvider.getBrands();
           set({ brands, isLoading: false });
         } catch (error) {
           set({
@@ -223,7 +225,7 @@ export const useAdminStore = create<AdminState>()(
       addBrand: async (brandData) => {
         try {
           set({ isLoading: true, error: null });
-          const newBrand = await localProvider.createBrand(brandData);
+          const newBrand = await dataProvider.createBrand(brandData);
           set((state) => ({
             brands: [...state.brands, newBrand],
             isLoading: false,
@@ -242,7 +244,7 @@ export const useAdminStore = create<AdminState>()(
       updateBrand: async (id, updates) => {
         try {
           set({ isLoading: true, error: null });
-          const updatedBrand = await localProvider.updateBrand(id, updates);
+          const updatedBrand = await dataProvider.updateBrand(id, updates);
           set((state) => ({
             brands: state.brands.map((b) => (b.id === id ? updatedBrand : b)),
             isLoading: false,
@@ -261,7 +263,7 @@ export const useAdminStore = create<AdminState>()(
       deleteBrand: async (id) => {
         try {
           set({ isLoading: true, error: null });
-          const success = await localProvider.deleteBrand(id);
+          const success = await dataProvider.deleteBrand(id);
           if (success) {
             set((state) => ({
               brands: state.brands.filter((b) => b.id !== id),
@@ -283,9 +285,9 @@ export const useAdminStore = create<AdminState>()(
         try {
           set({ isLoading: true, error: null });
           const [products, categories, brands] = await Promise.all([
-            localProvider.getProducts(),
-            localProvider.getCategories(),
-            localProvider.getBrands(),
+            dataProvider.getProducts(),
+            dataProvider.getCategories(),
+            dataProvider.getBrands(),
           ]);
           set({ products, categories, brands, isLoading: false });
         } catch (error) {
