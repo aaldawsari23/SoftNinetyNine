@@ -7,12 +7,23 @@
 
 import { DataProvider, ProviderConfig } from './types';
 import { localProvider } from './localProvider';
+import { apiProvider } from './apiProvider.stub';
 
 /**
  * المزود النشط حالياً
  * TODO: عند ربط الباك-إند، استبدل بـ API provider
  */
-let activeProvider: DataProvider = localProvider;
+const providerSource = (process.env.DATA_PROVIDER || process.env.NEXT_PUBLIC_DATA_PROVIDER || 'local').toLowerCase();
+
+// حدد المزود النشط بناءً على متغيرات البيئة مع ضمان السقوط للمحلي
+let activeProvider: DataProvider = (() => {
+  try {
+    return createProvider({ source: providerSource === 'api' ? 'api' : 'local' });
+  } catch (error) {
+    console.warn('[data-provider] Falling back to local provider:', error);
+    return localProvider;
+  }
+})();
 
 /**
  * الحصول على المزود النشط
@@ -39,8 +50,8 @@ export function createProvider(config: ProviderConfig): DataProvider {
       return localProvider;
 
     case 'api':
-      // TODO: إنشاء وتفعيل API provider
-      throw new Error('API provider not implemented yet. Use local provider for now.');
+      // يسمح بتفعيل مزود API في المستقبل دون كسر الواجهة الحالية
+      return apiProvider;
 
     default:
       throw new Error(`Unknown provider source: ${config.source}`);
@@ -49,6 +60,7 @@ export function createProvider(config: ProviderConfig): DataProvider {
 
 // تصدير المزود المحلي كخيار افتراضي
 export { localProvider } from './localProvider';
+export { apiProvider } from './apiProvider.stub';
 export * from './types';
 
 // تصدير المزود النشط كـ default

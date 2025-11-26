@@ -3,10 +3,12 @@
 import { useState, useEffect } from 'react';
 import { Product } from '@/types';
 import Link from 'next/link';
-import { localProvider } from '@/lib/data-providers';
+import { getDataProvider } from '@/lib/data-providers';
 import { filterProducts } from '@/utils/catalog';
 
 export default function AdminProductsPage() {
+  const dataProvider = getDataProvider();
+
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<'all' | 'published' | 'hidden'>('all');
   const [products, setProducts] = useState<Product[]>([]);
@@ -17,7 +19,8 @@ export default function AdminProductsPage() {
     async function loadProducts() {
       try {
         setIsLoading(true);
-        const data = await localProvider.getProducts();
+        // TODO: استبدل هذه القراءة المباشرة بنداء API حقيقي عند تفعيل مزود api
+        const data = await dataProvider.getProducts();
         setProducts(data);
       } catch (error) {
         console.error('Error loading products:', error);
@@ -31,7 +34,7 @@ export default function AdminProductsPage() {
   const handleDelete = async (productId: string) => {
     if (confirm('هل أنت متأكد من حذف هذا المنتج؟')) {
       try {
-        const success = await localProvider.deleteProduct(productId);
+        const success = await dataProvider.deleteProduct(productId);
         if (success) {
           setProducts(prev => prev.filter(p => p.id !== productId));
         }
@@ -48,7 +51,7 @@ export default function AdminProductsPage() {
       if (!product) return;
 
       const newStatus = product.status === 'published' ? 'hidden' : 'published';
-      const updated = await localProvider.updateProduct(productId, { status: newStatus });
+      const updated = await dataProvider.updateProduct(productId, { status: newStatus });
 
       setProducts(prev => prev.map(p =>
         p.id === productId ? updated : p
@@ -160,7 +163,7 @@ export default function AdminProductsPage() {
             {/* Actions */}
             <div className="flex gap-2 mt-3 pt-3 border-t border-white/10">
               <Link
-                href={`/admin/products/${product.id}`}
+                href={`/admin/products/${product.id}/edit`}
                 className="flex-1 text-center bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 py-2 px-3 rounded-lg text-xs font-semibold transition-colors"
               >
                 ✏️ تعديل
@@ -242,7 +245,7 @@ export default function AdminProductsPage() {
                 <td className="py-3 px-4">
                   <div className="flex gap-2">
                     <Link
-                      href={`/admin/products/${product.id}`}
+                      href={`/admin/products/${product.id}/edit`}
                       className="text-blue-500 hover:text-blue-400 text-sm transition-colors"
                     >
                       تعديل
