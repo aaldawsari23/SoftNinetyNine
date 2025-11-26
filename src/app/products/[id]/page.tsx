@@ -50,7 +50,7 @@ export default function ProductDetailPage() {
         setBrand(brandData);
 
         // Get related products
-        const related = getRelatedProducts(allProducts, foundProduct, 4);
+        const related = getRelatedProducts(foundProduct, allProducts, 4);
         setRelatedProducts(related);
       } catch (err) {
         console.error('Error loading product:', err);
@@ -61,14 +61,21 @@ export default function ProductDetailPage() {
     }
 
     loadData();
-  }, [productId, dataProvider]);
+  }, [productId]);
 
   const handleWhatsAppContact = () => {
     if (!product) return;
-    const message = `E1-('K #1:( ('D'3*A3'1 9F 'DEF*,: ${product.name_ar}\n'D391: ${product.price} ${product.currency}`;
-    const whatsappNumber = '966500000000'; // TODO: Add real WhatsApp number
+    // Sanitize product data to prevent XSS
+    const safeName = (product.name_ar || '').replace(/[<>]/g, '');
+    const safePrice = String(product.price || 0).replace(/[<>]/g, '');
+    const safeCurrency = (product.currency || '').replace(/[<>]/g, '');
+
+    const message = `E1-('K #1:( ('D'3*A3'1 9F 'DEF*,: ${safeName}\n'D391: ${safePrice} ${safeCurrency}`;
+    const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '966500000000';
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+
+    // Open with security flags
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
   if (isLoading) {

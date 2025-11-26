@@ -12,15 +12,17 @@ export default function NewBrandPage() {
   const router = useRouter();
   const dataProvider = getDataProvider();
   const [isSaving, setIsSaving] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleSubmit = async (brandData: Omit<Brand, 'id' | 'created_at'>) => {
     setIsSaving(true);
+    setSubmitError(null);
     try {
       await dataProvider.createBrand(brandData);
       router.push('/admin/brands');
     } catch (error) {
       console.error('Error creating brand', error);
-      alert('-/+ .7# #+F'! %6'A) 'D9D'E) 'D*,'1J)');
+      setSubmitError('-/+ .7# #+F'! %6'A) 'D9D'E) 'D*,'1J)');
     } finally {
       setIsSaving(false);
     }
@@ -37,9 +39,15 @@ export default function NewBrandPage() {
           href="/admin/brands"
           className="text-text-secondary hover:text-white text-sm border border-white/10 px-3 py-1.5 rounded-md"
         >
-          ê 'D1,H9 DD9D'E'*
+          ÔøΩ 'D1,H9 DD9D'E'*
         </Link>
       </div>
+
+      {submitError && (
+        <div className="card p-4 bg-red-500/10 border-red-500/20">
+          <p className="text-red-400 text-sm">{submitError}</p>
+        </div>
+      )}
 
       <BrandForm
         mode="create"

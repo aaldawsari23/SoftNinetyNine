@@ -16,6 +16,7 @@ export default function EditCategoryPage() {
   const [category, setCategory] = useState<Category | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   useEffect(() => {
     async function loadCategory() {
@@ -34,15 +35,16 @@ export default function EditCategoryPage() {
       }
     }
     loadCategory();
-  }, [dataProvider, id]);
+  }, [id]);
 
   const handleSubmit = async (categoryData: Omit<Category, 'id' | 'created_at'>) => {
     try {
+      setSubmitError(null);
       await dataProvider.updateCategory(id, categoryData);
       router.push('/admin/categories');
     } catch (error) {
       console.error('Error updating category', error);
-      alert('-/+ .7# #+F'! *-/J+ 'DA&)');
+      setSubmitError('-/+ .7# #+F'! *-/J+ 'DA&)');
     }
   };
 
@@ -63,7 +65,7 @@ export default function EditCategoryPage() {
             href="/admin/categories"
             className="text-primary hover:text-primary-hover text-sm"
           >
-            ê 'D1,H9 DDA&'*
+            ÔøΩ 'D1,H9 DDA&'*
           </Link>
         </div>
       </div>
@@ -85,9 +87,15 @@ export default function EditCategoryPage() {
           href="/admin/categories"
           className="text-text-secondary hover:text-white text-sm border border-white/10 px-3 py-1.5 rounded-md"
         >
-          ê 'D1,H9 DDA&'*
+          ÔøΩ 'D1,H9 DDA&'*
         </Link>
       </div>
+
+      {submitError && (
+        <div className="card p-4 bg-red-500/10 border-red-500/20">
+          <p className="text-red-400 text-sm">{submitError}</p>
+        </div>
+      )}
 
       <CategoryForm
         mode="edit"

@@ -12,15 +12,17 @@ export default function NewCategoryPage() {
   const router = useRouter();
   const dataProvider = getDataProvider();
   const [isSaving, setIsSaving] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleSubmit = async (categoryData: Omit<Category, 'id' | 'created_at'>) => {
     setIsSaving(true);
+    setSubmitError(null);
     try {
       await dataProvider.createCategory(categoryData);
       router.push('/admin/categories');
     } catch (error) {
       console.error('Error creating category', error);
-      alert('-/+ .7# #+F'! %6'A) 'DA&)');
+      setSubmitError('-/+ .7# #+F'! %6'A) 'DA&)');
     } finally {
       setIsSaving(false);
     }
@@ -37,9 +39,15 @@ export default function NewCategoryPage() {
           href="/admin/categories"
           className="text-text-secondary hover:text-white text-sm border border-white/10 px-3 py-1.5 rounded-md"
         >
-          ê 'D1,H9 DDA&'*
+          ÔøΩ 'D1,H9 DDA&'*
         </Link>
       </div>
+
+      {submitError && (
+        <div className="card p-4 bg-red-500/10 border-red-500/20">
+          <p className="text-red-400 text-sm">{submitError}</p>
+        </div>
+      )}
 
       <CategoryForm
         mode="create"

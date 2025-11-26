@@ -16,6 +16,7 @@ export default function EditBrandPage() {
   const [brand, setBrand] = useState<Brand | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   useEffect(() => {
     async function loadBrand() {
@@ -34,15 +35,16 @@ export default function EditBrandPage() {
       }
     }
     loadBrand();
-  }, [dataProvider, id]);
+  }, [id]);
 
   const handleSubmit = async (brandData: Omit<Brand, 'id' | 'created_at'>) => {
     try {
+      setSubmitError(null);
       await dataProvider.updateBrand(id, brandData);
       router.push('/admin/brands');
     } catch (error) {
       console.error('Error updating brand', error);
-      alert('-/+ .7# #+F'! *-/J+ 'D9D'E) 'D*,'1J)');
+      setSubmitError('-/+ .7# #+F'! *-/J+ 'D9D'E) 'D*,'1J)');
     }
   };
 
@@ -63,7 +65,7 @@ export default function EditBrandPage() {
             href="/admin/brands"
             className="text-primary hover:text-primary-hover text-sm"
           >
-            ê 'D1,H9 DD9D'E'* 'D*,'1J)
+            ÔøΩ 'D1,H9 DD9D'E'* 'D*,'1J)
           </Link>
         </div>
       </div>
@@ -85,9 +87,15 @@ export default function EditBrandPage() {
           href="/admin/brands"
           className="text-text-secondary hover:text-white text-sm border border-white/10 px-3 py-1.5 rounded-md"
         >
-          ê 'D1,H9 DD9D'E'* 'D*,'1J)
+          ÔøΩ 'D1,H9 DD9D'E'* 'D*,'1J)
         </Link>
       </div>
+
+      {submitError && (
+        <div className="card p-4 bg-red-500/10 border-red-500/20">
+          <p className="text-red-400 text-sm">{submitError}</p>
+        </div>
+      )}
 
       <BrandForm
         mode="edit"
