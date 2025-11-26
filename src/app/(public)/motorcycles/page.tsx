@@ -221,7 +221,7 @@ export default function MotorcyclesPage() {
               >
                 الكل
               </button>
-              {ccRanges.map(range => (
+              {CC_RANGES.map(range => (
                 <button
                   key={range.id}
                   onClick={() => setSelectedCC(range.id)}

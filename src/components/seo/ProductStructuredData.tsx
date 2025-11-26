@@ -36,7 +36,7 @@ export default function ProductStructuredData({
     name: product.name_ar || product.name_en,
     description: product.description || product.short_description,
     sku: product.sku,
-    mpn: product.model,
+    mpn: product.specifications?.model || product.specs?.model,
     image: images,
     category: category?.name_ar || category?.name,
     brand: brand
