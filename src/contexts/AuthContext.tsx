@@ -40,6 +40,24 @@ const DEMO_CREDENTIALS = {
 };
 
 const AUTH_STORAGE_KEY = 'soft99_admin_auth';
+const AUTH_COOKIE_KEY = 'soft99_admin_token';
+
+function setAuthCookie(value: string, maxAgeDays: number = 7) {
+  const maxAgeSeconds = maxAgeDays * 24 * 60 * 60;
+  document.cookie = `${AUTH_COOKIE_KEY}=${value}; path=/; max-age=${maxAgeSeconds}; samesite=lax`;
+}
+
+function clearAuthCookie() {
+  document.cookie = `${AUTH_COOKIE_KEY}=; path=/; max-age=0; samesite=lax`;
+}
+
+function getAuthCookie(): string | null {
+  if (typeof document === 'undefined') return null;
+  const cookieString = document.cookie || '';
+  const cookies = cookieString.split(';').map((c) => c.trim());
+  const tokenCookie = cookies.find((cookie) => cookie.startsWith(`${AUTH_COOKIE_KEY}=`));
+  return tokenCookie ? tokenCookie.split('=')[1] : null;
+}
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
@@ -49,9 +67,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     try {
       const stored = localStorage.getItem(AUTH_STORAGE_KEY);
+      const hasCookie = getAuthCookie();
       if (stored) {
         const userData = JSON.parse(stored);
         setUser(userData);
+      } else if (hasCookie) {
+        // fallback للكوكيز في حال تم تنظيف localStorage
+        setUser(DEMO_ADMIN);
       }
     } catch (error) {
       console.error('Error loading auth state:', error);
@@ -82,6 +104,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         const userData = DEMO_ADMIN;
         setUser(userData);
         localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(userData));
+        setAuthCookie(userData.id);
         return true;
       }
 
@@ -104,6 +127,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     setUser(null);
     localStorage.removeItem(AUTH_STORAGE_KEY);
+    clearAuthCookie();
   };
 
   const value: AuthContextType = {
