@@ -1,10 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import { useAdminAuth } from '@/contexts/AuthContext';
 
 export default function AdminSidebar() {
   const pathname = usePathname();
+  const router = useRouter();
+  const { logout, user } = useAdminAuth();
 
   const menuItems = [
     {
@@ -59,13 +62,27 @@ export default function AdminSidebar() {
           ))}
         </nav>
 
-        {/* Logout */}
+        {/* User Info & Actions */}
         <div className="mt-8 pt-8 border-t border-gray-800">
+          {user && (
+            <div className="mb-4 px-3 py-2 bg-background rounded-lg">
+              <p className="text-xs text-text-muted">مرحباً،</p>
+              <p className="text-sm text-white font-semibold truncate">{user.name || user.email}</p>
+            </div>
+          )}
+
           <Link href="/" className="sidebar-link text-primary hover:bg-primary/10">
             <span className="text-xl">🏠</span>
             <span>العودة للمتجر</span>
           </Link>
-          <button className="sidebar-link w-full text-right text-red-400 hover:bg-red-500/10">
+
+          <button
+            onClick={() => {
+              logout();
+              router.push('/admin/login');
+            }}
+            className="sidebar-link w-full text-right text-red-400 hover:bg-red-500/10"
+          >
             <span className="text-xl">🚪</span>
             <span>تسجيل الخروج</span>
           </button>

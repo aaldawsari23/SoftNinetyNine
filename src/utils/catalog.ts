@@ -16,6 +16,16 @@ export function filterProducts(
 ): Product[] {
   let filtered = [...products];
 
+  // فلتر الحالة (published/hidden) - مهم جداً!
+  if (filters.status) {
+    filtered = filtered.filter(p => p.status === filters.status);
+  }
+
+  // فلتر المنتجات المميزة
+  if (filters.isFeatured !== undefined) {
+    filtered = filtered.filter(p => p.is_featured === filters.isFeatured);
+  }
+
   // فلتر الفئة
   if (filters.category) {
     filtered = filtered.filter(p => p.category_id === filters.category);

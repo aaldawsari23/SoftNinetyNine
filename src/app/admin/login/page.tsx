@@ -3,26 +3,30 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { useAdminAuth } from '@/contexts/AuthContext';
 
 export default function AdminLoginPage() {
   const router = useRouter();
+  const { login, isLoading } = useAdminAuth();
   const [formData, setFormData] = useState({
-    username: '',
+    email: '',
     password: '',
   });
   const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
 
-    // Simple authentication (replace with real auth later)
-    if (formData.username === 'admin' && formData.password === 'admin123') {
-      // Store auth state (use proper auth solution in production)
-      localStorage.setItem('isAdminLoggedIn', 'true');
-      router.push('/admin/dashboard');
-    } else {
-      setError('اسم المستخدم أو كلمة المرور غير صحيحة');
+    try {
+      const success = await login(formData.email, formData.password);
+      if (success) {
+        router.push('/admin/dashboard');
+      } else {
+        setError('البريد الإلكتروني أو كلمة المرور غير صحيحة');
+      }
+    } catch (err) {
+      setError('حدث خطأ أثناء تسجيل الدخول. الرجاء المحاولة مرة أخرى.');
     }
   };
 
@@ -52,14 +56,15 @@ export default function AdminLoginPage() {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm text-text-secondary mb-2">اسم المستخدم</label>
+              <label className="block text-sm text-text-secondary mb-2">البريد الإلكتروني</label>
               <input
-                type="text"
+                type="email"
                 required
-                value={formData.username}
-                onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="input-field w-full"
-                placeholder="أدخل اسم المستخدم"
+                placeholder="admin@soft99bikes.com"
+                disabled={isLoading}
               />
             </div>
 
@@ -72,18 +77,22 @@ export default function AdminLoginPage() {
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                 className="input-field w-full"
                 placeholder="أدخل كلمة المرور"
+                disabled={isLoading}
               />
             </div>
 
-            <button type="submit" className="btn-primary w-full">
-              تسجيل الدخول
+            <button type="submit" className="btn-primary w-full" disabled={isLoading}>
+              {isLoading ? 'جاري تسجيل الدخول...' : 'تسجيل الدخول'}
             </button>
           </form>
 
           {process.env.NODE_ENV === 'development' && (
             <div className="mt-6 text-center">
               <p className="text-text-secondary text-sm">
-                بيانات تجريبية: admin / admin123
+                بيانات تجريبية:
+              </p>
+              <p className="text-text-muted text-xs mt-1">
+                admin@soft99bikes.com / admin123
               </p>
             </div>
           )}
