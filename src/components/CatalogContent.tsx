@@ -217,7 +217,13 @@ export default function CatalogContent() {
                 min={actualPriceRange.min}
                 max={actualPriceRange.max}
                 value={priceRange.min}
-                onChange={(e) => setPriceRange({ ...priceRange, min: Number(e.target.value) })}
+                onChange={(e) => {
+                  const newMin = Number(e.target.value);
+                  // Ensure min doesn't exceed max
+                  if (newMin <= priceRange.max) {
+                    setPriceRange({ ...priceRange, min: newMin });
+                  }
+                }}
                 className="w-1/2 bg-background/50 text-white px-2 py-1.5 rounded-lg border border-white/10 focus:border-primary/50 focus:outline-none text-sm"
                 placeholder="من"
               />
@@ -227,7 +233,13 @@ export default function CatalogContent() {
                 min={actualPriceRange.min}
                 max={actualPriceRange.max}
                 value={priceRange.max}
-                onChange={(e) => setPriceRange({ ...priceRange, max: Number(e.target.value) })}
+                onChange={(e) => {
+                  const newMax = Number(e.target.value);
+                  // Ensure max doesn't go below min
+                  if (newMax >= priceRange.min) {
+                    setPriceRange({ ...priceRange, max: newMax });
+                  }
+                }}
                 className="w-1/2 bg-background/50 text-white px-2 py-1.5 rounded-lg border border-white/10 focus:border-primary/50 focus:outline-none text-sm"
                 placeholder="إلى"
               />
