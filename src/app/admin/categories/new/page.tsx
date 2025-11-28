@@ -32,14 +32,14 @@ export default function NewCategoryPage() {
     <div className="px-2 sm:px-4 pb-8 space-y-6">
       <div className="flex items-center justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-white">%6'A) A&) ,/J/)</h1>
-          <p className="text-text-secondary text-sm">#/.D (J'F'* 'DA&) H3J*E -A8G' E-DJ'K #+F'! 'D*7HJ1.</p>
+          <h1 className="text-2xl font-bold text-white">إضافة فئة جديدة</h1>
+          <p className="text-text-secondary text-sm">أضف فئة جديدة لتنظيم المنتجات بشكل أفضل.</p>
         </div>
         <Link
           href="/admin/categories"
           className="text-text-secondary hover:text-white text-sm border border-white/10 px-3 py-1.5 rounded-md"
         >
-          � 'D1,H9 DDA&'*
+          ← العودة إلى الفئات
         </Link>
       </div>
 
@@ -56,7 +56,7 @@ export default function NewCategoryPage() {
       />
 
       {isSaving && (
-        <div className="text-sm text-text-secondary">,'1M 'D-A8...</div>
+        <div className="text-sm text-text-secondary">جاري الحفظ...</div>
       )}
     </div>
   );

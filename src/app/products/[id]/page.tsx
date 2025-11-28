@@ -1,18 +1,20 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { getDataProvider } from '@/lib/data-providers';
 import { Product, Category, Brand } from '@/types';
 import { getRelatedProducts } from '@/utils/catalog';
 import ProductCard from '@/components/products/ProductCard';
+import ProductStructuredData from '@/components/seo/ProductStructuredData';
 
 export default function ProductDetailPage() {
   const params = useParams();
-  const router = useRouter();
   const productId = params.id as string;
   const dataProvider = getDataProvider();
+  const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || 'https://soft99bikes.com';
 
   const [product, setProduct] = useState<Product | null>(null);
   const [category, setCategory] = useState<Category | null>(null);
@@ -61,7 +63,7 @@ export default function ProductDetailPage() {
     }
 
     loadData();
-  }, [productId]);
+  }, [productId, dataProvider]);
 
   const handleWhatsAppContact = () => {
     if (!product) return;
@@ -107,7 +109,14 @@ export default function ProductDetailPage() {
   const images = product.images && product.images.length > 0 ? product.images : [product.image_url || ''];
 
   return (
-    <div className="container mx-auto px-4 py-8 space-y-8">
+    <>
+      <ProductStructuredData
+        product={product}
+        category={category}
+        brand={brand}
+        baseUrl={siteUrl}
+      />
+      <div className="container mx-auto px-4 py-8 space-y-8">
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm text-text-muted">
         <Link href="/" className="hover:text-primary transition-colors">
@@ -205,18 +214,18 @@ export default function ProductDetailPage() {
               >
                 {brand.name_ar || brand.name}
               </Link>
-            )}
-            {product.is_new && (
-              <span className="px-3 py-1.5 bg-green-500/10 text-green-400 rounded-full text-sm">
-                ,/J/
-              </span>
-            )}
-            {product.is_featured && (
-              <span className="px-3 py-1.5 bg-yellow-500/10 text-yellow-400 rounded-full text-sm">
-                EEJ2
-              </span>
-            )}
-          </div>
+          )}
+          {product.is_new && (
+            <span className="px-3 py-1.5 bg-green-500/10 text-green-400 rounded-full text-sm">
+              جديد
+            </span>
+          )}
+          {product.is_featured && (
+            <span className="px-3 py-1.5 bg-yellow-500/10 text-yellow-400 rounded-full text-sm">
+              مميز
+            </span>
+          )}
+        </div>
 
           {/* Price */}
           <div className="card p-6 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
@@ -281,6 +290,7 @@ export default function ProductDetailPage() {
           </div>
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 }

@@ -1,7 +1,8 @@
 'use client';
 
-import { useToast } from '@/contexts/ToastContext';
 import { useEffect, useState } from 'react';
+
+import { useToast, Toast } from '@/contexts/ToastContext';
 
 export default function ToastContainer() {
   const { toasts, removeToast } = useToast();
@@ -19,7 +20,7 @@ export default function ToastContainer() {
   );
 }
 
-function ToastItem({ toast, onClose }: { toast: any; onClose: () => void }) {
+function ToastItem({ toast, onClose }: { toast: Toast; onClose: () => void }) {
   const [isVisible, setIsVisible] = useState(false);
   const [isLeaving, setIsLeaving] = useState(false);
 

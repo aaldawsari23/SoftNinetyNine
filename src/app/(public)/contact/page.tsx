@@ -1,7 +1,5 @@
 'use client';
 
-import Link from 'next/link';
-
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background py-12">

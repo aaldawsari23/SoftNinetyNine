@@ -7,7 +7,7 @@
 
 import { Product, Category, Brand, ProductFilters } from '@/types';
 import { DataProvider } from './types';
-import { filterProducts, sortProducts } from '@/utils/catalog';
+import { filterProducts } from '@/utils/catalog';
 
 // استيراد البيانات الأولية
 import productsData from '@/../public/data/products.json';
@@ -71,20 +71,20 @@ class LocalDataProvider implements DataProvider {
   /**
    * تنظيف بيانات المنتج - إزالة undefined من specifications
    */
-  private cleanProduct(product: any): Product {
+  private cleanProduct(product: Product): Product {
     const cleaned = { ...product };
 
     // تنظيف specifications - إزالة undefined
     if (cleaned.specifications) {
       cleaned.specifications = Object.fromEntries(
-        Object.entries(cleaned.specifications).filter(([_, v]) => v !== undefined)
+        Object.entries(cleaned.specifications).filter(([, value]) => value !== undefined)
       );
     }
 
     // تنظيف specs - إزالة undefined
     if (cleaned.specs) {
       cleaned.specs = Object.fromEntries(
-        Object.entries(cleaned.specs).filter(([_, v]) => v !== undefined)
+        Object.entries(cleaned.specs).filter(([, value]) => value !== undefined)
       );
     }
 
@@ -99,7 +99,7 @@ class LocalDataProvider implements DataProvider {
     if (!this.cache.products) {
       const rawProducts = this.loadFromStorage(
         STORAGE_KEYS.PRODUCTS,
-        productsData as any[]
+        productsData as Product[]
       );
 
       // تنظيف البيانات

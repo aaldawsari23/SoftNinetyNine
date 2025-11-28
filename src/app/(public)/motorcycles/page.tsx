@@ -1,11 +1,18 @@
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
-import { products, categories, brands } from '@/data/products';
-import { Product } from '@/types';
 import Link from 'next/link';
+import { products, brands } from '@/data/products';
 import { LazyProductImage } from '@/components/ui/LazyProductImage';
 import ScrollToTop from '@/components/ui/ScrollToTop';
+const CC_RANGES = [
+  { id: '125-250', label: '125 - 250 سي سي', min: 125, max: 250 },
+  { id: '251-600', label: '251 - 600 سي سي', min: 251, max: 600 },
+  { id: '601-750', label: '601 - 750 سي سي', min: 601, max: 750 },
+  { id: '751-1000', label: '751 - 1000 سي سي', min: 751, max: 1000 },
+  { id: '1001-1300', label: '1001 - 1300 سي سي', min: 1001, max: 1300 },
+  { id: '1301+', label: '1301+ سي سي', min: 1301, max: 99999 },
+];
 
 const ITEMS_PER_PAGE = 12;
 
@@ -36,15 +43,6 @@ export default function MotorcyclesPage() {
     return Array.from(types);
   }, [motorcycles]);
 
-  const ccRanges = [
-    { id: '125-250', label: '125 - 250 سي سي', min: 125, max: 250 },
-    { id: '251-600', label: '251 - 600 سي سي', min: 251, max: 600 },
-    { id: '601-750', label: '601 - 750 سي سي', min: 601, max: 750 },
-    { id: '751-1000', label: '751 - 1000 سي سي', min: 751, max: 1000 },
-    { id: '1001-1300', label: '1001 - 1300 سي سي', min: 1001, max: 1300 },
-    { id: '1301+', label: '1301+ سي سي', min: 1301, max: 99999 },
-  ];
-
   // Filter motorcycles
   const filteredMotorcycles = useMemo(() => {
     let filtered = [...motorcycles];
@@ -68,7 +66,7 @@ export default function MotorcyclesPage() {
 
     // CC range filter
     if (selectedCC !== 'all') {
-      const range = ccRanges.find(r => r.id === selectedCC);
+      const range = CC_RANGES.find(r => r.id === selectedCC);
       if (range) {
         filtered = filtered.filter(m => {
           const cc = parseInt(m.specifications?.cc || '0');
@@ -223,7 +221,7 @@ export default function MotorcyclesPage() {
               >
                 الكل
               </button>
-              {ccRanges.map(range => (
+              {CC_RANGES.map(range => (
                 <button
                   key={range.id}
                   onClick={() => setSelectedCC(range.id)}

@@ -5,7 +5,7 @@
  * يمكن استبدال المزود المحلي بمزود API لاحقاً بسهولة
  */
 
-import { Product, Category, Brand, ProductFilters, SortOption } from '@/types';
+import { Product, Category, Brand, ProductFilters } from '@/types';
 
 /**
  * واجهة مزود البيانات الأساسية
@@ -45,7 +45,7 @@ export interface ProviderConfig {
 /**
  * نتيجة العمليات على البيانات
  */
-export interface OperationResult<T = any> {
+export interface OperationResult<T = unknown> {
   success: boolean;
   data?: T;
   error?: string;
