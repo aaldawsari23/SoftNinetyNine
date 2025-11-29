@@ -71,23 +71,29 @@ export default function SectionNav() {
         </div>
       </div>
 
-      {/* Mobile Bottom Navigation */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background-light border-t border-white/10 shadow-2xl">
+      {/* Mobile Bottom Navigation - Enhanced */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background-light/95 backdrop-blur-lg border-t border-white/10 shadow-2xl safe-area-bottom">
         <div className="grid grid-cols-3">
           {sections.map((section) => (
             <Link
               key={section.id}
               href={section.href}
-              className={`flex flex-col items-center justify-center py-3 px-2 transition-all duration-200 ${
+              className={`flex flex-col items-center justify-center py-3 px-2 transition-all duration-200 relative ${
                 isActive(section.href)
                   ? 'text-primary'
-                  : 'text-text-muted'
+                  : 'text-text-muted active:scale-95'
               }`}
             >
-              <div className={`mb-1 ${isActive(section.href) ? 'scale-110' : ''}`}>
+              {/* Active indicator */}
+              {isActive(section.href) && (
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-primary rounded-full shadow-lg shadow-primary/50" />
+              )}
+              <div className={`mb-1 transition-transform ${isActive(section.href) ? 'scale-110' : ''}`}>
                 {section.icon}
               </div>
-              <span className="text-xs font-semibold">{section.label}</span>
+              <span className={`text-xs font-semibold ${isActive(section.href) ? 'font-bold' : ''}`}>
+                {section.label}
+              </span>
             </Link>
           ))}
         </div>

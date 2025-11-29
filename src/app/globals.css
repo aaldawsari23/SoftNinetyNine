@@ -215,4 +215,14 @@
     from { box-shadow: 0 0 20px rgba(255, 46, 46, 0.5); }
     to { box-shadow: 0 0 30px rgba(255, 46, 46, 0.8), 0 0 40px rgba(255, 46, 46, 0.4); }
   }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
