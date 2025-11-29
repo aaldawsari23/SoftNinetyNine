@@ -20,6 +20,39 @@ export default function ProductCard({ product }: ProductCardProps) {
   const category = categories.find(c => c.id === product.category_id);
   const brand = brands.find(b => b.id === product.brand_id);
 
+  // Build secondary info line from specifications
+  const getSecondaryInfo = (): string => {
+    const specs = product.specifications;
+    if (!specs) return '';
+
+    // زيوت (c1)
+    if (product.category_id === 'c1') {
+      const parts = [];
+      if (specs.viscosity) parts.push(specs.viscosity);
+      if (specs.volume) parts.push(specs.volume);
+      if (specs.oil_type) parts.push(specs.oil_type);
+      return parts.join(' • ');
+    }
+
+    // كفرات (c5)
+    if (product.category_id === 'c5') {
+      const parts = [];
+      if (specs.size) parts.push(specs.size);
+      if (specs.tread_pattern) parts.push(specs.tread_pattern);
+      return parts.join(' • ');
+    }
+
+    // فلاتر (c2) وبواجي (c3) - عرض الموديل فقط
+    if (product.category_id === 'c2' || product.category_id === 'c3') {
+      return specs.model || '';
+    }
+
+    // باقي المنتجات - عرض الموديل إذا موجود
+    return specs.model || '';
+  };
+
+  const secondaryInfo = getSecondaryInfo();
+
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
     addToCart(product);
@@ -74,15 +107,12 @@ export default function ProductCard({ product }: ProductCardProps) {
             {displayName}
           </h3>
 
-          {/* SKU & Info */}
-          <div className="space-y-1 text-xs text-text-muted">
-            {(product.sku || product.id) && (
-              <div>SKU: <span className="text-white">{product.sku || product.id}</span></div>
-            )}
-            {product.specifications?.model && (
-              <div>موديل: <span className="text-white">{product.specifications.model}</span></div>
-            )}
-          </div>
+          {/* Secondary Info - Key specs */}
+          {secondaryInfo && (
+            <p className="text-xs text-text-muted line-clamp-1">
+              {secondaryInfo}
+            </p>
+          )}
 
           {/* Spacer to push price to bottom */}
           <div className="flex-1"></div>

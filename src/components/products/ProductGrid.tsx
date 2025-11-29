@@ -24,8 +24,8 @@ export default function ProductGrid({ products, title }: ProductGridProps) {
       {title && (
         <h2 className="section-title animate-slide-down">{title}</h2>
       )}
-      {/* Modern responsive grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-5">
+      {/* Modern responsive grid - 3 columns on most mobile devices */}
+      <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-4 lg:gap-5">
         {products.map((product) => (
           <ProductCard
             key={product.id}
