@@ -27,6 +27,7 @@ export default function CatalogContent() {
   const [searchQuery, setSearchQuery] = useState(searchParam || '');
   const [currentPage, setCurrentPage] = useState(1);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
 
   // State for data from provider
   const [products, setProducts] = useState<Product[]>([]);
@@ -170,147 +171,255 @@ export default function CatalogContent() {
     );
   }
 
+  // Count active filters
+  const activeFiltersCount =
+    (selectedCategory !== 'all' ? 1 : 0) +
+    (selectedBrand !== 'all' ? 1 : 0) +
+    (searchQuery ? 1 : 0);
+
   return (
     <div className="space-y-3">
-      {/* Ultra Compact Filter Bar - 15% of Screen */}
-      <div className="bg-white/5 backdrop-blur-md rounded-lg p-2 border border-white/10 sticky top-14 md:top-14 z-40">
-        {/* Single Row: Search + Results + Clear */}
-        <div className="flex items-center gap-2 mb-1.5">
-          {/* Search Icon */}
+      {/* ✨ MINIMAL Filter Bar - Only 5% of screen */}
+      <div className="sticky top-14 md:top-14 z-40">
+        <div className="flex items-center gap-2">
+          {/* Filter Button with Badge */}
           <button
-            onClick={() => setIsSearchOpen(!isSearchOpen)}
-            className={`p-1.5 rounded-lg transition-all flex-shrink-0 ${
-              isSearchOpen || searchQuery
-                ? 'bg-primary/20 text-primary'
-                : 'text-text-muted hover:text-white'
-            }`}
-            aria-label="بحث"
+            onClick={() => setIsFilterDrawerOpen(true)}
+            className="relative flex items-center gap-2 px-3 py-2 bg-white/5 hover:bg-white/10 backdrop-blur-md rounded-lg border border-white/10 transition-all"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
             </svg>
+            <span className="text-xs text-white">فلتر</span>
+            {activeFiltersCount > 0 && (
+              <span className="absolute -top-1 -right-1 bg-primary text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
+                {activeFiltersCount}
+              </span>
+            )}
           </button>
 
-          {/* Expandable Search Input */}
-          {isSearchOpen && (
+          {/* Search */}
+          <div className="flex-1 relative">
             <input
               type="text"
-              placeholder="ابحث..."
+              placeholder="ابحث عن منتج..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="flex-1 bg-background/50 text-white px-2 py-1 rounded text-xs border border-white/10 focus:border-primary/50 focus:outline-none"
-              autoFocus
+              className="w-full bg-white/5 text-white px-3 py-2 pr-9 rounded-lg text-sm border border-white/10 focus:border-primary/50 focus:bg-white/10 focus:outline-none transition-all"
             />
-          )}
+            <svg className="w-4 h-4 text-text-muted absolute right-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
 
           {/* Results Count */}
-          {!isSearchOpen && (
-            <div className="flex-1">
-              <p className="text-xs text-text-muted">
-                <span className="text-primary font-bold">{filteredProducts.length}</span> منتج
-              </p>
-            </div>
-          )}
+          <div className="px-3 py-2 bg-white/5 backdrop-blur-md rounded-lg border border-white/10">
+            <span className="text-primary font-bold text-sm">{filteredProducts.length}</span>
+          </div>
 
-          {/* Clear Button */}
-          {(selectedCategory !== 'all' || selectedBrand !== 'all' || searchQuery) && (
+          {/* Clear Button (only if filters active) */}
+          {activeFiltersCount > 0 && (
             <button
               onClick={() => {
                 setSelectedCategory('all');
                 setSelectedBrand('all');
                 setSearchQuery('');
-                setIsSearchOpen(false);
               }}
-              className="text-xs text-primary hover:text-primary/80 px-2 py-1 bg-primary/10 rounded flex-shrink-0"
+              className="p-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg transition-all"
+              aria-label="مسح الفلاتر"
             >
-              مسح
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
           )}
         </div>
 
-        {/* Category Chips - Wrapped, No Scroll, Smart Toggle */}
-        {availableCategories.length > 0 && (
-          <div className="flex flex-wrap gap-1.5">
-            <button
-              onClick={() => {
-                setSelectedCategory('all');
-                setSelectedBrand('all');
-              }}
-              className={`px-2.5 py-1 text-xs rounded-full transition-all whitespace-nowrap ${
-                selectedCategory === 'all'
-                  ? 'bg-primary text-white shadow-lg shadow-primary/30'
-                  : 'bg-background/50 text-text-muted border border-white/10 hover:text-white hover:border-primary/30'
-              }`}
-            >
-              الكل
-            </button>
-            {availableCategories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => {
-                  // Toggle behavior: click again to deselect
-                  if (selectedCategory === cat.id) {
+        {/* Active Filters Display (Chips) */}
+        {activeFiltersCount > 0 && (
+          <div className="flex flex-wrap gap-1.5 mt-2">
+            {selectedCategory !== 'all' && (
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-primary/20 text-primary border border-primary/30 rounded-full text-xs">
+                {availableCategories.find(c => c.id === selectedCategory)?.name_ar}
+                <button
+                  onClick={() => {
                     setSelectedCategory('all');
                     setSelectedBrand('all');
-                  } else {
-                    setSelectedCategory(cat.id);
-                    setSelectedBrand('all');
-                  }
-                }}
-                className={`px-2.5 py-1 text-xs rounded-full transition-all whitespace-nowrap group ${
-                  selectedCategory === cat.id
-                    ? 'bg-primary text-white shadow-lg shadow-primary/30'
-                    : 'bg-background/50 text-text-muted border border-white/10 hover:text-white hover:border-primary/30'
-                }`}
-              >
-                {cat.name_ar}
-                {cat.count > 0 && (
-                  <span className={`mr-1 ${selectedCategory === cat.id ? 'opacity-80' : 'opacity-60'}`}>
-                    ({cat.count})
-                  </span>
-                )}
-              </button>
-            ))}
-          </div>
-        )}
-
-        {/* Brand Chips - Only show when category is selected, Smart Toggle */}
-        {selectedCategory !== 'all' && availableBrands.length > 1 && (
-          <div className="flex flex-wrap gap-1.5 mt-1.5 animate-in slide-in-from-top-2 duration-200">
-            <button
-              onClick={() => setSelectedBrand('all')}
-              className={`px-2.5 py-1 text-xs rounded-full transition-all whitespace-nowrap ${
-                selectedBrand === 'all'
-                  ? 'bg-primary text-white shadow-lg shadow-primary/30'
-                  : 'bg-background/50 text-text-muted border border-white/10 hover:text-white hover:border-primary/30'
-              }`}
-            >
-              الكل
-            </button>
-            {availableBrands.map((brand) => (
-              <button
-                key={brand.id}
-                onClick={() => {
-                  // Toggle behavior: click again to deselect
-                  setSelectedBrand(selectedBrand === brand.id ? 'all' : brand.id);
-                }}
-                className={`px-2.5 py-1 text-xs rounded-full transition-all whitespace-nowrap ${
-                  selectedBrand === brand.id
-                    ? 'bg-primary text-white shadow-lg shadow-primary/30'
-                    : 'bg-background/50 text-text-muted border border-white/10 hover:text-white hover:border-primary/30'
-                }`}
-              >
-                {brand.name}
-                {brand.count > 0 && (
-                  <span className={`mr-1 ${selectedBrand === brand.id ? 'opacity-80' : 'opacity-60'}`}>
-                    ({brand.count})
-                  </span>
-                )}
-              </button>
-            ))}
+                  }}
+                  className="hover:bg-primary/30 rounded-full p-0.5"
+                >
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </span>
+            )}
+            {selectedBrand !== 'all' && (
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-primary/20 text-primary border border-primary/30 rounded-full text-xs">
+                {availableBrands.find(b => b.id === selectedBrand)?.name}
+                <button
+                  onClick={() => setSelectedBrand('all')}
+                  className="hover:bg-primary/30 rounded-full p-0.5"
+                >
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </span>
+            )}
           </div>
         )}
       </div>
+
+      {/* 🎯 Filter Drawer - Opens from bottom */}
+      {isFilterDrawerOpen && (
+        <div className="fixed inset-0 z-50 flex items-end justify-center md:items-center">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            onClick={() => setIsFilterDrawerOpen(false)}
+          />
+
+          {/* Drawer Content */}
+          <div className="relative w-full md:w-2/3 lg:w-1/2 bg-background border-t md:border border-white/20 md:rounded-2xl shadow-2xl max-h-[80vh] overflow-hidden flex flex-col animate-in slide-in-from-bottom-full md:slide-in-from-bottom-0 md:zoom-in-95 duration-300">
+            {/* Header */}
+            <div className="flex items-center justify-between p-4 border-b border-white/10">
+              <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+                </svg>
+                فلترة المنتجات
+              </h3>
+              <button
+                onClick={() => setIsFilterDrawerOpen(false)}
+                className="p-2 hover:bg-white/10 rounded-lg transition-all"
+              >
+                <svg className="w-5 h-5 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Scrollable Content */}
+            <div className="flex-1 overflow-y-auto p-4 space-y-6">
+              {/* Categories Section */}
+              {availableCategories.length > 0 && (
+                <div>
+                  <h4 className="text-sm font-semibold text-text-muted mb-3 flex items-center gap-2">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                    </svg>
+                    التصنيفات
+                  </h4>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                    <button
+                      onClick={() => {
+                        setSelectedCategory('all');
+                        setSelectedBrand('all');
+                      }}
+                      className={`p-3 rounded-lg border transition-all text-sm font-medium ${
+                        selectedCategory === 'all'
+                          ? 'bg-primary border-primary text-white shadow-lg shadow-primary/30'
+                          : 'bg-white/5 border-white/10 text-text-muted hover:border-primary/30 hover:bg-white/10'
+                      }`}
+                    >
+                      <div>الكل</div>
+                      <div className="text-xs mt-1 opacity-70">
+                        {products.filter(p => p.status === 'published').length}
+                      </div>
+                    </button>
+                    {availableCategories.map((cat) => (
+                      <button
+                        key={cat.id}
+                        onClick={() => {
+                          if (selectedCategory === cat.id) {
+                            setSelectedCategory('all');
+                            setSelectedBrand('all');
+                          } else {
+                            setSelectedCategory(cat.id);
+                            setSelectedBrand('all');
+                          }
+                        }}
+                        className={`p-3 rounded-lg border transition-all text-sm font-medium ${
+                          selectedCategory === cat.id
+                            ? 'bg-primary border-primary text-white shadow-lg shadow-primary/30'
+                            : 'bg-white/5 border-white/10 text-text-muted hover:border-primary/30 hover:bg-white/10'
+                        }`}
+                      >
+                        <div>{cat.name_ar}</div>
+                        <div className="text-xs mt-1 opacity-70">{cat.count}</div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Brands Section - Only show when category selected */}
+              {selectedCategory !== 'all' && availableBrands.length > 0 && (
+                <div className="animate-in slide-in-from-top-2 duration-300">
+                  <h4 className="text-sm font-semibold text-text-muted mb-3 flex items-center gap-2">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                    </svg>
+                    الماركات
+                  </h4>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                    <button
+                      onClick={() => setSelectedBrand('all')}
+                      className={`p-3 rounded-lg border transition-all text-sm font-medium ${
+                        selectedBrand === 'all'
+                          ? 'bg-primary border-primary text-white shadow-lg shadow-primary/30'
+                          : 'bg-white/5 border-white/10 text-text-muted hover:border-primary/30 hover:bg-white/10'
+                      }`}
+                    >
+                      <div>الكل</div>
+                      <div className="text-xs mt-1 opacity-70">
+                        {products.filter(p => p.status === 'published' && p.category_id === selectedCategory).length}
+                      </div>
+                    </button>
+                    {availableBrands.map((brand) => (
+                      <button
+                        key={brand.id}
+                        onClick={() => {
+                          setSelectedBrand(selectedBrand === brand.id ? 'all' : brand.id);
+                        }}
+                        className={`p-3 rounded-lg border transition-all text-sm font-medium ${
+                          selectedBrand === brand.id
+                            ? 'bg-primary border-primary text-white shadow-lg shadow-primary/30'
+                            : 'bg-white/5 border-white/10 text-text-muted hover:border-primary/30 hover:bg-white/10'
+                        }`}
+                      >
+                        <div>{brand.name}</div>
+                        <div className="text-xs mt-1 opacity-70">{brand.count}</div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Footer Actions */}
+            <div className="p-4 border-t border-white/10 flex gap-3">
+              <button
+                onClick={() => {
+                  setSelectedCategory('all');
+                  setSelectedBrand('all');
+                  setSearchQuery('');
+                }}
+                className="flex-1 px-4 py-2.5 bg-white/5 hover:bg-white/10 text-text-muted border border-white/10 rounded-lg transition-all text-sm font-medium"
+              >
+                إعادة تعيين
+              </button>
+              <button
+                onClick={() => setIsFilterDrawerOpen(false)}
+                className="flex-1 px-4 py-2.5 bg-primary hover:bg-primary/90 text-white rounded-lg transition-all text-sm font-medium shadow-lg shadow-primary/30"
+              >
+                عرض {filteredProducts.length} منتج
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Products Grid or Empty State */}
       {filteredProducts.length === 0 ? (
