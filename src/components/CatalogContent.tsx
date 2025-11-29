@@ -102,9 +102,20 @@ export default function CatalogContent() {
     setCurrentPage(1);
   }, [selectedCategory, selectedBrand, searchQuery]);
 
+  // Smart filtering: Only show categories that have products
   const availableCategories = useMemo(() => {
-    return categories;
-  }, [categories]);
+    if (products.length === 0) return [];
+
+    const publishedProducts = products.filter(p => p.status === 'published');
+    const categoryIds = new Set(publishedProducts.map(p => p.category_id));
+
+    return categories
+      .filter(c => categoryIds.has(c.id))
+      .map(c => ({
+        ...c,
+        count: publishedProducts.filter(p => p.category_id === c.id).length
+      }));
+  }, [categories, products]);
 
   // Optimized: Calculate available brands from base products, not filtered
   // This prevents unnecessary recalculation when filters change
@@ -120,12 +131,22 @@ export default function CatalogContent() {
           .filter(p => p.category_id === selectedCategory)
           .map(p => p.brand_id)
       );
-      return brands.filter(b => brandIds.has(b.id));
+      return brands
+        .filter(b => brandIds.has(b.id))
+        .map(b => ({
+          ...b,
+          count: publishedProducts.filter(p => p.brand_id === b.id && p.category_id === selectedCategory).length
+        }));
     }
 
     // Otherwise show all brands that have published products
     const brandIds = new Set(publishedProducts.map(p => p.brand_id));
-    return brands.filter(b => brandIds.has(b.id));
+    return brands
+      .filter(b => brandIds.has(b.id))
+      .map(b => ({
+        ...b,
+        count: publishedProducts.filter(p => p.brand_id === b.id).length
+      }));
   }, [selectedCategory, products, brands]);
 
   // Paginate the filtered products
@@ -207,7 +228,7 @@ export default function CatalogContent() {
           )}
         </div>
 
-        {/* Category Chips - Wrapped, No Scroll */}
+        {/* Category Chips - Wrapped, No Scroll, Smart Toggle */}
         {availableCategories.length > 0 && (
           <div className="flex flex-wrap gap-1.5">
             <button
@@ -217,8 +238,8 @@ export default function CatalogContent() {
               }}
               className={`px-2.5 py-1 text-xs rounded-full transition-all whitespace-nowrap ${
                 selectedCategory === 'all'
-                  ? 'bg-primary text-white'
-                  : 'bg-background/50 text-text-muted border border-white/10 hover:text-white'
+                  ? 'bg-primary text-white shadow-lg shadow-primary/30'
+                  : 'bg-background/50 text-text-muted border border-white/10 hover:text-white hover:border-primary/30'
               }`}
             >
               الكل
@@ -227,30 +248,41 @@ export default function CatalogContent() {
               <button
                 key={cat.id}
                 onClick={() => {
-                  setSelectedCategory(cat.id);
-                  setSelectedBrand('all');
+                  // Toggle behavior: click again to deselect
+                  if (selectedCategory === cat.id) {
+                    setSelectedCategory('all');
+                    setSelectedBrand('all');
+                  } else {
+                    setSelectedCategory(cat.id);
+                    setSelectedBrand('all');
+                  }
                 }}
-                className={`px-2.5 py-1 text-xs rounded-full transition-all whitespace-nowrap ${
+                className={`px-2.5 py-1 text-xs rounded-full transition-all whitespace-nowrap group ${
                   selectedCategory === cat.id
-                    ? 'bg-primary text-white'
-                    : 'bg-background/50 text-text-muted border border-white/10 hover:text-white'
+                    ? 'bg-primary text-white shadow-lg shadow-primary/30'
+                    : 'bg-background/50 text-text-muted border border-white/10 hover:text-white hover:border-primary/30'
                 }`}
               >
                 {cat.name_ar}
+                {cat.count > 0 && (
+                  <span className={`mr-1 ${selectedCategory === cat.id ? 'opacity-80' : 'opacity-60'}`}>
+                    ({cat.count})
+                  </span>
+                )}
               </button>
             ))}
           </div>
         )}
 
-        {/* Brand Chips - Only show when category is selected */}
+        {/* Brand Chips - Only show when category is selected, Smart Toggle */}
         {selectedCategory !== 'all' && availableBrands.length > 1 && (
-          <div className="flex flex-wrap gap-1.5 mt-1.5">
+          <div className="flex flex-wrap gap-1.5 mt-1.5 animate-in slide-in-from-top-2 duration-200">
             <button
               onClick={() => setSelectedBrand('all')}
               className={`px-2.5 py-1 text-xs rounded-full transition-all whitespace-nowrap ${
                 selectedBrand === 'all'
-                  ? 'bg-primary text-white'
-                  : 'bg-background/50 text-text-muted border border-white/10 hover:text-white'
+                  ? 'bg-primary text-white shadow-lg shadow-primary/30'
+                  : 'bg-background/50 text-text-muted border border-white/10 hover:text-white hover:border-primary/30'
               }`}
             >
               الكل
@@ -258,22 +290,61 @@ export default function CatalogContent() {
             {availableBrands.map((brand) => (
               <button
                 key={brand.id}
-                onClick={() => setSelectedBrand(brand.id)}
+                onClick={() => {
+                  // Toggle behavior: click again to deselect
+                  setSelectedBrand(selectedBrand === brand.id ? 'all' : brand.id);
+                }}
                 className={`px-2.5 py-1 text-xs rounded-full transition-all whitespace-nowrap ${
                   selectedBrand === brand.id
-                    ? 'bg-primary text-white'
-                    : 'bg-background/50 text-text-muted border border-white/10 hover:text-white'
+                    ? 'bg-primary text-white shadow-lg shadow-primary/30'
+                    : 'bg-background/50 text-text-muted border border-white/10 hover:text-white hover:border-primary/30'
                 }`}
               >
                 {brand.name}
+                {brand.count > 0 && (
+                  <span className={`mr-1 ${selectedBrand === brand.id ? 'opacity-80' : 'opacity-60'}`}>
+                    ({brand.count})
+                  </span>
+                )}
               </button>
             ))}
           </div>
         )}
       </div>
 
-      {/* Products Grid */}
-      <ProductGrid products={paginatedProducts} />
+      {/* Products Grid or Empty State */}
+      {filteredProducts.length === 0 ? (
+        <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-white/10 text-center">
+          <div className="max-w-md mx-auto">
+            <svg className="w-20 h-20 mx-auto mb-4 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+            </svg>
+            <h3 className="text-xl font-bold text-white mb-2">لا توجد منتجات</h3>
+            <p className="text-text-secondary text-sm mb-6">
+              {searchQuery
+                ? `لم نجد نتائج للبحث "${searchQuery}"`
+                : selectedCategory !== 'all' || selectedBrand !== 'all'
+                ? 'لا توجد منتجات في هذا التصنيف حالياً'
+                : 'لا توجد منتجات متاحة حالياً'}
+            </p>
+            {(selectedCategory !== 'all' || selectedBrand !== 'all' || searchQuery) && (
+              <button
+                onClick={() => {
+                  setSelectedCategory('all');
+                  setSelectedBrand('all');
+                  setSearchQuery('');
+                  setIsSearchOpen(false);
+                }}
+                className="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-xl text-sm font-semibold transition-all hover:scale-105 active:scale-95"
+              >
+                إعادة تعيين الفلاتر
+              </button>
+            )}
+          </div>
+        </div>
+      ) : (
+        <ProductGrid products={paginatedProducts} />
+      )}
 
       {/* Pagination Controls */}
       {totalPages > 1 && (
