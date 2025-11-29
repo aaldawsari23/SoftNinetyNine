@@ -26,8 +26,6 @@ export default function CatalogContent() {
   const [selectedBrand, setSelectedBrand] = useState<string>(brandParam || 'all');
   const [searchQuery, setSearchQuery] = useState(searchParam || '');
   const [currentPage, setCurrentPage] = useState(1);
-  const [sortBy, setSortBy] = useState<'newest' | 'price-asc' | 'price-desc' | 'name'>('newest');
-  const [priceRange, setPriceRange] = useState<{ min: number; max: number }>({ min: 0, max: 10000 });
 
   // State for data from provider
   const [products, setProducts] = useState<Product[]>([]);
@@ -92,37 +90,16 @@ export default function CatalogContent() {
       status: 'published',
     });
 
-    // Apply price range filter
-    filtered = filtered.filter(p => p.price >= priceRange.min && p.price <= priceRange.max);
-
-    // Apply sorting
-    filtered = sortProducts(filtered, sortBy);
+    // Apply sorting - always newest first
+    filtered = sortProducts(filtered, 'newest');
 
     return filtered;
-  }, [products, selectedCategory, selectedBrand, searchQuery, priceRange, sortBy, isLoading]);
+  }, [products, selectedCategory, selectedBrand, searchQuery, isLoading]);
 
   // Reset to page 1 when filters change
   useEffect(() => {
     setCurrentPage(1);
-  }, [selectedCategory, selectedBrand, searchQuery, priceRange, sortBy]);
-
-  // Calculate price range from available products
-  const actualPriceRange = useMemo(() => {
-    if (products.length === 0) return { min: 0, max: 10000 };
-
-    const prices = products.filter(p => p.status === 'published').map(p => p.price);
-    return {
-      min: Math.floor(Math.min(...prices) / 10) * 10,
-      max: Math.ceil(Math.max(...prices) / 10) * 10,
-    };
-  }, [products]);
-
-  // Initialize price range when products load
-  useEffect(() => {
-    if (products.length > 0 && priceRange.min === 0 && priceRange.max === 10000) {
-      setPriceRange(actualPriceRange);
-    }
-  }, [products, actualPriceRange]);
+  }, [selectedCategory, selectedBrand, searchQuery]);
 
   const availableCategories = useMemo(() => {
     return categories;
@@ -171,107 +148,88 @@ export default function CatalogContent() {
     );
   }
 
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
   return (
-    <div className="space-y-4">
-      {/* Modern Filter Bar with Chips */}
-      <div className="bg-white/5 backdrop-blur-md rounded-2xl p-3 md:p-4 border border-white/10">
-        {/* Search */}
-        <div className="relative mb-3">
-          <input
-            type="text"
-            placeholder="ابحث عن منتج..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-background/50 text-white px-4 py-3 pr-11 rounded-xl border border-white/10 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-          />
-          <svg className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-        </div>
+    <div className="space-y-3">
+      {/* Compact Filter Bar */}
+      <div className="bg-white/5 backdrop-blur-md rounded-xl p-2.5 md:p-3 border border-white/10">
+        {/* Search Icon + Filters Row */}
+        <div className="flex items-center gap-2 mb-2">
+          {/* Search Toggle Button */}
+          <button
+            onClick={() => setIsSearchOpen(!isSearchOpen)}
+            className={`p-2 rounded-lg transition-all ${
+              isSearchOpen || searchQuery
+                ? 'bg-primary/20 text-primary border border-primary/30'
+                : 'bg-background/50 text-text-muted hover:text-white border border-white/10'
+            }`}
+            aria-label="بحث"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </button>
 
-        {/* Sort and Price Filter */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
-          {/* Sort Dropdown */}
-          <div>
-            <label className="block text-xs text-text-muted font-semibold mb-2">الترتيب:</label>
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as any)}
-              className="w-full bg-background/50 text-white px-3 py-2 rounded-xl border border-white/10 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all text-sm"
+          {/* Results Count */}
+          <div className="flex-1">
+            <p className="text-sm text-text-muted">
+              <span className="text-primary font-bold text-base">{filteredProducts.length}</span> منتج
+            </p>
+          </div>
+
+          {/* Clear Filters */}
+          {(selectedCategory !== 'all' || selectedBrand !== 'all' || searchQuery) && (
+            <button
+              onClick={() => {
+                setSelectedCategory('all');
+                setSelectedBrand('all');
+                setSearchQuery('');
+                setIsSearchOpen(false);
+              }}
+              className="text-xs text-primary hover:text-primary/80 transition-colors px-2 py-1 bg-primary/10 rounded-lg"
             >
-              <option value="newest">الأحدث</option>
-              <option value="price-asc">السعر: من الأقل للأعلى</option>
-              <option value="price-desc">السعر: من الأعلى للأقل</option>
-              <option value="name">الاسم (أ-ي)</option>
-            </select>
-          </div>
-
-          {/* Price Range */}
-          <div>
-            <label className="block text-xs text-text-muted font-semibold mb-2">
-              نطاق السعر: {priceRange.min} - {priceRange.max} ريال
-            </label>
-            <div className="flex gap-2 items-center">
-              <input
-                type="number"
-                min={actualPriceRange.min}
-                max={actualPriceRange.max}
-                value={priceRange.min}
-                onChange={(e) => {
-                  const newMin = Number(e.target.value);
-                  // Ensure min doesn't exceed max
-                  if (newMin <= priceRange.max) {
-                    setPriceRange({ ...priceRange, min: newMin });
-                  }
-                }}
-                className="w-1/2 bg-background/50 text-white px-2 py-1.5 rounded-lg border border-white/10 focus:border-primary/50 focus:outline-none text-sm"
-                placeholder="من"
-              />
-              <span className="text-text-muted">-</span>
-              <input
-                type="number"
-                min={actualPriceRange.min}
-                max={actualPriceRange.max}
-                value={priceRange.max}
-                onChange={(e) => {
-                  const newMax = Number(e.target.value);
-                  // Ensure max doesn't go below min
-                  if (newMax >= priceRange.min) {
-                    setPriceRange({ ...priceRange, max: newMax });
-                  }
-                }}
-                className="w-1/2 bg-background/50 text-white px-2 py-1.5 rounded-lg border border-white/10 focus:border-primary/50 focus:outline-none text-sm"
-                placeholder="إلى"
-              />
-            </div>
-          </div>
+              مسح
+            </button>
+          )}
         </div>
 
-        {/* Category Chips */}
+        {/* Expandable Search */}
+        {isSearchOpen && (
+          <div className="mb-2 animate-in slide-in-from-top-2 duration-200">
+            <input
+              type="text"
+              placeholder="ابحث عن منتج..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-background/50 text-white px-3 py-2 rounded-lg border border-white/10 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all text-sm"
+              autoFocus
+            />
+          </div>
+        )}
+
+        {/* Category Chips - No Labels */}
         {availableCategories.length > 0 && (
-          <div className="mb-3">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-xs text-text-muted font-semibold">الفئات:</span>
-            </div>
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-2">
+            <div className="flex flex-wrap gap-1.5">
               <button
                 onClick={() => setSelectedCategory('all')}
-                className={`px-3 py-1.5 text-xs md:text-sm rounded-full transition-all duration-200 ${
+                className={`px-3 py-1.5 text-xs rounded-full transition-all duration-200 ${
                   selectedCategory === 'all'
                     ? 'bg-primary text-white shadow-lg shadow-primary/30'
-                    : 'bg-background/50 text-text-muted border border-white/10 hover:border-primary/30 hover:text-white active:scale-95'
+                    : 'bg-background/50 text-text-muted border border-white/10 hover:border-primary/30 hover:text-white'
                 }`}
               >
                 الكل
               </button>
-              {availableCategories.slice(0, 8).map((cat) => (
+              {availableCategories.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-3 py-1.5 text-xs md:text-sm rounded-full transition-all duration-200 ${
+                  className={`px-3 py-1.5 text-xs rounded-full transition-all duration-200 ${
                     selectedCategory === cat.id
                       ? 'bg-primary text-white shadow-lg shadow-primary/30'
-                      : 'bg-background/50 text-text-muted border border-white/10 hover:border-primary/30 hover:text-white active:scale-95'
+                      : 'bg-background/50 text-text-muted border border-white/10 hover:border-primary/30 hover:text-white'
                   }`}
                 >
                   {cat.name_ar}
@@ -281,31 +239,28 @@ export default function CatalogContent() {
           </div>
         )}
 
-        {/* Brand Chips */}
+        {/* Brand Chips - Only show when category selected or if multiple brands available */}
         {availableBrands.length > 1 && (
           <div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-xs text-text-muted font-semibold">العلامات التجارية:</span>
-            </div>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5">
               <button
                 onClick={() => setSelectedBrand('all')}
-                className={`px-3 py-1.5 text-xs md:text-sm rounded-full transition-all duration-200 ${
+                className={`px-3 py-1.5 text-xs rounded-full transition-all duration-200 ${
                   selectedBrand === 'all'
                     ? 'bg-primary text-white shadow-lg shadow-primary/30'
-                    : 'bg-background/50 text-text-muted border border-white/10 hover:border-primary/30 hover:text-white active:scale-95'
+                    : 'bg-background/50 text-text-muted border border-white/10 hover:border-primary/30 hover:text-white'
                 }`}
               >
-                الكل
+                كل الماركات
               </button>
-              {availableBrands.slice(0, 10).map((brand) => (
+              {availableBrands.map((brand) => (
                 <button
                   key={brand.id}
                   onClick={() => setSelectedBrand(brand.id)}
-                  className={`px-3 py-1.5 text-xs md:text-sm rounded-full transition-all duration-200 ${
+                  className={`px-3 py-1.5 text-xs rounded-full transition-all duration-200 ${
                     selectedBrand === brand.id
                       ? 'bg-primary text-white shadow-lg shadow-primary/30'
-                      : 'bg-background/50 text-text-muted border border-white/10 hover:border-primary/30 hover:text-white active:scale-95'
+                      : 'bg-background/50 text-text-muted border border-white/10 hover:border-primary/30 hover:text-white'
                   }`}
                 >
                   {brand.name}
@@ -314,27 +269,6 @@ export default function CatalogContent() {
             </div>
           </div>
         )}
-
-        {/* Results Count */}
-        <div className="mt-3 pt-3 border-t border-white/10 flex items-center justify-between">
-          <p className="text-xs md:text-sm text-text-muted">
-            <span className="text-primary font-bold">{filteredProducts.length}</span> منتج
-          </p>
-          {(selectedCategory !== 'all' || selectedBrand !== 'all' || searchQuery || priceRange.min !== actualPriceRange.min || priceRange.max !== actualPriceRange.max || sortBy !== 'newest') && (
-            <button
-              onClick={() => {
-                setSelectedCategory('all');
-                setSelectedBrand('all');
-                setSearchQuery('');
-                setPriceRange(actualPriceRange);
-                setSortBy('newest');
-              }}
-              className="text-xs text-primary hover:text-primary/80 transition-colors"
-            >
-              مسح الفلاتر ✕
-            </button>
-          )}
-        </div>
       </div>
 
       {/* Products Grid */}

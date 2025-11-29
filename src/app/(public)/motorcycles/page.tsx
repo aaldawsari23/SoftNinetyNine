@@ -106,65 +106,62 @@ export default function MotorcyclesPage() {
           <p className="text-text-secondary">تصفح دراجاتنا النارية الجديدة والمستعملة</p>
         </div>
 
-        {/* Filters */}
-        <div className="bg-white/5 backdrop-blur-md rounded-2xl p-4 border border-white/10 mb-6 space-y-4">
+        {/* Compact Filters */}
+        <div className="bg-white/5 backdrop-blur-md rounded-xl p-3 border border-white/10 mb-6 space-y-3">
           {/* Condition Filter - Prominent */}
-          <div>
-            <h3 className="text-sm font-semibold text-white mb-3">الحالة</h3>
-            <div className="flex flex-wrap gap-3">
-              <button
-                onClick={() => setCondition('all')}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-200 ${
-                  condition === 'all'
-                    ? 'bg-primary text-white shadow-lg shadow-primary/30 scale-105'
-                    : 'bg-background/50 text-text-muted border border-white/10 hover:border-primary/30 hover:text-white active:scale-95'
-                }`}
-              >
-                الكل ({motorcycles.length})
-              </button>
-              <button
-                onClick={() => setCondition('new')}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-200 ${
-                  condition === 'new'
-                    ? 'bg-green-500 text-white shadow-lg shadow-green-500/30 scale-105'
-                    : 'bg-background/50 text-text-muted border border-white/10 hover:border-green-500/30 hover:text-white active:scale-95'
-                }`}
-              >
-                جديد ({newCount})
-              </button>
-              <button
-                onClick={() => setCondition('used')}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-200 ${
-                  condition === 'used'
-                    ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30 scale-105'
-                    : 'bg-background/50 text-text-muted border border-white/10 hover:border-orange-500/30 hover:text-white active:scale-95'
-                }`}
-              >
-                مستعمل ({usedCount})
-              </button>
-            </div>
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={() => setCondition('all')}
+              className={`px-6 py-2.5 rounded-xl font-bold transition-all duration-200 ${
+                condition === 'all'
+                  ? 'bg-primary text-white shadow-lg shadow-primary/30'
+                  : 'bg-background/50 text-text-muted border border-white/10 hover:border-primary/30 hover:text-white'
+              }`}
+            >
+              الكل ({motorcycles.length})
+            </button>
+            <button
+              onClick={() => setCondition('new')}
+              className={`px-6 py-2.5 rounded-xl font-bold transition-all duration-200 ${
+                condition === 'new'
+                  ? 'bg-green-500 text-white shadow-lg shadow-green-500/30'
+                  : 'bg-background/50 text-text-muted border border-white/10 hover:border-green-500/30 hover:text-white'
+              }`}
+            >
+              جديد ({newCount})
+            </button>
+            <button
+              onClick={() => setCondition('used')}
+              className={`px-6 py-2.5 rounded-xl font-bold transition-all duration-200 ${
+                condition === 'used'
+                  ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
+                  : 'bg-background/50 text-text-muted border border-white/10 hover:border-orange-500/30 hover:text-white'
+              }`}
+            >
+              مستعمل ({usedCount})
+            </button>
           </div>
 
-          {/* Brand Filter */}
-          {availableBrands.length > 0 && (
-            <div>
-              <h3 className="text-xs text-text-muted font-semibold mb-2">العلامة التجارية</h3>
-              <div className="flex flex-wrap gap-2">
+          {/* Brand, Type, CC Chips - No Labels */}
+          <div className="flex flex-wrap gap-1.5">
+            {/* Brands */}
+            {availableBrands.length > 0 && (
+              <>
                 <button
                   onClick={() => setSelectedBrand('all')}
-                  className={`px-3 py-1.5 text-sm rounded-full transition-all ${
+                  className={`px-3 py-1.5 text-xs rounded-full transition-all ${
                     selectedBrand === 'all'
                       ? 'bg-primary text-white'
                       : 'bg-background/50 text-text-muted border border-white/10 hover:text-white'
                   }`}
                 >
-                  الكل
+                  كل الماركات
                 </button>
                 {availableBrands.map(brand => (
                   <button
                     key={brand.id}
                     onClick={() => setSelectedBrand(brand.id)}
-                    className={`px-3 py-1.5 text-sm rounded-full transition-all ${
+                    className={`px-3 py-1.5 text-xs rounded-full transition-all ${
                       selectedBrand === brand.id
                         ? 'bg-primary text-white'
                         : 'bg-background/50 text-text-muted border border-white/10 hover:text-white'
@@ -173,74 +170,43 @@ export default function MotorcyclesPage() {
                     {brand.name}
                   </button>
                 ))}
-              </div>
-            </div>
-          )}
+              </>
+            )}
+          </div>
 
-          {/* Type Filter */}
-          {availableTypes.length > 0 && (
-            <div>
-              <h3 className="text-xs text-text-muted font-semibold mb-2">النوع</h3>
-              <div className="flex flex-wrap gap-2">
-                <button
-                  onClick={() => setSelectedType('all')}
-                  className={`px-3 py-1.5 text-sm rounded-full transition-all ${
-                    selectedType === 'all'
-                      ? 'bg-primary text-white'
-                      : 'bg-background/50 text-text-muted border border-white/10 hover:text-white'
-                  }`}
-                >
-                  الكل
-                </button>
-                {availableTypes.map(type => (
-                  <button
-                    key={type}
-                    onClick={() => setSelectedType(type)}
-                    className={`px-3 py-1.5 text-sm rounded-full transition-all ${
-                      selectedType === type
-                        ? 'bg-primary text-white'
-                        : 'bg-background/50 text-text-muted border border-white/10 hover:text-white'
-                    }`}
-                  >
-                    {type}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* CC Range Filter */}
-          <div>
-            <h3 className="text-xs text-text-muted font-semibold mb-2">السعة (CC)</h3>
-            <div className="flex flex-wrap gap-2">
+          {/* Type & CC Filters */}
+          <div className="flex flex-wrap gap-1.5">
+            {availableTypes.length > 0 && availableTypes.map(type => (
               <button
-                onClick={() => setSelectedCC('all')}
-                className={`px-3 py-1.5 text-sm rounded-full transition-all ${
-                  selectedCC === 'all'
+                key={type}
+                onClick={() => setSelectedType(type)}
+                className={`px-3 py-1.5 text-xs rounded-full transition-all ${
+                  selectedType === type
                     ? 'bg-primary text-white'
                     : 'bg-background/50 text-text-muted border border-white/10 hover:text-white'
                 }`}
               >
-                الكل
+                {type}
               </button>
-              {ccRanges.map(range => (
-                <button
-                  key={range.id}
-                  onClick={() => setSelectedCC(range.id)}
-                  className={`px-3 py-1.5 text-sm rounded-full transition-all ${
-                    selectedCC === range.id
-                      ? 'bg-primary text-white'
-                      : 'bg-background/50 text-text-muted border border-white/10 hover:text-white'
-                  }`}
-                >
-                  {range.label}
-                </button>
-              ))}
-            </div>
+            ))}
+
+            {ccRanges.map(range => (
+              <button
+                key={range.id}
+                onClick={() => setSelectedCC(range.id)}
+                className={`px-3 py-1.5 text-xs rounded-full transition-all ${
+                  selectedCC === range.id
+                    ? 'bg-primary text-white'
+                    : 'bg-background/50 text-text-muted border border-white/10 hover:text-white'
+                }`}
+              >
+                {range.label}
+              </button>
+            ))}
           </div>
 
           {/* Results & Clear */}
-          <div className="pt-3 border-t border-white/10 flex items-center justify-between">
+          <div className="pt-2 border-t border-white/10 flex items-center justify-between">
             <p className="text-sm text-text-muted">
               <span className="text-primary font-bold">{filteredMotorcycles.length}</span> دراجة
             </p>
@@ -252,9 +218,9 @@ export default function MotorcyclesPage() {
                   setSelectedType('all');
                   setSelectedCC('all');
                 }}
-                className="text-sm text-primary hover:text-primary/80"
+                className="text-xs text-primary hover:text-primary/80 px-2 py-1 bg-primary/10 rounded-lg"
               >
-                مسح الفلاتر ✕
+                مسح
               </button>
             )}
           </div>
@@ -339,7 +305,9 @@ export default function MotorcyclesPage() {
         {/* Empty State */}
         {paginatedMotorcycles.length === 0 && (
           <div className="text-center py-12">
-            <div className="text-6xl mb-4 opacity-50">🏍️</div>
+            <svg className="w-24 h-24 mx-auto mb-4 opacity-50 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
             <p className="text-text-secondary">لا توجد دراجات تطابق الفلاتر المحددة</p>
           </div>
         )}
