@@ -26,6 +26,7 @@ export default function CatalogContent() {
   const [selectedBrand, setSelectedBrand] = useState<string>(brandParam || 'all');
   const [searchQuery, setSearchQuery] = useState(searchParam || '');
   const [currentPage, setCurrentPage] = useState(1);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   // State for data from provider
   const [products, setProducts] = useState<Product[]>([]);
@@ -147,8 +148,6 @@ export default function CatalogContent() {
       </div>
     );
   }
-
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
     <div className="space-y-3">
