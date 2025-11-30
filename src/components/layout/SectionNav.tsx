@@ -3,31 +3,46 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-const sections = [
-  {
-    id: 'motorcycles',
-    label: 'الدراجات النارية',
-    href: '/motorcycles',
-  },
-  {
-    id: 'catalog',
-    label: 'المنتجات',
-    href: '/catalog',
-  },
-  {
-    id: 'maintenance',
-    label: 'الصيانة',
-    href: '/maintenance',
-  },
-];
-
 export default function SectionNav() {
-  const pathname = usePathname() || '/';
+  const pathname = usePathname();
+
+  const sections = [
+    {
+      id: 'products',
+      label: 'المنتجات',
+      href: '/',
+      icon: (
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+        </svg>
+      ),
+    },
+    {
+      id: 'motorcycles',
+      label: 'الدراجات',
+      href: '/motorcycles',
+      icon: (
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+    },
+    {
+      id: 'maintenance',
+      label: 'الصيانة',
+      href: '/maintenance',
+      icon: (
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      ),
+    },
+  ];
 
   const isActive = (href: string) => {
-    // نخلي /catalog هو الافتراضي بدل الصفحة الرئيسية
-    if (href === '/catalog') {
-      return pathname === '/' || pathname.startsWith('/catalog') || pathname.startsWith('/product');
+    if (href === '/') {
+      return pathname === '/' || pathname === '/catalog';
     }
     return pathname.startsWith(href);
   };
@@ -35,55 +50,52 @@ export default function SectionNav() {
   return (
     <>
       {/* Desktop Section Nav - Sticky below navbar */}
-      <div className="hidden md:block sticky top-14 z-30 bg-background/95 backdrop-blur-md border-b border-white/10 shadow-lg">
+      <div className="hidden md:block sticky top-14 z-40 bg-background border-b border-white/10 shadow-lg">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-2 py-2">
-            {sections.map((section) => {
-              const active = isActive(section.href);
-              return (
-                <Link
-                  key={section.id}
-                  href={section.href}
-                  className={`relative rounded-full px-5 py-1.5 text-sm font-semibold transition-all ${
-                    active
-                      ? 'bg-primary text-white shadow-lg shadow-primary/30'
-                      : 'bg-white/5 text-text-muted hover:bg-white/10'
-                  }`}
-                >
-                  {section.label}
-                  {active && (
-                    <span className="pointer-events-none absolute -bottom-1 left-1/2 h-0.5 w-10 -translate-x-1/2 rounded-full bg-primary shadow-primary/50 shadow-lg" />
-                  )}
-                </Link>
-              );
-            })}
+          <div className="flex items-center justify-center gap-1 py-2">
+            {sections.map((section) => (
+              <Link
+                key={section.id}
+                href={section.href}
+                className={`flex items-center gap-2 px-8 py-3 rounded-xl font-bold text-base transition-all duration-200 ${
+                  isActive(section.href)
+                    ? 'bg-primary text-white shadow-lg shadow-primary/30'
+                    : 'bg-white/5 text-text-secondary hover:bg-white/10 hover:text-white'
+                }`}
+              >
+                {section.icon}
+                <span>{section.label}</span>
+              </Link>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Mobile Bottom Nav */}
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-black/95 backdrop-blur-lg md:hidden">
-        <div className="flex items-center justify-around px-2 py-1.5">
-          {sections.map((section) => {
-            const active = isActive(section.href);
-            return (
-              <Link
-                key={section.id}
-                href={section.href}
-                className={`flex flex-col items-center justify-center flex-1 gap-0.5 rounded-xl py-1 transition-all ${
-                  active ? 'text-primary' : 'text-text-muted'
-                }`}
-              >
-                <span
-                  className={`flex h-9 w-9 items-center justify-center rounded-full text-[11px] font-semibold text-center leading-tight ${
-                    active ? 'bg-primary/20' : 'bg-white/5'
-                  }`}
-                >
-                  {section.label}
-                </span>
-              </Link>
-            );
-          })}
+      {/* Mobile Bottom Navigation - Enhanced */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background-light/95 backdrop-blur-lg border-t border-white/10 shadow-2xl safe-area-bottom">
+        <div className="grid grid-cols-3">
+          {sections.map((section) => (
+            <Link
+              key={section.id}
+              href={section.href}
+              className={`flex flex-col items-center justify-center py-3 px-2 transition-all duration-200 relative ${
+                isActive(section.href)
+                  ? 'text-primary'
+                  : 'text-text-muted active:scale-95'
+              }`}
+            >
+              {/* Active indicator */}
+              {isActive(section.href) && (
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-primary rounded-full shadow-lg shadow-primary/50" />
+              )}
+              <div className={`mb-1 transition-transform ${isActive(section.href) ? 'scale-110' : ''}`}>
+                {section.icon}
+              </div>
+              <span className={`text-xs font-semibold ${isActive(section.href) ? 'font-bold' : ''}`}>
+                {section.label}
+              </span>
+            </Link>
+          ))}
         </div>
       </div>
     </>
