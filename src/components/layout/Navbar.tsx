@@ -15,101 +15,77 @@ export default function Navbar() {
     setMounted(true);
   }, []);
 
-  const cartCount = mounted ? getTotalItems() : 0;
-
   return (
-    <nav className="sticky top-0 z-40 border-b border-white/10 bg-background/95 backdrop-blur-xl">
+    <nav className="bg-background-light border-b border-gray-800 sticky top-0 z-50 shadow-lg">
       <div className="container mx-auto px-3 md:px-4">
-        <div className="flex h-14 items-center justify-between gap-3">
-          {/* Logo / Brand */}
-          <Link href="/catalog" className="flex items-center gap-2">
+        <div className="flex items-center justify-between h-14">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2">
             <Image
               src="/Logo.png"
               alt="سوفت 99"
-              width={40}
-              height={40}
+              width={36}
+              height={36}
               className="h-9 w-9 rounded-md object-contain"
               priority
             />
-            <div className="hidden sm:flex flex-col leading-tight">
-              <span className="text-primary font-bold text-sm md:text-base">
-                سوفت 99
-              </span>
-              <span className="text-[11px] text-text-secondary">
-                متجر دراجات وقطع أصلية
-              </span>
+            <div className="flex flex-col">
+              <span className="text-primary font-bold text-sm md:text-base leading-tight">سوفت 99</span>
+              <span className="hidden md:block text-[10px] text-text-muted leading-tight">Soft Ninety Nine</span>
             </div>
           </Link>
 
-          {/* Actions cluster (Cart is the hero) */}
-          <div className="flex items-center gap-1.5 md:gap-2">
-            {/* Phone / Contact */}
+          {/* Action Icons - Right Side */}
+          <div className="flex items-center gap-2 md:gap-3">
+            {/* Phone - Contact Page Link */}
             <Link
               href="/contact"
-              aria-label="اتصل بنا"
-              title="اتصل بنا"
-              className="hidden xs:flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-text-muted hover:bg-white/10 hover:text-white transition-colors"
+              className="p-2 text-text-secondary hover:text-primary transition-colors"
+              aria-label="تواصل معنا"
+              title="تواصل معنا"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.8}
-                  d="M2.5 5.5C2.5 4.12 3.62 3 5 3h2c.7 0 1.3.4 1.6 1.02l1.1 2.3c.25.52.16 1.14-.24 1.56l-1.1 1.16a1 1 0 00-.2 1.12c.6 1.27 1.7 2.38 3 2.98a1 1 0 001.1-.2l1.17-1.1c.42-.4 1.04-.49 1.56-.24l2.3 1.1c.62.3 1.02.9 1.02 1.6V19c0 1.38-1.12 2.5-2.5 2.5h-.75C8.93 21.5 2.5 15.07 2.5 7.25V5.5z"
-                />
+              <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
             </Link>
 
-            {/* Location */}
+            {/* Location - Location Page Link */}
             <Link
               href="/location"
-              aria-label="الموقع"
-              title="الموقع"
-              className="hidden sm:flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-text-muted hover:bg-white/10 hover:text-white transition-colors"
+              className="p-2 text-text-secondary hover:text-primary transition-colors"
+              aria-label="الموقع وساعات العمل"
+              title="الموقع وساعات العمل"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.8}
-                  d="M12 21s-6-4.35-6-10a6 6 0 1112 0c0 5.65-6 10-6 10z"
-                />
-                <circle cx="12" cy="11" r="2.5" stroke="currentColor" strokeWidth={1.6} />
+              <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </Link>
 
             {/* Parking */}
             <Link
               href="/parking"
-              aria-label="المواقف"
-              title="المواقف"
-              className="hidden sm:flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-text-muted hover:bg-white/10 hover:text-white transition-colors"
+              className="p-2 text-text-secondary hover:text-primary transition-colors"
+              aria-label="مواقف الدراجات"
+              title="مواقف الدراجات"
             >
-              <div className="flex h-6 w-6 items-center justify-center rounded-md border border-white/20 text-[11px] font-extrabold">
-                P
-              </div>
+              <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+              </svg>
             </Link>
 
-            {/* Cart - main CTA */}
+            {/* Store Icon - Most Prominent */}
             <button
-              type="button"
               onClick={() => setIsCartOpen(true)}
-              className="relative flex h-9 w-9 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/40 ring-2 ring-primary/40 hover:bg-primary-hover transition-transform active:scale-95"
-              aria-label="سلة المشتريات"
+              className="relative p-2 md:p-2.5 text-white hover:text-primary transition-all duration-200 bg-primary/10 rounded-lg hover:bg-primary/20 border border-primary/30"
+              aria-label="سلة التسوق"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.9}
-                  d="M3.5 5h1.6l1.2 11.1A2 2 0 008.3 18h7.4a2 2 0 002-1.9L18.9 8H6.2"
-                />
-                <circle cx="10" cy="20" r="1" />
-                <circle cx="16" cy="20" r="1" />
+              <svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
               </svg>
-              {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 min-w-[18px] h-4 px-1 rounded-full bg-accent text-black text-[10px] flex items-center justify-center font-bold">
-                  {cartCount}
+              {mounted && getTotalItems() > 0 && (
+                <span className="absolute -top-1 -right-1 bg-green-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold animate-pulse">
+                  {getTotalItems()}
                 </span>
               )}
             </button>
