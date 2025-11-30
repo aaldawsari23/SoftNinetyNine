@@ -6,6 +6,7 @@ import { LazyProductImage } from '@/components/ui/LazyProductImage';
 import { useCart } from '@/contexts/CartContext';
 import { useToast } from '@/contexts/ToastContext';
 import { categories, brands } from '@/data/products';
+import { useState } from 'react';
 
 interface ProductCardProps {
   product: Product;
@@ -16,6 +17,8 @@ export default function ProductCard({ product }: ProductCardProps) {
   const isAvailable = product.is_available ?? true;
   const { addToCart, isInCart } = useCart();
   const { showToast } = useToast();
+  const [isCelebrating, setIsCelebrating] = useState(false);
+  const [isAdding, setIsAdding] = useState(false);
 
   const category = categories.find(c => c.id === product.category_id);
   const brand = brands.find(b => b.id === product.brand_id);
@@ -53,15 +56,25 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   const secondaryInfo = getSecondaryInfo();
 
-  const handleAddToCart = (e: React.MouseEvent) => {
+  const handleAddToCart = async (e: React.MouseEvent) => {
     e.preventDefault();
+    setIsAdding(true);
+    setIsCelebrating(true);
+
+    // Add to cart
     addToCart(product);
     showToast(`تم إضافة "${displayName}" إلى السلة`, 'success');
+
+    // Reset celebration animation after it completes
+    setTimeout(() => {
+      setIsCelebrating(false);
+      setIsAdding(false);
+    }, 600);
   };
 
   return (
     <Link href={`/product/${product.id}`} className="group h-full block">
-      <div className="h-full flex flex-col rounded-2xl border border-white/10 bg-[#090909] hover:border-primary/40 transition-all shadow-sm hover:shadow-xl hover:shadow-primary/15 active:scale-[0.98]">
+      <div className={`h-full flex flex-col rounded-2xl border border-white/10 bg-[#090909] hover:border-primary/40 transition-all shadow-sm hover:shadow-xl hover:shadow-primary/15 active:scale-[0.98] animate-fade-in ${isCelebrating ? 'animate-celebrate' : ''}`}>
         {/* Image */}
         <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl bg-[#111111] flex items-center justify-center">
           <LazyProductImage product={product} alt={displayName} />
@@ -70,10 +83,11 @@ export default function ProductCard({ product }: ProductCardProps) {
           {isAvailable && product.type !== 'bike' && (
             <button
               onClick={handleAddToCart}
-              className="absolute bottom-2 left-2 bg-primary/95 text-white px-2.5 py-1.5 rounded-xl shadow-lg shadow-primary/30 text-[11px] md:text-xs font-semibold hover:bg-primary transition-all active:scale-95"
+              disabled={isAdding}
+              className={`absolute bottom-2 left-2 bg-primary/95 text-white px-2.5 py-1.5 rounded-xl shadow-lg shadow-primary/30 text-[11px] md:text-xs font-semibold hover:bg-primary transition-all active:scale-95 focus-ring disabled:opacity-60 disabled:cursor-not-allowed ${isAdding ? 'animate-pulse' : ''}`}
               aria-label="أضف للسلة"
             >
-              + للسلة
+              {isAdding ? '✓' : '+ للسلة'}
             </button>
           )}
 

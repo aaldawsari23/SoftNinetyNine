@@ -13,10 +13,19 @@ interface CartDrawerProps {
 export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
   const { items, removeFromCart, updateQuantity, getTotalPrice, clearCart } = useCart();
   const [mounted, setMounted] = useState(false);
+  const [removingId, setRemovingId] = useState<string | null>(null);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const handleRemoveItem = (productId: string) => {
+    setRemovingId(productId);
+    setTimeout(() => {
+      removeFromCart(productId);
+      setRemovingId(null);
+    }, 300);
+  };
 
   const handleWhatsAppOrder = () => {
     if (items.length === 0) return;
@@ -82,13 +91,17 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
           {/* Cart Items */}
           <div className="flex-1 overflow-y-auto p-4 space-y-3">
             {items.length === 0 ? (
-              <div className="text-center py-12">
+              <div className="text-center py-12 animate-fade-in">
                 <div className="text-4xl mb-3 opacity-50">🛒</div>
                 <p className="text-text-secondary">السلة فارغة</p>
               </div>
             ) : (
-              items.map(item => (
-                <div key={item.product.id} className="bg-background rounded-lg p-3 border border-border">
+              items.map((item, index) => (
+                <div
+                  key={item.product.id}
+                  className={`bg-background rounded-lg p-3 border border-border transition-all duration-300 animate-slide-up ${removingId === item.product.id ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
                   <div className="flex gap-3">
                     <div className="w-16 h-16 rounded overflow-hidden bg-background flex-shrink-0">
                       <LazyProductImage product={item.product} alt={item.product.name_ar || ''} />
@@ -110,21 +123,24 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                     <div className="flex items-center gap-2">
                       <button
                         onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
-                        className="w-7 h-7 rounded bg-background hover:bg-primary/10 text-white flex items-center justify-center"
+                        className="w-7 h-7 rounded bg-background hover:bg-primary/10 text-white flex items-center justify-center transition-all focus-ring active:scale-95"
+                        aria-label="تقليل الكمية"
                       >
                         -
                       </button>
                       <span className="text-white font-semibold w-8 text-center">{item.quantity}</span>
                       <button
                         onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
-                        className="w-7 h-7 rounded bg-background hover:bg-primary/10 text-white flex items-center justify-center"
+                        className="w-7 h-7 rounded bg-background hover:bg-primary/10 text-white flex items-center justify-center transition-all focus-ring active:scale-95"
+                        aria-label="زيادة الكمية"
                       >
                         +
                       </button>
                     </div>
                     <button
-                      onClick={() => removeFromCart(item.product.id)}
-                      className="text-red-500 hover:text-red-400 text-sm"
+                      onClick={() => handleRemoveItem(item.product.id)}
+                      className="text-red-500 hover:text-red-400 text-sm transition-all focus-ring rounded px-2 py-1 active:scale-95"
+                      aria-label="حذف من السلة"
                     >
                       حذف
                     </button>
@@ -136,21 +152,26 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
 
           {/* Footer */}
           {items.length > 0 && (
-            <div className="border-t border-border p-4 space-y-3">
+            <div className="border-t border-border p-4 space-y-3 animate-slide-up">
               {getTotalPrice() > 0 && (
-                <div className="flex justify-between text-lg font-bold">
+                <div className="flex justify-between text-lg font-bold animate-fade-in">
                   <span className="text-white">الإجمالي:</span>
                   <span className="text-primary">{getTotalPrice().toLocaleString('ar-SA')} ريال</span>
                 </div>
               )}
               <button
                 onClick={handleWhatsAppOrder}
-                className="btn-primary w-full flex items-center justify-center gap-2"
+                className="btn-primary w-full flex items-center justify-center gap-2 ripple"
+                aria-label="إرسال الطلب عبر واتساب"
               >
                 <span>إرسال الطلب عبر واتساب</span>
                 <span>📱</span>
               </button>
-              <button onClick={clearCart} className="btn-secondary w-full text-sm">
+              <button
+                onClick={clearCart}
+                className="btn-secondary w-full text-sm"
+                aria-label="إفراغ السلة"
+              >
                 إفراغ السلة
               </button>
             </div>
