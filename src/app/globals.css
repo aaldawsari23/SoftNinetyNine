@@ -79,11 +79,38 @@
 }
 
 @layer components {
-  /* Primary Button - Enhanced */
+  /* Primary Button - Enhanced with ripple effect */
   .btn-primary {
     @apply relative overflow-hidden bg-gradient-to-r from-primary to-primary-hover text-white font-bold py-3 px-8 rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-primary/50 active:scale-[0.98] hover:-translate-y-1;
     background-size: 200% auto;
     animation: shimmer 3s ease infinite;
+  }
+
+  /* Better focus states for accessibility */
+  .btn-primary:focus-visible {
+    @apply outline-none ring-4 ring-primary/50 ring-offset-2 ring-offset-background;
+  }
+
+  /* Disabled state */
+  .btn-primary:disabled {
+    @apply opacity-50 cursor-not-allowed pointer-events-none;
+    animation: none;
+  }
+
+  /* Loading state */
+  .btn-primary.loading {
+    @apply pointer-events-none;
+  }
+
+  .btn-primary.loading::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent;
+    animation: loading-shimmer 1.5s infinite;
+  }
+
+  @keyframes loading-shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
   }
 
   @keyframes shimmer {
@@ -95,6 +122,14 @@
   /* Secondary Button - Modern */
   .btn-secondary {
     @apply relative bg-background-card backdrop-blur-sm text-text border-2 border-border-light font-semibold py-3 px-8 rounded-xl transition-all duration-300 hover:border-primary hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/20 active:scale-[0.98];
+  }
+
+  .btn-secondary:focus-visible {
+    @apply outline-none ring-4 ring-primary/30 ring-offset-2 ring-offset-background;
+  }
+
+  .btn-secondary:disabled {
+    @apply opacity-50 cursor-not-allowed pointer-events-none;
   }
 
   /* Card - Glass effect */
@@ -118,9 +153,27 @@
     opacity: 1;
   }
 
-  /* Input Field - Modern */
+  /* Input Field - Modern with enhanced accessibility */
   .input-field {
     @apply bg-background-card/50 backdrop-blur-sm border-2 border-border text-text rounded-xl px-5 py-3 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/20 focus:bg-background-card transition-all placeholder:text-text-muted;
+  }
+
+  .input-field:focus-visible {
+    @apply outline-none ring-4 ring-primary/30 border-primary;
+  }
+
+  .input-field:disabled {
+    @apply opacity-50 cursor-not-allowed bg-background-card/30;
+  }
+
+  /* Input with error state */
+  .input-field.error {
+    @apply border-red-500 focus:border-red-500 focus:ring-red-500/20;
+  }
+
+  /* Input with success state */
+  .input-field.success {
+    @apply border-green-500 focus:border-green-500 focus:ring-green-500/20;
   }
 
   /* Category Card - Interactive */
@@ -216,6 +269,134 @@
     to { box-shadow: 0 0 30px rgba(255, 46, 46, 0.8), 0 0 40px rgba(255, 46, 46, 0.4); }
   }
 
+  /* Staggered fade in animation for cards */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide in from bottom */
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out forwards;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Scale in animation */
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Celebration animation */
+  .animate-celebrate {
+    animation: celebrate 0.6s ease-out;
+  }
+
+  @keyframes celebrate {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.1) rotate(-5deg); }
+    50% { transform: scale(1.05) rotate(5deg); }
+    75% { transform: scale(1.1) rotate(-3deg); }
+    100% { transform: scale(1) rotate(0deg); }
+  }
+
+  /* Bounce animation */
+  .animate-bounce-in {
+    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Shake animation for errors */
+  .animate-shake {
+    animation: shake 0.5s ease-in-out;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+  }
+
+  /* Ripple effect (use with JS) */
+  .ripple {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+
+  .ripple:active::after {
+    width: 300px;
+    height: 300px;
+  }
+
+  /* Better focus visible for keyboard navigation */
+  .focus-ring:focus-visible {
+    @apply outline-none ring-4 ring-primary/50 ring-offset-2 ring-offset-background;
+  }
+
+  /* Skip to content link for accessibility */
+  .skip-to-content {
+    @apply fixed top-0 left-0 bg-primary text-white px-4 py-2 rounded-br-lg z-[100] transform -translate-y-full focus:translate-y-0 transition-transform;
+  }
+
   /* Hide scrollbar but keep functionality */
   .scrollbar-hide {
     -ms-overflow-style: none;
@@ -224,5 +405,21 @@
 
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+  }
+
+  /* Smooth page transitions */
+  .page-transition {
+    animation: pageTransition 0.3s ease-out;
+  }
+
+  @keyframes pageTransition {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
