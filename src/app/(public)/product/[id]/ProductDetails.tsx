@@ -54,19 +54,24 @@ export default function ProductDetails({ product, brand, category, relatedProduc
 
         {/* Mobile-first responsive layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-10">
-          {/* Image Section - Enhanced */}
+          {/* Image Section - Clean */}
           <div className="space-y-3 md:space-y-4">
-            <div className="bg-gradient-to-b from-background-light to-background rounded-xl md:rounded-2xl overflow-hidden border border-white/10 sticky top-20">
-              <div className="aspect-square relative">
+            <div className="relative rounded-3xl bg-gradient-to-br from-[#141414] via-[#050505] to-[#000000] border border-white/10 shadow-[0_18px_60px_rgba(0,0,0,0.75)] overflow-hidden sticky top-20">
+              <div className="aspect-square w-full max-w-md mx-auto flex items-center justify-center">
                 <LazyProductImage product={product} alt={displayName} />
-                {!isAvailable && (
-                  <div className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center">
-                    <span className="px-4 py-2 bg-danger text-white text-base md:text-lg font-bold rounded-xl">
-                      غير متوفر
-                    </span>
-                  </div>
-                )}
               </div>
+
+              {/* Out of stock badge - بدون تغطية الصورة */}
+              {!isAvailable && (
+                <div className="absolute top-3 left-3">
+                  <span className="px-3 py-1.5 rounded-full bg-red-600/95 text-xs font-bold text-white shadow-md shadow-red-500/40">
+                    غير متوفر حالياً
+                  </span>
+                </div>
+              )}
+
+              {/* حافة خفيفة حول الإطار */}
+              <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-white/5" />
             </div>
 
             {/* Product Meta - Mobile */}
@@ -189,7 +194,7 @@ export default function ProductDetails({ product, brand, category, relatedProduc
             )}
 
             {/* Actions */}
-            <div className="space-y-3 sticky bottom-0 bg-background/80 backdrop-blur-md py-4 -mx-4 px-4 lg:static lg:bg-transparent lg:p-0">
+            <div className="mt-6 space-y-3 lg:mt-8">
               {/* For Motorcycles: WhatsApp only */}
               {isMotorcycle && (
                 <button onClick={handleBuyNow} className="btn-primary w-full py-3.5 flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
@@ -258,7 +263,7 @@ export default function ProductDetails({ product, brand, category, relatedProduc
                     href={`/product/${p.id}`}
                     className="bg-white/5 backdrop-blur-sm rounded-xl p-3 border border-white/10 hover:border-primary/50 transition-all"
                   >
-                    <div className="aspect-square bg-gradient-to-b from-background-light to-background rounded-lg mb-3 overflow-hidden">
+                    <div className="aspect-[4/3] bg-[#101010] rounded-2xl mb-3 overflow-hidden flex items-center justify-center">
                       <LazyProductImage product={p} alt={relatedName} />
                     </div>
                     <h3 className="text-sm font-semibold text-white line-clamp-2 mb-1">{relatedName}</h3>

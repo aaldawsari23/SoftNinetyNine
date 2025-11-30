@@ -61,27 +61,26 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <Link href={`/product/${product.id}`} className="group h-full block">
-      <div className="h-full flex flex-col bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden hover:border-primary/50 active:border-primary/70 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 active:scale-[0.98]">
+      <div className="h-full flex flex-col rounded-2xl border border-white/10 bg-[#090909] hover:border-primary/40 transition-all shadow-sm hover:shadow-xl hover:shadow-primary/15 active:scale-[0.98]">
         {/* Image */}
-        <div className="relative overflow-hidden bg-gradient-to-b from-background to-background-light aspect-square">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl bg-[#111111] flex items-center justify-center">
           <LazyProductImage product={product} alt={displayName} />
 
-          {/* Quick Add Button - visible on mobile, enhanced on hover - Hidden for motorcycles */}
+          {/* Quick Add Button - Hidden for motorcycles */}
           {isAvailable && product.type !== 'bike' && (
             <button
               onClick={handleAddToCart}
-              className="absolute bottom-2 right-2 bg-primary/90 backdrop-blur-sm text-white p-2 rounded-lg opacity-70 md:opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary hover:scale-110 active:scale-95"
+              className="absolute bottom-2 left-2 bg-primary/95 text-white px-2.5 py-1.5 rounded-xl shadow-lg shadow-primary/30 text-[11px] md:text-xs font-semibold hover:bg-primary transition-all active:scale-95"
               aria-label="أضف للسلة"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-              </svg>
+              + للسلة
             </button>
           )}
 
+          {/* Out of stock badge (بدون تغطية الصورة) */}
           {!isAvailable && (
-            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center">
-              <span className="px-3 py-1 bg-danger text-white text-xs md:text-sm font-bold rounded-lg">
+            <div className="absolute top-2 left-2">
+              <span className="px-2.5 py-1 rounded-full bg-red-600/95 text-[10px] md:text-xs font-bold text-white shadow-md shadow-red-500/40">
                 غير متوفر
               </span>
             </div>
