@@ -8,9 +8,10 @@ import { Product } from '@/types';
 interface Props {
   product: Product;
   alt?: string;
+  className?: string;
 }
 
-export function LazyProductImage({ product, alt }: Props) {
+export function LazyProductImage({ product, alt, className }: Props) {
   const [error, setError] = useState(false);
 
   const imageSrc = error ? getFallbackImageSrc() : getProductImageSrc(product);
@@ -23,7 +24,10 @@ export function LazyProductImage({ product, alt }: Props) {
       width={300}
       height={300}
       loading="lazy"
-      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      className={
+        'w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 ' +
+        (className || '')
+      }
       onError={() => setError(true)}
     />
   );
