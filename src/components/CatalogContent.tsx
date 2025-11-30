@@ -7,6 +7,7 @@ import { Product, Category, Brand } from '@/types';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import { getDataProvider } from '@/lib/data-providers';
 import { filterProducts, sortProducts, paginateProducts } from '@/utils/catalog';
+import { filterVisibleProducts } from '@/utils/productFilter';
 
 const ITEMS_PER_PAGE = 20;
 
@@ -124,7 +125,11 @@ export default function CatalogContent() {
     const minPriceNum = minPrice ? Number(minPrice) : undefined;
     const maxPriceNum = maxPrice ? Number(maxPrice) : undefined;
 
-    let filtered = filterProducts(products, {
+    // تصفية المنتجات المخفية أولاً
+    let filtered = filterVisibleProducts(products);
+
+    // ثم تطبيق فلاتر المستخدم
+    filtered = filterProducts(filtered, {
       category: selectedCategory !== 'all' ? selectedCategory : undefined,
       brand: selectedBrand !== 'all' ? selectedBrand : undefined,
       minPrice: Number.isFinite(minPriceNum as number) ? minPriceNum : undefined,
