@@ -74,7 +74,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <Link href={`/product/${product.id}`} className="group h-full block">
-      <div className={`h-full flex flex-col rounded-2xl border border-white/10 bg-[#090909] hover:border-primary/40 transition-all shadow-sm hover:shadow-xl hover:shadow-primary/15 active:scale-[0.98] animate-fade-in ${isCelebrating ? 'animate-celebrate' : ''}`}>
+      <div className={`h-full flex flex-col rounded-2xl border border-white/10 bg-[#090909] hover:border-primary/40 transition-all shadow-sm card-glow active:scale-[0.98] animate-fade-in ${isCelebrating ? 'animate-celebrate' : ''} ${isInCart(product.id) ? 'in-cart-ring' : ''}`}>
         {/* Image */}
         <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl bg-[#111111] flex items-center justify-center">
           <LazyProductImage product={product} alt={displayName} />
@@ -84,10 +84,10 @@ export default function ProductCard({ product }: ProductCardProps) {
             <button
               onClick={handleAddToCart}
               disabled={isAdding}
-              className={`absolute bottom-2 left-2 bg-primary/95 text-white px-2.5 py-1.5 rounded-xl shadow-lg shadow-primary/30 text-[11px] md:text-xs font-semibold hover:bg-primary transition-all active:scale-95 focus-ring disabled:opacity-60 disabled:cursor-not-allowed ${isAdding ? 'animate-pulse' : ''}`}
+              className={`absolute bottom-3 left-3 cart-add-btn text-white text-xs font-bold disabled:opacity-60 disabled:cursor-not-allowed ${isAdding ? 'animate-pulse' : ''}`}
               aria-label="أضف للسلة"
             >
-              {isAdding ? '✓' : '+ للسلة'}
+              {isAdding ? '✓ تمت الإضافة' : '+ أضف للسلة'}
             </button>
           )}
 
@@ -103,15 +103,15 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         {/* Content - Compact - Flex to push price to bottom */}
         <div className="flex-1 flex flex-col p-3 md:p-4 space-y-2">
-          {/* Category & Brand */}
-          <div className="flex items-center gap-2 text-xs">
+          {/* Category & Brand - Improved spacing */}
+          <div className="flex items-center gap-2 text-xs flex-wrap">
             {category && (
-              <span className="px-2 py-0.5 bg-primary/10 text-primary rounded-full">
+              <span className="cat-badge">
                 {category.name_ar}
               </span>
             )}
             {brand && (
-              <span className="text-text-muted">{brand.name}</span>
+              <span className="text-text-muted/80 text-[11px]">• {brand.name}</span>
             )}
           </div>
 
@@ -130,24 +130,26 @@ export default function ProductCard({ product }: ProductCardProps) {
           {/* Spacer to push price to bottom */}
           <div className="flex-1"></div>
 
-          {/* Price */}
+          {/* Price - Premium badge style */}
           {product.price > 0 && (
             <div className="pt-2 border-t border-white/5">
-              <span className="text-lg md:text-xl font-bold text-green-500">{product.price.toLocaleString('ar-SA')} {product.currency}</span>
+              <span className="price-badge text-green-400 text-base md:text-lg">{product.price.toLocaleString('ar-SA')} <span className="text-green-400/70 text-sm">{product.currency}</span></span>
             </div>
           )}
 
           {/* Status */}
-          <div className="flex items-center gap-2 flex-wrap">
+          <div className="flex items-center gap-3 flex-wrap">
             {isAvailable && (
-              <div className="flex items-center gap-1 text-success text-[10px] md:text-xs font-semibold">
-                <span className="w-1.5 h-1.5 bg-success rounded-full animate-pulse"></span>
+              <div className="flex items-center gap-1.5 text-success text-[11px] font-semibold">
+                <span className="status-dot bg-success"></span>
                 <span>متوفر</span>
               </div>
             )}
             {isInCart(product.id) && (
-              <div className="flex items-center gap-1 text-yellow-500 text-[10px] md:text-xs font-semibold">
-                <span className="w-1.5 h-1.5 bg-yellow-500 rounded-full"></span>
+              <div className="flex items-center gap-1.5 text-yellow-400 text-[11px] font-bold">
+                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M16 6V4a2 2 0 00-2-2H6a2 2 0 00-2 2v2H2v10a2 2 0 002 2h12a2 2 0 002-2V6h-2zm-8 8a1 1 0 11-2 0 1 1 0 012 0zm6 0a1 1 0 11-2 0 1 1 0 012 0z"/>
+                </svg>
                 <span>في السلة</span>
               </div>
             )}

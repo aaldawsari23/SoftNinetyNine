@@ -3,16 +3,14 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="bg-background-light border-t border-gray-800 mt-auto">
+      {/* Dev Banner - Minimal */}
+      <div className="dev-banner">
+        <span className="text-orange-400/80">⚠️ نسخة تجريبية</span>
+        <span className="text-orange-300/60 mx-2">•</span>
+        <span className="text-orange-300/60">المنتجات المعروضة للتجربة فقط</span>
+      </div>
+
       <div className="container mx-auto px-4 py-6 md:py-8">
-        {/* Development Disclaimer */}
-        <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-4 mb-6 text-center">
-          <p className="text-orange-400 text-sm md:text-base font-bold mb-1">
-            ⚠️ الموقع تحت التطوير - نسخة تجريبية
-          </p>
-          <p className="text-orange-300/80 text-xs md:text-sm">
-            المنتجات المعروضة غير حقيقية وتم استيرادها آلياً للتجربة فقط ولا تعكس كمية ونوع المنتجات في المحل
-          </p>
-        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {/* About / Branding */}

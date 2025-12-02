@@ -270,15 +270,11 @@ export default function CatalogContent() {
             </div>
           </div>
 
-          {/* زر الفلتر */}
+          {/* زر الفلتر - Premium */}
           <button
             type="button"
             onClick={() => setIsFilterDrawerOpen(true)}
-            className={`flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full border transition-all ${
-              hasActiveFilters
-                ? 'bg-primary text-white border-primary shadow-lg shadow-primary/20'
-                : 'bg-white/5 text-text-muted border-white/10 hover:bg-white/10'
-            }`}
+            className={`filter-btn flex-shrink-0 ${hasActiveFilters ? 'active' : ''}`}
             aria-label="فتح الفلاتر"
           >
             <div className="relative">
@@ -287,28 +283,24 @@ export default function CatalogContent() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M4 6h16M6 6a2 2 0 104 0m-4 0a2 2 0 114 0M4 12h10m-8 0a2 2 0 104 0m-4 0a2 2 0 114 0m8 6h6m-4 0a2 2 0 104 0m-4 0a2 2 0 114 0"
+                  d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
                 />
               </svg>
               {hasActiveFilters && (
-                <span className="absolute -top-2 -right-2 w-4 h-4 bg-red-500 rounded-full border-2 border-background flex items-center justify-center text-[8px] font-bold">
-                  !
-                </span>
+                <span className="absolute -top-1 -right-1 w-3 h-3 bg-white rounded-full shadow-sm"></span>
               )}
             </div>
           </button>
         </div>
 
-        {/* شريط الفئات (شيبس) */}
+        {/* شريط الفئات (شيبس) - Premium Design */}
         {availableCategories.length > 0 && (
-          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 -mx-1 px-1">
             <button
               type="button"
               onClick={() => setSelectedCategory('all')}
-              className={`px-4 py-1.5 text-xs md:text-sm font-medium rounded-full border transition-all flex-shrink-0 ${
-                selectedCategory === 'all'
-                  ? 'bg-white text-black border-white shadow-md'
-                  : 'bg-white/5 text-text-muted border-white/10 hover:bg-white/15'
+              className={`chip-premium flex-shrink-0 ${
+                selectedCategory === 'all' ? 'active' : ''
               }`}
             >
               الكل
@@ -318,10 +310,8 @@ export default function CatalogContent() {
                 key={cat.id}
                 type="button"
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-4 py-1.5 text-xs md:text-sm font-medium rounded-full border transition-all flex-shrink-0 ${
-                  selectedCategory === cat.id
-                    ? 'bg-primary text-white border-primary shadow-md shadow-primary/30'
-                    : 'bg-white/5 text-text-muted border-white/10 hover:bg-white/15'
+                className={`chip-premium flex-shrink-0 ${
+                  selectedCategory === cat.id ? 'active' : ''
                 }`}
               >
                 {cat.name_ar}
@@ -418,13 +408,14 @@ export default function CatalogContent() {
         <ProductGrid products={paginatedProducts} />
 
         {totalPages > 1 && (
-          <div className="mt-4 flex flex-col items-center gap-3">
+          <div className="mt-6 flex flex-col items-center gap-4">
             <div className="flex items-center gap-2">
               <button
                 type="button"
                 onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                 disabled={currentPage === 1}
-                className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs md:text-sm text-text-muted disabled:opacity-40 disabled:cursor-not-allowed hover:bg-white/10"
+                className="page-btn"
+                aria-label="الصفحة السابقة"
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path
@@ -434,27 +425,40 @@ export default function CatalogContent() {
                     strokeLinejoin="round"
                   />
                 </svg>
-                <span>السابق</span>
               </button>
 
-              <div className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs md:text-sm text-text-muted">
-                صفحة <span className="text-primary font-semibold mx-1">{currentPage}</span>
-                من <span className="text-primary font-semibold mx-1">{totalPages}</span>
-                {totalItems > 0 && (
-                  <span className="ml-2 hidden sm:inline text-[11px]">
-                    (عرض {(currentPage - 1) * ITEMS_PER_PAGE + 1}–
-                    {Math.min(currentPage * ITEMS_PER_PAGE, totalItems)} من {totalItems})
-                  </span>
-                )}
+              <div className="flex items-center gap-1.5 px-4">
+                {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+                  let pageNum: number;
+                  if (totalPages <= 5) {
+                    pageNum = i + 1;
+                  } else if (currentPage <= 3) {
+                    pageNum = i + 1;
+                  } else if (currentPage >= totalPages - 2) {
+                    pageNum = totalPages - 4 + i;
+                  } else {
+                    pageNum = currentPage - 2 + i;
+                  }
+                  return (
+                    <button
+                      key={pageNum}
+                      type="button"
+                      onClick={() => setCurrentPage(pageNum)}
+                      className={`page-btn ${currentPage === pageNum ? 'active' : ''}`}
+                    >
+                      {pageNum}
+                    </button>
+                  );
+                })}
               </div>
 
               <button
                 type="button"
                 onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                 disabled={currentPage === totalPages}
-                className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs md:text-sm text-text-muted disabled:opacity-40 disabled:cursor-not-allowed hover:bg-white/10"
+                className="page-btn"
+                aria-label="الصفحة التالية"
               >
-                <span>التالي</span>
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path
                     d="M9 5l7 7-7 7"
@@ -464,6 +468,16 @@ export default function CatalogContent() {
                   />
                 </svg>
               </button>
+            </div>
+
+            <div className="text-xs text-text-muted">
+              صفحة <span className="text-primary font-semibold">{currentPage}</span> من <span className="text-primary font-semibold">{totalPages}</span>
+              {totalItems > 0 && (
+                <span className="mx-2">•</span>
+              )}
+              {totalItems > 0 && (
+                <span>{totalItems} منتج</span>
+              )}
             </div>
           </div>
         )}
