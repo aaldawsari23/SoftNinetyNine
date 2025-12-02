@@ -43,13 +43,27 @@ export default function ProductDetails({ product, brand, category, relatedProduc
   return (
     <div className="min-h-screen bg-background py-4 md:py-8">
       <div className="container mx-auto px-4">
-        {/* Breadcrumb */}
-        <nav className="text-sm text-text-secondary mb-4 md:mb-6">
-          <Link href="/" className="hover:text-primary">الرئيسية</Link>
-          {' / '}
-          <Link href="/catalog" className="hover:text-primary">المنتجات</Link>
-          {' / '}
-          <span className="text-white">{displayName}</span>
+        {/* Breadcrumb - Modern chip style */}
+        <nav className="flex items-center gap-2 mb-4 md:mb-6 flex-wrap">
+          <Link href="/" className="breadcrumb-chip hover:text-primary">
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            <span>الرئيسية</span>
+          </Link>
+          <svg className="w-4 h-4 text-text-muted/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          <Link href="/catalog" className="breadcrumb-chip hover:text-primary">
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+            </svg>
+            <span>المنتجات</span>
+          </Link>
+          <svg className="w-4 h-4 text-text-muted/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          <span className="breadcrumb-chip bg-primary/10 border-primary/20 text-primary">{displayName}</span>
         </nav>
 
         {/* Mobile-first responsive layout */}
@@ -207,19 +221,19 @@ export default function ProductDetails({ product, brand, category, relatedProduc
 
               {/* For Regular Products: Add to Cart only */}
               {!isMotorcycle && isAvailable && (
-                <div className="flex items-center gap-3">
-                  <div className="flex items-center bg-white/5 rounded-xl border border-white/10">
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-2 glass-premium p-2 rounded-2xl">
                     <button
                       onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                      className="px-4 py-3 hover:bg-white/5 transition-colors"
+                      className="qty-btn text-white text-xl"
                       aria-label="تقليل"
                     >
-                      -
+                      −
                     </button>
-                    <span className="px-4 py-3 font-semibold min-w-[50px] text-center">{quantity}</span>
+                    <span className="px-4 py-2 font-bold min-w-[60px] text-center text-xl text-white">{quantity}</span>
                     <button
                       onClick={() => setQuantity(quantity + 1)}
-                      className="px-4 py-3 hover:bg-white/5 transition-colors"
+                      className="qty-btn text-white text-xl"
                       aria-label="زيادة"
                     >
                       +
@@ -227,18 +241,20 @@ export default function ProductDetails({ product, brand, category, relatedProduc
                   </div>
                   <button
                     onClick={handleAddToCart}
-                    className="flex-1 btn-primary py-3 flex items-center justify-center gap-2"
+                    className="flex-1 btn-primary py-4 flex items-center justify-center gap-3 text-lg"
                     disabled={isInCart(product.id)}
                   >
                     {isInCart(product.id) ? (
                       <>
-                        <span>✓</span>
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
                         <span>في السلة</span>
                       </>
                     ) : (
                       <>
                         <span>أضف للسلة</span>
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
                       </>
@@ -253,7 +269,13 @@ export default function ProductDetails({ product, brand, category, relatedProduc
         {/* Related Products */}
         {relatedProducts.length > 0 && (
           <div className="mt-12 md:mt-16">
-            <h2 className="text-xl md:text-2xl font-bold text-white mb-6">منتجات مشابهة</h2>
+            {/* Section Divider */}
+            <div className="section-divider"></div>
+
+            <h2 className="text-xl md:text-2xl font-bold text-white mb-6 flex items-center gap-3">
+              <span className="w-1 h-6 bg-primary rounded-full"></span>
+              منتجات مشابهة
+            </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
               {relatedProducts.map(p => {
                 const relatedName = p.name_ar || p.name_en || 'منتج';

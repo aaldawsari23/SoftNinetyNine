@@ -33,12 +33,12 @@ export default function ScrollToTop() {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 left-6 z-40 p-3 bg-primary text-white rounded-full shadow-lg hover:bg-primary-hover transition-all duration-300 hover:scale-110 active:scale-95"
+          className="fixed bottom-6 left-6 z-40 p-3.5 bg-gradient-to-br from-primary to-primary-dark text-white rounded-2xl shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 hover:scale-110 active:scale-95 animate-scale-in"
           aria-label="العودة للأعلى"
           title="العودة للأعلى"
         >
           <svg
-            className="w-6 h-6"
+            className="w-5 h-5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -46,7 +46,7 @@ export default function ScrollToTop() {
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth={2}
+              strokeWidth={2.5}
               d="M5 10l7-7m0 0l7 7m-7-7v18"
             />
           </svg>
