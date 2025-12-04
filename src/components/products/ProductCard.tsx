@@ -74,7 +74,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <Link href={`/product/${product.id}`} className="group h-full block">
-      <div className={`h-full flex flex-col rounded-2xl border border-white/10 bg-[#090909] hover:border-primary/40 transition-all shadow-sm card-glow active:scale-[0.98] animate-fade-in ${isCelebrating ? 'animate-celebrate' : ''} ${isInCart(product.id) ? 'in-cart-ring' : ''}`}>
+      <div className={`h-full flex flex-col rounded-2xl border-2 border-white/10 bg-[#090909] hover:border-primary/40 transition-all shadow-md card-glow active:scale-[0.98] animate-fade-in ${isCelebrating ? 'animate-celebrate' : ''} ${isInCart(product.id) ? 'in-cart-ring' : ''}`}>
         {/* Image */}
         <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl bg-[#111111] flex items-center justify-center">
           <LazyProductImage product={product} alt={displayName} />
@@ -91,38 +91,38 @@ export default function ProductCard({ product }: ProductCardProps) {
             </button>
           )}
 
-          {/* Out of stock badge (بدون تغطية الصورة) */}
+          {/* Out of stock badge - Enhanced */}
           {!isAvailable && (
-            <div className="absolute top-2 left-2">
-              <span className="px-2.5 py-1 rounded-full bg-red-600/95 text-[10px] md:text-xs font-bold text-white shadow-md shadow-red-500/40">
+            <div className="absolute top-3 left-3">
+              <span className="px-3 py-1.5 rounded-full bg-red-600/95 text-xs md:text-sm font-bold text-white shadow-lg shadow-red-500/40">
                 غير متوفر
               </span>
             </div>
           )}
         </div>
 
-        {/* Content - Compact - Flex to push price to bottom */}
-        <div className="flex-1 flex flex-col p-3 md:p-4 space-y-2">
-          {/* Category & Brand - Improved spacing */}
-          <div className="flex items-center gap-2 text-xs flex-wrap">
+        {/* Content - Enhanced spacing */}
+        <div className="flex-1 flex flex-col p-4 md:p-5 space-y-2.5">
+          {/* Category & Brand - Enhanced */}
+          <div className="flex items-center gap-2 text-sm flex-wrap">
             {category && (
               <span className="cat-badge">
                 {category.name_ar}
               </span>
             )}
             {brand && (
-              <span className="text-text-muted/80 text-[11px]">• {brand.name}</span>
+              <span className="text-text-muted/80 text-xs md:text-sm">• {brand.name}</span>
             )}
           </div>
 
-          {/* Title */}
-          <h3 className="font-bold text-white line-clamp-2 leading-tight group-hover:text-primary transition-colors">
+          {/* Title - Enhanced */}
+          <h3 className="font-bold text-base md:text-lg text-white line-clamp-2 leading-snug group-hover:text-primary transition-colors">
             {displayName}
           </h3>
 
           {/* Secondary Info - Key specs */}
           {secondaryInfo && (
-            <p className="text-xs text-text-muted line-clamp-1">
+            <p className="text-sm text-text-muted line-clamp-1">
               {secondaryInfo}
             </p>
           )}
@@ -130,24 +130,24 @@ export default function ProductCard({ product }: ProductCardProps) {
           {/* Spacer to push price to bottom */}
           <div className="flex-1"></div>
 
-          {/* Price - Premium badge style */}
+          {/* Price - Enhanced */}
           {product.price > 0 && (
-            <div className="pt-2 border-t border-white/5">
-              <span className="price-badge text-green-400 text-base md:text-lg">{product.price.toLocaleString('ar-SA')} <span className="text-green-400/70 text-sm">{product.currency}</span></span>
+            <div className="pt-3 border-t border-white/5">
+              <span className="price-badge text-green-400 text-lg md:text-xl font-extrabold">{product.price.toLocaleString('ar-SA')} <span className="text-green-400/70 text-base font-semibold">{product.currency}</span></span>
             </div>
           )}
 
-          {/* Status */}
+          {/* Status - Enhanced */}
           <div className="flex items-center gap-3 flex-wrap">
             {isAvailable && (
-              <div className="flex items-center gap-1.5 text-success text-[11px] font-semibold">
+              <div className="flex items-center gap-2 text-success text-xs md:text-sm font-semibold">
                 <span className="status-dot bg-success"></span>
                 <span>متوفر</span>
               </div>
             )}
             {isInCart(product.id) && (
-              <div className="flex items-center gap-1.5 text-yellow-400 text-[11px] font-bold">
-                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center gap-2 text-yellow-400 text-xs md:text-sm font-bold">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M16 6V4a2 2 0 00-2-2H6a2 2 0 00-2 2v2H2v10a2 2 0 002 2h12a2 2 0 002-2V6h-2zm-8 8a1 1 0 11-2 0 1 1 0 012 0zm6 0a1 1 0 11-2 0 1 1 0 012 0z"/>
                 </svg>
                 <span>في السلة</span>
