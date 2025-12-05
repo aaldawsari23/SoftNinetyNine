@@ -79,15 +79,16 @@ export default function ProductCard({ product }: ProductCardProps) {
         <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl bg-[#111111] flex items-center justify-center">
           <LazyProductImage product={product} alt={displayName} />
 
-          {/* Quick Add Button - Hidden for motorcycles */}
+          {/* Quick Add Button - Mobile Optimized */}
           {isAvailable && product.type !== 'bike' && (
             <button
               onClick={handleAddToCart}
               disabled={isAdding}
-              className={`absolute bottom-3 left-3 cart-add-btn text-white text-xs font-bold disabled:opacity-60 disabled:cursor-not-allowed ${isAdding ? 'animate-pulse' : ''}`}
+              className={`absolute bottom-2 left-2 right-2 md:bottom-3 md:left-3 md:right-auto cart-add-btn-mobile md:cart-add-btn text-white text-xs md:text-sm font-bold disabled:opacity-60 disabled:cursor-not-allowed ${isAdding ? 'animate-pulse' : ''}`}
               aria-label="أضف للسلة"
             >
-              {isAdding ? '✓ تمت الإضافة' : '+ أضف للسلة'}
+              {isAdding ? '✓' : '+'}
+              <span className="hidden md:inline">{isAdding ? ' تمت الإضافة' : ' أضف للسلة'}</span>
             </button>
           )}
 
@@ -101,28 +102,28 @@ export default function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
 
-        {/* Content - Enhanced spacing */}
-        <div className="flex-1 flex flex-col p-4 md:p-5 space-y-2.5">
-          {/* Category & Brand - Enhanced */}
-          <div className="flex items-center gap-2 text-sm flex-wrap">
+        {/* Content - Mobile Optimized */}
+        <div className="flex-1 flex flex-col p-2 md:p-5 space-y-1.5 md:space-y-2.5">
+          {/* Category & Brand - Compact for Mobile */}
+          <div className="flex items-center gap-1 md:gap-2 text-xs md:text-sm flex-wrap">
             {category && (
-              <span className="cat-badge">
+              <span className="cat-badge text-[10px] md:text-xs px-2 md:px-3 py-0.5 md:py-1.5">
                 {category.name_ar}
               </span>
             )}
             {brand && (
-              <span className="text-text-muted/80 text-xs md:text-sm">• {brand.name}</span>
+              <span className="hidden md:inline text-text-muted/80">• {brand.name}</span>
             )}
           </div>
 
-          {/* Title - Enhanced */}
-          <h3 className="font-bold text-base md:text-lg text-white line-clamp-2 leading-snug group-hover:text-primary transition-colors">
+          {/* Title - Responsive */}
+          <h3 className="font-bold text-xs md:text-lg text-white line-clamp-2 leading-tight md:leading-snug group-hover:text-primary transition-colors">
             {displayName}
           </h3>
 
-          {/* Secondary Info - Key specs */}
+          {/* Secondary Info - Hidden on small mobile */}
           {secondaryInfo && (
-            <p className="text-sm text-text-muted line-clamp-1">
+            <p className="hidden md:block text-sm text-text-muted line-clamp-1">
               {secondaryInfo}
             </p>
           )}
@@ -130,27 +131,30 @@ export default function ProductCard({ product }: ProductCardProps) {
           {/* Spacer to push price to bottom */}
           <div className="flex-1"></div>
 
-          {/* Price - Enhanced */}
+          {/* Price - Mobile Compact */}
           {product.price > 0 && (
-            <div className="pt-3 border-t border-white/5">
-              <span className="price-badge text-green-400 text-lg md:text-xl font-extrabold">{product.price.toLocaleString('ar-SA')} <span className="text-green-400/70 text-base font-semibold">{product.currency}</span></span>
+            <div className="pt-1.5 md:pt-3 border-t border-white/5">
+              <span className="price-badge text-green-400 text-sm md:text-xl font-extrabold">
+                {product.price.toLocaleString('ar-SA')}
+                <span className="text-green-400/70 text-xs md:text-base font-semibold"> {product.currency}</span>
+              </span>
             </div>
           )}
 
-          {/* Status - Enhanced */}
-          <div className="flex items-center gap-3 flex-wrap">
+          {/* Status - Minimal on Mobile */}
+          <div className="flex items-center gap-1.5 md:gap-3 flex-wrap">
             {isAvailable && (
-              <div className="flex items-center gap-2 text-success text-xs md:text-sm font-semibold">
-                <span className="status-dot bg-success"></span>
-                <span>متوفر</span>
+              <div className="flex items-center gap-1 md:gap-2 text-success text-[10px] md:text-sm font-semibold">
+                <span className="status-dot bg-success w-1.5 h-1.5 md:w-2 md:h-2"></span>
+                <span className="hidden md:inline">متوفر</span>
               </div>
             )}
             {isInCart(product.id) && (
-              <div className="flex items-center gap-2 text-yellow-400 text-xs md:text-sm font-bold">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center gap-1 md:gap-2 text-yellow-400 text-[10px] md:text-sm font-bold">
+                <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M16 6V4a2 2 0 00-2-2H6a2 2 0 00-2 2v2H2v10a2 2 0 002 2h12a2 2 0 002-2V6h-2zm-8 8a1 1 0 11-2 0 1 1 0 012 0zm6 0a1 1 0 11-2 0 1 1 0 012 0z"/>
                 </svg>
-                <span>في السلة</span>
+                <span className="hidden md:inline">في السلة</span>
               </div>
             )}
           </div>

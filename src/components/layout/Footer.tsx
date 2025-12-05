@@ -10,32 +10,29 @@ export default function Footer() {
         <span className="text-orange-300/60 text-sm">المنتجات المعروضة للتجربة فقط</span>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 py-8 md:py-10">
+      <div className="container mx-auto px-4 md:px-6 py-6 md:py-10">
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-          {/* About / Branding */}
-          <div className="space-y-4">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+          {/* About / Branding - Full Width on Mobile */}
+          <div className="space-y-3 col-span-2 lg:col-span-1">
             <div className="flex flex-col leading-snug">
-              <span className="text-primary font-bold text-lg md:text-xl">سوفت تسعة وتسعين</span>
-              <span className="text-text-muted text-sm md:text-base mt-1">Soft Ninety Nine</span>
+              <span className="text-primary font-bold text-base md:text-xl">سوفت تسعة وتسعين</span>
+              <span className="text-text-muted text-xs md:text-base mt-0.5 md:mt-1">Soft Ninety Nine</span>
             </div>
-            <p className="text-text-secondary text-sm md:text-base leading-relaxed">
+            <p className="text-text-secondary text-xs md:text-base leading-relaxed">
               متجر متخصص في بيع الدراجات النارية والإكسسوارات ومواقف للإيجار
             </p>
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-white font-bold text-base md:text-lg mb-3">روابط سريعة</h4>
-            <div className="flex flex-col text-sm md:text-base text-text-secondary space-y-3">
+          <div className="space-y-2 md:space-y-4">
+            <h4 className="text-white font-bold text-sm md:text-lg mb-2 md:mb-3">روابط سريعة</h4>
+            <div className="flex flex-col text-xs md:text-base text-text-secondary space-y-2 md:space-y-3">
               <Link href="/" className="hover:text-primary transition-colors">
                 المنتجات
               </Link>
               <Link href="/motorcycles" className="hover:text-primary transition-colors">
                 الدراجات النارية
-              </Link>
-              <Link href="/maintenance" className="hover:text-primary transition-colors">
-                الصيانة
               </Link>
               <Link href="/parking" className="hover:text-primary transition-colors">
                 مواقف للإيجار
@@ -50,9 +47,9 @@ export default function Footer() {
           </div>
 
           {/* Legal & Developer */}
-          <div className="space-y-4">
-            <h4 className="text-white font-bold text-base md:text-lg mb-3">معلومات قانونية</h4>
-            <div className="flex flex-col text-sm md:text-base text-text-secondary space-y-3">
+          <div className="space-y-2 md:space-y-4">
+            <h4 className="text-white font-bold text-sm md:text-lg mb-2 md:mb-3">معلومات</h4>
+            <div className="flex flex-col text-xs md:text-base text-text-secondary space-y-2 md:space-y-3">
               <Link href="/terms" className="hover:text-primary transition-colors">
                 الشروط والأحكام
               </Link>
@@ -71,12 +68,9 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-            <div className="pt-5 mt-5 border-t border-gray-800">
-              <p className="text-xs md:text-sm text-text-muted">
-                تطوير: عبدالكريم الدوسري
-              </p>
-              <p className="text-xs md:text-sm text-text-muted mt-2">
-                © 2025 سوفت تسعة وتسعين
+            <div className="pt-3 md:pt-5 mt-3 md:mt-5 border-t border-gray-800">
+              <p className="text-[10px] md:text-sm text-text-muted">
+                © 2025 سوفت 99
               </p>
             </div>
           </div>

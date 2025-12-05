@@ -568,7 +568,23 @@
     background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
   }
 
-  /* Cart add button premium - ENHANCED */
+  /* Cart add button - Mobile Optimized */
+  .cart-add-btn-mobile {
+    @apply w-10 h-10 rounded-lg font-bold text-base transition-all duration-200 flex items-center justify-center;
+    background: linear-gradient(135deg, rgba(255, 46, 46, 0.95) 0%, rgba(255, 82, 82, 0.95) 100%);
+    box-shadow: 0 3px 12px rgba(255, 46, 46, 0.4);
+  }
+
+  .cart-add-btn-mobile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(255, 46, 46, 0.5);
+  }
+
+  .cart-add-btn-mobile:active {
+    transform: scale(0.95);
+  }
+
+  /* Cart add button premium - Desktop */
   .cart-add-btn {
     @apply px-5 py-3 rounded-xl font-bold text-sm md:text-base transition-all duration-200;
     background: linear-gradient(135deg, rgba(255, 46, 46, 0.95) 0%, rgba(255, 82, 82, 0.95) 100%);

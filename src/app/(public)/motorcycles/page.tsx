@@ -226,8 +226,8 @@ export default function MotorcyclesPage() {
           </div>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-6">
+        {/* Grid - Mobile First: 1 Column */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-6">
           {paginatedMotorcycles.map(bike => {
             const displayName = bike.name_ar || bike.name || 'دراجة نارية';
             const brand = brands.find(b => b.id === bike.brand_id);
