@@ -226,10 +226,10 @@ export default function CatalogContent() {
 
   return (
     <div className="space-y-4">
-      {/* الشريط الهجين المثبت */}
-      <div className="sticky top-14 z-30 bg-background/95 backdrop-blur-md border-b border-white/5 -mx-4 px-4 pt-3 pb-2 shadow-sm">
+      {/* الشريط الهجين المثبت - Enhanced */}
+      <div className="sticky top-16 md:top-18 z-30 bg-background/95 backdrop-blur-md border-b border-white/5 -mx-4 px-4 md:px-6 pt-4 pb-3 shadow-sm">
         {/* الصف العلوي: بحث (ديسكتوب) + زر فلتر */}
-        <div className="flex items-center gap-2 mb-2">
+        <div className="flex items-center gap-3 mb-3">
           {/* البحث (ديسكتوب) */}
           <div className="hidden md:block flex-1">
             <div className="relative">
@@ -238,7 +238,7 @@ export default function CatalogContent() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="ابحث عن منتج، رقم موديل، أو كود..."
-                className="w-full bg-white/5 border border-white/10 rounded-full px-4 py-2.5 pr-10 text-sm text-white placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full bg-white/5 border-2 border-white/10 rounded-full px-5 py-3 pr-11 text-base text-white placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
               />
               {searchQuery && (
                 <button
@@ -247,7 +247,7 @@ export default function CatalogContent() {
                   className="absolute inset-y-0 right-2 flex items-center text-text-muted hover:text-white"
                   aria-label="مسح البحث"
                 >
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <path
                       d="M18 6L6 18M6 6l12 12"
                       strokeWidth="2"
@@ -257,8 +257,8 @@ export default function CatalogContent() {
                   </svg>
                 </button>
               )}
-              <span className="absolute inset-y-0 left-3 flex items-center">
-                <svg className="w-4 h-4 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <span className="absolute inset-y-0 left-4 flex items-center">
+                <svg className="w-5 h-5 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path
                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                     strokeWidth="2"
@@ -278,7 +278,7 @@ export default function CatalogContent() {
             aria-label="فتح الفلاتر"
           >
             <div className="relative">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -293,9 +293,9 @@ export default function CatalogContent() {
           </button>
         </div>
 
-        {/* شريط الفئات (شيبس) - Premium Design */}
+        {/* شريط الفئات (شيبس) - Premium Design Enhanced */}
         {availableCategories.length > 0 && (
-          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 -mx-1 px-1">
+          <div className="flex items-center gap-2.5 overflow-x-auto no-scrollbar pb-2 -mx-1 px-1">
             <button
               type="button"
               onClick={() => setSelectedCategory('all')}
@@ -322,12 +322,12 @@ export default function CatalogContent() {
 
         {/* الفلاتر النشطة (Chips) */}
         {hasActiveFilters && (
-          <div className="flex flex-wrap gap-2 mt-2 pt-2 border-t border-white/5">
+          <div className="flex flex-wrap gap-2 mt-3 pt-3 border-t border-white/5">
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => setSearchQuery('')}
-                className="inline-flex items-center gap-1 px-2 py-1 bg-primary/10 text-primary text-[11px] rounded-full border border-primary/20"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 text-primary text-xs md:text-sm rounded-full border border-primary/20 hover:bg-primary/20 transition-all"
               >
                 <span>بحث: {searchQuery}</span>
                 <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -345,7 +345,7 @@ export default function CatalogContent() {
               <button
                 type="button"
                 onClick={() => setSelectedBrand('all')}
-                className="inline-flex items-center gap-1 px-2 py-1 bg-primary/10 text-primary text-[11px] rounded-full border border-primary/20"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 text-primary text-xs md:text-sm rounded-full border border-primary/20 hover:bg-primary/20 transition-all"
               >
                 <span>
                   ماركة:{' '}
@@ -371,7 +371,7 @@ export default function CatalogContent() {
                   setMinPrice('');
                   setMaxPrice('');
                 }}
-                className="inline-flex items-center gap-1 px-2 py-1 bg-primary/10 text-primary text-[11px] rounded-full border border-primary/20"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 text-primary text-xs md:text-sm rounded-full border border-primary/20 hover:bg-primary/20 transition-all"
               >
                 <span>
                   السعر:{' '}
@@ -395,7 +395,7 @@ export default function CatalogContent() {
             <button
               type="button"
               onClick={resetFilters}
-              className="text-[11px] text-text-muted underline decoration-dotted hover:text-white ml-auto"
+              className="text-xs md:text-sm text-text-muted underline decoration-dotted hover:text-white ml-auto font-medium"
             >
               مسح الكل
             </button>

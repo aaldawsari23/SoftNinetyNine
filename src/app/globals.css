@@ -76,6 +76,16 @@
     letter-spacing: 0.02em;
     font-weight: 450;
   }
+
+  /* Enhanced minimum font sizes for better readability */
+  body {
+    font-size: 15px; /* Increased from default 14px */
+  }
+
+  /* Better line heights for Arabic text */
+  p, span, div {
+    line-height: 1.7;
+  }
 }
 
 @layer components {
@@ -432,23 +442,29 @@
     @apply min-h-[44px] min-w-[44px];
   }
 
-  /* Premium chip with gradient border */
+  /* Premium chip with gradient border - ENHANCED */
   .chip-premium {
-    @apply relative px-4 py-2 rounded-full font-medium text-sm transition-all duration-300;
+    @apply relative px-5 py-2.5 rounded-full font-semibold text-sm md:text-base transition-all duration-300;
     background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1.5px solid rgba(255,255,255,0.12);
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .chip-premium:hover {
-    border-color: rgba(255, 46, 46, 0.3);
-    background: linear-gradient(135deg, rgba(255,46,46,0.1) 0%, rgba(255,46,46,0.05) 100%);
+    border-color: rgba(255, 46, 46, 0.4);
+    background: linear-gradient(135deg, rgba(255,46,46,0.15) 0%, rgba(255,46,46,0.08) 100%);
+    transform: translateY(-1px);
   }
 
   .chip-premium.active {
     background: linear-gradient(135deg, #FF2E2E 0%, #FF5252 100%);
     border-color: transparent;
     color: white;
-    box-shadow: 0 4px 15px rgba(255, 46, 46, 0.3);
+    box-shadow: 0 6px 20px rgba(255, 46, 46, 0.35);
+    transform: scale(1.02);
   }
 
   /* Price highlight badge */
@@ -552,52 +568,62 @@
     background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
   }
 
-  /* Cart add button premium */
+  /* Cart add button premium - ENHANCED */
   .cart-add-btn {
-    @apply px-4 py-2.5 rounded-xl font-bold text-sm transition-all duration-200;
-    background: linear-gradient(135deg, rgba(255, 46, 46, 0.9) 0%, rgba(255, 82, 82, 0.9) 100%);
-    box-shadow: 0 4px 15px rgba(255, 46, 46, 0.3);
-    min-height: 44px;
+    @apply px-5 py-3 rounded-xl font-bold text-sm md:text-base transition-all duration-200;
+    background: linear-gradient(135deg, rgba(255, 46, 46, 0.95) 0%, rgba(255, 82, 82, 0.95) 100%);
+    box-shadow: 0 4px 18px rgba(255, 46, 46, 0.35);
+    min-height: 48px;
   }
 
   .cart-add-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(255, 46, 46, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 46, 46, 0.45);
   }
 
   .cart-add-btn:active {
     transform: translateY(0) scale(0.98);
   }
 
-  /* Nav icon button */
+  /* Nav icon button - ENHANCED */
   .nav-icon-btn {
     @apply p-3 rounded-xl transition-all duration-200;
-    min-width: 44px;
-    min-height: 44px;
+    min-width: 48px;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .nav-icon-btn:hover {
-    background: rgba(255, 46, 46, 0.1);
+    background: rgba(255, 46, 46, 0.15);
+    transform: scale(1.05);
   }
 
-  /* Filter button premium */
+  .nav-icon-btn:active {
+    transform: scale(0.95);
+  }
+
+  /* Filter button premium - ENHANCED */
   .filter-btn {
-    @apply flex items-center justify-center rounded-full transition-all duration-300;
-    width: 44px;
-    height: 44px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    @apply flex items-center justify-center rounded-2xl transition-all duration-300;
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.06);
+    border: 1.5px solid rgba(255,255,255,0.12);
   }
 
   .filter-btn:hover {
-    background: rgba(255, 46, 46, 0.1);
-    border-color: rgba(255, 46, 46, 0.3);
+    background: rgba(255, 46, 46, 0.15);
+    border-color: rgba(255, 46, 46, 0.4);
+    transform: translateY(-1px);
   }
 
   .filter-btn.active {
     background: linear-gradient(135deg, #FF2E2E 0%, #FF5252 100%);
     border-color: transparent;
-    box-shadow: 0 4px 15px rgba(255, 46, 46, 0.3);
+    box-shadow: 0 6px 20px rgba(255, 46, 46, 0.4);
+    transform: scale(1.05);
   }
 
   /* Mobile search bar */
@@ -614,31 +640,34 @@
     box-shadow: 0 0 0 3px rgba(255, 46, 46, 0.1);
   }
 
-  /* Category badge in card */
+  /* Category badge in card - ENHANCED */
   .cat-badge {
-    @apply px-2.5 py-1 rounded-lg text-[11px] font-semibold;
-    background: linear-gradient(135deg, rgba(255, 46, 46, 0.15) 0%, rgba(255, 46, 46, 0.05) 100%);
+    @apply px-3 py-1.5 rounded-lg text-xs md:text-sm font-bold;
+    background: linear-gradient(135deg, rgba(255, 46, 46, 0.18) 0%, rgba(255, 46, 46, 0.08) 100%);
     color: #FF5252;
-    border: 1px solid rgba(255, 46, 46, 0.2);
+    border: 1px solid rgba(255, 46, 46, 0.25);
   }
 
-  /* Pagination premium */
+  /* Pagination premium - ENHANCED */
   .page-btn {
-    @apply w-10 h-10 rounded-xl flex items-center justify-center font-semibold text-sm transition-all duration-200;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    @apply w-12 h-12 rounded-xl flex items-center justify-center font-bold text-base transition-all duration-200;
+    background: rgba(255,255,255,0.06);
+    border: 1.5px solid rgba(255,255,255,0.12);
+    min-width: 48px;
   }
 
   .page-btn:hover:not(:disabled) {
-    background: rgba(255, 46, 46, 0.1);
-    border-color: rgba(255, 46, 46, 0.3);
+    background: rgba(255, 46, 46, 0.15);
+    border-color: rgba(255, 46, 46, 0.4);
+    transform: translateY(-1px);
   }
 
   .page-btn.active {
     background: linear-gradient(135deg, #FF2E2E 0%, #FF5252 100%);
     border-color: transparent;
     color: white;
-    box-shadow: 0 4px 15px rgba(255, 46, 46, 0.3);
+    box-shadow: 0 6px 20px rgba(255, 46, 46, 0.4);
+    transform: scale(1.05);
   }
 
   .page-btn:disabled {
